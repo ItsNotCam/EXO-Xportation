@@ -12,17 +12,21 @@ document.addEventListener('mousemove', (e) => {
 		customCursor.setAttribute('data-hovered', false);
 	}
 
-	const windowWidth = window.innerWidth;
-	const windowHeight = window.innerHeight;
+	// const windowWidth = window.outerWidth;
+	// const windowHeight = window.outerHeight;
 
-	const targetX = (windowWidth - 0.0001 * windowWidth) * (e.clientX / windowWidth);
-	const targetY = (windowHeight - 0.0001 * windowHeight) * (e.clientY / windowHeight);
+	// const percentX = (e.clientX / windowWidth)  * 35 + (windowWidth  / 10);
+	// const percentY = (e.clientY / windowHeight) * 10 - (windowHeight / 50);
 
-	spacemanImage.style.left = targetX + 'px';
-	spacemanImage.style.top = targetY + 'px';
+	// spacemanImage.style.backgroundPosition = `${percentX}px ${percentY}px`;
 	
 	// `translate(${targetX}px, ${targetY}px)`;
 });
+
+// Lerp function
+function lerp(start, end, t) {
+	return start * (1 - t) + end * t;
+}
 
 // SVG Button Hover Animation
 const svgButtons = document.querySelectorAll('.angled-btn');
