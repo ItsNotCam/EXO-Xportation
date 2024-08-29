@@ -1,5 +1,6 @@
 // Custom Cursor
 const customCursor = document.querySelector('#custom-cursor');
+const spacemanImage = document.querySelector('.spaceman-img');
 document.addEventListener('mousemove', (e) => {
 	customCursor.style.left = e.clientX + 'px';
 	customCursor.style.top = e.clientY + 'px';
@@ -10,7 +11,18 @@ document.addEventListener('mousemove', (e) => {
 	} else {
 		customCursor.setAttribute('data-hovered', false);
 	}
-})
+
+	const windowWidth = window.innerWidth;
+	const windowHeight = window.innerHeight;
+
+	const targetX = (windowWidth - 0.0001 * windowWidth) * (e.clientX / windowWidth);
+	const targetY = (windowHeight - 0.0001 * windowHeight) * (e.clientY / windowHeight);
+
+	spacemanImage.style.left = targetX + 'px';
+	spacemanImage.style.top = targetY + 'px';
+	
+	// `translate(${targetX}px, ${targetY}px)`;
+});
 
 // SVG Button Hover Animation
 const svgButtons = document.querySelectorAll('.angled-btn');
