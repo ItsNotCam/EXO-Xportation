@@ -29,7 +29,7 @@ function lerp(start, end, t) {
 }
 
 // SVG Button Hover Animation
-const svgButtons = document.querySelectorAll('.angled-btn');
+const svgButtons = document.querySelectorAll('.btn-angled');
 svgButtons.forEach((svgButton, index) => {
 	svgButton.innerHTML = `
 		<svg xmlns="http://www.w3.org/2000/svg" width="200" height="49" viewBox="0 0 203 49" fill="transparent">

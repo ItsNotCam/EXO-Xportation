@@ -430,12 +430,12 @@ body {
 	}
 }
 
-.angled-btn {
+.btn-angled {
 	color: var(--light);
 	position: relative;
 }
 
-.angled-btn[data-light="true"] svg g {
+.btn-angled[data-light="true"] svg g {
 	& :nth-child(1) {
 		stroke: transparent;
 		fill: var(--light);
@@ -446,7 +446,7 @@ body {
 	}
 }
 
-.angled-btn[data-light="true"]:hover svg g {
+.btn-angled[data-light="true"]:hover svg g {
 	& :nth-child(1) {
 		stroke: var(--dark);
 	}
@@ -455,7 +455,7 @@ body {
 	}
 }
 
-.angled-btn::after {
+.btn-angled::after {
 	content: attr(data-title);
 	position: absolute;
 	width: 100%;
@@ -469,11 +469,11 @@ body {
 	z-index: inherit;
 }
 
-.angled-btn:hover::after {
+.btn-angled:hover::after {
 	color: var(--dark);
 }
 
-.angled-btn[data-light="true"] {
+.btn-angled[data-light="true"] {
 	color: var(--dark);
 
 	&:hover::after {
@@ -539,7 +539,7 @@ body {
 		justify-content: baseline;
 	}
 	
-	.hero .hero__buttons .angled-btn {
+	.hero .hero__buttons .btn-angled {
 		display: flex;
 		width: max-content;
 	}
