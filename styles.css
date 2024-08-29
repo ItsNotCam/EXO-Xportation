@@ -194,7 +194,6 @@ body {
 }
 
 #custom-cursor {
-	display: none;
 	position: fixed;
 	height: 1rem;
 	width: 1rem;
