@@ -1,14 +1,6 @@
-
-
 // Custom Cursor
 const customCursor = document.querySelector('#custom-cursor');
 document.addEventListener('mousemove', (e) => {
-
-	if (!document.body.classList.contains('custom-cursor-initialized')) {
-		document.body.classList.add('custom-cursor-initialized');
-		customCursor.style.display = 'block';
-	}
-
 	customCursor.style.left = e.clientX + 'px';
 	customCursor.style.top = e.clientY + 'px';
 
