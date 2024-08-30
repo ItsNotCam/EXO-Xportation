@@ -1,19 +1,32 @@
 {
   "name": "svg-tester",
   "version": "1.0.0",
-  "main": "scripts.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tww": "npx tailwindcss -i ./src/styles/globals.css -o ./styles.css --watch"
+    "tww": "npx tailwindcss -i ./src/styles/globals.css -o ./dist/styles.css --watch",
+    "dev": "webpack serve",
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "css-loader": "^7.1.2",
     "cssnano": "^7.0.5",
+    "glob": "^11.0.0",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.9.1",
     "postcss": "^8.4.41",
+    "postcss-loader": "^8.1.1",
     "postcss-nested": "^6.2.0",
-    "tailwindcss": "^3.4.10"
+    "postcss-preset-env": "^10.0.2",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.4.10",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
   }
 }
