@@ -4,8 +4,8 @@ class ExoLinkBtn extends HTMLElement {
     const isLight = this.hasAttribute('light');
 
     this.innerHTML = /*html*/ `
-    <a href="${this.getAttribute('href')}">
-      <exo-btn ${isLight ? "light" : "" }>${title}</exo-btn>
+    <a href="${this.getAttribute('href')}" class="flex">
+      <exo-btn ${isLight ? "light" : "" } class="flex">${title}</exo-btn>
     </a>
     `
   }
