@@ -5,11 +5,11 @@ import {
 class ExoBtn extends HTMLElement {
   connectedCallback() {
     const title = this.innerText;
-    const isLight = this.getAttribute('light') === "true" ? "true" : "false";
+    const isLight = this.hasAttribute('light') ? "true" : "false";
     const clipUUID = uuidv4();
 
     this.innerHTML = /*html*/ `
-    <div class="btn-angled cch" data-title="${title}" data-light="${isLight}">
+    <button class="btn-angled cch" data-title="${title}" data-light="${isLight}">
       <svg xmlns="http://www.w3.org/2000/svg" width="200" height="49" viewBox="0 0 203 49" fill="transparent">
         <defs>
           <clipPath id="hover-clip-${clipUUID}">
@@ -24,7 +24,7 @@ class ExoBtn extends HTMLElement {
           <path d="M1 48V11.9399L12.389 1.5H202V38.0721L191.599 48H1Z" fill="white" stroke="none" id="hover-anim" clip-path="url(#hover-clip-${clipUUID})" />
         </g>
       </svg>
-    </div>
+    </button>
     `;
 
     this.addEventListener('mouseenter', () => {

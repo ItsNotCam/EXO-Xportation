@@ -1,11 +1,11 @@
 class ExoLinkBtn extends HTMLElement {
   connectedCallback() {
     const title = this.innerText;
-    const isLight = this.hasAttribute('light') ? "true" : "false";
+    const isLight = this.hasAttribute('light');
 
     this.innerHTML = /*html*/ `
     <a href="${this.getAttribute('href')}">
-      <exo-btn light="${isLight}">${title}</exo-btn>
+      <exo-btn ${isLight ? "light" : "" }>${title}</exo-btn>
     </a>
     `
   }
