@@ -82,9 +82,9 @@ body {
 .nav-link {
   @apply relative text-custom-light-100;
 
-	&[data-active="true"] {
-		@apply pointer-events-none;
-	}
+  &[data-active="true"] {
+    @apply pointer-events-none;
+  }
 
   &::after {
     content: '';
@@ -179,24 +179,24 @@ body {
 .btn-angled {
   @apply relative text-custom-light-100;
 
-	&::after {
-		content: attr(data-title);
-		@apply 
-			absolute 
-			left-0 
-			w-full 
-			top-1/2 
-			-translate-y-1/2 
-			text-center 
-			transition-colors 
-			duration-200 
-			pointer-events-none 
-			z-auto;
-	}
+  &::after {
+    content: attr(data-title);
+    @apply 
+      absolute 
+      left-0 
+      w-full 
+      top-1/2 
+      -translate-y-1/2 
+      text-center 
+      transition-colors 
+      duration-200 
+      pointer-events-none 
+      z-auto;
+  }
 
-	&:hover::after {
-		@apply text-custom-dark;
-	}
+  &:hover::after {
+    @apply text-custom-dark;
+  }
 }
 
 .btn-angled[data-light="true"] {
@@ -206,13 +206,13 @@ body {
     @apply text-custom-light-100;
   }
 
-	& svg g {
-		& :nth-child(1) { @apply fill-custom-light-100 stroke-transparent; }
-		& :nth-child(2) { @apply fill-custom-dark; }
-	}
+  & svg g {
+    & :nth-child(1) { @apply fill-custom-light-100 stroke-transparent; }
+    & :nth-child(2) { @apply fill-custom-dark; }
+  }
 
-	&:hover svg g {
-		& :nth-child(1) { @apply stroke-custom-dark; }
-		& :nth-child(2) { @apply fill-custom-dark; }
-	}
+  &:hover svg g {
+    & :nth-child(1) { @apply stroke-custom-dark; }
+    & :nth-child(2) { @apply fill-custom-dark; }
+  }
 }
