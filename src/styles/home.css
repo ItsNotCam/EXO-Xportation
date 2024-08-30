@@ -21,49 +21,6 @@
   }
 }
 
-.navbar {
-  @apply relative flex items-center justify-center py-8;
-}
-
-.nav-container {
-  @apply relative block w-full h-full text-left;
-}
-
-.logo {
-  margin-left: clamp(1.5rem, 4vw, 6rem);
-  @apply absolute left-0 top-[-0.8rem];
-}
-
-.nav-links {
-  @apply flex justify-center m-0 p-0;
-
-  & li:not(:last-child) {
-    @apply mr-8;
-  }
-}
-
-.nav-link {
-  @apply relative text-custom-light-100;
-
-  &::after {
-    content: '';
-    transition: transform .6s var(--star-bezier);
-    @apply 
-      absolute
-      bottom-[-0.3rem]
-      left-0
-      w-full
-      h-[1px]
-      bg-custom-light-100
-      scale-x-0
-      origin-right; 
-  }
-
-  &:hover::after {
-    @apply scale-x-100 origin-left;
-  }
-}
-
 .hero {
   @apply flex flex-col justify-center flex-grow max-w-[50rem];
   margin-left: clamp(1.5rem, 4vw, 6rem);

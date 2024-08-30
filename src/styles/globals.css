@@ -41,8 +41,6 @@ body {
 }
 
 #custom-cursor {
-  display: none;
-
   @apply fixed h-4 w-4 rounded-full bg-custom-light-100 pointer-events-none;
   transform: translate(-50%, -50%);
   z-index: 1000;
@@ -56,5 +54,52 @@ body {
     @apply h-8 w-8;
     background-color: rgba(255, 255, 255, 0.01);
     backdrop-filter: invert();
+  }
+}
+
+.navbar {
+  @apply relative flex items-center justify-center py-8;
+}
+
+.nav-container {
+  @apply relative block w-full h-full text-left;
+}
+
+.logo {
+  margin-left: clamp(1.5rem, 4vw, 6rem);
+  @apply absolute left-0 top-[-0.8rem];
+}
+
+.nav-links {
+  @apply flex justify-center m-0 p-0;
+
+  & li:not(:last-child) {
+    @apply mr-8;
+  }
+}
+
+.nav-link {
+  @apply relative text-custom-light-100;
+
+	&[data-active="true"] {
+		@apply pointer-events-none;
+	}
+
+  &::after {
+    content: '';
+    transition: transform .6s var(--star-bezier);
+    @apply 
+      absolute
+      bottom-[-0.3rem]
+      left-0
+      w-full
+      h-[1px]
+      bg-custom-light-100
+      scale-x-0
+      origin-right; 
+  }
+
+  &:hover::after {
+    @apply scale-x-100 origin-left;
   }
 }

@@ -1,2 +1,2 @@
-import '../styles/globals.css';
-import '../styles/home.css';
+import './globals.css';
+import './home.css';
