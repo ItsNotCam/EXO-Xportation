@@ -7,9 +7,9 @@
 	background-position: center center;
 	background-blend-mode: normal;
 
-	& > * {
+	/* & > * {
 		margin-left: clamp(1.5rem, 4vw, 6rem);
-	}
+	} */
 
 	&::before {
 		content: '';
@@ -45,6 +45,7 @@
 }
 
 .logo {
+	margin-left: clamp(1.5rem, 4vw, 6rem);
 	@apply absolute left-0 top-[-0.8rem];
 }
 
@@ -75,6 +76,7 @@
 
 .hero {
 	@apply flex flex-col justify-center flex-grow max-w-[50rem];
+	margin-left: clamp(1.5rem, 4vw, 6rem);
 
 	& > * {
 		@apply opacity-0;
