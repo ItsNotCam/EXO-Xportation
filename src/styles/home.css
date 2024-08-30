@@ -1,0 +1,367 @@
+.root {
+	@apply flex flex-col min-h-screen min-w-full overflow-hidden;
+
+	background-image: url('./images/bg.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-blend-mode: normal;
+
+	& > * {
+		margin-left: clamp(1.5rem, 4vw, 6rem);
+	}
+
+	&::before {
+		content: '';
+		background-color: rgba(0, 0, 0, 0.25);
+		transition: opacity 0.2s;
+
+		@apply absolute opacity-0 w-full h-full;
+	}
+}
+
+.navbar {
+	@apply relative flex items-center justify-center py-8;
+}
+
+.navbar .nav-toggle {
+	@apply relative hidden;
+
+	& svg {
+		@apply hidden;
+	}
+}
+
+.navbar .nav-toggle > * {
+	@apply absolute left-0;
+}
+
+.navbar .nav-toggle:checked + .nav-container {
+	@apply opacity-0 pointer-events-none;
+}
+
+.nav-container {
+	@apply relative block w-full h-full text-left;
+}
+
+.logo {
+	@apply absolute left-0 top-[-0.8rem];
+}
+
+.nav-links {
+	@apply flex justify-center m-0 p-0;
+
+	& li:not(:last-child) {
+		@apply mr-8;
+	}
+}
+
+.nav-link {
+	@apply relative text-custom-light-100;
+
+	&::after {
+		content: '';
+    transform-origin: right center;
+    transition: transform .6s var(--star-bezier);
+
+		@apply absolute bottom-[-0.3rem] left-0 w-full h-[1px] bg-custom-light-100 scale-x-0; 
+	}
+
+	&:hover::after {
+		@apply scale-x-100;
+    transform-origin: left center;
+	}
+}
+
+#custom-cursor {
+	display: none;
+
+	@apply fixed h-4 w-4 rounded-full bg-custom-light-100 pointer-events-none;
+	transform: translate(-50%, -50%);
+	z-index: 1000;
+	transition: background-color 0.2s, height 0.2s, width 0.2s;
+
+	&[data-hovered="false"] {
+		@apply bg-custom-light-100;
+	}
+
+	&[data-hovered="true"] {
+		@apply h-8 w-8;
+		background-color: rgba(255, 255, 255, 0.01);
+		backdrop-filter: invert();
+	}
+}
+
+.hero {
+	@apply flex flex-col justify-center flex-grow max-w-[50rem];
+
+	& > * {
+		@apply opacity-0;
+		animation: slide-fade-in 1.5s var(--star-bezier) forwards;
+	}
+
+	& .hero-subtitle {
+		@apply text-custom-light-200 mb-[-0.5rem];
+	}
+
+	& .hero-title {
+		font-weight: 900;
+		line-height: 0.9em;
+		font-size: 8rem;
+		margin-left: -0.4375rem;
+		margin-top: 0.125em;
+		animation-delay: 0.1s;
+	}
+
+	& .hero-text {
+		font-size: 1.15rem;
+		line-height: 130%;
+		letter-spacing: 0.04rem;
+		margin-top: min(1vw, 2rem);
+		animation-delay: 0.2s;
+
+		@apply max-w-[90%] text-custom-light-200;
+	}
+
+	& .hero-buttons {
+		margin-top: min(3vw, 3rem);
+		gap: 1rem 2rem;
+		animation-delay: 0.3s;
+		
+		@apply flex flex-row;
+	}
+}
+
+.btn {
+	letter-spacing: 0.1rem;
+	transition: color 0.2s, border 0.2s, scale 0.2s, font-size 0.2s;
+	animation-delay: 0.3s;
+
+	@apply relative flex items-center justify-center w-auto border border-custom-light-100;
+
+	&::after {
+		content: attr(data-title);
+		@apply absolute w-full text-center left-1/2 top-1/2 text-custom-light-100 transition-colors duration-300 -translate-x-1/2 -translate-y-1/2;
+	}
+
+	&::before {
+		content: '';
+		@apply absolute w-full h-full bg-custom-light-100 scale-y-0 origin-top transition-transform duration-200;
+	}
+	
+	&:hover::after {
+		@apply text-custom-dark;
+	}
+
+	&:hover::before {
+		@apply scale-y-100 origin-bottom;
+	}
+}
+
+.btn[data-light] {
+	@apply text-custom-dark bg-custom-light-100;
+
+	&::before {
+		@apply bg-custom-dark;
+		backdrop-filter: blur(20px);
+	}
+
+	&::after {
+		@apply text-custom-dark;
+	}
+
+	&:hover {
+		@apply border-none;
+		&::before, &::after {
+			@apply text-custom-light-100;
+		}
+	}
+}
+
+.btn-angled {
+	@apply relative text-custom-light-100;
+}
+
+.btn-angled[data-light="true"] svg g {
+	& :nth-child(1) {
+		stroke: transparent;
+		@apply fill-custom-light-100;
+	}
+
+	& :nth-child(2) {
+		@apply fill-custom-dark;
+	}
+}
+
+.btn-angled[data-light="true"]:hover svg g {
+	& :nth-child(1) {
+		@apply stroke-custom-dark;
+	}
+	& :nth-child(2) {
+		@apply fill-custom-dark;
+	}
+}
+
+.btn-angled::after {
+	content: attr(data-title);
+	@apply absolute left-0 w-full top-1/2 -translate-y-1/2 text-center transition-colors duration-200 pointer-events-none z-auto;
+}
+
+.btn-angled:hover::after {
+	@apply text-custom-dark;
+}
+
+.btn-angled[data-light="true"] {
+	@apply text-custom-dark;
+
+	&:hover::after {
+		@apply text-custom-light-100;
+	}
+}
+
+/* Media Queries */
+@media screen and (max-width: 1600px) {
+	.hero {
+		max-width: 40rem;
+	}
+	
+	.hero .hero-title {
+		font-size: 6rem;
+	}
+
+	.hero .hero-text {
+		font-size: 1rem;
+	}
+
+	.hero .hero-subtitle {
+		font-size: 0.8rem;
+	}
+}
+
+@media screen and (max-width: 1300px) {
+	.hero {
+		max-width: 37rem;
+	}
+
+	.hero .hero-title {
+		font-size: 5rem;
+	}
+}
+
+@media screen and (max-width: 805px) {
+	.hero .hero-title {
+		font-size: 6rem;
+	}
+
+	.root::before {
+		@applt opacity-1;
+	}
+}
+
+@media screen and (max-width: 636px) {
+	.hero .hero-title {
+		font-size: 5rem;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.hero {
+		@apply ml-0 w-[90%] mx-auto;
+	}
+
+	.hero .hero-buttons {
+		@apply flex flex-wrap justify-start;
+	}
+	
+	.hero .hero-buttons .btn-angled {
+		@apply flex w-max;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	.hero {
+		margin-top: 3rem;
+		justify-content: flex-start;
+	}
+
+	.hero .hero-title {
+		margin-top: 0.5rem;
+		font-size: 3rem;
+	}
+
+	.hero .hero-text {
+		margin-top: 1rem;
+	}
+
+	.hero .hero-buttons {
+		margin-top: 2rem;
+		justify-content: center;
+	}
+}
+
+@keyframes slide-fade-in {
+	from {
+		opacity: 0;
+		filter: blur(5px);
+		transform: translateY(3rem);
+	}
+	to {
+		opacity: 1;
+		filter: none;
+		transform: translateY(0rem);
+	}
+	80% {
+		filter: none;
+		opacity: 1;
+	}
+}
+
+@keyframes nav-link-in {
+	from { width: 0; }
+	to { width: 100%; }
+}
+
+/* Unused */
+.launch {
+	margin-top: 3rem;
+	animation-delay: 0.5s;
+	/* height: 200px; */
+	overflow: hidden;
+
+	& > * {
+		opacity: 0;
+		animation: slide-fade-in 1.5s var(--star-bezier) forwards;
+	}
+}
+
+.launch-upcoming {
+	animation-delay: 0.1s;
+}
+
+.launch-location {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;
+	animation-delay: 0.2s;
+
+	& svg {
+		margin-bottom: 0.75rem;
+	}
+}
+
+.launch-btn {
+	margin-top: 1rem;
+}
+
+.launch-src {
+	& h1 {
+		font-size: 3rem;
+		font-weight: 900;
+	}
+
+	& span {
+		font-size: 0.85rem;
+		color: #BABABA;
+	}
+}

@@ -1,0 +1,43 @@
+@import url('./home.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Aldrich';
+	src: url('./fonts/Aldrich-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'D-DIN';
+	src: url('./fonts/D-DIN.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'D-DIN-Bold';
+	src: url('./fonts/D-DIN-Bold.ttf') format('truetype');
+}
+
+.ddin {
+	font-family: 'D-DIN', sans-serif;
+}
+
+.ddin-bold {
+	font-family: 'D-DIN-Bold', sans-serif;
+}
+
+.aldrich {
+	font-family: 'Aldrich', sans-serif;
+}
+
+:root {
+	--light: #FFFFFF;
+	--dark: #121212;
+	--star-bezier: cubic-bezier(.19,1,.22,1);
+}
+
+body {
+	font-family: 'D-DIN', sans-serif;
+	@apply h-full text-custom-light-100 bg-custom-dark;
+}

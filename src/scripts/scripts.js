@@ -11,22 +11,7 @@ document.addEventListener('mousemove', (e) => {
 	} else {
 		customCursor.setAttribute('data-hovered', false);
 	}
-
-	// const windowWidth = window.outerWidth;
-	// const windowHeight = window.outerHeight;
-
-	// const percentX = (e.clientX / windowWidth)  * 35 + (windowWidth  / 10);
-	// const percentY = (e.clientY / windowHeight) * 10 - (windowHeight / 50);
-
-	// spacemanImage.style.backgroundPosition = `${percentX}px ${percentY}px`;
-	
-	// `translate(${targetX}px, ${targetY}px)`;
 });
-
-// Lerp function
-function lerp(start, end, t) {
-	return start * (1 - t) + end * t;
-}
 
 // SVG Button Hover Animation
 const svgButtons = document.querySelectorAll('.btn-angled');
@@ -51,10 +36,7 @@ svgButtons.forEach((svgButton, index) => {
 			</g>
 		</svg>
 	`;
-
-	// svgButton.querySelector('#hover-clip').id = `hover-clip-${index}`;
-	// svgButton.querySelector('#hover-anim').setAttribute('clip-path', `url(#hover-clip-${index})`);
-
+	
 	svgButton.addEventListener('mouseenter', () => {
 		svgButton.querySelector('#mouseenter').beginElement();
 	});
