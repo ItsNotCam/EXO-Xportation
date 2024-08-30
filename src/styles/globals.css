@@ -103,3 +103,125 @@ body {
     @apply scale-x-100 origin-left;
   }
 }
+
+
+
+.btn {
+  @apply 
+    relative
+    flex
+    items-center
+    justify-center
+    w-auto
+    border
+    border-custom-light-100;
+
+  letter-spacing: 0.1rem;
+  transition: color 0.2s, border 0.2s, scale 0.2s, font-size 0.2s;
+
+  &::after {
+    content: attr(data-title);
+    @apply 
+      absolute
+      w-full
+      text-center
+      left-1/2
+      top-1/2
+      text-custom-light-100
+      transition-colors
+      duration-300
+      -translate-x-1/2
+      -translate-y-1/2;
+  }
+
+  &::before {
+    content: '';
+    @apply 
+      absolute
+      w-full
+      h-full
+      bg-custom-light-100
+      scale-y-0
+      origin-top
+      transition-transform
+      duration-200;
+  }
+
+  
+  &:hover::after {
+    @apply text-custom-dark;
+  }
+
+  &:hover::before {
+    @apply scale-y-100 origin-bottom;
+  }
+}
+
+.btn[data-light] {
+  @apply text-custom-dark bg-custom-light-100;
+
+  &::before {
+    @apply bg-custom-dark backdrop-blur-lg;
+  }
+
+  &::after {
+    @apply text-custom-dark;
+  }
+
+  &:hover {
+    @apply border-none;
+    &::before, &::after {
+      @apply text-custom-light-100;
+    }
+  }
+}
+
+.btn-angled {
+  @apply relative text-custom-light-100;
+}
+
+.btn-angled[data-light="true"] svg g {
+  & :nth-child(1) {
+    @apply fill-custom-light-100 stroke-transparent;
+  }
+
+  & :nth-child(2) {
+    @apply fill-custom-dark;
+  }
+}
+
+.btn-angled[data-light="true"]:hover svg g {
+  & :nth-child(1) {
+    @apply stroke-custom-dark;
+  }
+  & :nth-child(2) {
+    @apply fill-custom-dark;
+  }
+}
+
+.btn-angled::after {
+  content: attr(data-title);
+  @apply 
+    absolute 
+    left-0 
+    w-full 
+    top-1/2 
+    -translate-y-1/2 
+    text-center 
+    transition-colors 
+    duration-200 
+    pointer-events-none 
+    z-auto;
+}
+
+.btn-angled:hover::after {
+  @apply text-custom-dark;
+}
+
+.btn-angled[data-light="true"] {
+  @apply text-custom-dark;
+
+  &:hover::after {
+    @apply text-custom-light-100;
+  }
+}
