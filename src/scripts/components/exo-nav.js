@@ -6,7 +6,7 @@ class Nav extends HTMLElement {
       <div class="nav-container">
         <a href="/" class="logo cch decoration-none text-custom-dark">
           <h1 class="aldrich text-custom-light-100 text-3xl">EXO</h1>
-          <h4 class="text-custom-light-400 text-lg">TRANSPORTATION</h4>
+          <!-- <h4 class="text-custom-light-400 text-lg">TRANSPORTATION</h4> -->
         </a>
         <ul class="nav-links">
           <li>

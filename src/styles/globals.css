@@ -60,7 +60,8 @@ body {
 /* Nav */
 .logo {
   margin-left: clamp(1.5rem, 4vw, 6rem);
-  @apply absolute left-0 top-[-0.8rem];
+  @apply absolute left-0;
+  /* @apply absolute left-0 top-[-0.8rem]; */
 }
 
 .navbar {
@@ -68,7 +69,7 @@ body {
 }
 
 .nav-container {
-  @apply relative block w-full h-full text-left;
+  /* @apply relative; */
 }
 
 .nav-links {
@@ -214,5 +215,30 @@ body {
   &:hover svg g {
     & :nth-child(1) { @apply stroke-custom-dark; }
     & :nth-child(2) { @apply fill-custom-dark; }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.slide-fade-in {
+		@apply opacity-0;
+		animation: slide-fade-in 1.5s var(--star-bezier) forwards;
+	}
+}
+
+/* Keyframes */
+@keyframes slide-fade-in {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(3rem);
+  }
+  to {
+    opacity: 1;
+    filter: none;
+    transform: translateY(0rem);
+  }
+  80% {
+    filter: none;
+    opacity: 1;
   }
 }
