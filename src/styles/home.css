@@ -27,6 +27,7 @@
   font-size: clamp(5.5rem, 6.5vw, 8rem);
   margin-left: clamp(1rem, 4vw, 4rem);
   width: clamp(20rem, 45vw, 50rem);
+  z-index: 1;
 
   /* fade in animation delays */
   & :nth-child(1) { animation-delay: 0s; }
@@ -46,6 +47,7 @@
     }
 
     & h1 {
+      font-size: inherit;
       @apply font-extrabold -ml-[0.05em];
     }
 
@@ -56,13 +58,39 @@
   & .hero-description {
     animation-delay: 0.2s;
     font-size: max(1rem, 0.15em);
-    line-height: 1.5em;
+    line-height: 130%;
     @apply w-9/10 text-custom-light-200 tracking-[0.04em];
   }
 
   & .hero-buttons {
     @apply flex flex-row gap-x-8 gap-y-4 text-base;
     animation-delay: 0.3s;
+    transition: scale 0.2s;
+    transform-origin: bottom left;
+  }
+}
+
+@media (max-width: 1366px) {
+  .hero .hero-buttons {
+    scale: 0.9;
+  }
+}
+
+@media (max-width: 1280px) {
+  .hero {
+    font-size: clamp(3rem, 5.5vw, 5.5rem);
+  }
+  
+  .hero .hero-description {
+    font-size: max(0.9rem, 0.1em);
+  }
+  
+  .hero .hero-title p {
+    font-size: max(0.75rem, 0.1em);
+  }
+
+  .hero .hero-buttons {
+    scale: 0.8;
   }
 }
 

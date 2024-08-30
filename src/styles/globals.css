@@ -220,8 +220,8 @@ body {
 
 @media (prefers-reduced-motion: no-preference) {
 	.slide-fade-in {
-		@apply opacity-0;
-		animation: slide-fade-in 1.5s var(--star-bezier) forwards;
+		/* @apply opacity-0;
+		animation: slide-fade-in 1.5s var(--star-bezier) forwards; */
 	}
 }
 
