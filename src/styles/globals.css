@@ -39,3 +39,22 @@ body {
 	font-family: 'D-DIN', sans-serif;
 	@apply h-full text-custom-light-100 bg-custom-dark;
 }
+
+#custom-cursor {
+	display: none;
+
+	@apply fixed h-4 w-4 rounded-full bg-custom-light-100 pointer-events-none;
+	transform: translate(-50%, -50%);
+	z-index: 1000;
+	transition: background-color 0.2s, height 0.2s, width 0.2s;
+
+	&[data-hovered="false"] {
+		@apply bg-custom-light-100;
+	}
+
+	&[data-hovered="true"] {
+		@apply h-8 w-8;
+		background-color: rgba(255, 255, 255, 0.01);
+		backdrop-filter: invert();
+	}
+}
