@@ -27,12 +27,14 @@ class ExoBtn extends HTMLElement {
     </button>
     `;
 
+    const mouseenter = this.querySelector('#mouseenter');
     this.addEventListener('mouseenter', () => {
-      this.querySelector('#mouseenter').beginElement();
+      mouseenter.beginElement();
     });
 
+    const mouseleave = this.querySelector('#mouseleave');
     this.addEventListener('mouseleave', () => {
-      this.querySelector('#mouseleave').beginElement();
+      mouseleave.beginElement();
     });
   }
 }

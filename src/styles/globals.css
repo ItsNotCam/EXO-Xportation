@@ -57,17 +57,17 @@ body {
   }
 }
 
+.logo {
+  margin-left: clamp(1.5rem, 4vw, 6rem);
+  @apply absolute left-0 top-[-0.8rem];
+}
+
 .navbar {
   @apply relative flex items-center justify-center py-8;
 }
 
 .nav-container {
   @apply relative block w-full h-full text-left;
-}
-
-.logo {
-  margin-left: clamp(1.5rem, 4vw, 6rem);
-  @apply absolute left-0 top-[-0.8rem];
 }
 
 .nav-links {
@@ -103,8 +103,6 @@ body {
     @apply scale-x-100 origin-left;
   }
 }
-
-
 
 .btn {
   @apply 
@@ -178,44 +176,25 @@ body {
 
 .btn-angled {
   @apply relative text-custom-light-100;
-}
 
-.btn-angled[data-light="true"] svg g {
-  & :nth-child(1) {
-    @apply fill-custom-light-100 stroke-transparent;
-  }
+	&::after {
+		content: attr(data-title);
+		@apply 
+			absolute 
+			left-0 
+			w-full 
+			top-1/2 
+			-translate-y-1/2 
+			text-center 
+			transition-colors 
+			duration-200 
+			pointer-events-none 
+			z-auto;
+	}
 
-  & :nth-child(2) {
-    @apply fill-custom-dark;
-  }
-}
-
-.btn-angled[data-light="true"]:hover svg g {
-  & :nth-child(1) {
-    @apply stroke-custom-dark;
-  }
-  & :nth-child(2) {
-    @apply fill-custom-dark;
-  }
-}
-
-.btn-angled::after {
-  content: attr(data-title);
-  @apply 
-    absolute 
-    left-0 
-    w-full 
-    top-1/2 
-    -translate-y-1/2 
-    text-center 
-    transition-colors 
-    duration-200 
-    pointer-events-none 
-    z-auto;
-}
-
-.btn-angled:hover::after {
-  @apply text-custom-dark;
+	&:hover::after {
+		@apply text-custom-dark;
+	}
 }
 
 .btn-angled[data-light="true"] {
@@ -224,4 +203,14 @@ body {
   &:hover::after {
     @apply text-custom-light-100;
   }
+
+	& svg g {
+		& :nth-child(1) { @apply fill-custom-light-100 stroke-transparent; }
+		& :nth-child(2) { @apply fill-custom-dark; }
+	}
+
+	&:hover svg g {
+		& :nth-child(1) { @apply stroke-custom-dark; }
+		& :nth-child(2) { @apply fill-custom-dark; }
+	}
 }
