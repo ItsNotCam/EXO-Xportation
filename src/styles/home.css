@@ -1,43 +1,28 @@
 .root {
-  @apply flex flex-col min-h-screen min-w-full overflow-hidden;
+  @apply 
+    flex
+    flex-col
+    min-h-screen
+    min-w-full
+    overflow-hidden;
 
-  background-image: url('../images/bg.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-blend-mode: normal;
-
-  /* & > * {
-    margin-left: clamp(1.5rem, 4vw, 6rem);
-  } */
+  background: url('../images/bg.png') center center / cover no-repeat;
 
   &::before {
     content: '';
-    background-color: rgba(0, 0, 0, 0.25);
-    transition: opacity 0.2s;
-
-    @apply absolute opacity-0 w-full h-full;
+    @apply 
+      absolute
+      opacity-0
+      w-full
+      h-full
+      transition-opacity
+      duration-200
+      bg-black/25;
   }
 }
 
 .navbar {
   @apply relative flex items-center justify-center py-8;
-}
-
-.navbar .nav-toggle {
-  @apply relative hidden;
-
-  & svg {
-    @apply hidden;
-  }
-}
-
-.navbar .nav-toggle > * {
-  @apply absolute left-0;
-}
-
-.navbar .nav-toggle:checked + .nav-container {
-  @apply opacity-0 pointer-events-none;
 }
 
 .nav-container {
@@ -62,15 +47,20 @@
 
   &::after {
     content: '';
-    transform-origin: right center;
     transition: transform .6s var(--star-bezier);
-
-    @apply absolute bottom-[-0.3rem] left-0 w-full h-[1px] bg-custom-light-100 scale-x-0; 
+    @apply 
+      absolute
+      bottom-[-0.3rem]
+      left-0
+      w-full
+      h-[1px]
+      bg-custom-light-100
+      scale-x-0
+      origin-right; 
   }
 
   &:hover::after {
-    @apply scale-x-100;
-    transform-origin: left center;
+    @apply scale-x-100 origin-left;
   }
 }
 
@@ -83,6 +73,12 @@
     animation: slide-fade-in 1.5s var(--star-bezier) forwards;
   }
 
+  /* fade in animation delays */
+  & :nth-child(1) { animation-delay: 0s;   }
+  & :nth-child(2) { animation-delay: 0.1s; }
+  & :nth-child(3) { animation-delay: 0.2s; }
+  & :nth-child(4) { animation-delay: 0.3s; }
+
   & .hero-subtitle {
     @apply text-custom-light-200 mb-[-0.5rem];
   }
@@ -93,44 +89,63 @@
     font-size: 8rem;
     margin-left: -0.4375rem;
     margin-top: 0.125em;
-    animation-delay: 0.1s;
   }
 
   & .hero-text {
+    @apply max-w-[90%] text-custom-light-200;
     font-size: 1.15rem;
     line-height: 130%;
     letter-spacing: 0.04rem;
     margin-top: min(1vw, 2rem);
-    animation-delay: 0.2s;
-
-    @apply max-w-[90%] text-custom-light-200;
   }
 
   & .hero-buttons {
+    @apply flex flex-row gap-x-8 gap-y-4;
     margin-top: min(3vw, 3rem);
-    gap: 1rem 2rem;
-    animation-delay: 0.3s;
-    
-    @apply flex flex-row;
   }
 }
 
 .btn {
+  @apply 
+    relative
+    flex
+    items-center
+    justify-center
+    w-auto
+    border
+    border-custom-light-100;
+
   letter-spacing: 0.1rem;
   transition: color 0.2s, border 0.2s, scale 0.2s, font-size 0.2s;
-  animation-delay: 0.3s;
-
-  @apply relative flex items-center justify-center w-auto border border-custom-light-100;
 
   &::after {
     content: attr(data-title);
-    @apply absolute w-full text-center left-1/2 top-1/2 text-custom-light-100 transition-colors duration-300 -translate-x-1/2 -translate-y-1/2;
+    @apply 
+      absolute
+      w-full
+      text-center
+      left-1/2
+      top-1/2
+      text-custom-light-100
+      transition-colors
+      duration-300
+      -translate-x-1/2
+      -translate-y-1/2;
   }
 
   &::before {
     content: '';
-    @apply absolute w-full h-full bg-custom-light-100 scale-y-0 origin-top transition-transform duration-200;
+    @apply 
+      absolute
+      w-full
+      h-full
+      bg-custom-light-100
+      scale-y-0
+      origin-top
+      transition-transform
+      duration-200;
   }
+
   
   &:hover::after {
     @apply text-custom-dark;
@@ -145,8 +160,7 @@
   @apply text-custom-dark bg-custom-light-100;
 
   &::before {
-    @apply bg-custom-dark;
-    backdrop-filter: blur(20px);
+    @apply bg-custom-dark backdrop-blur-lg;
   }
 
   &::after {
@@ -167,8 +181,7 @@
 
 .btn-angled[data-light="true"] svg g {
   & :nth-child(1) {
-    stroke: transparent;
-    @apply fill-custom-light-100;
+    @apply fill-custom-light-100 stroke-transparent;
   }
 
   & :nth-child(2) {
@@ -187,7 +200,17 @@
 
 .btn-angled::after {
   content: attr(data-title);
-  @apply absolute left-0 w-full top-1/2 -translate-y-1/2 text-center transition-colors duration-200 pointer-events-none z-auto;
+  @apply 
+    absolute 
+    left-0 
+    w-full 
+    top-1/2 
+    -translate-y-1/2 
+    text-center 
+    transition-colors 
+    duration-200 
+    pointer-events-none 
+    z-auto;
 }
 
 .btn-angled:hover::after {
@@ -233,11 +256,11 @@
 
 @media screen and (max-width: 805px) {
   .hero .hero-title {
-    font-size: 6rem;
+    @apply text-8xl;
   }
 
   .root::before {
-    @applt opacity-1;
+    @apply opacity-100;
   }
 }
 
@@ -263,22 +286,19 @@
 
 @media screen and (max-width: 520px) {
   .hero {
-    margin-top: 3rem;
-    justify-content: flex-start;
+    @apply justify-start mt-12;
   }
 
   .hero .hero-title {
-    margin-top: 0.5rem;
-    font-size: 3rem;
+    @apply mt-2 text-5xl;
   }
 
   .hero .hero-text {
-    margin-top: 1rem;
+    @apply mt-4;
   }
 
   .hero .hero-buttons {
-    margin-top: 2rem;
-    justify-content: center;
+    @apply mt-8 justify-center;
   }
 }
 
@@ -306,35 +326,39 @@
 
 /* Unused */
 .launch {
-  margin-top: 3rem;
+  @apply hidden mt-12;
+
   animation-delay: 0.5s;
-  /* height: 200px; */
-  overflow: hidden;
 
   & > * {
-    opacity: 0;
+    @apply opacity-0;
     animation: slide-fade-in 1.5s var(--star-bezier) forwards;
+  }
+
+  & .launch-upcoming {
+    animation-delay: 0.1s;
+  }
+
+  & .launch-location {
+    animation-delay: 0.2s;
   }
 }
 
-.launch-upcoming {
-  animation-delay: 0.1s;
-}
 
 .launch-location {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-  animation-delay: 0.2s;
+  @apply
+    flex
+    flex-row
+    items-center
+    gap-4;
 
   & svg {
-    margin-bottom: 0.75rem;
+    @apply mb-3;
   }
 }
 
 .launch-btn {
-  margin-top: 1rem;
+  @apply mt-4;
 }
 
 .launch-src {
@@ -345,6 +369,6 @@
 
   & span {
     font-size: 0.85rem;
-    color: #BABABA;
+    @apply text-custom-light-200;
   }
 }
