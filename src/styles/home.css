@@ -1,7 +1,7 @@
 .root {
 	@apply flex flex-col min-h-screen min-w-full overflow-hidden;
 
-	background-image: url('./images/bg.png');
+	background-image: url('../images/bg.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
