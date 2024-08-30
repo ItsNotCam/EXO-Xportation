@@ -17,6 +17,7 @@
   src: url('../fonts/D-DIN-Bold.ttf') format('truetype');
 }
 
+/* Fonts */
 .ddin {
   font-family: 'D-DIN', sans-serif;
 }
@@ -30,16 +31,15 @@
 }
 
 :root {
-  --light: #FFFFFF;
-  --dark: #121212;
   --star-bezier: cubic-bezier(.19,1,.22,1);
 }
 
 body {
   font-family: 'D-DIN', sans-serif;
-  @apply h-full text-custom-light-100 bg-custom-dark;
+  @apply text-custom-light-100 bg-custom-dark;
 }
 
+/* Cursor */
 #custom-cursor {
   @apply fixed h-4 w-4 rounded-full bg-custom-light-100 pointer-events-none;
   transform: translate(-50%, -50%);
@@ -57,6 +57,7 @@ body {
   }
 }
 
+/* Nav */
 .logo {
   margin-left: clamp(1.5rem, 4vw, 6rem);
   @apply absolute left-0 top-[-0.8rem];
@@ -104,6 +105,7 @@ body {
   }
 }
 
+/* Buttons */
 .btn {
   @apply 
     relative
