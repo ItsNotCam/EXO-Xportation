@@ -22,7 +22,12 @@
 }
 
 .hero {
-  @apply flex flex-col justify-center flex-grow gap-[0.2em];
+  @apply 
+    flex
+    flex-col
+    justify-center
+    flex-grow
+    gap-[0.2em];
 
   font-size: clamp(5.5rem, 6.5vw, 8rem);
   margin-left: clamp(1rem, 4vw, 4rem);
@@ -33,7 +38,12 @@
   & :nth-child(1) { animation-delay: 0s; }
 
   & .hero-text {
-    @apply flex flex-col gap-[0.2em] h-fit -mt-[0.6em];
+    @apply 
+      flex
+      flex-col
+      gap-[0.2em]
+      h-fit
+      -mt-[0.6em];
   }
 
   & .hero-title {
@@ -59,7 +69,11 @@
     animation-delay: 0.2s;
     font-size: max(1rem, 0.15em);
     line-height: 130%;
-    @apply w-9/10 text-custom-light-200 tracking-[0.04em];
+    
+    @apply 
+      w-9/10
+      text-custom-light-200
+      tracking-[0.04em];
   }
 
   & .hero-buttons {

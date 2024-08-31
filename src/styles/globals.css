@@ -40,14 +40,21 @@ body {
 }
 
 exo-link-btn {
-	transform-origin: bottom left;
+  transform-origin: bottom left;
 }
 
 /* Cursor */
 #custom-cursor {
-  @apply fixed h-4 w-4 rounded-full bg-custom-light-100 pointer-events-none;
+  @apply 
+    fixed
+    h-4
+    w-4
+    rounded-full
+    bg-custom-light-100
+    pointer-events-none
+    z-50;
+
   transform: translate(-50%, -50%);
-  z-index: 1000;
   transition: background-color 0.2s, height 0.2s, width 0.2s;
 
   &[data-hovered="false"] {
@@ -133,7 +140,7 @@ exo-link-btn {
 }
 
 .btn-angled {
-	transform-origin: bottom left;
+  transform-origin: bottom left;
   @apply relative text-custom-light-100;
 
   &::after {
@@ -175,15 +182,15 @@ exo-link-btn {
 }
 
 .btn-angled-container {
-	@apply flex flex-row text-base items-center;
-	gap: clamp(1rem, 3vw, 2rem);
+  @apply flex flex-row text-base items-center;
+  gap: clamp(1rem, 3vw, 2rem);
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	.slide-fade-in {
-		@apply opacity-0;
-		animation: slide-fade-in 1.5s var(--star-bezier) forwards;
-	}
+  .slide-fade-in {
+    @apply opacity-0;
+    animation: slide-fade-in 1.5s var(--star-bezier) forwards;
+  }
 }
 
 /* Keyframes */
