@@ -63,22 +63,18 @@
   }
 
   & .hero-buttons {
-    @apply flex flex-row gap-x-8 gap-y-4 text-base;
+    @apply flex flex-row text-base;
+    gap: clamp(1rem, 3vw, 2rem);
     animation-delay: 0.3s;
     transition: scale 0.2s;
     transform-origin: bottom left;
   }
 }
 
-@media (max-width: 1366px) {
-  .hero .hero-buttons {
-    scale: 0.9;
-  }
-}
-
-@media (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
   .hero {
-    font-size: clamp(3rem, 5.5vw, 5.5rem);
+    /* font-size: clamp(3rem, 5.5vw, 5.5rem); */
+    font-size: clamp(4rem, 13.5vw, 5.5rem);
   }
   
   .hero .hero-description {
@@ -88,17 +84,12 @@
   .hero .hero-title p {
     font-size: max(0.75rem, 0.1em);
   }
-
-  .hero .hero-buttons {
-    scale: 0.8;
-  }
 }
 
 /* Media Queries */
 @media (max-width: 1136px) {
   .hero {
     width: clamp(40rem, 60vw, 50rem);
-    font-size: clamp(4rem, 13.5vw, 5.5rem);
   }
 
   .home-root::before {
@@ -125,15 +116,11 @@
   .hero, .hero .hero-text {
     gap: 0.5em;
   }
-
-  .hero .hero-buttons {
-    @apply gap-2;
-  }
 }
 
 @media (max-width: 428px) {
   .hero .hero-buttons {
-    @apply flex-col gap-4
+    @apply flex-col;
   }
 }
 
