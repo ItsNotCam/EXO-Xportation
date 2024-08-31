@@ -5,7 +5,7 @@ import {
 class ExoBtn extends HTMLElement {
   connectedCallback() {
     const title = this.innerText;
-    const isLight = this.hasAttribute('light') ? "true" : "false";
+    const isLight = this.hasAttribute('light');
     const clipUUID = uuidv4();
 
     this.innerHTML = /*html*/ `
@@ -28,14 +28,9 @@ class ExoBtn extends HTMLElement {
     `;
 
     const mouseenter = this.querySelector('#mouseenter');
-    this.addEventListener('mouseenter', () => {
-      mouseenter.beginElement();
-    });
-
     const mouseleave = this.querySelector('#mouseleave');
-    this.addEventListener('mouseleave', () => {
-      mouseleave.beginElement();
-    });
+    this.addEventListener('mouseenter', () => mouseenter.beginElement());
+    this.addEventListener('mouseleave', () => mouseleave.beginElement());
   }
 }
 

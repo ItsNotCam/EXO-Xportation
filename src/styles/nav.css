@@ -58,10 +58,33 @@
 }
 
 .logo {
-  @apply absolute left-4 top-4;
+  @apply absolute left-4;
 }
 
-@media screen and (max-width: 900px) {
+.nav-socials {
+	display: none;
+
+	& svg {
+		transition: scale 0.15s;
+		fill: #E0E0E0;
+	}
+
+	& a:hover svg {
+		scale: 1.1;
+		fill: white;
+	}
+}
+
+/* 960px */
+@media screen and (max-width: 60rem) {
+	.logo {
+		@apply 
+			absolute
+			left-[50%]
+			translate-x-[-50%]
+			top-5;
+	}
+
   .navbar {
     @apply w-full justify-end;
   }
@@ -98,6 +121,7 @@
 
   .nav-link {
     @apply flex justify-end pr-0;
+		transition: color 0.35s;
 
     &::after {
       @apply 
@@ -105,6 +129,10 @@
         h-[2px]
         left-0;
     }
+
+		&:hover {
+			@apply text-custom-light-400;
+		}
   }
 
   .nav-links[data-expanded="false"] > li {
@@ -139,15 +167,8 @@
   #nav-dropdown-button {
     @apply block;
   }
-}
 
-@keyframes fall-down {
-  0% {
-    opacity: 0;
-    transform: translateY(-25%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+	.nav-socials {
+		display: flex;
+	}
 }

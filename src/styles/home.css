@@ -34,9 +34,6 @@
   width: clamp(20rem, 45vw, 50rem);
   z-index: 1;
 
-  /* fade in animation delays */
-  & :nth-child(1) { animation-delay: 0s; }
-
   & .hero-text {
     @apply 
       flex
@@ -60,13 +57,9 @@
       font-size: inherit;
       @apply font-extrabold -ml-[0.05em];
     }
-
-    & p  { animation-delay: 0s;   }
-    & h1 { animation-delay: 0.1s; }
   }
 
   & .hero-description {
-    animation-delay: 0.2s;
     font-size: max(1rem, 0.15em);
     line-height: 130%;
     
@@ -77,13 +70,13 @@
   }
 
   & .hero-buttons {
-    animation-delay: 0.3s;
     transition: scale 0.2s;
     transform-origin: bottom left;
   }
 }
 
-@media screen and (max-width: 1280px) {
+/* 1280px */
+@media screen and (max-width: 80rem) {
   .hero {
     font-size: clamp(4rem, 13.5vw, 5.5rem);
   }
@@ -98,7 +91,8 @@
 }
 
 /* Media Queries */
-@media (max-width: 1136px) {
+/* 1136px */
+@media (max-width: 71rem) {
   .hero {
     width: clamp(40rem, 60vw, 50rem);
   }
@@ -108,7 +102,8 @@
   }
 }
 
-@media (max-width: 645px) {
+/* 645px */
+@media (max-width: 40.3125rem) {
   .home-root::before {
     opacity: 0.5;
   }
@@ -123,13 +118,15 @@
   }
 }
 
-@media (max-width: 450px) {
+/* Convert to rem and comment above its pixel value */
+@media (max-width: 28.125rem) {
   .hero, .hero .hero-text {
     gap: 0.5em;
   }
 }
 
-@media (max-width: 428px) {
+/* Convert to rem and comment above its pixel value */
+@media (max-width: 26.75rem) {
   .hero .hero-buttons {
     @apply flex-col;
   }
@@ -143,9 +140,6 @@
     @apply opacity-0;
     animation: slide-fade-in 1.5s var(--star-bezier) forwards;
   }
-
-  & .launch-upcoming { animation-delay: 0.1s; }
-  & .launch-location { animation-delay: 0.2s; }
 }
 
 .launch-location {

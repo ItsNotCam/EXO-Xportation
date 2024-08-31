@@ -30,6 +30,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
+    "jquery": "^3.7.1",
     "uuid": "^10.0.0"
   }
 }
