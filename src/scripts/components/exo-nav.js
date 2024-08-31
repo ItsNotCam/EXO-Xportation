@@ -20,7 +20,16 @@ class Nav extends HTMLElement {
         <li>
           <a href="simulation.html" class="nav-link cch" data-active='${path.endsWith("/simulation.html") ? "true" : "false" }'>SIMULATION</a>
         </li>
-        <li class="nav-socials flex justify-end mt-auto mb-4 border-none">
+        <li class="nav-socials flex flex-row gap-4 justify-end items-center mt-auto mb-4 border-none">
+          <a href="https://www.figma.com/design/wM1QwepxhQEqXILXFCVqTv/IT-331-Project-1?node-id=0-1&t=lRgPOmWjdUkPz3k1-1" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 42 62" fill="none">
+              <path d="M1 11C1 5.47715 5.47715 1 11 1H21V21H11C5.47715 21 1 16.5228 1 11V11Z" stroke="#E0E0E0" stroke-width="4" fill="none" />
+              <path d="M41 11C41 5.47715 36.5228 1 31 1H21V21H31C36.5228 21 41 16.5228 41 11V11Z" stroke="#E0E0E0" stroke-width="4" fill="none" />
+              <path d="M41 31C41 25.4772 36.5228 21 31 21V21C25.4772 21 21 25.4772 21 31V31C21 36.5228 25.4772 41 31 41V41C36.5228 41 41 36.5228 41 31V31Z" stroke="#E0E0E0" stroke-width="4" fill="none" />
+              <path d="M1 31C1 25.4772 5.47715 21 11 21H21V41H11C5.47715 41 1 36.5228 1 31V31Z" stroke="#E0E0E0" stroke-width="4" fill="none" />
+              <path d="M1 51C1 45.4772 5.47715 41 11 41H21V51C21 56.5228 16.5228 61 11 61V61C5.47715 61 1 56.5228 1 51V51Z" stroke="#E0E0E0" stroke-width="4" fill="none" />
+            </svg>
+          </a>
           <!-- <a target="_blank" href="https://icons8.com/icon/12599/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>  -->
           <a href="https://github.com/ItsNotCam/EXO-Xportation" target="_blank">
             <svg width="35px" height="35px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
