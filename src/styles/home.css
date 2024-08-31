@@ -78,11 +78,11 @@
 /* 1280px */
 @media screen and (max-width: 80rem) {
   .hero {
-    font-size: clamp(3.5rem, 13.5vw, 5.5rem);
+    font-size: clamp(4rem, 12vw, 5.5rem);
   }
   
   .hero .hero-description {
-    font-size: clamp(0.9rem, 0.165em, 1.2rem);
+    font-size: clamp(0.9rem, 0.175em, 1.1rem);
   }
   
   .hero .hero-title p {

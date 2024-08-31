@@ -1,8 +1,11 @@
+import $ from 'jquery';
+
 import '../styles/styles';
 
 import './components/exo-nav';
 import './components/exo-btn';
 import './components/exo-link-btn';
+import './components/exo-launch-hero';
 import './components/exo-cursor';
 
 // remove the index html from the url because of how relative pathing works with links lol
@@ -44,4 +47,15 @@ if(allBtns.length > 0) {
 	window.addEventListener('resize', () => {
 		allBtns.forEach((btn) => updateBtnScale(btn, baseWidth));
 	});
+}
+
+// custom height init
+const sections = $('.height-init');
+const windowHeight = $(window).height();
+const navMainHeight = $('.navbar').height();
+if (navMainHeight) {
+	// sections.height(windowHeight - navMainHeight);
+	// sections.height(windowHeight);
+} else {
+	// sections.height(windowHeight);
 }

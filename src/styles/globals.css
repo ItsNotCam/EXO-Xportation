@@ -36,7 +36,8 @@
 
 body {
   font-family: 'D-DIN', sans-serif;
-  @apply text-custom-light-100 bg-custom-dark-500;
+  @apply text-custom-light-100 bg-black;
+  /* @apply text-custom-light-100 bg-custom-dark-500; */
 }
 
 exo-link-btn {
@@ -71,13 +72,15 @@ exo-link-btn {
 /* Buttons */
 .btn {
   @apply 
+		cursor-pointer
     relative
     flex
     items-center
     justify-center
     w-auto
     border
-    border-custom-light-100;
+    border-custom-light-100
+		backdrop-blur-sm;
 
   letter-spacing: 0.1rem;
   transition: color 0.2s, border 0.2s, scale 0.2s, font-size 0.2s;

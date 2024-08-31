@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EXO</title>
+  </head>
+
+  <body>
+    <exo-cursor class="hidden"></exo-cursor>
+    <exo-nav></exo-nav>
+    <!-- <a href="https://www.freepik.com/free-ai-image/futuristic-space-rocket-with-fantasy-design_133536843.htm#fromView=search&page=2&position=29&uuid=16958f25-3f20-4a66-98b3-1ae1ce78d8aa">Image by freepik</a> -->
+    <section class="astronaut-img height-init h-screen bg-black relative">
+			<img src="images/spaceship_small.png" class="object-cover h-full w-full" loading="lazy">
+      <div class="absolute bottom-16 left-16">
+        <exo-launch-hero>
+          <span slot="rocket-name">POLARIS-IV</span>
+          <span slot="location-from" data-location="[ EARTH / US ]"> IAD </span>
+          <span slot="location-to" data-location="[ MARS / JP ]"> JIP </span>
+        </exo-launch-hero>
+      </div>
+    </section>
+    <section class="height-init h-screen bg-red-500">
+      <h1 class="text-4xl">Hello World</h1>
+    </section>
+    <section class="height-init h-screen bg-yellow-600">
+      <h1 class="text-4xl">Hello World</h1>
+    </section>
+  </body>
+</html>
