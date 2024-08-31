@@ -91,7 +91,7 @@
   
   .nav-links {
     @apply 
-      w-[250px]
+      w-[275px]
       h-screen
       fixed
       flex-col
@@ -144,7 +144,6 @@
 
     @apply 
       visible
-      w-[250px]
       backdrop-blur-sm;
     
     & > li {
