@@ -36,7 +36,7 @@
 
 body {
   font-family: 'D-DIN', sans-serif;
-  @apply text-custom-light-100 bg-custom-dark;
+  @apply text-custom-light-100 bg-custom-dark-500;
 }
 
 exo-link-btn {
@@ -58,55 +58,6 @@ exo-link-btn {
     @apply h-8 w-8;
     background-color: rgba(255, 255, 255, 0.01);
     backdrop-filter: invert();
-  }
-}
-
-/* Nav */
-.logo {
-  margin-left: clamp(1.5rem, 4vw, 6rem);
-  @apply absolute left-0;
-  /* @apply absolute left-0 top-[-0.8rem]; */
-}
-
-.navbar {
-  @apply relative flex items-center justify-center py-8;
-}
-
-.nav-container {
-  /* @apply relative; */
-}
-
-.nav-links {
-  @apply flex justify-center m-0 p-0;
-
-  & li:not(:last-child) {
-    @apply mr-8;
-  }
-}
-
-.nav-link {
-  @apply relative text-custom-light-100;
-
-  &[data-active="true"] {
-    @apply pointer-events-none;
-  }
-
-  &::after {
-    content: '';
-    transition: transform .6s var(--star-bezier);
-    @apply 
-      absolute
-      bottom-[-0.3rem]
-      left-0
-      w-full
-      h-[1px]
-      bg-custom-light-100
-      scale-x-0
-      origin-right; 
-  }
-
-  &:hover::after {
-    @apply scale-x-100 origin-left;
   }
 }
 
@@ -154,7 +105,7 @@ exo-link-btn {
 
   
   &:hover::after {
-    @apply text-custom-dark;
+    @apply text-custom-dark-500;
   }
 
   &:hover::before {
@@ -163,14 +114,14 @@ exo-link-btn {
 }
 
 .btn[data-light] {
-  @apply text-custom-dark bg-custom-light-100;
+  @apply text-custom-dark-500 bg-custom-light-100;
 
   &::before {
-    @apply bg-custom-dark backdrop-blur-lg;
+    @apply bg-custom-dark-500 backdrop-blur-lg;
   }
 
   &::after {
-    @apply text-custom-dark;
+    @apply text-custom-dark-500;
   }
 
   &:hover {
@@ -201,12 +152,12 @@ exo-link-btn {
   }
 
   &:hover::after {
-    @apply text-custom-dark;
+    @apply text-custom-dark-500;
   }
 }
 
 .btn-angled[data-light="true"] {
-  @apply text-custom-dark;
+  @apply text-custom-dark-500;
 
   &:hover::after {
     @apply text-custom-light-100;
@@ -214,12 +165,12 @@ exo-link-btn {
 
   & svg g {
     & :nth-child(1) { @apply fill-custom-light-100 stroke-transparent; }
-    & :nth-child(2) { @apply fill-custom-dark; }
+    & :nth-child(2) { @apply fill-custom-dark-500; }
   }
 
   &:hover svg g {
-    & :nth-child(1) { @apply stroke-custom-dark; }
-    & :nth-child(2) { @apply fill-custom-dark; }
+    & :nth-child(1) { @apply stroke-custom-dark-500; }
+    & :nth-child(2) { @apply fill-custom-dark-500; }
   }
 }
 

@@ -1,0 +1,138 @@
+.navbar {
+  @apply relative flex items-center justify-center py-8;
+}
+
+.navbar[data-expanded="false"] {
+	@apply flex-col gap-4;
+}
+
+.nav-links {
+  @apply flex justify-center m-0 p-0;
+	z-index: 5;
+
+  & > :not(:last-child) {
+    @apply mr-8;
+  }
+}
+
+.nav-link {
+  @apply relative text-custom-light-100 pr-8;
+
+  &[data-active="true"] {
+    /* @apply pointer-events-none; */
+  }
+
+  &::after {
+    content: '';
+    transition: transform .6s var(--star-bezier);
+    @apply 
+      absolute
+      bottom-[-0.3rem]
+      left-0
+      w-full
+      h-[1px]
+      bg-custom-light-100
+      scale-x-0
+      origin-right; 
+  }
+
+  &:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+}
+
+#nav-dropdown-button {
+	@apply fixed hidden top-4 z-10 right-4;
+}
+
+.logo {
+  @apply absolute left-4 top-4;
+}
+
+@media screen and (max-width: 1137px) {
+	.navbar {
+		@apply w-full justify-end;
+	}
+	
+	.nav-links {
+		@apply 
+			w-[250px]
+			h-screen
+			fixed
+			flex-col
+			top-0
+			justify-start
+			items-start
+			px-8
+			pt-16
+			bg-custom-dark-900/95;
+
+		& > li {
+			@apply 
+				w-full
+				text-right
+				border-b-2
+				border-custom-light-300/50
+				py-2
+				opacity-0;
+		}
+
+		transform: translateX(100%);
+		transition: 
+			opacity 0.6s var(--star-bezier),
+			width 0.6s var(--star-bezier),
+			transform 0.5s var(--star-bezier);
+	}
+
+	.nav-link {
+		@apply flex justify-end pr-0;
+
+		&::after {
+			@apply -bottom-[0.6rem] h-[2px] left-0;
+		}
+	}
+
+	.nav-links[data-expanded="false"] > li {
+		@apply pointer-events-none;
+	}
+
+	.nav-links[data-expanded="true"] {
+		transform: translateX(0);
+
+		@apply 
+			visible
+			w-[250px]
+			backdrop-blur-sm;
+		
+		& > li {
+			@apply mr-0;
+			animation: fall-down 0.6s var(--star-bezier) forwards;
+		}
+
+		& :nth-child(1)  { animation-delay: 0.2s; }
+		& :nth-child(2)  { animation-delay: 0.3s; }
+		& :nth-child(3)  { animation-delay: 0.4s; }
+		& :nth-child(4)  { animation-delay: 0.5s; }
+		& :nth-child(5)  { animation-delay: 0.6s; }
+		& :nth-child(6)  { animation-delay: 0.7s; }
+		& :nth-child(7)  { animation-delay: 0.8s; }
+		& :nth-child(8)  { animation-delay: 0.9s; }
+		& :nth-child(9)  { animation-delay: 1s; }
+		& :nth-child(10) { animation-delay: 1.1s; }
+	}
+
+	#nav-dropdown-button {
+		@apply block;
+	}
+}
+
+@keyframes fall-down {
+	0% {
+		opacity: 0;
+		transform: translateY(-25%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
