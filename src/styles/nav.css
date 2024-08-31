@@ -16,7 +16,7 @@
 }
 
 .nav-link {
-  @apply relative text-custom-light-100 pr-8;
+  @apply relative text-custom-light-100;
 
   &[data-active="true"] {
     /* @apply pointer-events-none; */
@@ -49,7 +49,7 @@
   @apply absolute left-4 top-4;
 }
 
-@media screen and (max-width: 1137px) {
+@media screen and (max-width: 900px) {
 	.navbar {
 		@apply w-full justify-end;
 	}
