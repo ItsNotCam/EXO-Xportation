@@ -63,7 +63,7 @@
   }
 
   & .hero-buttons {
-    @apply flex flex-row text-base;
+    @apply flex flex-row text-base items-center;
     gap: clamp(1rem, 3vw, 2rem);
     animation-delay: 0.3s;
     transition: scale 0.2s;
