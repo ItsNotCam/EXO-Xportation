@@ -63,8 +63,6 @@
   }
 
   & .hero-buttons {
-    @apply flex flex-row text-base items-center;
-    gap: clamp(1rem, 3vw, 2rem);
     animation-delay: 0.3s;
     transition: scale 0.2s;
     transform-origin: bottom left;
@@ -73,7 +71,6 @@
 
 @media screen and (max-width: 1280px) {
   .hero {
-    /* font-size: clamp(3rem, 5.5vw, 5.5rem); */
     font-size: clamp(4rem, 13.5vw, 5.5rem);
   }
   

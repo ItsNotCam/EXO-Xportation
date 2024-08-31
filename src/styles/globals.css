@@ -223,6 +223,11 @@ exo-link-btn {
   }
 }
 
+.btn-angled-container {
+	@apply flex flex-row text-base items-center;
+	gap: clamp(1rem, 3vw, 2rem);
+}
+
 @media (prefers-reduced-motion: no-preference) {
 	.slide-fade-in {
 		@apply opacity-0;
