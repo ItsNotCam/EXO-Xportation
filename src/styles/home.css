@@ -78,11 +78,11 @@
 /* 1280px */
 @media screen and (max-width: 80rem) {
   .hero {
-    font-size: clamp(4rem, 13.5vw, 5.5rem);
+    font-size: clamp(3.5rem, 13.5vw, 5.5rem);
   }
   
   .hero .hero-description {
-    font-size: max(0.9rem, 0.1em);
+    font-size: clamp(0.9rem, 0.165em, 1.2rem);
   }
   
   .hero .hero-title p {
@@ -94,12 +94,22 @@
 /* 1136px */
 @media (max-width: 71rem) {
   .hero {
-    width: clamp(40rem, 60vw, 50rem);
+		@apply w-7/10 mx-auto;
+    /*width: 80%;clamp(40rem, 60vw, 50rem);
+		margin-inline: auto;*/	
   }
 
+	.hero .hero-text {
+		@apply justify-center;
+	}
+
+	.hero .hero-description {
+		@apply w-full;
+	}
+
   .home-root::before {
-    opacity: 0.2;
-  }
+    opacity: 0.4;
+  }	
 }
 
 /* 645px */
@@ -109,7 +119,7 @@
   }
 
   .hero {
-    width: calc(100%-clamp(1rem, 5vw, 5rem));
+    width: calc(100%-clamp(1.5rem, 5vw, 5rem));
     margin-inline: auto;
   }
 
@@ -121,14 +131,14 @@
 /* Convert to rem and comment above its pixel value */
 @media (max-width: 28.125rem) {
   .hero, .hero .hero-text {
-    gap: 0.5em;
+    gap: 0.25em;
   }
 }
 
 /* Convert to rem and comment above its pixel value */
 @media (max-width: 26.75rem) {
   .hero .hero-buttons {
-    @apply flex-col;
+    @apply justify-center;
   }
 }
 
