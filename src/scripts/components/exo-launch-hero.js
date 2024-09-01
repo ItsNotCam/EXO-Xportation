@@ -7,15 +7,19 @@ class ExoLaunchHero extends HTMLElement {
       mode: 'open'
     });
 
+    const subtitle = document.createElement("slot");
+    subtitle.name = "subtitle";
+
     const rocketSlot = document.createElement("slot");
-    rocketSlot.name = "rocket-name";
+    rocketSlot.name = "title";
 
     const locationFromSlot = document.createElement("slot");
-    locationFromSlot.name = "location-from";
+    locationFromSlot.name = "from";
 
     const locationToSlot = document.createElement("slot");
-    locationToSlot.name = "location-to";
+    locationToSlot.name = "to";
 
+    shadow.appendChild(subtitle);
     shadow.appendChild(rocketSlot);
     shadow.appendChild(locationFromSlot);
     shadow.appendChild(locationToSlot);
@@ -42,14 +46,15 @@ class ExoLaunchHero extends HTMLElement {
         break
     }
 
-    const rocketName = this.shadowRoot.querySelector('slot[name="rocket-name"]').assignedNodes()[0];
-    const lfEl = this.shadowRoot.querySelector('slot[name="location-from"]').assignedNodes()[0];
-    const leEl = this.shadowRoot.querySelector('slot[name="location-to"]').assignedNodes()[0];
+    const subtitle = this.shadowRoot.querySelector('slot[name="subtitle"]').assignedNodes()[0];
+    const rocketName = this.shadowRoot.querySelector('slot[name="title"]').assignedNodes()[0];
+    const lfEl = this.shadowRoot.querySelector('slot[name="from"]').assignedNodes()[0];
+    const leEl = this.shadowRoot.querySelector('slot[name="to"]').assignedNodes()[0];
 
-    const locationFromCountry = lfEl.attributes.getNamedItem("data-location").nodeValue;
+    const locationFromCountry = lfEl.attributes.getNamedItem("loc").nodeValue;
     const locationFromName = lfEl.innerText;
 
-    const locationToCountry = leEl.attributes.getNamedItem("data-location").nodeValue;
+    const locationToCountry = leEl.attributes.getNamedItem("loc").nodeValue;
     const locationToName = leEl.innerText;
 
     this.shadowRoot.innerHTML = /*html*/ `
@@ -57,9 +62,9 @@ class ExoLaunchHero extends HTMLElement {
     <div class="flex flex-col gap-2 ${textAlign}">
       <span>
         <h2 class="text-lg text-custom-light-200 drop-shadow-custom-sm slide-fade-in delay-0">
-          Upcoming Launch
+          ${subtitle.innerText}
         </h2>
-        <h2 class="text-3xl font-medium tracking-wider drop-shadow-custom-sm slide-fade-in delay-1">
+        <h2 class="text-3xl font-medium tracking-tight drop-shadow-custom-sm slide-fade-in delay-1">
           ${rocketName.innerText}
         </h2>
       </span>

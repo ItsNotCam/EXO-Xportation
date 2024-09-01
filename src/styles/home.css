@@ -94,22 +94,22 @@
 /* 1136px */
 @media (max-width: 71rem) {
   .hero {
-		@apply w-7/10 mx-auto;
+    @apply w-7/10 mx-auto;
     /*width: 80%;clamp(40rem, 60vw, 50rem);
-		margin-inline: auto;*/	
+    margin-inline: auto;*/  
   }
 
-	.hero .hero-text {
-		@apply justify-center;
-	}
+  .hero .hero-text {
+    @apply justify-center;
+  }
 
-	.hero .hero-description {
-		@apply w-full;
-	}
+  .hero .hero-description {
+    @apply w-full;
+  }
 
   .home-root::before {
     opacity: 0.4;
-  }	
+  }  
 }
 
 /* 645px */

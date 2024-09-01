@@ -8,18 +8,18 @@
 
 .launch-route {
   @apply flex
-		flex-row
-		items-center
-		justify-center
-		gap-2
-		tracking-wide
-		-mt-2 
-		mb-1
-		text-5xl
-		font-bold
-		w-max
-		drop-shadow-custom-lg 
-		leading-none;
+    flex-row
+    items-center
+    justify-center
+    gap-2
+    tracking-wide
+    -mt-2 
+    mb-1
+    text-5xl
+    font-bold
+    w-max
+    drop-shadow-custom-lg 
+    leading-none;
 }
 
 .launch-route span {
@@ -28,8 +28,8 @@
   &::after {
     content: attr(data-location);
     @apply block 
-			text-custom-light-300
-			text-sm
-			font-normal;
+      text-custom-light-300
+      text-sm
+      font-normal;
   }
 }

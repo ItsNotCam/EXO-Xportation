@@ -15,38 +15,38 @@ if (window.location.pathname.endsWith("index.html")) {
 
 // update the scale of the special buttons based on the window width
 const updateBtnScale = (buttonElement, baseWidth) => {
-	const windowWidth = window.innerWidth;
-	if(windowWidth >= 1920) {
-		buttonElement.style.transform = "scale(1)";
-		buttonElement.style.width = `${baseWidth}px`;
-		return;
-	}
+  const windowWidth = window.innerWidth;
+  if(windowWidth >= 1920) {
+    buttonElement.style.transform = "scale(1)";
+    buttonElement.style.width = `${baseWidth}px`;
+    return;
+  }
 
-	const percent = Math.min(1, window.innerWidth / 2560.0);
-	const value = parseFloat(lerp(0.8, 1, percent));
-	buttonElement.style.transform = `scale(${value})`;
+  const percent = Math.min(1, window.innerWidth / 2560.0);
+  const value = parseFloat(lerp(0.8, 1, percent));
+  buttonElement.style.transform = `scale(${value})`;
 
-	const width = parseFloat(baseWidth * value);
-	buttonElement.style.width = `${width}px`;
+  const width = parseFloat(baseWidth * value);
+  buttonElement.style.width = `${width}px`;
 }
 
 const lerp = (a, b, n) => {
-	return (1 - n) * a + n * b;
+  return (1 - n) * a + n * b;
 }
 
 const linkBtns = [...document.querySelectorAll('exo-link-btn')];
 let rglrBtns = [...document.querySelectorAll('exo-btn')];
 if(rglrBtns.length > 0) {
-	rglrBtns = rglrBtns.filter((btn) => !btn.closest("exo-link-btn"));
+  rglrBtns = rglrBtns.filter((btn) => !btn.closest("exo-link-btn"));
 }
 
 const allBtns = [...linkBtns, ...rglrBtns];
 if(allBtns.length > 0) {
-	const baseWidth = window.getComputedStyle(allBtns[0]).width.replace("px", "");
-	allBtns.forEach((btn) => updateBtnScale(btn, baseWidth));
-	window.addEventListener('resize', () => {
-		allBtns.forEach((btn) => updateBtnScale(btn, baseWidth));
-	});
+  const baseWidth = window.getComputedStyle(allBtns[0]).width.replace("px", "");
+  allBtns.forEach((btn) => updateBtnScale(btn, baseWidth));
+  window.addEventListener('resize', () => {
+    allBtns.forEach((btn) => updateBtnScale(btn, baseWidth));
+  });
 }
 
 // custom height init
@@ -54,8 +54,8 @@ const sections = $('.height-init');
 const windowHeight = $(window).height();
 const navMainHeight = $('.navbar').height();
 if (navMainHeight) {
-	// sections.height(windowHeight - navMainHeight);
-	// sections.height(windowHeight);
+  // sections.height(windowHeight - navMainHeight);
+  // sections.height(windowHeight);
 } else {
-	// sections.height(windowHeight);
+  // sections.height(windowHeight);
 }
