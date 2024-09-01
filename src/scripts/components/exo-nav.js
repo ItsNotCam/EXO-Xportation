@@ -4,7 +4,12 @@ class Nav extends HTMLElement {
   connectedCallback() {
     const path = window.location.pathname;
 
+    const hasBG = this.hasAttribute("blur-color");
+    const blurColor = hasBG ? this.getAttribute("blur-color") : "";
+    const bgGradient = hasBG ? `<div style="background: linear-gradient(to bottom, ${blurColor} 0%, #FFFFFF 100%);" class="nav-gradient"></div>` : "";
+
     this.innerHTML = /*html*/ `
+    ${bgGradient}
     <nav class="navbar">
       <a href="/" class="logo cch aldrich text-custom-light-100 text-3xl">EXO</a>
       <ul id="nav-main" class="nav-links" data-expanded="false">

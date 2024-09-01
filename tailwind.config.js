@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+			screens: {
+				"nav-fold-in": "960px"
+			},
 			dropShadow: {
 				"custom-lg": "2px 2px 2px rgba(0,0,0,0.4)",
 				"custom-sm": "1px 1px 1px rgba(0,0,0,0.5)"

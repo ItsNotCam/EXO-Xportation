@@ -13,6 +13,19 @@
   @apply flex-col gap-4;
 }
 
+.nav-gradient {
+	@apply 
+		fixed
+		top-0
+		h-[95px]
+		max-nav-fold-in:h-[85px]
+		w-full
+		bg-blend-multiply
+		mix-blend-multiply
+		z-10
+		pointer-events-none;
+}
+
 .nav-links {
   @apply 
     flex
@@ -84,13 +97,13 @@
 			absolute
 			left-[50%]
 			translate-x-[-50%]
-			top-5;
+			top-4;
 	}
 
   .navbar {
     @apply w-full justify-end;
   }
-  
+
   .nav-links {
     @apply 
       w-[275px]

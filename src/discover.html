@@ -8,23 +8,50 @@
 
   <body>
     <exo-cursor class="hidden"></exo-cursor>
-    <exo-nav></exo-nav>
+    <exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
+
     <!-- <a href="https://www.freepik.com/free-ai-image/futuristic-space-rocket-with-fantasy-design_133536843.htm#fromView=search&page=2&position=29&uuid=16958f25-3f20-4a66-98b3-1ae1ce78d8aa">Image by freepik</a> -->
-    <section class="astronaut-img height-init h-screen bg-black relative">
-			<img src="images/spaceship_small.png" class="object-cover h-full w-full" loading="lazy">
-      <div class="absolute bottom-16 left-16">
-        <exo-launch-hero>
-          <span slot="rocket-name">POLARIS-IV</span>
-          <span slot="location-from" data-location="[ EARTH / US ]"> IAD </span>
-          <span slot="location-to" data-location="[ MARS / JP ]"> JIP </span>
-        </exo-launch-hero>
-      </div>
+    <section class="bg-[#04050a]">
+			<div class="astronaut-img height-init h-screen relative">
+				<img alt="spaceship" src="images/spaceship_small.png" class="opacity-fade-in delay-2 object-cover h-full w-full" loading="lazy">
+				<div class="absolute bottom-[clamp(2rem,10vw,8rem)] left-[clamp(2rem,10vw,8rem)]">
+					<exo-launch-hero data-align="left" data-link="#polaris-desc">
+						<span slot="rocket-name">POLARIS-IV</span>
+						<span slot="location-from" data-location="[ EARTH / US ]">IAD</span>
+						<span slot="location-to" data-location="[ MARS / JP ]">JIP</span>
+					</exo-launch-hero>
+				</div>
+			</div>
+			<div class="relative py-28 px-8 mx-auto max-w-[1100px]" id="polaris-desc">
+				<div class="relative z-10">
+					<h1 class="text-4xl font-bold mb-1">Mission Overview: Earth (IAD) to Mars (JIP)</h1>
+					Welcome to the future of space travel! Our latest mission from Washington Dulles International Airport (IAD) on Earth to the Japanese Interplanetary Port (JIP) on Mars is a journey you won’t want to miss. This mission is all about connecting two worlds—Earth and Mars—in ways we’ve never imagined before.
+					<br>
+					<h2 class="text-lg font-semibold mt-8">The Journey:</h2>
+					Starting from IAD, nestled in the heart of Virginia, the mission takes off in one of our most advanced spacecraft yet, designed for a smooth and speedy ride to Mars. You’ll be headed to the JIP, a bustling hub located in the beautiful Aokigahara Basin, a vibrant community on Mars. This port has become the go-to spot for travelers, scientists, and adventurers alike.
+					<h2 class="text-lg font-semibold mt-8">Why JIP?</h2>
+					JIP isn’t just another stop on Mars; it’s a gateway to new experiences. Whether you’re here for work, exploration, or just to take in the breathtaking Martian landscapes, JIP offers something for everyone. From cutting-edge research facilities to cozy habitats with stunning views of the Tharsis region, you’ll feel right at home—even 140 million miles away.
+					<h2 class="text-lg font-semibold mt-8">What to Expect:</h2>
+					The mission is more than just a trip. It’s an experience. Along the way, you’ll have the chance to participate in activities that make the most of your time in space, from stargazing to enjoying zero-gravity sports. And once you arrive at JIP, you’ll be greeted by friendly faces ready to help you explore all that Mars has to offer.
+					This mission isn’t just about getting from point A to point B; it’s about the adventure, the discovery, and the memories you’ll make along the way. Welcome aboard!
+				</div>
+				<img src="images/launchpad.jpg" alt="launchpad" class="blur-[2px] opacity-fade-in delay-2 max-w-full opacity-0 right-0 absolute top-0 object-cover h-screen z-0" loading="lazy">
+			</div>
+			<!-- <a href="https://www.freepik.com/free-ai-image/rocket-flying-through-space_41745932.htm#fromView=search&page=4&position=35&uuid=93dfe074-957c-4869-8a2c-60bc2b1182d0">Image by freepik</a> -->
     </section>
-    <section class="height-init h-screen bg-red-500">
-      <h1 class="text-4xl">Hello World</h1>
-    </section>
-    <section class="height-init h-screen bg-yellow-600">
-      <h1 class="text-4xl">Hello World</h1>
+
+		<!-- <a href="https://www.freepik.com/free-ai-image/rocket-flying-through-space_41745954.htm">Image by freepik</a> -->
+		<section>
+			<div class="astronaut-img height-init h-screen relative">
+				<img alt="rocket" src="images/rocket.jpg" class="object-cover h-full w-full" loading="lazy">
+				<div class="absolute bottom-16 left-16">
+					<exo-launch-hero data-align="left">
+						<span slot="rocket-name">FALCON HEAVY</span>
+						<span slot="location-from" data-location="[ EARTH / US ]">LAX</span>
+						<span slot="location-to" data-location="[ NEPTUNE / GB ]">KII</span>
+					</exo-launch-hero>
+				</div>
+			</div>
     </section>
   </body>
 </html>

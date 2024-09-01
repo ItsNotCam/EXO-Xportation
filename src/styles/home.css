@@ -6,7 +6,7 @@
     min-w-full
     overflow-hidden;
 
-  background: url('../images/bg.png') center center / cover no-repeat;
+  /* background: url('../images/bg.png') center center / cover no-repeat; */
 
   &::before {
     content: '';

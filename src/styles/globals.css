@@ -34,6 +34,10 @@
   --star-bezier: cubic-bezier(.19,1,.22,1);
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
   font-family: 'D-DIN', sans-serif;
   @apply text-custom-light-100 bg-black;
@@ -211,7 +215,34 @@ exo-link-btn {
 .delay-9  { animation-delay: 0.9s; }
 .delay-10 { animation-delay: 1.0s; }
 
+.opacity-fade-in {
+	@apply opacity-0;
+	animation-fill-mode: forwards;
+	animation-duration: 3s;
+	animation-timing-function: var(--star-bezier);
+	animation-name: opacity-fade-in;
+	/* animation: opacity-fade-in 2s var(--star-bezier) forwards; */
+}
+
 /* Keyframes */
+@keyframes opacity-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes bg-opacity-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
 @keyframes slide-fade-in {
   from {
     opacity: 0;
