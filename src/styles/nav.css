@@ -55,7 +55,7 @@
       scale-x-0
       origin-right; 
   }
-
+/* HERE */
   &:hover::after {
     @apply 
       scale-x-100

@@ -1,75 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EXO</title>
-  </head>
 
-  <body>
-    <exo-cursor class="hidden"></exo-cursor>
-    <exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EXO</title>
+  <style>
+    .circle {
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      background-color: #e8eaed;
 
-    <!-- <a href="https://www.freepik.com/free-ai-image/futuristic-space-rocket-with-fantasy-design_133536843.htm#fromView=search&page=2&position=29&uuid=16958f25-3f20-4a66-98b3-1ae1ce78d8aa">Image by freepik</a> -->
-    <section class="bg-[#04050a]">
-      <div class="astronaut-img height-init h-screen relative">
-        <img alt="spaceship" src="images/spaceship_small.png" class="opacity-fade-in delay-2 object-cover h-full w-full" loading="lazy">
-        <div class="absolute bottom-[clamp(2rem,10vw,8rem)] left-[clamp(2rem,10vw,8rem)]">
-          <exo-launch-hero data-align="left" data-link="#polaris-mission">
-						<data slot="subtitle">Upcoming Launch</data>
-            <span slot="title">POLARIS-IV</span>
-            <span slot="from" loc="[ EARTH / US ]">IAD</span>
-            <span slot="to" loc="[ MARS / JP ]">IJP</span>
+      transition: background-color 0.3s;
+    }
+
+    .circle[data-selected="false"] {
+      background-color: gray;
+    } 
+  </style>
+</head>
+
+<body>
+  <exo-cursor class="hidden"></exo-cursor>
+  <exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
+
+  <!-- <a href="https://www.freepik.com/free-ai-image/futuristic-space-rocket-with-fantasy-design_133536843.htm#fromView=search&page=2&position=29&uuid=16958f25-3f20-4a66-98b3-1ae1ce78d8aa">Image by freepik</a> -->
+    
+  <div id="img-selectors" class="absolute bottom-16 left-[50%] -translate-x-1/2 -translate-y-1/2 flex flex-row gap-2 slide-fade-in delay-5 z-20">
+    <div class="circle cursor-pointer" data-selected="true"  id="img-select-0"></div>
+    <div class="circle cursor-pointer" data-selected="false" id="img-select-1"></div>
+    <div class="circle cursor-pointer" data-selected="false" id="img-select-2"></div>
+    <div class="circle cursor-pointer" data-selected="false" id="img-select-3"></div>
+    <div class="circle cursor-pointer" data-selected="false" id="img-select-4"></div>
+  </div>
+  <section class="bg-[#04050a] overflow-hidden relative h-screen w-screen" id="exo-launches">
+    <!-- one -->
+    <div class="absolute left-0 top-0 h-full" id="launch0" style="transform: translateX(0%)">
+      <div class="height-init h-full relative">
+        <img alt="spaceship" src="images/spaceship_small.png" class="opacity-fade-in delay-2 object-cover h-full w-full"
+          loading="lazy">
+        <div class="absolute mx-16 mb-16 left-0 bottom-0">
+          <exo-launch-hero data-align="left" data-link="#polaris-mission" data-index="0">
+            <p slot="subtitle">Upcoming Launch</p>
+            <p slot="title">
+              <span class="text-3xl text-custom-light-100">SEABLOOM</span>
+              <span class="text-2xl text-custom-light-300 font-normal">POLARIS-IV</span>
+            </p>
+            <h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
+            <h1 slot="to" loc="[ NEPTUNE-IO / INTL. ]">IJP</h1>
+            <p slot="description">
+              The Falcon Heavy mission is a highly anticipated upcoming launch using
+              <a href="" class="cursor-pointer underline text-red-400 font-semibold">SpaceX's Falcon Heavy</a> rocket.
+              This mission aims to transport a payload from Earth (IAD) to
+              <a href="" class="cursor-pointer underline text-red-400 font-semibold">Mars</a> (IJP).
+              The Falcon Heavy rocket, known for its impressive capabilities, will be
+              used for this mission. Stay tuned for more updates and exciting developments!
+            </p>
           </exo-launch-hero>
         </div>
       </div>
-      <div class="relative py-28 px-8 mx-auto max-w-[1100px]" id="polaris-mission">
-        <div class="relative z-10">
-          <h1 class="text-4xl font-bold mb-1 uppercase">FLIGHT LOG: <span class="text-3xl font-medium">Earth (IAD) to Mars (JPI)</span></h1>
-          Welcome to the future of space travel! Our latest mission from Washington Dulles International Airport (IAD) on Earth to the Japanese Interplanetary Port (IJP) on Mars is a journey you won’t want to miss. This mission is all about connecting two worlds—Earth and Mars—in ways we’ve never imagined before.
-          <br>
-          <h2 class="text-xl font-semibold mt-8 uppercase">The Journey:</h2>
-          Starting from IAD, nestled in the heart of Virginia, the mission takes off in one of our most advanced spacecraft yet, designed for a smooth and speedy ride to Mars. You’ll be headed to the JIP, a bustling hub located in the beautiful Aokigahara Basin, a vibrant community on Mars. This port has become the go-to spot for travelers, scientists, and adventurers alike.
-          <h2 class="text-xl font-semibold mt-8 uppercase">Why JIP?</h2>
-          JIP isn’t just another stop on Mars; it’s a gateway to new experiences. Whether you’re here for work, exploration, or just to take in the breathtaking Martian landscapes, JIP offers something for everyone. From cutting-edge research facilities to cozy habitats with stunning views of the Tharsis region, you’ll feel right at home—even 140 million miles away.
-          <h2 class="text-xl font-semibold mt-8 uppercase">What to Expect:</h2>
-          The mission is more than just a trip. It’s an experience. Along the way, you’ll have the chance to participate in activities that make the most of your time in space, from stargazing to enjoying zero-gravity sports. And once you arrive at JIP, you’ll be greeted by friendly faces ready to help you explore all that Mars has to offer.
-          This mission isn’t just about getting from point A to point B; it’s about the adventure, the discovery, and the memories you’ll make along the way. Welcome aboard!
-        </div>
-        <img src="images/launchpad.jpg" alt="launchpad" class="blur-[2px] opacity-fade-in delay-2 max-w-full opacity-0 right-0 absolute top-0 object-cover h-screen z-0" loading="lazy">
-      </div>
-      <div class="astronaut-img height-init h-screen relative">
-        <!-- <a href="https://www.vecteezy.com/free-videos/4k">4k Stock Videos by Vecteezy</a> -->
-        <video autoplay loop class="object-cover h-full w-full">
-          <source src="videos/le space rotation.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <img alt="spaceship" src="images/spaceship_small.png" class="opacity-fade-in delay-2 object-cover h-full w-full" loading="lazy">
-        <div class="absolute bottom-[clamp(2rem,10vw,8rem)] left-[clamp(2rem,10vw,8rem)]">
-          <exo-launch-hero data-align="left">
-						<data slot="subtitle">Recent Launch</data>
-            <span slot="title">FALCON HEAVY</span>
-            <span slot="from" loc="[ EARTH / US ]">LAX</span>
-            <span slot="to" loc="[ JUPITER-IO / INTL. ]">IKO</span>
-          </exo-launch-hero>
-        </div>
-      </div>
-      <!-- <a href="https://www.freepik.com/free-ai-image/rocket-flying-through-space_41745932.htm#fromView=search&page=4&position=35&uuid=93dfe074-957c-4869-8a2c-60bc2b1182d0">Image by freepik</a> -->
-    </section>
+    </div>
 
-    <!-- <a href="https://www.freepik.com/free-ai-image/rocket-flying-through-space_41745954.htm">Image by freepik</a> -->
-    <section>
-      <div class="astronaut-img height-init h-screen relative">
-        <img alt="rocket" src="images/rocket.jpg" class="object-cover h-full w-full" loading="lazy">
-        <div class="absolute bottom-16 left-16">
-          <exo-launch-hero data-align="left">
-						<data slot="subtitle">Recent Launch</data>
-            <span slot="title">Atlas-III</span>
-            <span slot="from" loc="[ EARTH / GER ]">FRA</span>
-            <span slot="to" loc="[ JUPITER-EUROPA / INTL. ]">IJU</span>
+    <!-- two -->
+    <div class="absolute left-0 top-0 h-full" id="launch1" style="transform: translateX(100%)">
+      <div class="height-init h-full relative">
+        <img alt="moon base" src="images/moon_base.png" class="opacity-fade-in delay-2 object-cover h-full w-full"
+          loading="lazy">
+        <div class="absolute mx-16 mb-16 left-0 bottom-0">
+          <exo-launch-hero data-align="left" data-link="#polaris-mission" data-index="1">
+            <p slot="subtitle">Upcoming Launch</p>
+            <p slot="title">
+              <span class="text-3xl text-custom-light-100">SEABLOOM</span>
+              <span class="text-2xl text-custom-light-300 font-normal">ATLAS-II</span>
+            </p>
+            <h1 slot="from" loc="[ EARTH / US ]">LAX</h1>
+            <h1 slot="to" loc="[ SELENE / INTL. ]">OKO</h1>
+            <p slot="description">
+              The Falcon Heavy mission is a highly anticipated upcoming launch using
+              <a href="" class="cursor-pointer underline text-red-400 font-semibold">SpaceX's Falcon Heavy</a> rocket.
+              This mission aims to transport a payload from Earth (IAD) to
+              <a href="" class="cursor-pointer underline text-red-400 font-semibold">Mars</a> (IJP).
+              The Falcon Heavy rocket, known for its impressive capabilities, will be
+              used for this mission. Stay tuned for more updates and exciting developments!
+            </p>
           </exo-launch-hero>
         </div>
       </div>
-    </section>
-  </body>
+    </div>
+
+    <!-- three -->
+    <div class="absolute left-0 top-0 h-full" id="launch2" style="transform: translateX(200%)">
+      <div class="height-init h-full relative">
+        <img alt="mars base" src="images/space home.jpg" class="opacity-fade-in delay-2 object-cover h-full w-full"
+          loading="lazy">
+        <div class="absolute mx-16 mb-16 left-0 bottom-0">
+          <exo-launch-hero data-align="left" data-link="#polaris-mission" data-index="2">
+            <p slot="subtitle">Upcoming Launch</p>
+            <p slot="title">
+              <span class="text-3xl text-custom-light-100">SPACEX</span>
+              <span class="text-2xl text-custom-light-300 font-normal">FALCON HEAVY</span>
+            </p>
+            <h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
+            <h1 slot="to" loc="[ MARS / JP ]">IJP</h1>
+            <p slot="description">
+              The Falcon Heavy mission is a highly anticipated upcoming launch using
+              <a href="" class="cursor-pointer underline text-red-400 font-semibold">SpaceX's Falcon Heavy</a> rocket.
+              This mission aims to transport a payload from Earth (IAD) to
+              <a href="" class="cursor-pointer underline text-red-400 font-semibold">Mars</a> (IJP).
+              The Falcon Heavy rocket, known for its impressive capabilities, will be
+              used for this mission. Stay tuned for more updates and exciting developments!
+            </p>
+          </exo-launch-hero>
+        </div>
+      </div>
+    </div>
+
+    <!-- four -->
+    <div class="absolute left-0 top-0 h-full" id="launch3" style="transform: translateX(300%)">
+      <div class="height-init h-full relative">
+        <video alt="earth from space" src="videos/le space rotation.mp4" class="w-full h-full object-cover" autoplay loop muted></video>
+        <div class="absolute mx-16 mb-16 left-0 bottom-0">
+          <exo-launch-hero data-align="left" data-link="#polaris-mission" data-index="3">
+            <p slot="subtitle">Upcoming Launch</p>
+            <p slot="title">
+              <span class="text-3xl text-custom-light-100">AIRBUS</span>
+              <span class="text-2xl text-custom-light-300 font-normal">SA-990</span>
+            </p>
+            <h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
+            <h1 slot="to" loc="[ EARTH / GER ]">FRA</h1>
+            <p slot="description">
+              The Falcon Heavy mission is a highly anticipated upcoming launch using
+              <a href="" class="cursor-pointer underline text-red-400 font-semibold">SpaceX's Falcon Heavy</a> rocket.
+              This mission aims to transport a payload from Earth (IAD) to
+              <a href="" class="cursor-pointer underline text-red-400 font-semibold">Mars</a> (IJP).
+              The Falcon Heavy rocket, known for its impressive capabilities, will be
+              used for this mission. Stay tuned for more updates and exciting developments!
+            </p>
+          </exo-launch-hero>
+        </div>
+      </div>
+    </div>
+
+    <!-- five -->
+    <div class="absolute left-0 top-0 h-full" id="launch4" style="transform: translateX(400%)">
+      <div class="height-init h-full relative">
+        <img alt="spacesuit man holding an hourglass" src="images/portrait-astronaut-space-suit-doing-regular-human-activity (1).jpg"
+          class="opacity-fade-in delay-2 object-cover h-full w-full" loading="lazy">
+        <div class="absolute mx-16 mb-16 left-0 bottom-0">
+          <exo-launch-hero data-align="left" data-link="#polaris-mission" data-index="4">
+            <p slot="subtitle">Upcoming Launch</p>
+            <p slot="title">
+              <span class="text-3xl text-custom-light-100">AIRBUX</span>
+              <span class="text-2xl text-custom-light-300 font-normal">LEO-690</span>
+            </p>
+            <h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
+            <h1 slot="to" loc="[ EARTH / JP ]">NRT</h1>
+            <p slot="description">
+              The Falcon Heavy mission is a highly anticipated upcoming launch using
+              <a href="" class="cursor-pointer underline text-red-400 font-semibold">SpaceX's Falcon Heavy</a> rocket.
+              This mission aims to transport a payload from Earth (IAD) to
+              <a href="" class="cursor-pointer underline text-red-400 font-semibold">Mars</a> (IJP).
+              The Falcon Heavy rocket, known for its impressive capabilities, will be
+              used for this mission. Stay tuned for more updates and exciting developments!
+            </p>
+          </exo-launch-hero>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
 </html>

@@ -9,6 +9,7 @@ class ExoBtn extends HTMLElement {
     const clipUUID = uuidv4();
 
     this.innerHTML = /*html*/ `
+		
     <button class="btn-angled cch" data-title="${title}" data-light="${isLight}">
       <svg xmlns="http://www.w3.org/2000/svg" width="200" height="49" viewBox="0 0 203 49" fill="transparent">
         <defs>

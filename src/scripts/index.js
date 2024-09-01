@@ -7,6 +7,7 @@ import './components/exo-btn';
 import './components/exo-link-btn';
 import './components/exo-launch-hero';
 import './components/exo-cursor';
+import './launches';
 
 // remove the index html from the url because of how relative pathing works with links lol
 if (window.location.pathname.endsWith("index.html")) {
