@@ -55,11 +55,13 @@
       scale-x-0
       origin-right; 
   }
-/* HERE */
-  &:hover::after {
-    @apply 
-      scale-x-100
-      origin-left;
+
+  &[data-active="false"]:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+
+	&[data-active="true"]::after {
+    @apply scale-x-100;
   }
 }
 
