@@ -36,22 +36,22 @@ class ExoLaunchHero extends HTMLElement {
     <link rel="stylesheet" href="styles.css">
     <div class="flex flex-col gap-2 ${textAlign} rounded-xl p-4 bg-fade-in delay-4 bg-blend-multiply">
       <p class="text-lg text-custom-light-200 drop-shadow-custom-sm slide-fade-in delay-0">
-        ${subtitle ? subtitle.innerHTML : 'Subtitle'}
+        ${subtitle ? subtitle.innerHTML : "Subtitle"}
       </p>
       <p class="text-3xl font-medium tracking-tight drop-shadow-custom-sm slide-fade-in delay-1">
-        ${rocketName ? rocketName.innerHTML : 'Rocket Name'}
+        ${rocketName ? rocketName.innerHTML : "Rocket Name"}
       </p>
-      <div class="launch-route slide-fade-in delay-2">
-        <h1 data-location="${locationFromCountry}">${locationFromName}</h1>
+      <div class="launch-route flex flex-row items-center justify-center gap-2 tracking-wide -mt-2 mb-1 w-max drop-shadow-custom-lg leading-none slide-fade-in delay-2">
+        <h1 class="launch-route__location" data-location="${locationFromCountry}">${locationFromName}</h1>
         <svg class="inline mb-4" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
           <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
         </svg>
-        <h1 data-location="${locationToCountry}">${locationToName}</h1>
+        <h1 class="launch-route__location" data-location="${locationToCountry}">${locationToName}</h1>
       </div>
       <p class="mb-2 max-w-[35rem] slide-fade-in delay-3">
         ${description ? description.innerHTML : "Description"}
       </p>
-      <a href="${link}" class="btn text-custom-dark-500 duration-500 slide-fade-in delay-4 ${textAlign} tracking-tight text-sm" data-title="LEARN MORE" style="width: 8.5rem; height: 3.5rem;"></a>
+      <a href="${link}" class="btn slide-fade-in delay-4 ${textAlign} tracking-tight text-sm" data-title="LEARN MORE" style="width: 8.5rem; height: 3.5rem;"></a>
     </div>
     `;
 

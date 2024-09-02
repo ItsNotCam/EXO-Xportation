@@ -40,8 +40,8 @@ html {
 
 body {
   font-family: 'D-DIN', sans-serif;
-  @apply text-custom-light-100 bg-black;
-  /* @apply text-custom-light-100 bg-custom-dark-500; */
+	background-color: black;
+  @apply text-custom-light-100;
 }
 
 exo-link-btn {
@@ -50,14 +50,13 @@ exo-link-btn {
 
 /* Cursor */
 #custom-cursor {
-  @apply 
-    fixed
-    h-4
-    w-4
-    rounded-full
-    bg-custom-light-100
-    pointer-events-none
-    z-50;
+	position: fixed;
+	height: 1rem;
+	width: 1rem;
+	border-radius: 50%;
+	pointer-events: none;
+	z-index: 50;
+  @apply bg-custom-light-100;
 
   transform: translate(-50%, -50%);
   transition: background-color 0.2s, height 0.2s, width 0.2s;
@@ -67,7 +66,8 @@ exo-link-btn {
   }
 
   &[data-hovered="true"] {
-    @apply h-8 w-8;
+		height: 2rem;
+		width: 2rem;
     background-color: rgba(255, 255, 255, 0.01);
     backdrop-filter: invert();
   }
@@ -75,47 +75,41 @@ exo-link-btn {
 
 /* Buttons */
 .btn {
-  @apply 
-    cursor-pointer
-    relative
-    flex
-    items-center
-    justify-center
-    w-auto
-    border
-    border-custom-light-100
-    backdrop-blur-sm;
-
+	cursor: pointer;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: auto;
+	border-width: 1px;
+	backdrop-filter: blur(4px);
   letter-spacing: 0.1rem;
   transition: color 0.2s, border 0.2s, scale 0.2s, font-size 0.2s;
 
+  @apply border-custom-light-100 text-custom-dark-500;
+
   &::after {
     content: attr(data-title);
-    @apply 
-      absolute
-      w-full
-      text-center
-      left-1/2
-      top-1/2
-      text-custom-light-100
-      transition-colors
-      duration-300
-      -translate-x-1/2
-      -translate-y-1/2
-      tracking-wider;
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		left: 50%;
+		top: 50%;
+		transition: color 500ms;
+		transform: translate(-50%, -50%);
+		letter-spacing: 0.05em;
+    @apply text-custom-light-100;
   }
 
   &::before {
     content: '';
-    @apply 
-      absolute
-      w-full
-      h-full
-      bg-custom-light-100
-      scale-y-0
-      origin-top
-      transition-transform
-      duration-200;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		transform: scaleY(0);
+		transition: transform 300ms;
+		transform-origin: top;
+    @apply bg-custom-light-100;
   }
 
   
@@ -124,7 +118,8 @@ exo-link-btn {
   }
 
   &:hover::before {
-    @apply scale-y-100 origin-bottom;
+		transform: scaleY(100%);
+		transform-origin: bottom;
   }
 }
 
@@ -132,7 +127,8 @@ exo-link-btn {
   @apply text-custom-dark-500 bg-custom-light-100;
 
   &::before {
-    @apply bg-custom-dark-500 backdrop-blur-lg;
+		backdrop-filter: blur(16px);
+    @apply bg-custom-dark-500;
   }
 
   &::after {
@@ -140,7 +136,7 @@ exo-link-btn {
   }
 
   &:hover {
-    @apply border-none;
+		border: none;
     &::before, &::after {
       @apply text-custom-light-100;
     }
@@ -148,22 +144,21 @@ exo-link-btn {
 }
 
 .btn-angled {
-  transform-origin: bottom left;
-  @apply relative text-custom-light-100;
+  transform-origin: bottom;
+	position: relative;
+  @apply text-custom-light-100;
 
   &::after {
     content: attr(data-title);
-    @apply 
-      absolute 
-      left-0 
-      w-full 
-      top-1/2 
-      -translate-y-1/2 
-      text-center 
-      transition-colors 
-      duration-200 
-      pointer-events-none 
-      z-auto;
+		position: absolute;
+		left: 50%;
+		width: 100%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		text-align: center;
+		transition: color 200ms;
+		pointer-events: none;
+		z-index: auto;
   }
 
   &:hover::after {
@@ -190,13 +185,17 @@ exo-link-btn {
 }
 
 .btn-angled-container {
-  @apply flex flex-row text-base items-center;
+	display: flex;
+	flex-direction: row;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	align-items: center;
   gap: clamp(1rem, 3vw, 2rem);
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .slide-fade-in {
-    @apply opacity-0;
+		opacity: 0;
     animation: slide-fade-in 1.5s var(--star-bezier) forwards;
   }
 
@@ -205,43 +204,34 @@ exo-link-btn {
   }
 }
 
-.delay-1  { animation-delay: 0.1s; }
-.delay-2  { animation-delay: 0.2s; }
-.delay-3  { animation-delay: 0.3s; }
-.delay-4  { animation-delay: 0.4s; }
-.delay-5  { animation-delay: 0.5s; }
-.delay-6  { animation-delay: 0.6s; }
-.delay-7  { animation-delay: 0.7s; }
-.delay-8  { animation-delay: 0.8s; }
-.delay-9  { animation-delay: 0.9s; }
-.delay-10 { animation-delay: 1.0s; }
+.anim-delay-1  { animation-delay: 0.1s; }
+.anim-delay-2  { animation-delay: 0.2s; }
+.anim-delay-3  { animation-delay: 0.3s; }
+.anim-delay-4  { animation-delay: 0.4s; }
+.anim-delay-5  { animation-delay: 0.5s; }
+.anim-delay-6  { animation-delay: 0.6s; }
+.anim-delay-7  { animation-delay: 0.7s; }
+.anim-delay-8  { animation-delay: 0.8s; }
+.anim-delay-9  { animation-delay: 0.9s; }
+.anim-delay-10 { animation-delay: 1.0s; }
 
 .opacity-fade-in {
-  @apply opacity-0;
+	opacity: 0;
   animation-fill-mode: forwards;
   animation-duration: 3s;
   animation-timing-function: var(--star-bezier);
   animation-name: opacity-fade-in;
-  /* animation: opacity-fade-in 2s var(--star-bezier) forwards; */
 }
 
 /* Keyframes */
 @keyframes opacity-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes bg-opacity-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slide-fade-in {
@@ -260,8 +250,6 @@ exo-link-btn {
     opacity: 1;
   }
 }
-
-
 
 @keyframes fall-down {
   0% {

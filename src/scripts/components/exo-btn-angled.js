@@ -35,4 +35,4 @@ class ExoBtn extends HTMLElement {
   }
 }
 
-customElements.define('exo-btn', ExoBtn);
+customElements.define('exo-btn-angled', ExoBtn);

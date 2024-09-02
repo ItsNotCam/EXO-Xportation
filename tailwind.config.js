@@ -6,6 +6,30 @@ module.exports = {
   ],
   theme: {
     extend: {
+			screens: {
+				'720p': {'max': '1280px'},
+				'home-lg': {'max': '1140px'},
+				'home-md': {'max': '645px'},
+				'home-sm': {'max': '450px'},
+				'home-xs': {'max': '428px'}
+			},
+			lineHeight: {
+				'em-0.1': '0.1em',
+				'em-0.2': '0.2em',
+				'em-0.3': '0.3em',
+				'em-0.4': '0.4em',
+				'em-0.5': '0.5em',
+				'em-0.6': '0.6em',
+				'em-0.7': '0.7em',
+				'em-0.8': '0.8em',
+				'em-0.9': '0.9em',
+				'em-1.0': '1em',
+				'em-1.1': '1.1em',
+				'em-1.2': '1.2em',
+				'em-1.3': '1.3em',
+				'em-1.4': '1.4em',
+				'em-1.5': '1.5em'
+			},
       screens: {
         "nav-fold-in": "960px"
       },

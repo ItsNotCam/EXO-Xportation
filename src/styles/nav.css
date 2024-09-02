@@ -1,132 +1,75 @@
-.navbar {
-  @apply 
-    fixed
-    w-full
-    flex
-    items-center
-    justify-center
-    py-8
-    z-50;
-}
-
-.navbar[data-expanded="false"] {
-  @apply flex-col gap-4;
-}
-
-.nav-gradient {
-  @apply 
-    fixed
-    top-0
-    h-[95px]
-    max-nav-fold-in:h-[85px]
-    w-full
-    bg-blend-multiply
-    mix-blend-multiply
-    z-10
-    pointer-events-none;
-}
-
-.nav-links {
-  @apply 
-    flex
-    justify-center
-    m-0
-    p-0
-    z-10;
-
-  & > :not(:last-child) {
-    @apply mr-8;
-  }
-}
-
 .nav-link {
-  @apply relative text-custom-light-100;
-
+	position: relative;
   &::after {
     content: '';
     transition: transform .6s var(--star-bezier);
-    @apply 
-      absolute
-      bottom-[-0.3rem]
-      left-0
-      w-full
-      h-[1px]
-      bg-custom-light-100
-      scale-x-0
-      origin-right; 
+		position: absolute;
+		bottom: -0.3rem;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		transform: scaleX(0);
+		transform-origin: right;
+		@apply bg-custom-light-100;
   }
 
   &[data-active="false"]:hover::after {
-    @apply scale-x-100 origin-left;
+		transform: scaleX(100%);
+		transform-origin: left;
   }
 
-	&[data-active="true"]::after {
-    @apply scale-x-100;
-  }
-}
-
-#nav-dropdown-button {
-  @apply 
-    absolute
-    hidden
-    top-4
-    z-10
-    right-4;
-}
-
-.logo {
-  @apply fixed left-4;
-}
-
-.nav-socials {
-  display: none;
-
-  & svg {
-    transition: scale 0.15s;
-    fill: #E0E0E0;
-  }
-
-  & a:hover svg {
-    scale: 1.1;
-    fill: white;
+	&[data-active="true"] {
+		pointer-events: none;
+		
+		&::after {
+			transform: scaleX(100%);
+		}
   }
 }
 
 /* 960px */
 @media screen and (max-width: 60rem) {
-  .logo {
-    @apply 
-      absolute
-      left-[50%]
-      translate-x-[-50%]
-      top-4;
+	.nav-bg-gradient {
+		height: 85px;
+		width: 100%;
+		justify-content: end;
+	}
+
+	.logo {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 1rem;
+	}
+
+  .nav-socials {
+    display: flex;
   }
 
-  .navbar {
-    @apply w-full justify-end;
-  }
+	.nav-dropdown-btn {
+		display: block;
+	}
 
   .nav-links {
-    @apply 
-      w-[275px]
-      h-screen
-      fixed
-      flex-col
-      top-0
-      justify-start
-      items-start
-      px-8
-      pt-16
-      bg-custom-dark-900/95;
+		width: 275px;
+		height: 100svh;
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		top: 0;
+		right: 0;
+		justify-content: start;
+		align-items: baseline;
+		padding: 4rem 2rem 0 2rem;
+    @apply bg-custom-dark-900/95;
 
     & > li {
-      @apply 
-        w-full
-        text-right
-        border-b-2
-        border-custom-light-300/50
-        py-2
-        opacity-0;
+			width: 100%;
+			text-align: right;
+			border-bottom-width: 2px;
+			padding-block: 0.5rem;
+			opacity: 0;
+      @apply border-custom-light-300/50;
     }
 
     transform: translateX(100%);
@@ -137,34 +80,27 @@
   }
 
   .nav-link {
-    @apply flex justify-end pr-0;
+		display: flex;
+		justify-content: end;
+		padding-right: 0;
+		position: relative;
     transition: color 0.35s;
+    @apply text-custom-light-100;
 
     &::after {
-      @apply 
-        -bottom-[0.6rem]
-        h-[2px]
-        left-0;
+			bottom: -0.6rem;
+			height: 2px;
+			left: 0;
     }
-
-    &:hover {
-      @apply text-custom-light-400;
-    }
-  }
-
-  .nav-links[data-expanded="false"] > li {
-    @apply pointer-events-none;
   }
 
   .nav-links[data-expanded="true"] {
     transform: translateX(0);
+		visibility: visible;
+		backdrop-filter: blur(4px);
 
-    @apply 
-      visible
-      backdrop-blur-sm;
-    
     & > li {
-      @apply mr-0;
+			margin-right: 0;
       animation: fall-down 0.6s var(--star-bezier) forwards;
     }
 
@@ -178,13 +114,5 @@
     & :nth-child(8)  { animation-delay: 0.9s; }
     & :nth-child(9)  { animation-delay: 1.0s; }
     & :nth-child(10) { animation-delay: 1.1s; }
-  }
-
-  #nav-dropdown-button {
-    @apply block;
-  }
-
-  .nav-socials {
-    display: flex;
   }
 }

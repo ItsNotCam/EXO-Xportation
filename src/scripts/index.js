@@ -3,7 +3,7 @@ import $ from 'jquery';
 import '../styles/styles';
 
 import './components/exo-nav';
-import './components/exo-btn';
+import './components/exo-btn-angled';
 import './components/exo-link-btn';
 import './components/exo-launch-hero';
 import './components/exo-cursor';
