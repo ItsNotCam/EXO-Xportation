@@ -34,7 +34,7 @@ class ExoLaunchHero extends HTMLElement {
 
     container.innerHTML = /*html*/ `
     <link rel="stylesheet" href="styles.css">
-    <div class="flex flex-col gap-2 ${textAlign}">
+    <div class="flex flex-col gap-2 ${textAlign} rounded-xl p-4 bg-fade-in delay-4 bg-blend-multiply">
       <p class="text-lg text-custom-light-200 drop-shadow-custom-sm slide-fade-in delay-0">
         ${subtitle ? subtitle.innerHTML : 'Subtitle'}
       </p>
@@ -51,7 +51,7 @@ class ExoLaunchHero extends HTMLElement {
       <p class="mb-2 max-w-[35rem] slide-fade-in delay-3">
         ${description ? description.innerHTML : "Description"}
       </p>
-      <a href="${link}" class="btn text-custom-dark-500 duration-500 slide-fade-in delay-4 ${textAlign}" data-title="LEARN MORE" style="width: 9.5rem; height: 4rem;"></a>
+      <a href="${link}" class="btn text-custom-dark-500 duration-500 slide-fade-in delay-4 ${textAlign} tracking-tight text-sm" data-title="LEARN MORE" style="width: 8.5rem; height: 3.5rem;"></a>
     </div>
     `;
 

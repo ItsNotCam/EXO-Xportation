@@ -1,0 +1,87 @@
+.launch-route {
+  @apply flex
+    flex-row
+    items-center
+    justify-center
+    gap-2
+    tracking-wide
+    -mt-2 
+    mb-1
+    w-max
+    drop-shadow-custom-lg 
+    leading-none;
+}
+
+.launch-route h1 {
+  @apply 
+		text-5xl 
+		font-bold
+		inline-block;
+
+  &::after {
+    content: attr(data-location);
+    @apply block 
+      text-custom-light-300
+      text-sm
+      font-normal;
+  }
+}
+
+#exo-launches {
+	@apply flex overflow-x-hidden;
+}
+
+.circle {
+	@apply 
+		rounded-full
+		bg-custom-light-100
+		transition-colors
+		duration-300
+		cursor-pointer;
+
+	width: clamp(0.5rem, 0.75vw, 0.65rem);
+	height: clamp(0.5rem, 0.75vw, 0.65rem);
+
+	&[data-selected="false"]:not(:hover) {
+		background-color: gray;
+	} 
+}
+
+#img-next, #img-back {
+	width: 0.9rem !important;
+	height: 1.05rem !important;
+
+	&[data-enabled="false"] {
+		@apply pointer-events-none opacity-40;
+	}
+}
+
+#carousel-controls-container {
+	bottom: clamp(1rem, 5vh, 2rem);
+}
+
+#carousel-controls {
+	gap: clamp(0.75rem, 1vw, 1.8rem);
+	padding-block: clamp(0.5rem, 0.75vw, 0.75rem);
+	padding-inline: clamp(0.65rem, 0.9vw, 1rem);
+}
+
+#img-selectors {
+	gap: clamp(0.6rem, 1vw, 1rem);
+}
+
+.bg-fade-in {
+	animation: bg-fade-in 0.5s forwards;
+}
+
+@keyframes bg-fade-in {
+	from {
+		background-color: rgba(12,12,12,0);
+		backdrop-filter: blur(0);
+	}
+
+	to {
+		background-color: rgba(12,12,12,0.35);
+		backdrop-filter: blur(3px);
+	}
+}
