@@ -223,6 +223,11 @@ exo-link-btn {
   animation-name: opacity-fade-in;
 }
 
+.bg-fade-in {
+	animation: bg-fade-in 0.5s forwards;
+}
+
+
 /* Keyframes */
 @keyframes opacity-fade-in {
   from { opacity: 0; }
@@ -271,4 +276,16 @@ exo-link-btn {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes bg-fade-in {
+	from {
+		background-color: rgba(12,12,12,0);
+		backdrop-filter: blur(0);
+	}
+
+	to {
+		background-color: rgba(12,12,12,0.35);
+		backdrop-filter: blur(3px);
+	}
 }

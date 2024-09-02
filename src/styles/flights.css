@@ -52,18 +52,83 @@
 	gap: clamp(0.6rem, 1vw, 1rem);
 }
 
-.bg-fade-in {
-	animation: bg-fade-in 0.5s forwards;
+.exo-launch-container {
+	height: 100svh;
+	position: relative;
+	border-radius: 0;
 }
 
-@keyframes bg-fade-in {
-	from {
-		background-color: rgba(12,12,12,0);
-		backdrop-filter: blur(0);
+.exo-launch-img {
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+	object-position: bottom left;
+}
+
+.exo-launch-desc {
+	position: absolute;
+	margin: clamp(1rem, 3vw, 4rem);
+	width: clamp(380px, 38vw, 800px);
+	border-radius: 0;
+	left: 0;
+	bottom: 0;
+}
+
+@media screen and (max-width: 960px) {
+	#exo-launches {
+		background-color: rgba(12,12,12,0.35);
 	}
 
-	to {
-		background-color: rgba(12,12,12,0.35);
-		backdrop-filter: blur(3px);
+	.exo-launch-container {
+		position: relative;
+		display: grid;
+		grid-template-columns: clamp(320px, 30%, 400px) 1fr;
+		grid-template-rows: 1fr;
+		height: 100%;
+	}
+
+	.exo-launch-img {
+		grid-area: 2 / 3 / 1 / 2;
+	}
+
+	.exo-launch-desc {
+		position: relative;
+		margin: 0;
+		align-self: center;
+		width: 100%;
+		grid-area: 1 / 2 / 2 / 1;
+	}
+}
+
+@media screen and (max-width: 690px) {
+	#carousel-controls-container {
+		bottom: 0.5rem;
+	}
+
+	#carousel-controls {
+		margin-inline: auto;
+		width: 100%;
+		border-radius: 0;
+	}
+
+	#exo-launches > * {
+		height: 95%;
+	}
+
+	.exo-launch-container {
+		display: flex;
+		flex-direction: column;
+		/* overflow-y: scroll; */
+	}
+
+	.exo-launch-img {
+		position: absolute;
+	}
+
+	.exo-launch-desc {
+		flex-shrink: 1;
+		position: absolute;
+		padding: 0;
+		margin: 0;
 	}
 }

@@ -9,7 +9,7 @@
 
 <body>
   <exo-cursor class="hidden"></exo-cursor>
-  <exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
+	<exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
   <main>
     <div id="carousel-controls-container" class="fixed w-full z-20">
       <div id="carousel-controls" class="flex flex-row w-fit mx-auto items-center justify-between rounded-full bg-black/85 backdrop-blur-sm slide-fade-in delay-5">
@@ -28,13 +28,12 @@
         </svg>
       </div>
     </div>
-    <section class="flex bg-[#04050a] overflow-hidden relative h-screen w-screen" id="exo-launches">
+    <section id="exo-launches" class="flex flex-row bg-[#04050a] overflow-hidden relative h-screen w-screen">
       <!-- one -->
       <div class="absolute left-0 top-0 h-full w-full" id="launch0" style="transform: translateX(0%)">
-        <div class="height-init h-full relative">
-          <img alt="spaceship" src="images/pikaso_embed.png" class="object-cover h-full w-full opacity-fade-in delay-2"
-            loading="lazy">
-          <div class="absolute mx-16 mb-16 left-0 bottom-0">
+        <div class="exo-launch-container">
+					<img class="exo-launch-img" alt="spaceship" src="images/pikaso_embed.png" loading="lazy">
+          <div class="exo-launch-desc opacity-fade-in delay-2">
             <exo-launch-hero data-align="left" data-link="#polaris-mission" data-index="0">
               <p slot="subtitle">Upcoming Launch</p>
               <p slot="title">
@@ -58,10 +57,9 @@
 
       <!-- two -->
       <div class="absolute left-0 top-0 h-full w-full" id="launch1" style="transform: translateX(100%)">
-        <div class="height-init h-full relative">
-          <img alt="moon base" src="images/moon_settlement.jpg" class="opacity-fade-in delay-2 object-cover h-full w-full"
-            loading="lazy">
-          <div class="absolute mx-16 mb-16 left-0 bottom-0">
+				<div class="exo-launch-container">
+          <img class="exo-launch-img" alt="moon base" src="images/moon_settlement.jpg" loading="lazy">
+          <div class="exo-launch-desc opacity-fade-in delay-2">
             <exo-launch-hero data-align="left" data-link="#polaris-mission" data-index="1">
               <p slot="subtitle">Upcoming Launch</p>
               <p slot="title">
@@ -78,15 +76,14 @@
               </p>
             </exo-launch-hero>
           </div>
-        </div>
+				</div>
       </div>
 
       <!-- three -->
       <div class="absolute left-0 top-0 h-full w-full" id="launch2" style="transform: translateX(200%)">
-        <div class="height-init h-full relative">
-          <img alt="mars base" src="images/mars_settlement.jpg" class="opacity-fade-in delay-2 object-cover h-full w-full"
-            loading="lazy">
-          <div class="absolute mx-16 mb-16 left-0 bottom-0">
+				<div class="exo-launch-container">
+          <img class="exo-launch-img" alt="moon base" src="images/mars_settlement.jpg" loading="lazy">
+          <div class="exo-launch-desc opacity-fade-in delay-2">
             <exo-launch-hero data-align="left" data-link="#polaris-mission" data-index="2">
               <p slot="subtitle">Upcoming Launch</p>
               <p slot="title">
@@ -110,9 +107,9 @@
 
       <!-- four -->
       <div class="absolute left-0 top-0 h-full w-full" id="launch3" style="transform: translateX(300%)">
-        <div class="height-init h-full relative">
-          <video alt="earth from space" src="videos/le space rotation.mp4" class="w-full h-full object-cover" autoplay loop muted></video>
-          <div class="absolute mx-16 mb-16 left-0 bottom-0">
+				<div class="exo-launch-container">
+          <video alt="earth from space" src="videos/le space rotation.mp4" class="exo-launch-img" autoplay loop muted></video>
+          <div class="exo-launch-desc opacity-fade-in delay-2">
             <exo-launch-hero data-align="left" data-link="#polaris-mission" data-index="3">
               <p slot="subtitle">Upcoming Launch</p>
               <p slot="title">
@@ -135,10 +132,9 @@
 
       <!-- five -->
       <div class="absolute left-0 top-0 h-full w-full" id="launch4" style="transform: translateX(400%)">
-        <div class="height-init h-full relative">
-          <img alt="spacesuit man holding an hourglass" src="images/aiport 2(1).png"
-            class="opacity-fade-in delay-2 object-cover h-full w-full" loading="lazy">
-          <div class="absolute mx-16 mb-16 left-0 bottom-0">
+				<div class="exo-launch-container">
+          <img class="exo-launch-img" alt="moon base" src="images/aiport 2(1).png" loading="lazy">
+          <div class="exo-launch-desc opacity-fade-in delay-2">
             <exo-launch-hero data-align="left" data-link="#polaris-mission" data-index="4">
               <p slot="subtitle">Upcoming Launch</p>
               <p slot="title">

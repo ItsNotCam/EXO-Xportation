@@ -34,7 +34,7 @@ function setSelectedImg(index) {
 		const newOffsetXPercent = currentXPercent + directionAmountPercent;
 
 		$(this).css("transform", `translateX(${newOffsetXPercent}%)`);
-		if(i !== curSelectedImg) {
+		if(i !== curSelectedImg && (window.innerWidth > 1024 || window.innerWidth < 690)) {
 			$(this).find("exo-launch-hero").css("display", "none");
 		}
 	});
