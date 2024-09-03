@@ -165,9 +165,9 @@ exo-link-btn {
     @apply text-custom-dark-500;
   }
 
-	& svg g {
-		fill: transparent;
-	}
+  & svg g {
+    fill: transparent;
+  }
 }
 
 .btn-angled[data-light="true"] {

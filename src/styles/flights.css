@@ -1,37 +1,37 @@
 .exo-launch {
-	&[data-state="enter"] {
-		opacity: 0;
-		display: none;
-	}
+  &[data-state="enter"] {
+    opacity: 0;
+    display: none;
+  }
 
-	&[data-state="visible"] {
-		animation: cross-fade-in 350ms forwards;
-	}
-	
-	&[data-state="hidden"] {
-		animation: cross-fade-out 350ms forwards;
-	}
+  &[data-state="visible"] {
+    animation: cross-fade-in 350ms forwards;
+  }
+  
+  &[data-state="hidden"] {
+    animation: cross-fade-out 350ms forwards;
+  }
 }
 
 @keyframes cross-fade-out {
-	from {
-		opacity: 1;
-		display: block;
-	}
-	to {
-		opacity: 0;
-		display: none;
-	}
+  from {
+    opacity: 1;
+    display: block;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
 }
 @keyframes cross-fade-in {
-	from {
-		opacity: 0;
-		display: block;
-	}
-	to {
-		opacity: 1;
-		display: block;
-	}
+  from {
+    opacity: 0;
+    display: block;
+  }
+  to {
+    opacity: 1;
+    display: block;
+  }
 }
 
 .launch-route__location {
@@ -86,7 +86,7 @@
 
 #img-selectors {
   gap: clamp(0.6rem, 1vw, 1rem);
-	
+  
 }
 
 .exo-launch-container {
@@ -99,7 +99,6 @@
   object-fit: cover;
   height: 100%;
   width: 100%;
-  /* object-position: bottom left; */
 }
 
 .exo-launch-desc {
@@ -115,45 +114,11 @@
 @media screen and (max-width: 68.75rem) {
   .exo-launch-desc {
     width: clamp(400px, 45%, 500px);
-    bottom: 4rem;
+    bottom: 2.5rem;
   }
 }
 
 /* 960px */
-@media screen and (max-width: 60rem) {
-  /* #exo-launches {
-    background-color: rgba(12,12,12,0);
-  }
-
-  .exo-launch-container {
-    position: relative;
-    display: grid;
-    grid-template-columns: clamp(400px, 30%, 500px) 1fr;
-    grid-template-rows: 1fr;
-    height: 100%;
-  }
-
-  .exo-launch-img {
-    grid-area: 1 / -2 / 1 / 2;
-  }
-
-  .exo-launch-desc {
-    position: relative;
-    margin: 0;
-    align-self: center;
-    width: 100%;
-    grid-area: 1 / 2 / 2 / 1;
-  }
-
-  .exo-launch-desc {
-    width: clamp(38rem, 50%, 40rem);
-    width: 60%;
-    bottom: 4rem;
-  } */
-}
-
-/* 960px */
-/* @media screen and (max-width: 690px) { */
 @media screen and (max-width: 60rem) {
   #carousel-controls-container {
     bottom: 0;

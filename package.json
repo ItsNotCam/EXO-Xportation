@@ -5,8 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tww": "npx tailwindcss -i ./src/styles/globals.css -o ./dist/styles.css --watch",
-    "dev": "webpack serve",
-    "build": "webpack",
+    "dev": "./update_imports.sh; webpack serve",
+    "build": "./update_imports.sh; webpack",
     "watch": "webpack --watch"
   },
   "author": "",

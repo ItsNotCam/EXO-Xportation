@@ -1,12 +1,12 @@
 import $ from 'jquery'
 
 const pageState = {
-	imgNext: $('#img-next'),
-	imgBack: $('#img-back'),
-	carouselControls: $('#carousel-controls'),
-	imgSelectors: $('#img-selectors > *'),
-	images: $('.exo-launch'),
-	curSelectedImg: 0
+  imgNext: $('#img-next'),
+  imgBack: $('#img-back'),
+  carouselControls: $('#carousel-controls'),
+  imgSelectors: $('#img-selectors > *'),
+  images: $('.exo-launch'),
+  curSelectedImg: 0
 };
 
 function setSelectedImg(newSelectedImg) {
@@ -15,18 +15,18 @@ function setSelectedImg(newSelectedImg) {
   }
 
   pageState.carouselControls.css("pointer-events", "none");
-	pageState.images.each(function(imgIdx) {
-		let curState = $(this).attr("data-state");
-		if(imgIdx === newSelectedImg) {
-			$(this).attr("data-state", "visible");
-		} else if(curState !== "enter") {
-			$(this).attr("data-state", "hidden");
-		}
-	});
+  pageState.images.each(function(imgIdx) {
+    let curState = $(this).attr("data-state");
+    if(imgIdx === newSelectedImg) {
+      $(this).attr("data-state", "visible");
+    } else if(curState !== "enter") {
+      $(this).attr("data-state", "hidden");
+    }
+  });
 
-	setTimeout(() => {
-		pageState.carouselControls.css("pointer-events", "auto");
-	}, 350);
+  setTimeout(() => {
+    pageState.carouselControls.css("pointer-events", "auto");
+  }, 350);
 
   pageState.curSelectedImg = newSelectedImg;
 }
