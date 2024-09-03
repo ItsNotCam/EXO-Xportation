@@ -1,32 +1,4 @@
-/* BEGIN IMPORTS */
-
-import './styles/globals.css';
-import './styles/home.css';
-import './styles/nav.css';
-import './styles/flights.css';
-
-import './components/exo-nav';
-import './components/exo-btn-angled';
-import './components/exo-link-btn';
-import './components/exo-launch-hero';
-import './components/exo-cursor';
-
-import './lib/flights';
-
-import '../public/images/airport.png';
-import '../public/images/alien_planet.png';
-import '../public/images/frankfurt.jpg';
-import '../public/images/mars_settlement.jpg';
-import '../public/images/moon_settlement.jpg';
-import '../public/images/snowboard_astro.jpg';
-
-import '../public/videos/earth_rotation.mp4';
-
-import '../public/fonts/Aldrich-Regular.ttf';
-import '../public/fonts/D-DIN-Bold.ttf';
-import '../public/fonts/D-DIN.ttf';
-
-/* END IMPORTS */
+import './scripted_imports'
 
 // remove the index html from the url because of how relative pathing works with links lol
 if (window.location.pathname.endsWith("index.html")) {
