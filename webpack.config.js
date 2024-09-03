@@ -1,19 +1,16 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const glob = require('glob');
 
 const templateFiles = glob.sync(`./src/**/*.html`);
 const htmlPlugins = templateFiles.map((filePath) => new HtmlWebpackPlugin({
   filename: filePath.split(path.sep).pop(),
-  template: filePath,
+  template: filePath
 }));
 
-const MODE = 'development';
-
 module.exports = {
-  mode: MODE,
+  mode: 'development',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -35,11 +32,6 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: 'styles.css' }),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     { from: 'src/public', to: 'public' },
-    //   ],
-    // }),
     ...htmlPlugins
   ],
   module: {
@@ -61,7 +53,6 @@ module.exports = {
         generator: {
           filename: 'public/images/[name][ext]',
         },
-				// use: ['file-loader']
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
@@ -70,7 +61,6 @@ module.exports = {
         generator: {
           filename: 'public/fonts/[name][ext]',
         },
-				// use: ['file-loader']
       },
       {
         test: /\.(mp4)$/,
@@ -79,12 +69,7 @@ module.exports = {
         generator: {
           filename: 'public/videos/[name][ext]',
         },
-				// use: ['file-loader']
-      },
-      {
-        test: /unused\//,
-        loader: 'ignore-loader'
-      },
+      }
     ],
   },
 }

@@ -9,8 +9,8 @@ import './components/exo-link-btn';
 import './components/exo-launch-hero';
 import './components/exo-cursor';
 
-import './scripts/flights';
-import './scripts/utilities';
+import './lib/flights';
+import './lib/utilities';
 
 import '../public/images/airport.png';
 import '../public/images/alien_planet.png';
@@ -19,6 +19,10 @@ import '../public/images/moon_settlement.jpg';
 import '../public/images/snowboard_astro.jpg';
 
 import '../public/videos/earth_rotation.mp4';
+
+import '../public/fonts/Aldrich-Regular.ttf';
+import '../public/fonts/D-DIN-Bold.ttf';
+import '../public/fonts/D-DIN.ttf';
 
 // remove the index html from the url because of how relative pathing works with links lol
 if (window.location.pathname.endsWith("index.html")) {
