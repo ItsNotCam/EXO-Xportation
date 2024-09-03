@@ -39,7 +39,7 @@ module.exports = {
       {
         test: /\.css$/i,
         include: path.resolve(__dirname, 'src'),
-				exclude: /unused\//,
+        exclude: /unused\//,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
@@ -48,27 +48,21 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-				exclude: /unused\//,
+        exclude: /unused\//,
         type: 'asset/resource',
-        generator: {
-          filename: 'public/images/[name][ext]',
-        },
+        generator: { filename: 'public/images/[name][ext]' },
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-				exclude: /unused\//,
+        exclude: /unused\//,
         type: 'asset/resource',
-        generator: {
-          filename: 'public/fonts/[name][ext]',
-        },
+        generator: { filename: 'public/fonts/[name][ext]' },
       },
       {
         test: /\.(mp4)$/,
-				exclude: /unused\//,
+        exclude: /unused\//,
         type: 'asset/resource',
-        generator: {
-          filename: 'public/videos/[name][ext]',
-        },
+        generator: { filename: 'public/videos/[name][ext]' },
       }
     ],
   },

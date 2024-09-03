@@ -7,8 +7,8 @@ class Nav extends HTMLElement {
     const hasBG = this.hasAttribute("blur-color");
     const blurColor = hasBG ? this.getAttribute("blur-color") : "";
     const bgGradient = hasBG ? /*html*/`
-			<div style="background: linear-gradient(to bottom, ${blurColor} 0%, #FFFFFF 100%);" class="nav-bg-gradient fixed top-0 h-24 w-full bg-blend-multiply mix-blend-multiply z-10 pointer-events-none"></div>
-		` : "";
+      <div style="background: linear-gradient(to bottom, ${blurColor} 0%, #FFFFFF 100%);" class="nav-bg-gradient fixed top-0 h-24 w-full bg-blend-multiply mix-blend-multiply z-10 pointer-events-none"></div>
+    ` : "";
 
     this.innerHTML = /*html*/ `
     ${bgGradient}

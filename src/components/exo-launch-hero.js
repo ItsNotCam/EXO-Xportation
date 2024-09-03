@@ -10,16 +10,16 @@ class ExoLaunchHero extends HTMLElement {
     const textAlign = this.getAttribute('data-align') || 'text-left';
     const link = this.getAttribute('data-link') || '#';
 
-    const subtitle 			= this.querySelector('[slot="subtitle"]');
-    const rocketName 		= this.querySelector('[slot="title"]');
-    const locationFrom 	= this.querySelector('[slot="from"]');
-    const locationTo 		= this.querySelector('[slot="to"]');
+    const subtitle       = this.querySelector('[slot="subtitle"]');
+    const rocketName     = this.querySelector('[slot="title"]');
+    const locationFrom   = this.querySelector('[slot="from"]');
+    const locationTo     = this.querySelector('[slot="to"]');
     const description   = this.querySelector('[slot="description"]');
 
-    let locationFromName 		= "'from-innerText' - FROM PORT";
+    let locationFromName     = "'from-innerText' - FROM PORT";
     let locationFromCountry = "'from-attr(loc)' - [ WORLD / COUNTRY ]";
-    let locationToName 			= "'to-innerText' - TO PORT";
-    let locationToCountry 	= "'to-attr(loc)' - [ WORLD / COUNTRY ]";
+    let locationToName       = "'to-innerText' - TO PORT";
+    let locationToCountry   = "'to-attr(loc)' - [ WORLD / COUNTRY ]";
 
     if (locationFrom) {
       locationFromName = locationFrom.innerText;
@@ -49,8 +49,8 @@ class ExoLaunchHero extends HTMLElement {
       <p class="mb-2 w-full slide-fade-in  anim-delay-3">
         ${description ? description.innerHTML : "Description"}
       </p>
-			
-      <exo-link-btn data-link="#ok" class="slide-fade-in anim-delay-4">LEARN MORE</exo-link-btn>
+      
+      <!-- <exo-link-btn data-link="#ok" class="slide-fade-in anim-delay-4">LEARN MORE</exo-link-btn> -->
       <!-- <a href="${link}" class="btn slide-fade-in  anim-delay-4 ${textAlign} tracking-tight text-sm" data-title="LEARN MORE" style="width: 8.5rem; height: 3.5rem;"></a> -->
     </div>
     `;

@@ -10,7 +10,6 @@ import './components/exo-launch-hero';
 import './components/exo-cursor';
 
 import './lib/flights';
-import './lib/utilities';
 
 import '../public/images/airport.png';
 import '../public/images/alien_planet.png';
