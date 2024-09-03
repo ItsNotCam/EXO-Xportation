@@ -1,80 +1,54 @@
 import $ from 'jquery'
 
-const TRANSITION_DURATION_MS = 750;
+const pageState = {
+	imgNext: $('#img-next'),
+	imgBack: $('#img-back'),
+	carouselControls: $('#carousel-controls'),
+	imgSelectors: $('#img-selectors > *'),
+	images: $('.exo-launch'),
+	curSelectedImg: 0
+};
 
-const imgNext = $('#img-next');
-const imgBack = $('#img-back');
-const carouselControls = $('#carousel-controls');
-const imgSelectorChildren = $('#img-selectors > *');
-const images = $('#exo-launches').children();
-
-let timeout = null;
-
-images.each(function() {
-  $(this).css("transition", `transform ease-in-out ${TRANSITION_DURATION_MS}ms`);
-});
-
-let curSelectedImg = 0;
-function setSelectedImg(index) {
-  if(index === curSelectedImg) {
+function setSelectedImg(newSelectedImg) {
+  if(newSelectedImg === pageState.curSelectedImg) {
     return;
   }
 
-  carouselControls.css({
-    "pointer-events": "none",
-    "opacity": "0.5"
-  });
+  pageState.carouselControls.css("pointer-events", "none");
+	pageState.images.each(function(imgIdx) {
+		let curState = $(this).attr("data-state");
+		if(imgIdx === newSelectedImg) {
+			$(this).attr("data-state", "visible");
+		} else if(curState !== "enter") {
+			$(this).attr("data-state", "hidden");
+		}
+	});
 
-  images.each(function(i) {
-    const matrix = $(this).css("transform").replace(/[^0-9\-.,]/g, '').split(',');
-    const currentX = parseInt(matrix[12] || matrix[4]);
-    const currentXPercent = currentX / window.innerWidth * 100;
+	setTimeout(() => {
+		pageState.carouselControls.css("pointer-events", "auto");
+	}, 350);
 
-    const directionAmountPercent = (curSelectedImg-index) * 100;
-    const newOffsetXPercent = currentXPercent + directionAmountPercent;
-
-    $(this).css("transform", `translateX(${newOffsetXPercent}%)`);
-    if(i == curSelectedImg) {
-      setTimeout(() =>$(this).find("exo-launch-hero").css("display", "none"), TRANSITION_DURATION_MS);
-    } else {
-      $(this).find("exo-launch-hero").css("display", "none");
-    }
-  });
-
-  if(timeout) {
-    clearTimeout(timeout);
-  }
-  
-  timeout = setTimeout(() => {
-    $(images[index]).find("exo-launch-hero").css("display", "block");
-    carouselControls.css({
-      "pointer-events": "auto",
-      "opacity": "1"
-    });
-  }, TRANSITION_DURATION_MS);
-
-  curSelectedImg = index;
+  pageState.curSelectedImg = newSelectedImg;
 }
-
 
 /* Image Selectors */
 const updateImgSelectors = (nextIdx) => {
-  if(nextIdx === curSelectedImg) {
+  if(nextIdx === pageState.curSelectedImg) {
     return;
   }
 
-  imgSelectorChildren.each(function() { 
+  pageState.imgSelectors.each(function() { 
     $(this).attr("data-selected", false);  
   });
-  $(imgSelectorChildren[nextIdx]).attr("data-selected", true);
+  $(pageState.imgSelectors[nextIdx]).attr("data-selected", true);
 
-  imgBack.attr("data-enabled", nextIdx !== 0);
-  imgNext.attr("data-enabled", nextIdx !== images.length-1);
+  pageState.imgBack.attr("data-enabled", nextIdx !== 0);
+  pageState.imgNext.attr("data-enabled", nextIdx !== pageState.images.length-1);
 }
 
-imgSelectorChildren.each(function(index) {
+pageState.imgSelectors.each(function(index) {
   $(this).on('click', () => {
-    if(index === curSelectedImg) {
+    if(index === pageState.curSelectedImg) {
       return;      
     }
 
@@ -83,26 +57,27 @@ imgSelectorChildren.each(function(index) {
   });
 });
 
-imgNext.on('click', () => {
-  let nextIdx = curSelectedImg+1;
-  if(nextIdx > images.length-1) {
+/* Image Next and Back buttons */
+pageState.imgNext.on('click', () => {
+  let nextIdx = pageState.curSelectedImg+1;
+  if(nextIdx > pageState.images.length-1) {
     nextIdx = 0;
   }
 
   updateImgSelectors(nextIdx);
   setSelectedImg(nextIdx);
 
-  curSelectedImg = nextIdx;
+  pageState.curSelectedImg = nextIdx;
 });
 
-imgBack.on('click', () => {
-  let nextIdx = curSelectedImg-1;
+pageState.imgBack.on('click', () => {
+  let nextIdx = pageState.curSelectedImg-1;
   if(nextIdx < 0) { 
-    nextIdx = images.length-1; 
+    nextIdx = pageState.images.length-1; 
   }
 
   updateImgSelectors(nextIdx);
   setSelectedImg(nextIdx);
 
-  curSelectedImg = nextIdx;
+  pageState.curSelectedImg = nextIdx;
 });

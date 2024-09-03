@@ -50,8 +50,8 @@ class ExoLaunchHero extends HTMLElement {
         ${description ? description.innerHTML : "Description"}
       </p>
 			
-      <exo-link-btn data-link="#ok" class="slide-fade-in anim-delay-4">LEARN MORE</exo-link-btn>
-      <!-- <a href="${link}" class="btn slide-fade-in  anim-delay-4 ${textAlign} tracking-tight text-sm" data-title="LEARN MORE" style="width: 8.5rem; height: 3.5rem;"></a> -->
+      <!-- <exo-link-btn data-link="#ok" class="slide-fade-in anim-delay-4">LEARN MORE</exo-link-btn> -->
+      <a href="${link}" class="btn slide-fade-in  anim-delay-4 ${textAlign} tracking-tight text-sm" data-title="LEARN MORE" style="width: 8.5rem; height: 3.5rem;"></a>
     </div>
     `;
 
