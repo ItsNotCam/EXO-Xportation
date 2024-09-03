@@ -4,17 +4,17 @@
 
 @font-face {
   font-family: 'Aldrich';
-  src: url('../fonts/Aldrich-Regular.ttf') format('truetype');
+  src: url('../../public/fonts/Aldrich-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'D-DIN';
-  src: url('../fonts/D-DIN.ttf') format('truetype');
+  src: url('../../public/fonts/D-DIN.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'D-DIN-Bold';
-  src: url('../fonts/D-DIN-Bold.ttf') format('truetype');
+  src: url('../../public/fonts/D-DIN-Bold.ttf') format('truetype');
 }
 
 /* Fonts */
@@ -158,7 +158,7 @@ exo-link-btn {
 		text-align: center;
 		transition: color 200ms;
 		pointer-events: none;
-		z-index: auto;
+		z-index: 200;
   }
 
   &:hover::after {
