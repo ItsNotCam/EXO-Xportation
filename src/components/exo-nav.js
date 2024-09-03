@@ -19,13 +19,13 @@ class Nav extends HTMLElement {
           <a href="index.html" class="nav-link cch" data-active='${path.endsWith("/") || path.endsWith("/index.html") ? "true" : "false" }'>HOME</a>
         </li>
         <li class="mr-8">
-          <a href="mission.html" class="nav-link cch" data-active='${path.endsWith("/mission.html") ? "true" : "false" }'>MISSION</a>
-        </li>
-        <li class="mr-8">
           <a href="flights.html" class="nav-link cch" data-active='${path.endsWith("/flights.html") ? "true" : "false" }'>FLIGHTS</a>
         </li>
         <li class="mr-8">
           <a href="book.html" class="nav-link cch" data-active='${path.endsWith("/destinations.html") ? "true" : "false" }'>DESTINATIONS</a>
+        </li>
+        <li class="mr-8">
+          <a href="mission.html" class="nav-link cch" data-active='${path.endsWith("/about.html") ? "true" : "false" }'>ABOUT</a>
         </li>
         <li class="nav-socials hidden flex-row gap-4 justify-end items-center mt-auto mb-4 border-none">
           <a class="cch group" href="https://www.figma.com/design/wM1QwepxhQEqXILXFCVqTv/IT-331-Project-1?node-id=0-1&t=lRgPOmWjdUkPz3k1-1" target="_blank">
