@@ -2,4 +2,7 @@ node_modules
 package-lock.json
 dist
 src/launch.bak
-videos
+**/unused
+/videos/*
+!/videos/earth_rotate.mp4
+./replace_tabs.sh

@@ -1,11 +1,11 @@
 .home-root__before::before {
-	content: '';
-	position: absolute;
-	opacity: 0;
-	width: 100%;
-	height: 100%;
-	transition: opacity 200ms;
-	background-color: black;
+  content: '';
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 200ms;
+  background-color: black;
 }
 
 .hero {
@@ -14,41 +14,43 @@
   width: clamp(20rem, 45vw, 50rem);
 
   & .hero-title p {
-		font-size: max(1rem, 0.15em);
+    font-size: max(1rem, 0.15em);
   }
 
   & .hero-description {
-    font-size: max(1rem, 0.15em);
+    font-size: max(1.125rem, 0.15em);
   }
 }
 
 /* Media Queries */
-@media screen and (max-width: 1280px) {
+/* 1280px */
+@media screen and (max-width: 80rem) {
   .hero {
     font-size: clamp(4rem, 12vw, 5.5rem);
   }
   
   .hero .hero-description {
-    font-size: clamp(0.9rem, 0.175em, 1.1rem);
+    font-size: clamp(1.05rem, 0.185em, 1.125rem);
   }
   
   .hero .hero-title p {
-    font-size: max(0.75rem, 0.1em);
+    font-size: max(0.9rem, 0.1em);
   }
 }
 
-@media (max-width: 1136px) {
+/* 1136px */
+@media (max-width: 71rem) {
   .hero {
-		margin-inline: auto;
-		width: 70%;
+    margin-inline: auto;
+    width: 70%;
   }
 
   .hero .hero-text {
-		justify-content: center
+    justify-content: center
   }
 
   .hero .hero-description {
-		width: 100%;
+    width: 100%;
   }
 
   .home-root__before::before {
@@ -56,7 +58,8 @@
   }  
 }
 
-@media (max-width: 645px) {
+/* 645px */
+@media (max-width: 40.3125rem) {
   .home-root__before::before {
     opacity: 0.5;
   }
@@ -67,18 +70,20 @@
   }
 
   .hero .hero-description {
-		width: 100%;
+    width: 100%;
   }
 }
 
-@media (max-width: 450px) {
+/* 450px */
+@media (max-width: 28.125rem) {
   .hero, .hero .hero-text {
     gap: 0.25em;
   }
 }
 
+/* 428px */
 @media (max-width: 26.75rem) {
   .hero .hero-buttons {
-		justify-content: center
+    justify-content: center
   }
 }
