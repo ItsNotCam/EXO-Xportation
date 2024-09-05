@@ -6,8 +6,8 @@ class Nav extends HTMLElement {
 
     const hasBG = this.hasAttribute("blur-color");
     const blurColor = hasBG ? this.getAttribute("blur-color") : "";
-    const bgGradient = hasBG ? /*html*/`
-      <div style="background: linear-gradient(to bottom, ${blurColor} 0%, #FFFFFF 100%);" class="nav-bg-gradient fixed top-0 h-24 w-full bg-blend-multiply mix-blend-multiply z-10 pointer-events-none"></div>
+    const bgGradient = hasBG ? /*html*/ `
+    <div style="background: linear-gradient(to bottom, ${blurColor} 0%, #FFFFFF 100%);" class="nav-bg-gradient fixed top-0 h-24 w-full bg-blend-multiply mix-blend-multiply z-10 pointer-events-none"></div>
     ` : "";
 
     this.innerHTML = /*html*/ `
@@ -22,7 +22,7 @@ class Nav extends HTMLElement {
           <a href="flights.html" class="nav-link cch" data-active='${path.endsWith("/flights.html") ? "true" : "false" }'>FLIGHTS</a>
         </li>
         <li class="mr-8">
-          <a href="book.html" class="nav-link cch" data-active='${path.endsWith("/destinations.html") ? "true" : "false" }'>DESTINATIONS</a>
+          <a href="journey.html" class="nav-link cch" data-active='${path.endsWith("/journey.html") ? "true" : "false" }'>JOURNEY</a>
         </li>
         <li class="mr-8">
           <a href="mission.html" class="nav-link cch" data-active='${path.endsWith("/about.html") ? "true" : "false" }'>ABOUT</a>
