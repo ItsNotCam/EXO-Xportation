@@ -8,8 +8,11 @@
 </head>
 
 <body>
+  <!-- src/components/exo-cursor.js -->
   <exo-cursor class="hidden"></exo-cursor>
-	<exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
+
+  <!-- src/components/exo-nav.js -->
+  <exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
   <main>
     <div id="carousel-controls-container" class="fixed w-full z-20">
       <div id="carousel-controls" class="flex flex-row w-fit mx-auto items-center justify-between rounded-full bg-black/85 backdrop-blur-sm slide-fade-in delay-5">
@@ -29,15 +32,17 @@
       </div>
     </div>
     <section id="exo-launches" class="flex flex-row bg-[#04050a] overflow-hidden relative h-screen w-screen">
+      
       <!-- one -->
       <div data-state="visible" class="exo-launch absolute left-0 top-0 h-full w-full" id="launch0">
         <div class="exo-launch-container">
-					<img class="exo-launch-img opacity-fade-in" alt="spaceship" src="public/images/alien_planet.png">
+          <img class="exo-launch-img opacity-fade-in" alt="spaceship" src="public/images/alien_planet.png">
           <div class="exo-launch-desc opacity-fade-in delay-2">
-            <exo-launch-hero data-align="left" data-link="#polaris-mission" data-index="0">
+            <!-- src/components/exo-launch-item.js -->
+            <exo-launch-item data-align="left" data-link="#polaris-mission" data-index="0">
               <p slot="subtitle">Upcoming Launch</p>
               <p slot="title">
-                <span class="text-3xl text-custom-light-100">SEABLOOM</span>
+                <span class="text-3xl text-custom-light-100">ENDEAVOR</span>
                 <span class="text-2xl text-custom-light-300 font-normal">POLARIS-IV</span>
               </p>
               <h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
@@ -57,13 +62,14 @@
 
       <!-- two -->
       <div data-state="enter" class="exo-launch absolute left-0 top-0 h-full w-full" id="launch1">
-				<div class="exo-launch-container">
+        <div class="exo-launch-container">
           <img class="exo-launch-img opacity-fade-in" alt="moon base" src="public/images/moon_settlement.jpg">
           <div class="exo-launch-desc opacity-fade-in delay-2">
-            <exo-launch-hero data-align="left" data-link="#polaris-mission" data-index="1">
+            <!-- src/components/exo-launch-item.js -->
+            <exo-launch-item data-align="left" data-link="#polaris-mission" data-index="1">
               <p slot="subtitle">Upcoming Launch</p>
               <p slot="title">
-                <span class="text-3xl text-custom-light-100">SEABLOOM</span>
+                <span class="text-3xl text-custom-light-100">HORIZON</span>
                 <span class="text-2xl text-custom-light-300 font-normal">ATLAS-II</span>
               </p>
               <h1 slot="from" loc="[ EARTH / US ]">LAX</h1>
@@ -76,18 +82,19 @@
               </p>
             </exo-launch-hero>
           </div>
-				</div>
+        </div>
       </div>
 
       <!-- three -->
       <div data-state="enter" class="exo-launch absolute left-0 top-0 h-full w-full" id="launch2">
-				<div class="exo-launch-container">
+        <div class="exo-launch-container">
           <img class="exo-launch-img opacity-fade-in" alt="moon base" src="public/images/mars_settlement.jpg">
           <div class="exo-launch-desc opacity-fade-in delay-2">
-            <exo-launch-hero data-align="left" data-link="#polaris-mission" data-index="2">
+            <!-- src/components/exo-launch-item.js -->
+            <exo-launch-item data-align="left" data-link="#polaris-mission" data-index="2">
               <p slot="subtitle">Upcoming Launch</p>
               <p slot="title">
-                <span class="text-3xl text-custom-light-100">SPACEX</span>
+                <span class="text-3xl text-custom-light-100">ODYSSEY</span>
                 <span class="text-2xl text-custom-light-300 font-normal">FALCON HEAVY</span>
               </p>
               <h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
@@ -107,14 +114,15 @@
 
       <!-- four -->
       <div data-state="enter" class="exo-launch absolute left-0 top-0 h-full w-full" id="launch3">
-				<div class="exo-launch-container">
+        <div class="exo-launch-container">
           <img class="exo-launch-img opacity-fade-in" alt="Frankfurt" src="public/images/frankfurt.jpg">
           <!-- <video alt="earth from space" src="public/videos/earth_rotation.mp4" class="exo-launch-img opacity-fade-in" autoplay loop muted></video> -->
           <div class="exo-launch-desc opacity-fade-in delay-2">
-            <exo-launch-hero data-align="left" data-link="#polaris-mission" data-index="3">
+            <!-- src/components/exo-launch-item.js -->
+            <exo-launch-item data-align="left" data-link="#polaris-mission" data-index="3">
               <p slot="subtitle">Upcoming Launch</p>
               <p slot="title">
-                <span class="text-3xl text-custom-light-100">AIRBUS</span>
+                <span class="text-3xl text-custom-light-100">ORIGIN</span>
                 <span class="text-2xl text-custom-light-300 font-normal">SA-990</span>
               </p>
               <h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
@@ -133,13 +141,14 @@
 
       <!-- five -->
       <div data-state="enter" class="exo-launch absolute left-0 top-0 h-full w-full" id="launch4">
-				<div class="exo-launch-container">
+        <div class="exo-launch-container">
           <img class="exo-launch-img opacity-fade-in" alt="moon base" src="public/images/airport.png">
           <div class="exo-launch-desc opacity-fade-in delay-2">
-            <exo-launch-hero data-align="left" data-link="#polaris-mission" data-index="4">
+            <!-- src/components/exo-launch-item.js -->
+            <exo-launch-item data-align="left" data-link="#polaris-mission" data-index="4">
               <p slot="subtitle">Upcoming Launch</p>
               <p slot="title">
-                <span class="text-3xl text-custom-light-100">AIRBUS</span>
+                <span class="text-3xl text-custom-light-100">PURSUIT</span>
                 <span class="text-2xl text-custom-light-300 font-normal">LEO-690</span>
               </p>
               <h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
