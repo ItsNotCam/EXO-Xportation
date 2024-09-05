@@ -1,5 +1,6 @@
 import $ from 'jquery'
 
+/* Page State */
 const pageState = {
   imgNext: $('#img-next'),
   imgBack: $('#img-back'),
@@ -31,7 +32,7 @@ function setSelectedImg(newSelectedImg) {
   pageState.curSelectedImg = newSelectedImg;
 }
 
-/* Image Selectors */
+/* Image selectors */
 const updateImgSelectors = (nextIdx) => {
   if(nextIdx === pageState.curSelectedImg) {
     return;
@@ -57,7 +58,7 @@ pageState.imgSelectors.each(function(index) {
   });
 });
 
-/* Image Next and Back buttons */
+/* Image next and back buttons */
 pageState.imgNext.on('click', () => {
   let nextIdx = pageState.curSelectedImg+1;
   if(nextIdx > pageState.images.length-1) {
