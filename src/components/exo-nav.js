@@ -8,42 +8,42 @@ class Nav extends HTMLElement {
     const blurColor = hasBG ? this.getAttribute("blur-color") : "";
     const bgGradient = hasBG ? /*html*/ `
     <div style="background: linear-gradient(to bottom, ${blurColor} 0%, #FFFFFF 100%);" class="
-              nav-bg-gradient 
-              fixed top-0 h-24 w-full 
-              bg-blend-multiply mix-blend-multiply 
-              z-10 
-              pointer-events-none
-              max-nav-fold-in:h-[5.3rem]
-              max-nav-fold-in:w-full
-              max-nav-fold-in:justify-end
-            "></div>` : "";
+                  nav-bg-gradient 
+                  fixed top-0 h-24 w-full 
+                  bg-blend-multiply mix-blend-multiply 
+                  z-10 
+                  pointer-events-none
+                  max-nav-fold-in:h-[5.3rem]
+                  max-nav-fold-in:w-full
+                  max-nav-fold-in:justify-end
+                "></div>` : "";
 
     this.innerHTML = /*html*/ `
     ${bgGradient}
     <nav class="fixed w-full flex flex-col gap-4 items-center justify-center py-9 z-50" data-expanded="false">
       <a href="/" class="
-                cch 
-                fixed 
-                left-4 
-                aldrich 
-                text-custom-light-100 
-                text-3xl
-                max-nav-fold-in:absolute
-                max-nav-fold-in:left-1/2
-                max-nav-fold-in:-translate-x-1/2
-                max-nav-fold-in:top-4
-              ">EXO</a>
+                    cch 
+                    fixed 
+                    left-4 
+                    aldrich 
+                    text-custom-light-100 
+                    text-3xl
+                    max-nav-fold-in:absolute
+                    max-nav-fold-in:left-1/2
+                    max-nav-fold-in:-translate-x-1/2
+                    max-nav-fold-in:top-4
+                  ">EXO</a>
       <ul id="nav-main" class="nav-links" data-expanded="false">
         <li class="mr-8">
           <a href="index.html" class="nav-link cch" data-active='${path.endsWith("/") || path.endsWith("/index.html") ? "true" : "false" }'>HOME</a>
         </li>
-        <li class="mr-8">
+        <li class="text-center">
           <a href="flights.html" class="nav-link cch" data-active='${path.endsWith("/flights.html") ? "true" : "false" }'>FLIGHTS</a>
         </li>
         <li class="mr-8">
           <a href="journey.html" class="nav-link cch" data-active='${path.endsWith("/journey.html") ? "true" : "false" }'>JOURNEY</a>
         </li>
-        <li class="mr-8">
+        <li class="text-center">
           <a href="mission.html" class="nav-link cch" data-active='${path.endsWith("/about.html") ? "true" : "false" }'>ABOUT</a>
         </li>
         <li class="max-[960px]:flex hidden flex-row gap-4 justify-end items-center mt-auto mb-4 border-none">

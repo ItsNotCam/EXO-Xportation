@@ -46,7 +46,7 @@
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: normal;
-    @apply text-custom-light-300;
+    @apply text-exo-light-300;
   }
 }
 
@@ -54,7 +54,7 @@
   border-radius: 50%;
   transition: background-color 300ms;
   cursor: pointer;
-  @apply bg-custom-light-100;
+  @apply bg-exo-light-100;
 
   width: clamp(0.5rem, 0.75vw, 0.65rem);
   height: clamp(0.5rem, 0.75vw, 0.65rem);

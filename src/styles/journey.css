@@ -1,0 +1,23 @@
+.animate-learn-more-arrow {
+	animation: learn-more-arrow 2s ease-out infinite;
+}
+
+@keyframes learn-more-arrow {
+	0% {
+		opacity: 0;
+		transform: translateY(0);
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	75% {
+		opacity: 1;
+	}
+	
+	100% {
+		opacity: 0;
+		transform: translateY(0.7rem);
+	}
+}

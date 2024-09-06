@@ -11,7 +11,7 @@
     height: 1px;
     transform: scaleX(0);
     transform-origin: right;
-    @apply bg-custom-light-100;
+    @apply bg-exo-light-100;
   }
 
   &[data-active="false"]:hover::after {
@@ -47,10 +47,11 @@
     flex-direction: column;
     top: 0;
     right: 0;
+		gap: 0;
     justify-content: start;
     align-items: baseline;
     padding: 4rem 2rem 0 2rem;
-    @apply bg-custom-dark-900/95;
+    @apply bg-exo-dark-900/95;
 
     & > li {
       width: 100%;
@@ -58,7 +59,7 @@
       border-bottom-width: 2px;
       padding-block: 0.5rem;
       opacity: 0;
-      @apply border-custom-light-300/50;
+      @apply border-exo-light-300/50;
     }
 
     transform: translateX(100%);
@@ -74,7 +75,7 @@
     padding-right: 0;
     position: relative;
     transition: color 0.35s;
-    @apply text-custom-light-100;
+    @apply text-exo-light-100;
 
     &::after {
       bottom: -0.6rem;

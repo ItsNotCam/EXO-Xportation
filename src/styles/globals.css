@@ -41,7 +41,7 @@ html {
 body {
   font-family: 'D-DIN', sans-serif;
   background-color: black;
-  @apply text-custom-light-100;
+  @apply text-exo-light-100;
 }
 
 exo-link-btn {
@@ -49,20 +49,20 @@ exo-link-btn {
 }
 
 /* Cursor */
-#custom-cursor {
+#exo-cursor {
   position: fixed;
   height: 1rem;
   width: 1rem;
   border-radius: 50%;
   pointer-events: none;
   z-index: 50;
-  @apply bg-custom-light-100;
+  @apply bg-exo-light-100;
 
   transform: translate(-50%, -50%);
   transition: background-color 0.2s, height 0.2s, width 0.2s;
 
   &[data-hovered="false"] {
-    @apply bg-custom-light-100;
+    @apply bg-exo-light-100;
   }
 
   &[data-hovered="true"] {
@@ -82,6 +82,22 @@ exo-link-btn {
   .fall-down {
     animation: fall-down 0.6s var(--star-bezier) forwards;
   }
+	
+	.opacity-fade-in {
+		opacity: 0;
+		animation-fill-mode: forwards;
+		animation-duration: 3s;
+		animation-timing-function: var(--star-bezier);
+		animation-name: opacity-fade-in;
+	}
+
+	.bg-fade-in {
+		animation: bg-fade-in 0.5s forwards;
+	}
+
+	.animate-learn-more-arrow {
+		animation: learn-more-arrow 2s ease-out infinite;
+	}
 }
 
 .anim-delay-1  { animation-delay: 0.1s; }
@@ -94,18 +110,6 @@ exo-link-btn {
 .anim-delay-8  { animation-delay: 0.8s; }
 .anim-delay-9  { animation-delay: 0.9s; }
 .anim-delay-10 { animation-delay: 1.0s; }
-
-.opacity-fade-in {
-  opacity: 0;
-  animation-fill-mode: forwards;
-  animation-duration: 3s;
-  animation-timing-function: var(--star-bezier);
-  animation-name: opacity-fade-in;
-}
-
-.bg-fade-in {
-  animation: bg-fade-in 0.5s forwards;
-}
 
 
 /* Keyframes */
@@ -168,4 +172,24 @@ exo-link-btn {
     background-color: rgba(12,12,12,0.35);
     backdrop-filter: blur(3px);
   }
+}
+
+@keyframes learn-more-arrow {
+	0% {
+		opacity: 0;
+		transform: translateY(0);
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	75% {
+		opacity: 1;
+	}
+	
+	100% {
+		opacity: 0;
+		transform: translateY(0.7rem);
+	}
 }
