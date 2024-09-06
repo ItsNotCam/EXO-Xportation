@@ -14,17 +14,17 @@ class Nav extends HTMLElement {
     ${bgGradient}
     <nav class="navbar fixed w-full flex flex-col gap-4 items-center justify-center py-9 z-50" data-expanded="false">
       <a href="/" class="logo cch fixed left-4 aldrich text-custom-light-100 text-3xl">EXO</a>
-      <ul id="nav-main" class="nav-links relative flex justify-center m-0 p-0 z-10" data-expanded="false">
-        <li class="mr-8">
+      <ul id="nav-main" class="nav-links relative flex justify-center gap-12 m-0 p-0 z-10" data-expanded="false">
+        <li class="text-center">
           <a href="index.html" class="nav-link cch" data-active='${path.endsWith("/") || path.endsWith("/index.html") ? "true" : "false" }'>HOME</a>
         </li>
-        <li class="mr-8">
+        <li class="text-center">
           <a href="flights.html" class="nav-link cch" data-active='${path.endsWith("/flights.html") ? "true" : "false" }'>FLIGHTS</a>
         </li>
-        <li class="mr-8">
+        <li class="text-center">
           <a href="book.html" class="nav-link cch" data-active='${path.endsWith("/destinations.html") ? "true" : "false" }'>DESTINATIONS</a>
         </li>
-        <li class="mr-8">
+        <li class="text-center">
           <a href="mission.html" class="nav-link cch" data-active='${path.endsWith("/about.html") ? "true" : "false" }'>ABOUT</a>
         </li>
         <li class="nav-socials hidden flex-row gap-4 justify-end items-center mt-auto mb-4 border-none">
