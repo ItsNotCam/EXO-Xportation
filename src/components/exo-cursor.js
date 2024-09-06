@@ -2,9 +2,9 @@ import $ from "jquery";
 
 class ExoCursor extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = /*html*/ `<div id='custom-cursor' data-hovered="false"></div>`;
+    this.innerHTML = /*html*/ `<div id='exo-cursor' data-hovered="false"></div>`;
 
-    let customCursor = $('#custom-cursor');
+    let customCursor = $('#exo-cursor');
     if (customCursor) {
       $(document).on('mousemove', (e) => {
         customCursor.css({
