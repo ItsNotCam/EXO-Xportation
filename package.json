@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev_update": "./update_imports.sh; webpack serve",
+    "dev_update": "./scripts/update_imports.sh; webpack serve",
     "dev": "webpack serve",
-    "build": "./update_imports.sh; webpack"
+    "build": "./scripts/update_imports.sh; webpack"
   },
   "author": "",
   "license": "ISC",
