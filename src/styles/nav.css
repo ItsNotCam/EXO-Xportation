@@ -1,6 +1,6 @@
 .nav-link {
   position: relative;
-	
+  
   &::after {
     content: '';
     transition: transform .6s var(--star-bezier);
@@ -28,29 +28,17 @@
   }
 }
 
+.nav-links {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+}
+
 /* 960px */
 @media screen and (max-width: 60rem) {
-  .nav-bg-gradient {
-    height: 85px;
-    width: 100%;
-    justify-content: end;
-  }
-
-  .logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 1rem;
-  }
-
-  .nav-socials {
-    display: flex;
-  }
-
-  .nav-dropdown-btn {
-    display: block;
-  }
-
   .nav-links {
     width: 275px;
     height: 100svh;

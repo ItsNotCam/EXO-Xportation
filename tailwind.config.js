@@ -8,10 +8,11 @@ module.exports = {
     extend: {
       screens: {
         '720p': {'max': '1280px'},
-        'home-lg': {'max': '1140px'},
-        'home-md': {'max': '645px'},
-        'home-sm': {'max': '450px'},
-        'home-xs': {'max': '428px'}
+        'home-lg':       {'max': '1140px'},
+        'home-md':       {'max': '645px'},
+        'home-sm':       {'max': '450px'},
+        'home-xs':       {'max': '428px'},
+        "nav-fold-in":   {'max': "960px"}
       },
       lineHeight: {
         'em-0.1': '0.1em',
@@ -29,9 +30,6 @@ module.exports = {
         'em-1.3': '1.3em',
         'em-1.4': '1.4em',
         'em-1.5': '1.5em'
-      },
-      screens: {
-        "nav-fold-in": "960px"
       },
       dropShadow: {
         "custom-lg": "2px 2px 2px rgba(0,0,0,0.4)",

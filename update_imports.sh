@@ -14,7 +14,7 @@ js_files=$(find src/* -type f -name "*.js" -not -path "*index.js" -and -not -pat
 css_files=$(find src/* -type f -name "*.css" -not -path "*/node_modules/*" | sed 's/src\// .\//g')
 font_files=$(find public/* -type f -name "*.ttf" -not -path "*/node_modules/*" | sed 's/public\// ..\/public\//')
 
-FILENAME='./src/scripted_imports.js'
+FILENAME='./src/scripted_imports.mjs'
 rm $FILENAME
 touch $FILENAME
 

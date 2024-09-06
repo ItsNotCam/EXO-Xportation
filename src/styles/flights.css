@@ -86,7 +86,6 @@
 
 #img-selectors {
   gap: clamp(0.6rem, 1vw, 1rem);
-  
 }
 
 .exo-launch-container {
