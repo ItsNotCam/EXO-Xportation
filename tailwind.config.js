@@ -33,12 +33,11 @@ module.exports = {
 			},
       screens: {
         '720p': {'max': '1280px'},
-        'home-lg':       {'max': '1140px'},
-        'home-md':       {'max': '645px'},
-        'home-sm':       {'max': '450px'},
-        'home-xs':       {'max': '428px'},
-        "nav-fold-in": {"max": "960px"},
-        "nav-fold-in":   {'max': "960px"}
+        'home-lg': {'max': '1140px'},
+        'home-md': {'max': '645px'},
+        'home-sm': {'max': '450px'},
+        'home-xs': {'max': '428px'},
+        "nav": {"max": "960px"},
       },
       lineHeight: {
         'em-0.1': '0.1em',
