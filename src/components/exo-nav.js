@@ -5,6 +5,9 @@ class Nav extends HTMLElement {
     const path = window.location.pathname;
     const blurColor = this.getAttribute("blur-color") || "rgba(12,12,12,0.45)";
 
+		let hidden = false;
+		let expanded = false;
+
     this.innerHTML = /*html*/ `
     <div style="background: linear-gradient(to bottom, ${blurColor} 0%, #FFFFFF 100%);" class="
 			nav-bg-gradient 
@@ -16,7 +19,14 @@ class Nav extends HTMLElement {
 			nav:w-full
 			nav:justify-end
 		"></div>
-    <nav class="fixed w-full flex flex-col gap-4 items-center justify-center py-9 z-50" data-expanded="false">
+    <nav id="nav-container"
+			class="
+				fixed w-full
+				flex flex-col gap-4 items-center justify-center 
+				py-9 z-50
+				transition-transform duration-200
+			" 
+			data-expanded="false">
       <a href="/" class="
 				cch 
 				fixed left-4 
@@ -63,14 +73,18 @@ class Nav extends HTMLElement {
     </nav>
     `;
 
+    const navContainer = $("#nav-container");
     const mainNav = $("#nav-main");
+
     $(document).on("click", (e) => {
       if (e.target.closest("#nav-dropdown-button") !== null) {
+				expanded  = true;
         mainNav.attr("data-expanded", !(mainNav.attr("data-expanded") === "true"));
         return;
       }
 
       if (e.target.closest("#nav-main") === null && mainNav.attr("data-expanded") === "true") {
+				expanded = false;
         mainNav.attr("data-expanded", false);
         $(`#nav-dropdown-button #reverse`).each(function() {
           this.beginElement();
@@ -86,6 +100,30 @@ class Nav extends HTMLElement {
         });
       }
     });
+
+		let lastScrollPositionY = window.scrollY;
+		window.addEventListener("scroll", () => {
+			const curScrollPositionY = window.scrollY;
+			console.log(curScrollPositionY, lastScrollPositionY, curScrollPositionY>lastScrollPositionY, curScrollPositionY-lastScrollPositionY)
+
+			// scroll position increases as you scroll down and decreases when you scroll up
+			const scrollDelta = curScrollPositionY - lastScrollPositionY;
+			if(scrollDelta > 0 && !hidden) {
+				hidden = true;
+				navContainer.css("transform", "translateY(-100%)");
+				if(expanded) {
+					$("#nav-dropdown-button #reverse").each(function() {
+						this.beginElement();
+					});
+					mainNav.attr("data-expanded", false);
+				}
+			} else if(scrollDelta <= 0 && hidden) {
+				hidden = false;
+				navContainer.css("transform", "translateY(0)");	
+			}
+
+			lastScrollPositionY = curScrollPositionY;
+		});
   }
 }
 
