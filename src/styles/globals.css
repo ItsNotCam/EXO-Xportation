@@ -98,98 +98,21 @@ exo-link-btn {
 	.animate-learn-more-arrow {
 		animation: learn-more-arrow 2s ease-out infinite;
 	}
-}
 
-.anim-delay-1  { animation-delay: 0.1s; }
-.anim-delay-2  { animation-delay: 0.2s; }
-.anim-delay-3  { animation-delay: 0.3s; }
-.anim-delay-4  { animation-delay: 0.4s; }
-.anim-delay-5  { animation-delay: 0.5s; }
-.anim-delay-6  { animation-delay: 0.6s; }
-.anim-delay-7  { animation-delay: 0.7s; }
-.anim-delay-8  { animation-delay: 0.8s; }
-.anim-delay-9  { animation-delay: 0.9s; }
-.anim-delay-10 { animation-delay: 1.0s; }
-
-
-/* Keyframes */
-@keyframes opacity-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes bg-opacity-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slide-fade-in {
-  from {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateY(3rem);
-  }
-  to {
-    opacity: 1;
-    filter: none;
-    transform: translateY(0rem);
-  }
-  80% {
-    filter: none;
-    opacity: 1;
-  }
-}
-
-@keyframes fall-down {
-  0% {
-    opacity: 0;
-    transform: translateY(-25%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fall-up {
-  0% {
-    opacity: 0;
-    transform: translateY(25%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes bg-fade-in {
-  from {
-    background-color: rgba(12,12,12,0);
-    backdrop-filter: blur(0);
-  }
-
-  to {
-    background-color: rgba(12,12,12,0.35);
-    backdrop-filter: blur(3px);
-  }
-}
-
-@keyframes learn-more-arrow {
-	0% {
-		opacity: 0;
-		transform: translateY(0);
+	.animate-learn-more-arrow {
+		animation: learn-more-arrow 2s ease-out infinite;
 	}
+}
 
-	50% {
-		opacity: 1;
-	}
-
-	75% {
-		opacity: 1;
-	}
-	
-	100% {
-		opacity: 0;
-		transform: translateY(0.7rem);
-	}
+@layer utilities {
+	.anim-delay-1  { animation-delay: 0.1s; }
+	.anim-delay-2  { animation-delay: 0.2s; }
+	.anim-delay-3  { animation-delay: 0.3s; }
+	.anim-delay-4  { animation-delay: 0.4s; }
+	.anim-delay-5  { animation-delay: 0.5s; }
+	.anim-delay-6  { animation-delay: 0.6s; }
+	.anim-delay-7  { animation-delay: 0.7s; }
+	.anim-delay-8  { animation-delay: 0.8s; }
+	.anim-delay-9  { animation-delay: 0.9s; }
+	.anim-delay-10 { animation-delay: 1.0s; }
 }
