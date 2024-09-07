@@ -13,9 +13,9 @@ class Nav extends HTMLElement {
 			bg-blend-multiply mix-blend-multiply 
 			z-10 
 			pointer-events-none
-			max-nav:h-[5.3rem]
-			max-nav:w-full
-			max-nav:justify-end
+			nav:h-[5.3rem]
+			nav:w-full
+			nav:justify-end
 		"></div>` : "";
 
     this.innerHTML = /*html*/ `
@@ -28,10 +28,10 @@ class Nav extends HTMLElement {
 				aldrich 
 				text-custom-light-100 
 				text-3xl
-				max-nav:absolute
-				max-nav:left-1/2
-				max-nav:-translate-x-1/2
-				max-nav:top-4
+				nav:absolute
+				nav:left-1/2
+				nav:-translate-x-1/2
+				nav:top-4
 			">EXO</a>
       <ul id="nav-main" class="nav-links" data-expanded="false">
         <li><a href="index.html" class="nav-link cch" data-active='${path.endsWith("/") || path.endsWith("/index.html") ? "true" : "false" }'>HOME</a></li>
