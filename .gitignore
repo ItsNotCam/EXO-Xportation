@@ -5,4 +5,4 @@ src/launch.bak
 **/unused
 /videos/*
 !/videos/earth_rotate.mp4
-./replace_tabs.sh
+src/scripted_imports.js
