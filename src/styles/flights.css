@@ -97,7 +97,7 @@
 }
 
 /* 960px */
-@media screen and (max-width: 60rem) {
+@media screen(nav) {
   #carousel-controls-container {
     bottom: 0;
   }
