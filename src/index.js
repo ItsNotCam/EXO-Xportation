@@ -1,4 +1,5 @@
-import './scripted_imports'
+import './scripted_imports';
+import $ from 'jquery';
 
 // remove the index html from the url because of how relative pathing works with links lol
 if (window.location.pathname.endsWith("index.html")) {
@@ -40,3 +41,18 @@ if(allBtns.length > 0) {
     allBtns.forEach((btn) => updateBtnScale(btn, baseWidth));
   });
 }
+
+const startAnimation = (entries, observer) => {
+  entries.forEach(entry => {
+    entry.target.classList.toggle("slide-fade-in", entry.isIntersecting);
+  });
+};
+
+$(function() {
+	const observer = new IntersectionObserver(startAnimation);
+	const options = { root: null, rootMargin: '0px', threshold: 1 }; 
+	const elements = document.querySelectorAll('.slide-in-when-visible');
+	elements.forEach(el => {
+		observer.observe(el, options);
+	});
+})
