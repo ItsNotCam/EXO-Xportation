@@ -15,6 +15,73 @@ const easeOut = (yPos) => {
 	return progress <= 1 ? ease(progress) : 1;
 }
 
+let outerLeft = $(".parallax-outer-left")
+let outerRight = $(".parallax-outer-right")
+let inner = $(".parallax-inner")
+
+window.addEventListener('scroll', function () {
+	const yPos = window.scrollY;
+
+  const stickyElement = document.getElementById('parallax-images');
+	// stickyElement.style.position = 'sticky';
+	// stickyElement.style.top = `0`;
+
+	const scale = lerp(150, 100, easeOut(yPos))
+	$("#parallax-images > *").css("transform", `scale(${scale}%)`)
+
+
+	// stickyElement.style.transform = `scale(${scale}%)`;
+
+  const unstickyPoint = 6*this.window.innerHeight;
+	// stickyElement.style.transform = `translateY(${this.window.innerHeight + stickyElement.offsetHeight / 5}px)`
+  // if (window.scrollY > unstickyPoint) {
+  //   stickyElement.style.position = 'relative';
+  //   stickyElement.style.top = `0`;
+	// 	stickyElement.style.transform = `translateY(${this.window.innerHeight + stickyElement.offsetHeight / 5}px)`
+  // } else {
+  //   stickyElement.style.position = 'sticky';
+  //   stickyElement.style.top = '0';
+	// 	stickyElement.style.transform = `translateY(0px)`
+  // }
+
+	let centerTranslateY = (yPos * 0.135) - (window.innerHeight);
+	let outerTranslateY = (-yPos * 0.125) + (window.innerHeight * 0.35) - 300;
+	outerRight.each(function() {
+		$(this).css("transform", `translateY(${outerTranslateY}px)`)
+	});
+	outerLeft.each(function() {
+		$(this).css("transform", `translateY(${outerTranslateY}px)`)
+	});
+	inner.each(function() {
+		$(this).css("transform", `translateY(${centerTranslateY}px)`)
+	})
+});
+
+
+
+
+
+const doParallax = (element, value) => {
+	$(element).css("transform", `translate3d(0,${value}px,0)`);
+}
+
+$(function() {
+	const outerElementLeft = $(".parallax-outer-left")
+	const outerElementRight = $(".parallax-outer-right")
+	const innerElement = $(".parallax-inner")
+
+	const tm = $(".translate-me");
+	document.addEventListener("scroll", function() {
+		tm.css("translateY", `-${window.scrollY}px`);
+		// const value = window.scrollY*1.1 - window.innerHeight*2;
+		// outerElementLeft.css("transform", `translate(0, -${value}px)`);
+		// innerElement.css("transform", `translate(0, ${value/4}px)`);
+		// outerElementRight.css("transform", `translate(0, -${value}px)`);
+	});
+})
+
+
+
 $(function() {
 	document.addEventListener('scroll', function () {
 		if(outerElements === undefined || container === undefined || title === undefined) {

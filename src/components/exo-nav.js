@@ -78,8 +78,8 @@ class Nav extends HTMLElement {
 
     $(document).on("click", (e) => {
       if (e.target.closest("#nav-dropdown-button") !== null) {
-				expanded  = true;
-        mainNav.attr("data-expanded", !(mainNav.attr("data-expanded") === "true"));
+				expanded = !(mainNav.attr("data-expanded") === "true");
+        mainNav.attr("data-expanded", expanded);
         return;
       }
 
@@ -94,6 +94,7 @@ class Nav extends HTMLElement {
 
     window.addEventListener("resize", () => {
       if (window.innerWidth >= 960 && mainNav.attr("data-expanded") === "true") {
+				expanded = false;
         mainNav.attr("data-expanded", false);
         $("#nav-dropdown-button #reverse").each(function() {
           this.beginElement();
@@ -103,8 +104,10 @@ class Nav extends HTMLElement {
 
 		let lastScrollPositionY = window.scrollY;
 		window.addEventListener("scroll", () => {
+			// scroll position increases as you scroll down and decreases when you scroll up
 			const curScrollPositionY = window.scrollY;
 			const scrollDelta = curScrollPositionY - lastScrollPositionY;
+
 			if(scrollDelta > 0 && !hidden) {
 				hidden = true;
 				navContainer.css("transform", "translateY(-100%)");
