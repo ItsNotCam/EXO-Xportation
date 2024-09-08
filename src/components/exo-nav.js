@@ -104,9 +104,6 @@ class Nav extends HTMLElement {
 		let lastScrollPositionY = window.scrollY;
 		window.addEventListener("scroll", () => {
 			const curScrollPositionY = window.scrollY;
-			console.log(curScrollPositionY, lastScrollPositionY, curScrollPositionY>lastScrollPositionY, curScrollPositionY-lastScrollPositionY)
-
-			// scroll position increases as you scroll down and decreases when you scroll up
 			const scrollDelta = curScrollPositionY - lastScrollPositionY;
 			if(scrollDelta > 0 && !hidden) {
 				hidden = true;
