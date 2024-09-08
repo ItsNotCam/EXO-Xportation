@@ -4,17 +4,17 @@
 }
 
 /* https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
-*::-webkit-scrollbar {
+/**::-webkit-scrollbar {
   display: none;
 }
 
 * {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
+}*/
 
-.parallax-margin-bottom {
-	margin-top: var(--parallax-height);
+.parallax-spacer {
+	height: var(--parallax-height);
 }
 
 .parallax-title {
