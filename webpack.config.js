@@ -1,4 +1,5 @@
-const path = require('path')
+const webpack = require('webpack');
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const glob = require('glob');
@@ -16,9 +17,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'scripts.js',
   },
-  // optimization: {
-  //   minimize: false,
-  // },
+  optimization: {
+    minimize: false,
+  },
   // devtool: false,
   devServer: {
     static: {
@@ -32,7 +33,12 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: 'styles.css' }),
-    ...htmlPlugins
+    ...htmlPlugins,
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    })
   ],
   module: {
     rules: [
