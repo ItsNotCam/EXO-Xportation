@@ -25,9 +25,6 @@ gsap.timeline({
 		scrub: true,
 	}
 })
-.to(".parallax-images", {
-	scale: 1.0
-}, 0)
 .to(".outer-images", {
 	y: "-35%",
 }, 0)
@@ -36,7 +33,8 @@ gsap.timeline({
 }, 0);
 
 gsap.set(".parallax-title", {
-	scale: 0.9
+	scale: 0.9,
+	translateY: "-50%"
 })
 gsap.timeline({
 	scrollTrigger: {
@@ -48,6 +46,9 @@ gsap.timeline({
 }).to(".parallax-title", {
 	scale: 1.0,
 	rotationX: "0deg"
+}, 0)
+.to(".parallax-images", {
+	scale: 1.0
 }, 0);
 
 // gsap.to(".parallax-title", {

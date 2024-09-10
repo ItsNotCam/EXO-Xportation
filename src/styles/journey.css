@@ -40,7 +40,8 @@
 	grid-auto-flow: column;
 
 	gap: var(--parallax-gap);
-	padding-inline: var(--parallax-gap);
+	/* padding-inline: var(--parallax-gap); */
+	padding-inline: 1rem;
 
 	@apply bg-exo-dark-900;
 }

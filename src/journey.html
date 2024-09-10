@@ -10,19 +10,14 @@
 <body>
 	<exo-cursor hidden="true"></exo-cursor>
 	<exo-nav blur-color="rgba(12,12,12,1)"></exo-nav>
-	<a href="#hero" class="fixed bottom-8 right-8 p-2 rounded-full transition-colors duration-200 hover:bg-exo-dark-500"
+	<a aria-label="Return to top of page" href="#hero" class="fixed bottom-8 right-8 p-2 rounded-full transition-colors duration-200 hover:bg-exo-dark-500 z-[0]"
 		title="Return to Top">
-		<svg class="-rotate-90" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px"
+		<svg aria-label="upward arrow" class="-rotate-90" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px"
 			fill="#e8eaed">
 			<path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
 		</svg>
 	</a>
 	<main>
-		<!-- <section id="hero" class="
-			h-screen max-w-screen relative 
-			grid grid-cols-1 grid-rows-1 items-center
-			bg-exo-dark-500
-		"> -->
 		<section id="hero">
 			<div id="parallax-container" class="
 			fixed 
@@ -30,9 +25,9 @@
 			grid place-items-center grid-cols-1 grid-rows-1
 			bg-black
 		" style="transform: translateY(0)">
-				<img class="parallax-img opacity-fade-in anim-delay-5" id="parallax-bg" src="public/images/parallax-bg-small.png">
-				<img class="parallax-img opacity-fade-in anim-delay-5" id="parallax-mg" src="public/images/parallax-mg-small.png">
-				<img class="parallax-img opacity-fade-in" id="parallax-fg" src="public/images/parallax-fg.png">
+				<img loading="lazy" alt="parallax background" class="parallax-img opacity-fade-in anim-delay-5 pointer-events-none" id="parallax-bg" src="public/images/parallax-bg-small.png">
+				<img loading="lazy" alt="parallax midground" class="parallax-img opacity-fade-in anim-delay-5 pointer-events-none" id="parallax-mg" src="public/images/parallax-mg-small.png">
+				<img loading="lazy" alt="parallax foreground" class="parallax-img opacity-fade-in pointer-events-none" id="parallax-fg" src="public/images/parallax-fg.png">
 				<div id="parallax-text" class="
 					fixed grid col-start-1 col-end-2 row-start-1 row-end-1
 					text-center text-[clamp(5rem,12vw,6.875rem)]
@@ -59,22 +54,23 @@
 					</a>
 				</div>
 			</div>
-			<div class="h-screen relative" id="parallax-spacer">
+			<div class="h-screen relative pointer-events-none" id="parallax-spacer">
 				<a href="#content"class="
 					absolute grid items-center 
 					bottom-6 left-1/2 -translate-x-1/2 
 					text-center cursor-pointer
+					pointer-events-auto
 				">
 				<span class="text-xl">More</span>
-				<svg class="mx-auto -my-2 animate-learn-more-arrow" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#e8eaed">
+				<svg aria-label="downard arrow" class="mx-auto -my-2 animate-learn-more-arrow" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#e8eaed">
 					<path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
 				</svg>
 			</a>
 			</div>
 		</section>
-		<section id="cringe-space-quote" class="flex flex-col mx-auto">
+		<section id="cringe-space-quote" class="flex flex-col mx-auto pointer-events-none">
 			<!-- <div class="p-8 grid grid-cols-2 grid-rows-1 gap-8 items-center bg-exo-dark-500"> -->
-			<!-- <img src="public/images/planets.png" class="w-full object-cover"> -->
+			<!-- <img loading="lazy" alt="" src="public/images/planets.png" class="w-full object-cover"> -->
 			<!-- <div>
 					<h1 class="text-4xl font-bold mb-4">FLY EXO</h1>
 					<p>
@@ -97,51 +93,52 @@
 				</div>
 			</div> -->
 			<div class="relative min-w-screen h-[135svh] grid grid-cols-1 items-center bg-exo-dark-900">
-				<video class="absolute inset-0 w-full h-full object-cover" src="public/videos/earth_rotation.mp4" autoplay loop
-					muted></video>
+				<video src="public/videos/earth_rotation.mp4" alt="video of earth from space" class="absolute inset-0 w-full h-full object-cover" autoplay loop muted></video>
 				<div id="content" class="self-center w-fit text-3xl mx-auto flex flex-col gap-2">
-					<p class="slide-in-when-visible opacity-0 anim-delay-2 w-fit">When the Milky Way is your midnight skyline....
+					<p class="slide-in-when-visible opacity-0 anim-delay-2 w-fit">
+						When the Milky Way is your midnight skyline....
 					</p>
-					<p class="slide-in-when-visible opacity-0 anim-delay-4 ml-8 w-fit">When dining among the stars is your daily
-						routine...</p>
-					<p class="slide-in-when-visible opacity-0 anim-delay-6 ml-16 w-fit">When your journey is measured in
-						light-years, not miles..</p>
+					<p class="slide-in-when-visible opacity-0 anim-delay-4 ml-8 w-fit">
+						When dining among the stars is your daily routine...
+					</p>
+					<p class="slide-in-when-visible opacity-0 anim-delay-6 ml-16 w-fit">
+						When your journey is measured in light-years, not miles..
+					</p>
 				</div>
 			</div>
 		</section>
-		<section id="parallax-live-luxury">
+		<section id="parallax-live-luxury" class="pointer-events-none">
 			<div id="trig" class="h-full">
 				<div class="parallax-title">
 					<h1 class="text-[clamp(3rem,10vw,6rem)] text-shadow-bloom shadow-white/75 font-bold">
 						LIVE IN LUXURY
 					</h1>
 				</div>
-				<div class="parallax-images">
+				<div aria-label="a set of images displaying life on EXO spacecraft" class="parallax-images">
 					<div class="outer-images">
-						<img src="public/images/1.png" alt="">
-						<img src="public/images/3.png" alt="">
-						<img src="public/images/4.png" alt="">
-						<img src="public/images/5.png" alt="">
-						<img src="public/images/6.png" alt="">
+						<img src="public/images/1.png" loading="lazy" alt="lady in a space pod">
+						<img src="public/images/3.png" loading="lazy" alt="two beds in a spaceship room">
+						<img src="public/images/4.png" loading="lazy" alt="a nice apartment room">
+						<img src="public/images/5.png" loading="lazy" alt="a kitchen in a spaceship">
+						<img src="public/images/6.png" loading="lazy" alt="a window view of the stratosphere">
 					</div>
 					<div class="inner-images" style="transform: translateY(-50%)">
-						<img src="public/images/5.png" alt="">
-						<img src="public/images/6.png" alt="">
-						<img src="public/images/7.png" alt="">
-						<img src="public/images/11.png" alt="">
-						<img src="public/images/8.png" alt="">
-						<img src="public/images/12.png" alt="">
+						<img src="public/images/5.png"  loading="lazy" alt="a kitchen in a spaceship">
+						<img src="public/images/6.png"  loading="lazy" alt="a window view of the stratosphere">
+						<img src="public/images/7.png"  loading="lazy" alt="a gym">
+						<img src="public/images/11.png" loading="lazy" alt="a marble countertop">
+						<img src="public/images/8.png"  loading="lazy" alt="a futuristic table overlooking a human-sized terrarium">
+						<img src="public/images/12.png" loading="lazy" alt="a fancy dish of lobster">
 					</div>
 					<div class="outer-images">
-						<img src="public/images/11.png" alt="">
-						<img src="public/images/12.png" alt="">
-						<img src="public/images/13.png" alt="">
-						<img src="public/images/10.png" alt="">
-						<img src="public/images/9.png" alt="">
+						<img src="public/images/11.png" loading="lazy" alt="a marble countertop">
+						<img src="public/images/12.png" loading="lazy" alt="a fancy dish of lobster">
+						<img src="public/images/13.png" loading="lazy" alt="a greek dish with american fries">
+						<img src="public/images/10.png" loading="lazy" alt="a steak dinner with wine">
+						<img src="public/images/9.png"  loading="lazy" alt="a futuristic kitchenette with a bar island">
 					</div>
 				</div>
 			</div>
-			<!-- <div id="parallax-margin-bottom"></div> -->
 		</section>
 		<section>
 			<div class="bg-exo-dark-500 h-screen">
