@@ -30,6 +30,8 @@
   "dependencies": {
     "gsap": "^3.12.5",
     "jquery": "^3.7.1",
+    "jquery.nicescroll": "^3.7.6",
+    "smooth-scrollbar": "^8.8.4",
     "uuid": "^10.0.0"
   }
 }
