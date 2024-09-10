@@ -1,67 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>EXO</title>
 </head>
+
 <body>
-  <exo-cursor hidden="true"></exo-cursor>
+	<exo-cursor hidden="true"></exo-cursor>
 	<exo-nav blur-color="rgba(12,12,12,1)"></exo-nav>
-	<a href="#hero" class="fixed bottom-8 right-8 p-2 rounded-full transition-colors duration-200 hover:bg-exo-dark-500" title="Return to Top">
-		<svg class="-rotate-90" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#e8eaed">
-			<path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
+	<a href="#hero" class="fixed bottom-8 right-8 p-2 rounded-full transition-colors duration-200 hover:bg-exo-dark-500"
+		title="Return to Top">
+		<svg class="-rotate-90" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px"
+			fill="#e8eaed">
+			<path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
 		</svg>
 	</a>
-  <main>
-		<section id="hero" class="
+	<main>
+		<!-- <section id="hero" class="
 			h-screen max-w-screen relative 
 			grid grid-cols-1 grid-rows-1 items-center
 			bg-exo-dark-500
-		">
-			<img src="public/images/green_future_city.jpg" class="
-				h-full w-full col-start-1 col-end-2 row-start-1 row-end-2 
-				object-cover 
-				opacity-fade-in
-			">
-			<div class="
-				relative grid col-start-1 col-end-2 row-start-1 row-end-1
-				text-center text-[clamp(5rem,12vw,6.875rem)]
-			">
-				<h1 class="
-					text-em-1.0 tracking-tight leading-tight text-exo-light-100 font-bold 
-					text-shadow-lg shadow-exo-dark-500/35 
-					slide-fade-in
+		"> -->
+		<section id="hero">
+			<div id="parallax-container" class="
+			fixed 
+			w-full min-h-screen 
+			grid place-items-center grid-cols-1 grid-rows-1
+			bg-black
+		" style="transform: translateY(0)">
+				<img class="parallax-img opacity-fade-in anim-delay-5" id="parallax-bg" src="public/images/parallax-bg-small.png">
+				<img class="parallax-img opacity-fade-in anim-delay-5" id="parallax-mg" src="public/images/parallax-mg-small.png">
+				<img class="parallax-img opacity-fade-in" id="parallax-fg" src="public/images/parallax-fg.png">
+				<div id="parallax-text" class="
+					fixed grid col-start-1 col-end-2 row-start-1 row-end-1
+					text-center text-[clamp(5rem,12vw,6.875rem)]
+					w-screen
+					left-1/2
 				">
-					TAKE FLIGHT
-				</h1>
-				<h2 class="
-					-mt-2 
-					text-[max(1rem,0.2em)] text-exo-light-100 font-medium tracking-normal 
-					text-shadow-sm shadow-exo-dark-500/85 
-					slide-fade-in anim-delay-2
-				">
-					YOUR LIFE DURING THE JOURNEY
-				</h2>
-				<a href="journey.html" class="btn-white slide-fade-in anim-delay-4">
-					BOOK
-				</a>
+					<h1 class="
+						text-em-1.0 tracking-tight leading-tight text-exo-light-100 font-bold 
+						text-shadow-lg shadow-exo-dark-500/35 
+						slide-fade-in
+					">
+						TAKE FLIGHT
+					</h1>
+					<h2 class="
+						-mt-2 
+						text-[max(1rem,0.2em)] text-exo-light-100 font-medium tracking-normal 
+						text-shadow-sm shadow-exo-dark-500/85 
+						slide-fade-in anim-delay-2
+					">
+						YOUR LIFE DURING THE JOURNEY
+					</h2>
+					<a href="journey.html" class="btn-white slide-fade-in anim-delay-4">
+						BOOK
+					</a>
+				</div>
 			</div>
-			<a href="#content"class="
-				absolute grid items-center 
-				bottom-6 left-1/2 -translate-x-1/2 
-				text-center cursor-pointer
-			">
+			<div class="h-screen relative" id="parallax-spacer">
+				<a href="#content"class="
+					absolute grid items-center 
+					bottom-6 left-1/2 -translate-x-1/2 
+					text-center cursor-pointer
+				">
 				<span class="text-xl">More</span>
 				<svg class="mx-auto -my-2 animate-learn-more-arrow" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#e8eaed">
 					<path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
 				</svg>
 			</a>
+			</div>
 		</section>
-		<section id="content" class="flex flex-col mx-auto">
+		<section id="cringe-space-quote" class="flex flex-col mx-auto">
 			<!-- <div class="p-8 grid grid-cols-2 grid-rows-1 gap-8 items-center bg-exo-dark-500"> -->
-				<!-- <img src="public/images/planets.png" class="w-full object-cover"> -->
-				<!-- <div>
+			<!-- <img src="public/images/planets.png" class="w-full object-cover"> -->
+			<!-- <div>
 					<h1 class="text-4xl font-bold mb-4">FLY EXO</h1>
 					<p>
 						EXO offers a modern, safe, and luxurious industry-leading approach to interplanetary travel. 
@@ -82,65 +96,76 @@
 					</p>
 				</div>
 			</div> -->
-			<div class="relative min-w-screen h-[100svh] grid grid-cols-1 items-center bg-exo-dark-900">
-				<video class="absolute inset-0 w-full h-full object-cover" src="public/videos/earth_rotation.mp4" autoplay loop muted></video>
-				<div class="self-center w-fit text-3xl mx-auto flex flex-col gap-2">
-					<p class="slide-in-when-visible opacity-0 anim-delay-2 w-fit">When the Milky Way is your midnight skyline....</p>
-					<p class="slide-in-when-visible opacity-0 anim-delay-4 ml-8 w-fit">When dining among the stars is your daily routine...</p>
-					<p class="slide-in-when-visible opacity-0 anim-delay-6 ml-16 w-fit">When your journey is measured in light-years, not miles..</p>
+			<div class="relative min-w-screen h-[135svh] grid grid-cols-1 items-center bg-exo-dark-900">
+				<video class="absolute inset-0 w-full h-full object-cover" src="public/videos/earth_rotation.mp4" autoplay loop
+					muted></video>
+				<div id="content" class="self-center w-fit text-3xl mx-auto flex flex-col gap-2">
+					<p class="slide-in-when-visible opacity-0 anim-delay-2 w-fit">When the Milky Way is your midnight skyline....
+					</p>
+					<p class="slide-in-when-visible opacity-0 anim-delay-4 ml-8 w-fit">When dining among the stars is your daily
+						routine...</p>
+					<p class="slide-in-when-visible opacity-0 anim-delay-6 ml-16 w-fit">When your journey is measured in
+						light-years, not miles..</p>
 				</div>
 			</div>
-			<!-- <div class="h-[50svh] bg-exo-dark-900"></div> -->
-			<div>
+		</section>
+		<section id="parallax-live-luxury">
+			<div id="trig" class="h-full">
 				<div class="parallax-title">
-					<h1 class="text-[clamp(3rem,12vw,7rem)] text-shadow-bloom shadow-white/75 font-bold">LIVE IN LUXURY</h1>
+					<h1 class="text-[clamp(3rem,10vw,6rem)] text-shadow-bloom shadow-white/75 font-bold">
+						LIVE IN LUXURY
+					</h1>
 				</div>
 				<div class="parallax-images">
 					<div class="outer-images">
 						<img src="public/images/1.png" alt="">
-						<img src="public/images/2.png" alt="">
 						<img src="public/images/3.png" alt="">
 						<img src="public/images/4.png" alt="">
-					</div>
-					<div class="inner-images">
 						<img src="public/images/5.png" alt="">
-						<img src="public/images/7.png" alt="">
 						<img src="public/images/6.png" alt="">
+					</div>
+					<div class="inner-images" style="transform: translateY(-50%)">
+						<img src="public/images/5.png" alt="">
+						<img src="public/images/6.png" alt="">
+						<img src="public/images/7.png" alt="">
+						<img src="public/images/11.png" alt="">
 						<img src="public/images/8.png" alt="">
-						<img src="public/images/9.png" alt="">
-						<img src="public/images/10.png" alt="">
+						<img src="public/images/12.png" alt="">
 					</div>
 					<div class="outer-images">
-						<img src="public/images/10.png" alt="">
 						<img src="public/images/11.png" alt="">
 						<img src="public/images/12.png" alt="">
 						<img src="public/images/13.png" alt="">
+						<img src="public/images/10.png" alt="">
+						<img src="public/images/9.png" alt="">
 					</div>
 				</div>
 			</div>
-			<div class="parallax-margin-bottom"></div>
+			<!-- <div id="parallax-margin-bottom"></div> -->
+		</section>
+		<section>
 			<div class="bg-exo-dark-500 h-screen">
 				<h1 class="text-4xl font-bold mb-4">FLY EXO</h1>
 				<p>
-					EXO offers a modern, safe, and luxurious industry-leading approach to interplanetary travel. 
+					EXO offers a modern, safe, and luxurious industry-leading approach to interplanetary travel.
 				</p>
 				<p>
-					Thanks to our integration of the revolutionary <strong>Murphy Accelerator</strong>, you can now reach even 
-					the most distant destinations, like <a href="" class="font-bold underline text-red-400">Europa</a>, 
-					in just two months. 
+					Thanks to our integration of the revolutionary <strong>Murphy Accelerator</strong>, you can now reach even
+					the most distant destinations, like <a href="" class="font-bold underline text-red-400">Europa</a>,
+					in just two months.
 				</p>
 				<p>
-					Due to the immense energy and maintenance required to cross such vast distances so quickly, EXO only 
-					offers one-way trips. 
+					Due to the immense energy and maintenance required to cross such vast distances so quickly, EXO only
+					offers one-way trips.
 				</p>
 				<p>
-					For those who prefer to bypass the journey altogether, our <strong>Extended Sleep Modules</strong> are 
-					available at a reduced charge, ensuring that passengers feel as though they've arrived in the blink 
+					For those who prefer to bypass the journey altogether, our <strong>Extended Sleep Modules</strong> are
+					available at a reduced charge, ensuring that passengers feel as though they've arrived in the blink
 					of an eye, waking up ready to begin their adventure.
 				</p>
 			</div>
-		</div>
 		</section>
 	</main>
 </body>
+
 </html>

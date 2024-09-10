@@ -28,6 +28,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
+    "gsap": "^3.12.5",
     "jquery": "^3.7.1",
     "uuid": "^10.0.0"
   }
