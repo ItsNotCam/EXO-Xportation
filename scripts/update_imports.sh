@@ -10,7 +10,7 @@ for f in $html_files; do
 	media_files+=$(grep -Eo 'src="[^"]+"' $f | sed 's/src="//' | sed 's/"$//' | sed 's/public\// ..\/public\//')
 done
 
-js_files=$(find src/lib/shared/* -type f -name "*.js" -not -path "*index.js" -and -not -path "*scripted_imports.js" | sed 's/src\//.\//')
+js_files=$(find src/scripts/shared/* -type f -name "*.js" -not -path "*index.js" -and -not -path "*scripted_imports.js" | sed 's/src\//.\//')
 css_files=$(find src/styles/shared/* -type f -name "*.css" -not -path "*/node_modules/*" | sed 's/src\// .\//g')
 font_files=$(find public/* -type f -name "*.ttf" -not -path "*/node_modules/*" | sed 's/public\// ..\/public\//')
 

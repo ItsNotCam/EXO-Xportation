@@ -8,10 +8,12 @@ const templateFiles = glob.sync(`./src/**/*.html`);
 const htmlPlugins = templateFiles.map((filePath) => {
 	let chunks = ["main"];
 	const filename = filePath.split(path.sep).pop();
-	if(filename !== "index.html") {
+	if(filename === "index.html") {
+		chunks.push("home");
+	} else {
 		chunks.push(filename.split(".")[0]);
 	}
-
+	
 	return new HtmlWebpackPlugin({
 		filename: filename,
 		template: filePath,
@@ -23,8 +25,9 @@ module.exports = {
   mode: 'development',
   entry: {
 		main: './src/index.js', 
-		flights: './src/lib/pages/flights.js', 
-		journey: './src/lib/pages/journey.js'
+		home: './src/scripts/pages/home.js', 
+		flights: './src/scripts/pages/flights.js', 
+		journey: './src/scripts/pages/journey.js'
 	},
   output: {
     path: path.resolve(__dirname, 'dist'),
