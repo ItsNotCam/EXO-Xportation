@@ -47,13 +47,18 @@ const heroParallaxText = document.querySelector("#parallax-text");
 
 let visible = true;
 const updateParallax = () => {
-	if(visible === true && window.scrollY > window.innerHeight * 1.25) {
-		visible = false;
-		heroContainer.display = "none";
+	const displayCutoffPx = window.innerHeight + 300;
+	if(window.scrollY >= displayCutoffPx) {
+		if(visible) {
+			visible = false;
+			heroContainer.style.opacity = 0;
+			heroContainer.style.pointerEvents = "none";
+		}
 		return;
-	} else if(!visible) {
+	} else if(!visible && window.scrollY < displayCutoffPx) {
 		visible = true;
-		heroContainer.display = "grid";
+		heroContainer.style.opacity = 1;
+		heroContainer.style.pointerEvents = "auto";
 	}
 
 	const FG_MULTIPLIER = 0.4;

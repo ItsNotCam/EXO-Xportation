@@ -19,6 +19,10 @@ html.lenis, html.lenis body {
 	pointer-events: none;
 }
 
+.grid-center {
+	grid-area: 1 / 1 / -1 / -1;
+}
+
 /* Fonts */
 @font-face {
   font-family: 'Aldrich';

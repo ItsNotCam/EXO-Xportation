@@ -1,5 +1,7 @@
 import './scripted_imports';
-import Lenis from 'lenis'
+import Lenis from 'lenis';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // remove the index html from the url because of how relative pathing works with links lol
 if (window.location.pathname.endsWith("index.html")) {
@@ -50,13 +52,31 @@ const startAnimation = (entries, observer) => {
 };
 
 window.onload = function() {
-	// smooth scrolling
-	const lenis = new Lenis()
-	lenis.stop();
+	gsap.registerPlugin(ScrollTrigger);
 	
-	lenis.start();
+	var scroll = new Lenis({
+		duration: 1.25,
+	})
+
+	scroll.on('scroll', ScrollTrigger.update);
+
+	gsap.ticker.add((time) => {
+		scroll.raf(time * 1000);
+	});
+
+	gsap.ticker.lagSmoothing(0);
+ 
+	// smooth scrolling
+	// const lenis = new Lenis({
+	// 	duration: 2,
+	// 	smoothWheel: true
+	// })
+	// lenis.stop();
+	
+	// lenis.start();
 	function raf(time) {
-		lenis.raf(time)
+		// lenis.raf(time)
+		scroll.raf(time)
 		requestAnimationFrame(raf)
 	}
 	requestAnimationFrame(raf)	

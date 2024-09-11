@@ -6,3 +6,4 @@ src/launch.bak
 /videos/*
 !/videos/earth_rotate.mp4
 src/scripted_imports.js
+.vscode

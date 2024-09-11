@@ -16,6 +16,7 @@
 #parallax-live-luxury {
 	height: 170vh;
 	position: relative;
+	z-index: -2;
 }
 
 .parallax-title {
