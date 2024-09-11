@@ -4,17 +4,17 @@
 }
 
 /* https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
-#journey-body *::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
 }
 
-#journey-body * {
+* {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
 #parallax-live-luxury {
-	height: 250vh;
+	height: 170vh;
 	position: relative;
 }
 
@@ -78,6 +78,7 @@
 	width: 100vw;
 	grid-area: 1 / -1 / 1 / -1;
 	object-fit: cover;
+	object-position: 35%;
 }
 
 .parallax-container {

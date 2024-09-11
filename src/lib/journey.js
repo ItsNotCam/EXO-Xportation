@@ -1,9 +1,13 @@
 import $ from 'jquery';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import { CustomEase } from "gsap/CustomEase";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
-let title = $(".parallax-title")
+gsap.registerPlugin(ScrollTrigger, CustomEase);
+gsap.registerPlugin(MotionPathPlugin);
+gsap.registerPlugin(ScrollTrigger);
+CustomEase.create("custom-ease", ".9, .1, .1, .9");
 
 gsap.set(".parallax-images", {scale: 1.4});
 gsap.set(".parallax-title", {rotationX: "90deg"})
@@ -15,12 +19,8 @@ gsap.timeline({
 		scrub: true,
 	}
 })
-.to(".outer-images", {
-	y: "-35%",
-}, 0)
-.to(".inner-images", {
-	y: "15%",
-}, 0);
+.to(".outer-images", { y: "-35%" }, 0)
+.to(".inner-images", { y: "15%" },  0);
 
 gsap.set(".parallax-title", {
 	scale: 0.9,
@@ -40,14 +40,6 @@ gsap.timeline({
 .to(".parallax-images", {
 	scale: 1.0
 }, 0);
-
-
-gsap.registerPlugin(ScrollTrigger);
-
-////////////////////////
-// HERO PARALLAX GSAP //
-////////////////////////
-
 
 ///////////////////
 // HERO PARALLAX //
@@ -74,13 +66,11 @@ const updateParallax = () => {
 	const CONTAINER_MULTIPLIER = 0.35;
 	const TEXT_MULTIPLIER = MG_MULTIPLIER*-1;
 
-	if(heroContainer) {
-		heroParallaxFg.style.transform = `translate3d(0, -${ window.scrollY * FG_MULTIPLIER}px, 0)`;
-		heroParallaxMg.style.transform = `translate3d(0, -${ window.scrollY * MG_MULTIPLIER}px, 0)`;
-		heroContainer.style.transform = `translate3d(0, -${window.scrollY * CONTAINER_MULTIPLIER}px, 0)`;
-		heroParallaxText.style.transform = `translate3d(0, ${window.scrollY * TEXT_MULTIPLIER}px, 0)`;
-		heroParallaxSpacer.style.height = `${window.innerHeight + (window.scrollY*CONTAINER_MULTIPLIER / 1.5)}px`;
-	}
+	heroParallaxFg.style.transform = `translate3d(0, -${ window.scrollY * FG_MULTIPLIER}px, 0)`;
+	heroParallaxMg.style.transform = `translate3d(0, -${ window.scrollY * MG_MULTIPLIER}px, 0)`;
+	heroContainer.style.transform = `translate3d(0, -${window.scrollY * CONTAINER_MULTIPLIER}px, 0)`;
+	heroParallaxText.style.transform = `translate3d(0, ${window.scrollY * TEXT_MULTIPLIER}px, 0)`;
+	heroParallaxSpacer.style.height = `${window.innerHeight + (window.scrollY*CONTAINER_MULTIPLIER / 1.5)}px`;
 }
 
 window.addEventListener("scroll", () => {

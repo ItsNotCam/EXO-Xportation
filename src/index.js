@@ -1,42 +1,18 @@
 import './scripted_imports';
 import $ from 'jquery';
+import Lenis from 'lenis'
 
-/*
-import 'jquery.nicescroll';
-
-document.addEventListener('touchstart', function(){}, {passive: false});
-document.addEventListener('wheel', function(){}, {passive: false});
-$(() => {
-  $('body').on('touchstart', function (e) {
-    e.preventDefault(); // Block touch events if necessary
-  }, { passive: false });
-	console.log($.fn.jquery);  // Check jQuery version
-  $('body').niceScroll({
-		mousescrollstep: 50, // scrolling speed with mouse wheel (pixel)
-		scrollspeed: 50, // scrolling speed with mouse wheel (pixel)
-	});
-});
-
-$(document).ready(() => {
-  console.log('jQuery version:', $.fn.jquery);
-  console.log('niceScroll is loaded:', typeof $.fn.niceScroll);
-
-  $(document).on('wheel', (e) => {
-		console.log('Scroll event detected:', e);
-	});
-
-	jQuery.noConflict();
-	$(() => {
-		$('body').niceScroll();
-	});
-});
-*/
-
-// import Scrollbar from 'smooth-scrollbar';
-// Scrollbar.initAll({
-// 	damping: 0.025
-// })
-
+// smooth scrolling
+const lenis = new Lenis()
+lenis.stop();
+$(document).ready(function(){
+	lenis.start();
+	function raf(time) {
+		lenis.raf(time)
+		requestAnimationFrame(raf)
+	}
+	requestAnimationFrame(raf)	
+})
 
 // remove the index html from the url because of how relative pathing works with links lol
 if (window.location.pathname.endsWith("index.html")) {

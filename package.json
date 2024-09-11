@@ -30,6 +30,7 @@
   "dependencies": {
     "gsap": "^3.12.5",
     "jquery": "^3.7.1",
+    "lenis": "^1.1.13",
     "uuid": "^10.0.0"
   }
 }
