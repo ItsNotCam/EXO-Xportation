@@ -1,4 +1,17 @@
 import './scripted_imports'
+import Lenis from 'lenis'
+
+// smooth scrolling
+const lenis = new Lenis()
+lenis.stop();
+$(document).ready(function(){
+	lenis.start();
+	function raf(time) {
+		lenis.raf(time)
+		requestAnimationFrame(raf)
+	}
+	requestAnimationFrame(raf)	
+})
 
 // remove the index html from the url because of how relative pathing works with links lol
 if (window.location.pathname.endsWith("index.html")) {
