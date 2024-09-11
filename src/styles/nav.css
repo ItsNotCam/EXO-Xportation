@@ -40,7 +40,7 @@
 }
 
 /* 960px */
-@media screen and (max-width: 60rem) {
+@media screen(nav) {
   .nav-links {
     width: 275px;
     height: 100svh;
