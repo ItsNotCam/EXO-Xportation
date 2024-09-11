@@ -104,10 +104,10 @@
 }
 
 .btn-angled-light {
-  @apply text-exo-dark-500;
+	color: rgb(18 18 18) !important;
 
 	&:hover {
-		@apply text-exo-light-100;
+		color: white !important;
 	}
 
   & svg g {

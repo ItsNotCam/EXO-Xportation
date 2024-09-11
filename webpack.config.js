@@ -1,24 +1,37 @@
-const webpack = require('webpack');
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const glob = require('glob');
 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const templateFiles = glob.sync(`./src/**/*.html`);
-const htmlPlugins = templateFiles.map((filePath) => new HtmlWebpackPlugin({
-  filename: filePath.split(path.sep).pop(),
-  template: filePath
-}));
+const htmlPlugins = templateFiles.map((filePath) => {
+	let chunks = ["main"];
+	const filename = filePath.split(path.sep).pop();
+	if(filename !== "index.html") {
+		chunks.push(filename.split(".")[0]);
+	}
+
+	return new HtmlWebpackPlugin({
+		filename: filename,
+		template: filePath,
+		chunks: chunks
+	}
+)});
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: {
+		main: './src/index.js', 
+		flights: './src/lib/pages/flights.js', 
+		journey: './src/lib/pages/journey.js'
+	},
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'scripts.js',
+    filename: 'scripts/[name].bundle.js',
   },
   optimization: {
-    minimize: false,
+    minimize: true,
   },
   // devtool: false,
   devServer: {
@@ -32,13 +45,10 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: 'styles.css' }),
-    ...htmlPlugins,
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
-    })
+    new MiniCssExtractPlugin({ 
+			filename: 'styles/[name].bundle.css',
+		}),
+    ...htmlPlugins
   ],
   module: {
     rules: [
@@ -53,7 +63,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
         exclude: /unused\//,
         type: 'asset/resource',
         generator: { filename: 'public/images/[name][ext]' },

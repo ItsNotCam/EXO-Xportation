@@ -2,7 +2,7 @@
 const config = {
   plugins: [
     require('autoprefixer'),
-    require('cssnano'),
+    // require('cssnano'),
     require('tailwindcss'),
     require('postcss-nested')
   ]

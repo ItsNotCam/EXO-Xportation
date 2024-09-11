@@ -1,18 +1,5 @@
 import './scripted_imports';
-import $ from 'jquery';
 import Lenis from 'lenis'
-
-// smooth scrolling
-const lenis = new Lenis()
-lenis.stop();
-$(document).ready(function(){
-	lenis.start();
-	function raf(time) {
-		lenis.raf(time)
-		requestAnimationFrame(raf)
-	}
-	requestAnimationFrame(raf)	
-})
 
 // remove the index html from the url because of how relative pathing works with links lol
 if (window.location.pathname.endsWith("index.html")) {
@@ -62,12 +49,20 @@ const startAnimation = (entries, observer) => {
   });
 };
 
-$(function() {
+window.onload = function() {
+	// smooth scrolling
+	const lenis = new Lenis()
+	lenis.stop();
+	
+	lenis.start();
+	function raf(time) {
+		lenis.raf(time)
+		requestAnimationFrame(raf)
+	}
+	requestAnimationFrame(raf)	
+
 	const observer = new IntersectionObserver(startAnimation);
 	const options = { root: null, rootMargin: '0px', threshold: 1 }; 
 	const elements = document.querySelectorAll('.animate-when-visible');
-	elements.forEach(el => {
-		observer.observe(el, options);
-	});
-})
-
+	elements.forEach(el => observer.observe(el, options));
+}

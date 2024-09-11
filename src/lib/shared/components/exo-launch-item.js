@@ -31,7 +31,8 @@ class ExoLaunchItem extends HTMLElement {
     }
 
     container.innerHTML = /*html*/ `
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="styles/main.bundle.css">
+		<link rel="stylesheet" href="styles/flights.bundle.css">
 		<div class="flex flex-col gap-2 ${textAlign} rounded-xl max-[1024px]:rounded-sm p-8 bg-fade-in anim-delay-4 bg-blend-multiply">
 			<p class="text-lg text-custom-light-200 drop-shadow-custom-sm slide-fade-in  anim-delay-0">
 				${subtitle ? subtitle.innerHTML : "Subtitle"}

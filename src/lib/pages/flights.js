@@ -1,4 +1,5 @@
-import $ from 'jquery'
+import $ from 'jquery';
+import '../../styles/pages/flights.css';
 
 /* Page State */
 const pageState = {

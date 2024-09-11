@@ -1,13 +1,8 @@
-import $ from 'jquery';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { CustomEase } from "gsap/CustomEase";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import '../../styles/pages/journey.css';
 
-gsap.registerPlugin(ScrollTrigger, CustomEase);
-gsap.registerPlugin(MotionPathPlugin);
 gsap.registerPlugin(ScrollTrigger);
-CustomEase.create("custom-ease", ".9, .1, .1, .9");
 
 gsap.set(".parallax-images", {scale: 1.4});
 gsap.set(".parallax-title", {rotationX: "90deg"})
@@ -74,5 +69,8 @@ const updateParallax = () => {
 }
 
 window.addEventListener("scroll", () => {
+	requestAnimationFrame(updateParallax);
+});
+window.addEventListener("resize", () => {
 	requestAnimationFrame(updateParallax);
 });

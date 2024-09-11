@@ -1,40 +1,38 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/* Lenis */
 html.lenis, html.lenis body {
   height: auto;
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: auto !important;
+	scroll-behavior: auto !important;
 }
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
+.lenis.lenis-smooth[data-lenis-prevent] {
+	overscroll-behavior: contain;
 }
 
 .lenis.lenis-stopped {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 .lenis.lenis-smooth iframe {
-  pointer-events: none;
+	pointer-events: none;
 }
 
+/* Fonts */
 @font-face {
   font-family: 'Aldrich';
-  src: url('../../public/fonts/Aldrich-Regular.ttf') format('truetype');
+  src: url('../../../public/fonts/Aldrich-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'D-DIN';
-  src: url('../../public/fonts/D-DIN.ttf') format('truetype');
+  src: url('../../../public/fonts/D-DIN.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'D-DIN-Bold';
-  src: url('../../public/fonts/D-DIN-Bold.ttf') format('truetype');
+  src: url('../../../public/fonts/D-DIN-Bold.ttf') format('truetype');
 }
 
 /* Fonts */
@@ -93,7 +91,7 @@ exo-link-btn {
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) { */
   .slide-fade-in {
     opacity: 0;
     animation: slide-fade-in 1.75s var(--star-bezier) forwards;
@@ -127,7 +125,7 @@ exo-link-btn {
 	.animate-learn-more-arrow {
 		animation: learn-more-arrow 2s ease-out infinite;
 	}
-}
+/* } */
 
 .anim-delay-1  { animation-delay: 0.1s; }
 .anim-delay-2  { animation-delay: 0.2s; }
