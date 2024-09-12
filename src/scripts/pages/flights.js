@@ -1,6 +1,9 @@
 import $ from 'jquery';
 import '../../styles/pages/flights.css';
 	
+
+$(function() { $("main").css("display", "block")  });
+
 const carouselControls = $("#img-selectors");
 $("#exo-launches").children().each(function(index) {
 	$(carouselControls).html(
