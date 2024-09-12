@@ -8,13 +8,15 @@ class ExoLaunchItem extends HTMLElement {
     const container = document.createElement('div');
 
     const textAlign = this.getAttribute('data-align') || 'text-left';
-    const link = this.getAttribute('data-link') || '#';
+    // const id = this.getAttribute('data-id') || '#';
+		const id = this.id;
 
     const subtitle = this.querySelector('[slot="subtitle"]');
     const rocketName = this.querySelector('[slot="title"]');
     const locationFrom = this.querySelector('[slot="from"]');
     const locationTo = this.querySelector('[slot="to"]');
     const description = this.querySelector('[slot="description"]');
+    const moreBtn = this.querySelector('[slot="more-btn"]');
 
     let locationFromName = "'from-innerText' - FROM PORT";
     let locationFromCountry = "'from-attr(loc)' - [ WORLD / COUNTRY ]";
@@ -50,7 +52,7 @@ class ExoLaunchItem extends HTMLElement {
 			<p class="mb-2 w-full slide-fade-in  anim-delay-3">
 				${description ? description.innerHTML : "Description"}
 			</p>
-			<a href="${link}" class="btn slide-fade-in anim-delay-4 ${textAlign} tracking-snug font-bold text-sm" data-title="MORE" style="width: 10rem; height: 3.5rem;"></a>
+			<button class="launch-more more-btn btn slide-fade-in anim-delay-4 ${textAlign} tracking-snug font-bold text-sm" data-title="MORE" style="width: 10rem; height: 3.5rem;"></button>
 		</div>
 		`;
 

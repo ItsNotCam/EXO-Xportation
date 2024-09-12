@@ -7,6 +7,9 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx,vue}'
   ],
   theme: {
+		data: {
+			visible: `visible="true"`
+		},
     extend: {
 			objectPosition: {
 				"exo-parallax-bg": "30% bottom" 

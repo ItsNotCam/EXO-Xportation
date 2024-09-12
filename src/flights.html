@@ -2,20 +2,286 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EXO</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>EXO</title>
 </head>
 
 <body>
-  <!-- src/components/exo-cursor.js -->
-  <exo-cursor class="hidden"></exo-cursor>
+	<!-- src/components/exo-cursor.js -->
+	<exo-cursor class="hidden"></exo-cursor>
 
-  <!-- src/components/exo-nav.js -->
-  <exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
-  <main>
-    <div id="carousel-controls-container" class="fixed w-full z-20">
-      <div id="carousel-controls" class="
+	<!-- src/components/exo-nav.js -->
+	<exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
+	<main>
+		<section id="exo-launches" class="flex flex-row bg-[#04050a] overflow-hidden relative h-screen w-screen">
+			<div id="launch0-more" class="launch-details-container" aria-label="details for launch ENDEAVOR">
+				<div class="w-[clamp(350px,80vw,500px)] slide-fade-in">
+					<div class="flex flex-row justify-between items-center">
+						<div>
+							<h2 class="text-xl">ENDEAVOR</h2>
+							<h1 class="text-4xl uppercase ddin-bold">Overview</h1>
+						</div>
+						<button id="launch0-close" class="launch-close-btn">
+							<svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+								stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<line x1="18" y1="6" x2="6" y2="18" />
+								<line x1="6" y1="6" x2="18" y2="18" />
+							</svg>
+						</button>
+					</div>
+					<table class="w-full">
+						<tbody class="w-full font-light">
+							<tr
+								class="relative w-full h-12 after:absolute after:bottom-0 after:left-0 after:content-[''] after:w-full after:h-[1px] after:bg-exo-light-400 slide-fade-in anim-delay-2">
+								<td class="uppercase ddin-bold tracking-wide">SPACECRAFT</td>
+								<td class="text-right">Seabloom</td>
+								<td class="text-left w-[25%] pl-4 text-exo-light-400">POLARIS-IV</td>
+							</tr>
+							<tr
+								class="relative w-full h-12 after:absolute after:bottom-0 after:left-0 after:content-[''] after:w-full after:h-[1px] after:bg-exo-light-400 slide-fade-in anim-delay-3">
+								<td class="uppercase ddin-bold tracking-wide">Start</td>
+								<td class="text-right">Earth</td>
+								<td class="text-left w-[25%] pl-4 text-exo-light-400">Washington D.C.</td>
+							</tr>
+							<tr
+								class="relative w-full h-12 after:absolute after:bottom-0 after:left-0 after:content-[''] after:w-full after:h-[1px] after:bg-exo-light-400 slide-fade-in anim-delay-4">
+								<td class="uppercase ddin-bold tracking-wide">End</td>
+								<td class="text-right">Jupter / IO</td>
+								<td class="text-left w-[25%] pl-4 text-exo-light-400">New Solara</td>
+							</tr>
+							<tr
+								class="relative w-full h-12 after:absolute after:bottom-0 after:left-0 after:content-[''] after:w-full after:h-[1px] after:bg-exo-light-400 slide-fade-in anim-delay-5">
+								<td class="uppercase ddin-bold tracking-wide">Distance</td>
+								<td class="text-right">4.2 AU</td>
+								<td class="text-left w-[25%] pl-4 text-exo-light-400">628e<sup>6</sup> KM</td>
+							</tr>
+							<tr
+								class="relative w-full h-12 after:absolute after:bottom-0 after:left-0 after:content-[''] after:w-full after:h-[1px] after:bg-exo-light-400 slide-fade-in anim-delay-6">
+								<td class="uppercase ddin-bold tracking-wide">Duration</td>
+								<td class="text-right">0.42 Sols</td>
+								<td class="text-left w-[25%] pl-4 text-exo-light-400">5 Months</td>
+							</tr>
+							<tr
+								class="relative w-full h-12 after:absolute after:bottom-0 after:left-0 after:content-[''] after:w-full after:h-[1px] after:bg-exo-light-400 slide-fade-in anim-delay-6">
+								<td class="uppercase ddin-bold tracking-wide">Cruising Speed</td>
+								<td class="text-right">0.04c</td>
+								<td class="text-left w-[25%] pl-4 text-exo-light-400">300e<sup>3</sup> KM/s</td>
+							</tr>
+							<tr
+								class="relative w-full h-12 after:absolute after:bottom-0 after:left-0 after:content-[''] after:w-full after:h-[1px] after:bg-exo-light-400 slide-fade-in anim-delay-7">
+								<td class="uppercase ddin-bold tracking-wide">ENERGY REQUIRED</td>
+								<td class="text-right">150 TJ</td>
+								<td class="text-left w-[25%] pl-4 text-exo-light-400">US Pwr 0.45yr</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div id="launch1-more" class="launch-details-container" aria-label="details for launch ENDEAVOR">
+				<div class="w-[clamp(350px,80vw,500px)] slide-fade-in">
+					<div class="flex flex-row justify-between items-center">
+						<div>
+							<h2 class="text-xl">ENDEAVOR</h2>
+							<h1 class="text-4xl uppercase ddin-bold">Overview</h1>
+						</div>
+						<button id="launch1-close" class="launch-close-btn">
+							<svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+								stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<line x1="18" y1="6" x2="6" y2="18" />
+								<line x1="6" y1="6" x2="18" y2="18" />
+							</svg>
+						</button>
+					</div>
+					<table class="w-full">
+						<tbody class="w-full font-light">
+							<tr
+								class="relative w-full h-12 after:absolute after:bottom-0 after:left-0 after:content-[''] after:w-full after:h-[1px] after:bg-exo-light-400 slide-fade-in anim-delay-2">
+								<td class="uppercase ddin-bold tracking-wide">SPACECRAFT</td>
+								<td class="text-right">Seabloom</td>
+								<td class="text-left w-[25%] pl-4 text-exo-light-400">POLARIS-IV</td>
+							</tr>
+							<tr
+								class="relative w-full h-12 after:absolute after:bottom-0 after:left-0 after:content-[''] after:w-full after:h-[1px] after:bg-exo-light-400 slide-fade-in anim-delay-3">
+								<td class="uppercase ddin-bold tracking-wide">Start</td>
+								<td class="text-right">Earth</td>
+								<td class="text-left w-[25%] pl-4 text-exo-light-400">Washington D.C.</td>
+							</tr>
+							<tr
+								class="relative w-full h-12 after:absolute after:bottom-0 after:left-0 after:content-[''] after:w-full after:h-[1px] after:bg-exo-light-400 slide-fade-in anim-delay-4">
+								<td class="uppercase ddin-bold tracking-wide">End</td>
+								<td class="text-right">Jupter / IO</td>
+								<td class="text-left w-[25%] pl-4 text-exo-light-400">New Solara</td>
+							</tr>
+							<tr
+								class="relative w-full h-12 after:absolute after:bottom-0 after:left-0 after:content-[''] after:w-full after:h-[1px] after:bg-exo-light-400 slide-fade-in anim-delay-5">
+								<td class="uppercase ddin-bold tracking-wide">Distance</td>
+								<td class="text-right">4.2 AU</td>
+								<td class="text-left w-[25%] pl-4 text-exo-light-400">628e<sup>6</sup> KM</td>
+							</tr>
+							<tr
+								class="relative w-full h-12 after:absolute after:bottom-0 after:left-0 after:content-[''] after:w-full after:h-[1px] after:bg-exo-light-400 slide-fade-in anim-delay-6">
+								<td class="uppercase ddin-bold tracking-wide">Duration</td>
+								<td class="text-right">0.42 Sols</td>
+								<td class="text-left w-[25%] pl-4 text-exo-light-400">5 Months</td>
+							</tr>
+							<tr
+								class="relative w-full h-12 after:absolute after:bottom-0 after:left-0 after:content-[''] after:w-full after:h-[1px] after:bg-exo-light-400 slide-fade-in anim-delay-6">
+								<td class="uppercase ddin-bold tracking-wide">Cruising Speed</td>
+								<td class="text-right">0.04c</td>
+								<td class="text-left w-[25%] pl-4 text-exo-light-400">300e<sup>3</sup> KM/s</td>
+							</tr>
+							<tr
+								class="relative w-full h-12 after:absolute after:bottom-0 after:left-0 after:content-[''] after:w-full after:h-[1px] after:bg-exo-light-400 slide-fade-in anim-delay-7">
+								<td class="uppercase ddin-bold tracking-wide">ENERGY REQUIRED</td>
+								<td class="text-right">150 TJ</td>
+								<td class="text-left w-[25%] pl-4 text-exo-light-400">US Pwr 0.45yr</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+
+			<!-- one -->
+			<div data-state="visible" class="exo-launch absolute left-0 top-0 h-full w-full">
+				<div class="exo-launch-container">
+					<img class="exo-launch-img opacity-fade-in" alt="spaceship" src="public/images/alien_planet.webp">
+					<div class="exo-launch-desc opacity-fade-in delay-2">
+						<!-- src/components/exo-launch-item.js -->
+						<exo-launch-item data-align="left" data-link="#polaris-mission" data-index="0" id="launch0"
+							class="launch-container">
+							<p slot="subtitle">Upcoming Launch</p>
+							<p slot="title">
+								<span class="text-3xl text-exo-light-100">ENDEAVOR</span>
+								<span class="text-2xl text-exo-light-300 font-normal">POLARIS-IV</span>
+							</p>
+							<h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
+							<h1 slot="to" loc="[ JUPITER-IO / INTL. ]">IJP</h1>
+							<p slot="description">
+								The Seabloom mission is a highly anticipated upcoming launch using
+								<a href="" class="cursor-pointer underline text-red-400 font-semibold">Seabloom's POLARIS-IV</a> rocket.
+								This mission aims to transport a payload from Earth (IAD) to
+								<a href="" class="cursor-pointer underline text-red-400 font-semibold">Jupiter's moon IO</a> (IJP).
+								The POLARIS-IV, known for its impressive capabilities, will be used for this mission. Stay tuned
+								for more updates and exciting developments!
+							</p>
+							</exo-launch-hero>
+					</div>
+				</div>
+			</div>
+
+			<!-- two -->
+			<div data-state="enter" class="exo-launch absolute left-0 top-0 h-full w-full">
+				<div class="exo-launch-container">
+					<img class="exo-launch-img opacity-fade-in" alt="moon base" src="public/images/moon_settlement.webp">
+					<div class="exo-launch-desc opacity-fade-in delay-2">
+						<!-- src/components/exo-launch-item.js -->
+						<exo-launch-item data-align="left" data-link="#polaris-mission" data-index="1" id="launch1">
+							<p slot="subtitle">Upcoming Launch</p>
+							<p slot="title">
+								<span class="text-3xl text-exo-light-100">HORIZON</span>
+								<span class="text-2xl text-exo-light-300 font-normal">ATLAS-II</span>
+							</p>
+							<h1 slot="from" loc="[ EARTH / US ]">LAX</h1>
+							<h1 slot="to" loc="[ SELENE / INTL. ]">OKO</h1>
+							<p slot="description">
+								The Seabloom mission is an exciting upcoming spaceship launch. This mission will utilize Seabloom's
+								ATLAS-II
+								to transport a payload from Earth (IAD) to Jupiter's moon IO (IJP). The Falcon Heavy rocket is renowned
+								for
+								its impressive capabilities and will play a crucial role in this mission. Stay tuned for more updates
+								and thrilling developments!
+							</p>
+							</exo-launch-hero>
+					</div>
+				</div>
+			</div>
+
+			<!-- three -->
+			<div data-state="enter" class="exo-launch absolute left-0 top-0 h-full w-full">
+				<div class="exo-launch-container">
+					<img class="exo-launch-img opacity-fade-in" alt="alien base" src="public/images/mars_settlement.webp">
+					<div class="exo-launch-desc opacity-fade-in delay-2">
+						<!-- src/components/exo-launch-item.js -->
+						<exo-launch-item data-align="left" data-link="#polaris-mission" data-index="2" id="launch2">
+							<p slot="subtitle">Upcoming Launch</p>
+							<p slot="title">
+								<span class="text-3xl text-exo-light-100">ODYSSEY</span>
+								<span class="text-2xl text-exo-light-300 font-normal">FALCON HEAVY</span>
+							</p>
+							<h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
+							<h1 slot="to" loc="[ MARS / JP ]">IJP</h1>
+							<p slot="description">
+								The Falcon Heavy mission is a highly anticipated upcoming launch using
+								<a href="" class="cursor-pointer underline text-red-400 font-semibold">SpaceX's Falcon Heavy</a> rocket.
+								This mission aims to transport passengers from Earth (IAD) to
+								<a href="" class="cursor-pointer underline text-red-400 font-semibold">Mars</a> (IJP).
+								The Falcon Heavy rocket, known for its impressive capabilities, will be
+								used for this mission. Stay tuned for more updates and exciting developments!
+							</p>
+							</exo-launch-hero>
+					</div>
+				</div>
+			</div>
+
+			<!-- four -->
+			<div data-state="enter" class="exo-launch absolute left-0 top-0 h-full w-full">
+				<div aria-label="launch name ORIGIN" class="exo-launch-container">
+					<img class="exo-launch-img opacity-fade-in" alt="Frankfurt City" src="public/images/frankfurt.webp">
+					<!-- <video alt="earth from space" src="public/videos/earth_rotation.mp4" class="exo-launch-img opacity-fade-in" autoplay loop muted></video> -->
+					<div class="exo-launch-desc opacity-fade-in delay-2">
+						<!-- src/components/exo-launch-item.js -->
+						<exo-launch-item data-align="left" data-link="#polaris-mission" data-index="3" id="launch3">
+							<p slot="subtitle">Upcoming Launch</p>
+							<p slot="title">
+								<span class="text-3xl text-exo-light-100">ORIGIN</span>
+								<span class="text-2xl text-exo-light-300 font-normal">SA-990</span>
+							</p>
+							<h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
+							<h1 slot="to" loc="[ EARTH / GER ]">FRA</h1>
+							<p slot="description">
+								The Airbus SA-990 mission is a routine intraplanetary flight using
+								<a href="" class="cursor-pointer underline text-red-400 font-semibold">Airbus' SA-990</a> rocket.
+								This mission will start in Washington, D.C. and aims to take 30 humans into low earth orbit. Their
+								destination is Frankfurt Spaceport in Germany. The SA-990, known for its impressive capabilities, will
+								be
+								used for this mission. Stay tuned for more updates and exciting developments!
+							</p>
+							</exo-launch-hero>
+					</div>
+				</div>
+			</div>
+
+			<!-- five -->
+			<div data-state="enter" class="exo-launch absolute left-0 top-0 h-full w-full">
+				<div class="exo-launch-container">
+					<img class="exo-launch-img opacity-fade-in" alt="futuristic airport" src="public/images/airport.webp">
+					<div class="exo-launch-desc opacity-fade-in delay-2">
+						<!-- src/components/exo-launch-item.js -->
+						<exo-launch-item data-align="left" data-link="#polaris-mission" data-index="4" id="launch4">
+							<p slot="subtitle">Upcoming Launch</p>
+							<p slot="title">
+								<span class="text-3xl text-exo-light-100">PURSUIT</span>
+								<span class="text-2xl text-exo-light-300 font-normal">LEO-690</span>
+							</p>
+							<h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
+							<h1 slot="to" loc="[ EARTH / JP ]">NRT</h1>
+							<p slot="description">
+								The LEO-990 mission is a routine intraplanetary flight using
+								<a href="" class="cursor-pointer underline text-red-400 font-semibold">Airbus' SA-990</a> rocket.
+								This mission will start in Washington, D.C. and aims to take 30 humans into low earth orbit. Their
+								destination is Japan Space Port. The SA-990, known for its impressive capabilities, will be
+								used for this mission. Stay tuned for more updates and exciting developments!
+							</p>
+							</exo-launch-hero>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div id="carousel-controls-container" class="fixed w-full">
+			<div id="carousel-controls" class="
         w-fit mx-auto
         flex flex-row items-center justify-between 
         rounded-full 
@@ -23,156 +289,24 @@
         backdrop-blur-sm 
         slide-fade-in delay-5
       ">
-        <svg id="img-back" class="rotate-180 cursor-pointer" data-enabled="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 10" fill="inherit" >
-          <path d="M1.0125 10L0.125 9.1125L4.2375 5L0.125 0.8875L1.0125 0L6.0125 5L1.0125 10Z" fill="white"/>
-        </svg>
-        <div id="img-selectors" class="flex flex-row">
-          <button class="circle" data-selected="true"  id="img-select-0"></button>
-          <button class="circle" data-selected="false" id="img-select-1"></button>
-          <button class="circle" data-selected="false" id="img-select-2"></button>
-          <button class="circle" data-selected="false" id="img-select-3"></button>
-          <button class="circle" data-selected="false" id="img-select-4"></button>
-        </div>
-        <svg id="img-next" data-enabled="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 10" fill="inherit" class="cursor-pointer">
-          <path d="M1.0125 10L0.125 9.1125L4.2375 5L0.125 0.8875L1.0125 0L6.0125 5L1.0125 10Z" fill="white"/>
-        </svg>
-      </div>
-    </div>
-    <section id="exo-launches" class="flex flex-row bg-[#04050a] overflow-hidden relative h-screen w-screen">
-      
-      <!-- one -->
-      <div data-state="visible" class="exo-launch absolute left-0 top-0 h-full w-full" id="launch0">
-        <div class="exo-launch-container">
-          <img class="exo-launch-img opacity-fade-in" alt="spaceship" src="public/images/alien_planet.webp">
-          <div class="exo-launch-desc opacity-fade-in delay-2">
-            <!-- src/components/exo-launch-item.js -->
-            <exo-launch-item data-align="left" data-link="#polaris-mission" data-index="0">
-              <p slot="subtitle">Upcoming Launch</p>
-              <p slot="title">
-                <span class="text-3xl text-exo-light-100">ENDEAVOR</span>
-                <span class="text-2xl text-exo-light-300 font-normal">POLARIS-IV</span>
-              </p>
-              <h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
-              <h1 slot="to" loc="[ JUPITER-IO / INTL. ]">IJP</h1>
-              <p slot="description">
-                The Seabloom mission is a highly anticipated upcoming launch using
-                <a href="" class="cursor-pointer underline text-red-400 font-semibold">Seabloom's POLARIS-IV</a> rocket.
-                This mission aims to transport a payload from Earth (IAD) to
-                <a href="" class="cursor-pointer underline text-red-400 font-semibold">Jupiter's moon IO</a> (IJP).
-                The POLARIS-IV, known for its impressive capabilities, will be used for this mission. Stay tuned 
-                for more updates and exciting developments!
-              </p>
-            </exo-launch-hero>
-          </div>
-        </div>
-      </div>
-
-      <!-- two -->
-      <div data-state="enter" class="exo-launch absolute left-0 top-0 h-full w-full" id="launch1">
-        <div class="exo-launch-container">
-          <img class="exo-launch-img opacity-fade-in" alt="moon base" src="public/images/moon_settlement.webp">
-          <div class="exo-launch-desc opacity-fade-in delay-2">
-            <!-- src/components/exo-launch-item.js -->
-            <exo-launch-item data-align="left" data-link="#polaris-mission" data-index="1">
-              <p slot="subtitle">Upcoming Launch</p>
-              <p slot="title">
-                <span class="text-3xl text-exo-light-100">HORIZON</span>
-                <span class="text-2xl text-exo-light-300 font-normal">ATLAS-II</span>
-              </p>
-              <h1 slot="from" loc="[ EARTH / US ]">LAX</h1>
-              <h1 slot="to" loc="[ SELENE / INTL. ]">OKO</h1>
-              <p slot="description">
-                The Seabloom mission is an exciting upcoming spaceship launch. This mission will utilize Seabloom's ATLAS-II 
-                to transport a payload from Earth (IAD) to Jupiter's moon IO (IJP). The Falcon Heavy rocket is renowned for 
-                its impressive capabilities and will play a crucial role in this mission. Stay tuned for more updates 
-                and thrilling developments!
-              </p>
-            </exo-launch-hero>
-          </div>
-        </div>
-      </div>
-
-      <!-- three -->
-      <div data-state="enter" class="exo-launch absolute left-0 top-0 h-full w-full" id="launch2">
-        <div class="exo-launch-container">
-          <img class="exo-launch-img opacity-fade-in" alt="alien base" src="public/images/mars_settlement.webp">
-          <div class="exo-launch-desc opacity-fade-in delay-2">
-            <!-- src/components/exo-launch-item.js -->
-            <exo-launch-item data-align="left" data-link="#polaris-mission" data-index="2">
-              <p slot="subtitle">Upcoming Launch</p>
-              <p slot="title">
-                <span class="text-3xl text-exo-light-100">ODYSSEY</span>
-                <span class="text-2xl text-exo-light-300 font-normal">FALCON HEAVY</span>
-              </p>
-              <h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
-              <h1 slot="to" loc="[ MARS / JP ]">IJP</h1>
-              <p slot="description">
-                The Falcon Heavy mission is a highly anticipated upcoming launch using
-                <a href="" class="cursor-pointer underline text-red-400 font-semibold">SpaceX's Falcon Heavy</a> rocket.
-                This mission aims to transport passengers from Earth (IAD) to
-                <a href="" class="cursor-pointer underline text-red-400 font-semibold">Mars</a> (IJP).
-                The Falcon Heavy rocket, known for its impressive capabilities, will be
-                used for this mission. Stay tuned for more updates and exciting developments!
-              </p>
-            </exo-launch-hero>
-          </div>
-        </div>
-      </div>
-
-      <!-- four -->
-      <div data-state="enter" class="exo-launch absolute left-0 top-0 h-full w-full" id="launch3">
-        <div class="exo-launch-container">
-          <img class="exo-launch-img opacity-fade-in" alt="Frankfurt City" src="public/images/frankfurt.webp">
-          <!-- <video alt="earth from space" src="public/videos/earth_rotation.mp4" class="exo-launch-img opacity-fade-in" autoplay loop muted></video> -->
-          <div class="exo-launch-desc opacity-fade-in delay-2">
-            <!-- src/components/exo-launch-item.js -->
-            <exo-launch-item data-align="left" data-link="#polaris-mission" data-index="3">
-              <p slot="subtitle">Upcoming Launch</p>
-              <p slot="title">
-                <span class="text-3xl text-exo-light-100">ORIGIN</span>
-                <span class="text-2xl text-exo-light-300 font-normal">SA-990</span>
-              </p>
-              <h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
-              <h1 slot="to" loc="[ EARTH / GER ]">FRA</h1>
-              <p slot="description">
-                The Airbus SA-990 mission is a routine intraplanetary flight using
-                <a href="" class="cursor-pointer underline text-red-400 font-semibold">Airbus' SA-990</a> rocket.
-                This mission will start in Washington, D.C. and aims to take 30 humans into low earth orbit. Their 
-                destination is Frankfurt Spaceport in Germany. The SA-990, known for its impressive capabilities, will be
-                used for this mission. Stay tuned for more updates and exciting developments!
-              </p>
-            </exo-launch-hero>
-          </div>
-        </div>
-      </div>
-
-      <!-- five -->
-      <div data-state="enter" class="exo-launch absolute left-0 top-0 h-full w-full" id="launch4">
-        <div class="exo-launch-container">
-          <img class="exo-launch-img opacity-fade-in" alt="futuristic airport" src="public/images/airport.webp">
-          <div class="exo-launch-desc opacity-fade-in delay-2">
-            <!-- src/components/exo-launch-item.js -->
-            <exo-launch-item data-align="left" data-link="#polaris-mission" data-index="4">
-              <p slot="subtitle">Upcoming Launch</p>
-              <p slot="title">
-                <span class="text-3xl text-exo-light-100">PURSUIT</span>
-                <span class="text-2xl text-exo-light-300 font-normal">LEO-690</span>
-              </p>
-              <h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
-              <h1 slot="to" loc="[ EARTH / JP ]">NRT</h1>
-              <p slot="description">
-                The LEO-990 mission is a routine intraplanetary flight using
-                <a href="" class="cursor-pointer underline text-red-400 font-semibold">Airbus' SA-990</a> rocket.
-                This mission will start in Washington, D.C. and aims to take 30 humans into low earth orbit. Their 
-                destination is Japan Space Port. The SA-990, known for its impressive capabilities, will be
-                used for this mission. Stay tuned for more updates and exciting developments!
-              </p>
-            </exo-launch-hero>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+				<svg id="img-back" class="rotate-180 cursor-pointer" data-enabled="false" xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 7 10" fill="inherit">
+					<path d="M1.0125 10L0.125 9.1125L4.2375 5L0.125 0.8875L1.0125 0L6.0125 5L1.0125 10Z" fill="white" />
+				</svg>
+				<div id="img-selectors" class="flex flex-row">
+					<button class="circle" data-selected="true" id="img-select-0"></button>
+					<button class="circle" data-selected="false" id="img-select-1"></button>
+					<button class="circle" data-selected="false" id="img-select-2"></button>
+					<button class="circle" data-selected="false" id="img-select-3"></button>
+					<button class="circle" data-selected="false" id="img-select-4"></button>
+				</div>
+				<svg id="img-next" data-enabled="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 10" fill="inherit"
+					class="cursor-pointer">
+					<path d="M1.0125 10L0.125 9.1125L4.2375 5L0.125 0.8875L1.0125 0L6.0125 5L1.0125 10Z" fill="white" />
+				</svg>
+			</div>
+		</div>
+	</main>
 </body>
 
 </html>

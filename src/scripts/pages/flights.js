@@ -83,3 +83,37 @@ pageState.imgBack.on('click', () => {
 
   pageState.curSelectedImg = nextIdx;
 });
+
+$(function() {
+	/* Details Toggles */
+	for(let i = 0; i < 100; i++) {
+		const launchContainerId = `#launch${i}`;
+		const launchCloseId = `${launchContainerId}-close`;
+		const launchDetailsId = `${launchContainerId}-more`;
+
+		
+		const container = document.querySelector(launchContainerId);
+		if(!container) {
+			continue;
+		}
+		console.log("registering", launchContainerId, container)
+		
+		const launchShadowRoot = container.shadowRoot;
+		if(!launchShadowRoot) {
+			continue;
+		}
+
+		const launchMoreBtn = launchShadowRoot.querySelector("button");
+		const launchDetailsContainer = $(launchDetailsId);
+		$(launchMoreBtn).on("click", function() {
+			console.log("clicked", launchContainerId)
+			launchDetailsContainer.attr("data-visible", "true");
+		});
+		
+		const launchCloseBtn = $(launchCloseId);
+		$(launchCloseBtn).on("click", function() {
+			console.log("clicked", launchContainerId)
+			launchDetailsContainer.attr("data-visible", "false");
+		});
+	}
+})
