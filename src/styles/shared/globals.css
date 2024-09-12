@@ -26,17 +26,17 @@ html.lenis, html.lenis body {
 /* Fonts */
 @font-face {
   font-family: 'Aldrich';
-  src: url('../../../public/fonts/Aldrich-Regular.ttf') format('truetype');
+  src: url('../../public/fonts/Aldrich-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'D-DIN';
-  src: url('../../../public/fonts/D-DIN.ttf') format('truetype');
+  src: url('../../public/fonts/D-DIN.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'D-DIN-Bold';
-  src: url('../../../public/fonts/D-DIN-Bold.ttf') format('truetype');
+  src: url('../../public/fonts/D-DIN-Bold.ttf') format('truetype');
 }
 
 /* Fonts */

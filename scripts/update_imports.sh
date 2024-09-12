@@ -7,12 +7,12 @@ media_files=()
 # add all media files
 html_files=$(find src/* -type f -name "*.html" -not -path "*/node_modules/*")
 for f in $html_files; do
-	media_files+=$(grep -Eo 'src="[^"]+"' $f | sed 's/src="//' | sed 's/"$//' | sed 's/public\// ..\/public\//')
+	media_files+=$(grep -Eo 'src="[^"]+"' $f | sed 's/src="//' | sed 's/"$//' | sed 's/public\// .\/public\//')
 done
 
 js_files=$(find src/scripts/shared/* -type f -name "*.js" -not -path "*index.js" -and -not -path "*scripted_imports.js" | sed 's/src\//.\//')
-css_files=$(find src/styles/shared/* -type f -name "*.css" -not -path "*/node_modules/*" | sed 's/src\// .\//g')
-font_files=$(find public/* -type f -name "*.ttf" -not -path "*/node_modules/*" | sed 's/public\// ..\/public\//')
+css_files=$(find src/styles/shared/* -type f -name "*.css" | sed 's/src\// .\//g')
+font_files=$(find src/public/fonts/* -type f -name "*.ttf" | sed 's/src\// .\//g')
 
 FILENAME='./src/scripted_imports.js'
 rm $FILENAME
