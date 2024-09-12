@@ -187,11 +187,14 @@
 
 .exo-launch-container {
   height: 100svh;
+	min-width: 100vw;
   position: relative;
   border-radius: 0;
 }
 
 .exo-launch-img {
+	position: absolute;
+	inset: 0;
   object-fit: cover;
   height: 100%;
   width: 100%;

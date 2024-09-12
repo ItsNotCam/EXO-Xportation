@@ -1,6 +1,15 @@
 import $ from 'jquery';
 import '../../styles/pages/flights.css';
+	
+const carouselControls = $("#img-selectors");
+$("#exo-launches").children().each(function(index) {
+	$(carouselControls).html(
+		$(carouselControls).html() + 
+		/*html*/`<button class="circle" data-selected="${index === 0}" id="img-select-${index}"></button>`
+	);
+});
 
+$(function() {
 /* Page State */
 const pageState = {
 	imgNext: $('#img-next'),
@@ -83,24 +92,17 @@ pageState.imgBack.on('click', () => {
 
 	pageState.curSelectedImg = nextIdx;
 });
+})
 
 $(function () {
 	/* Details Toggles */
 	for (let i = 0; i < 100; i++) {
 		const launchContainerId = `#launch${i}`;
-		const launchCloseId = `${launchContainerId}-close`;
-		const launchDetailsId = `${launchContainerId}-more`;
+		const container = $(launchContainerId);
 
-		const container = document.querySelector(launchContainerId);
-		if (!container) { continue; }
-
-		const launchShadowRoot = container.shadowRoot;
-		if (!launchShadowRoot) { continue; }
-
-		const launchMoreBtn = launchShadowRoot.querySelector("button");
-		const launchDetailsContainer = $(launchDetailsId);
+		const launchDetailsContainer = $(`${launchContainerId}-more`);
+		const launchMoreBtn = $(container).find("button");
 		$(launchMoreBtn).on("click", function () {
-			console.log("clicked", launchContainerId)
 			launchDetailsContainer.attr("data-visible", "true");
 
 			$(launchDetailsContainer).find('.text-type-in').each(function() {
@@ -114,12 +116,12 @@ $(function () {
 				text.split('').forEach((char, index) => {
 					setTimeout(() => {
 						element.text(element.text() + char)
-					}, 4 * index + 1000);
+					}, 2 * index + 1000);
 				});
 			});
 		});
 
-		const launchCloseBtn = $(launchCloseId);
+		const launchCloseBtn = $(`${launchContainerId}-close`);
 		$(launchCloseBtn).on("click", function () {
 			console.log("clicked", launchContainerId)
 			launchDetailsContainer.attr("data-visible", "false");
