@@ -77,6 +77,7 @@ module.exports = {
         "7/10": "70%",
         "8/10": "80%",
         "9/10": "90%",
+				"launch-col": "clamp(350px, 80vw, 600px)"
       },
       colors: {
         exo: {
