@@ -8,7 +8,7 @@ const carouselControls = $("#img-selectors");
 $("#exo-launches").children().each(function(index) {
 	$(carouselControls).html(
 		$(carouselControls).html() + 
-		/*html*/`<button class="circle" data-selected="${index === 0}" id="img-select-${index}"></button>`
+		/*html*/ `<button class="circle" data-selected="${index === 0}" id="img-select-${index}"></button>`
 	);
 });
 
