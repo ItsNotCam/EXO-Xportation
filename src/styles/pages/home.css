@@ -65,7 +65,7 @@
   }
 
   .hero {
-    width: calc(100%-clamp(1.5rem, 5vw, 5rem));
+    width: calc(100% - clamp(1.5rem, 5vw, 5rem));
     margin-inline: auto;
   }
 
@@ -84,6 +84,7 @@
 /* 428px */
 @media (max-width: 26.75rem) {
   .hero .hero-buttons {
-    justify-content: center
+    justify-content: center;
+		flex-direction: column;
   }
 }
