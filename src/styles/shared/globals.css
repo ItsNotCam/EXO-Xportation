@@ -4,23 +4,23 @@ html.lenis, html.lenis body {
 }
 
 .lenis.lenis-smooth {
-	scroll-behavior: auto !important;
+  scroll-behavior: auto !important;
 }
 
 .lenis.lenis-smooth[data-lenis-prevent] {
-	overscroll-behavior: contain;
+  overscroll-behavior: contain;
 }
 
 .lenis.lenis-stopped {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .lenis.lenis-smooth iframe {
-	pointer-events: none;
+  pointer-events: none;
 }
 
 .grid-center {
-	grid-area: 1 / 1 / -1 / -1;
+  grid-area: 1 / 1 / -1 / -1;
 }
 
 /* Fonts */
@@ -46,8 +46,8 @@ html.lenis, html.lenis body {
 
 .ddin-bold {
   font: 'D-DIN-Bold', sans-serif;
-	font-weight: 800;
-	font-style: normal;
+  font-weight: 800;
+  font-style: normal;
 }
 
 .aldrich {
@@ -111,26 +111,26 @@ exo-link-btn {
   .fall-down {
     animation: fall-down 0.6s var(--star-bezier) forwards;
   }
-	
-	.opacity-fade-in {
-		opacity: 0;
-		animation-fill-mode: forwards;
-		animation-duration: 4.5s;
-		animation-timing-function: var(--star-bezier);
-		animation-name: opacity-fade-in;
-	}
+  
+  .opacity-fade-in {
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-duration: 4.5s;
+    animation-timing-function: var(--star-bezier);
+    animation-name: opacity-fade-in;
+  }
 
-	.bg-fade-in {
-		animation: bg-fade-in 0.5s forwards;
-	}
+  .bg-fade-in {
+    animation: bg-fade-in 0.5s forwards;
+  }
 
-	.animate-learn-more-arrow {
-		animation: learn-more-arrow 2s ease-out infinite;
-	}
+  .animate-learn-more-arrow {
+    animation: learn-more-arrow 2s ease-out infinite;
+  }
 
-	.animate-learn-more-arrow {
-		animation: learn-more-arrow 2s ease-out infinite;
-	}
+  .animate-learn-more-arrow {
+    animation: learn-more-arrow 2s ease-out infinite;
+  }
 /* } */
 
 .anim-delay-1  { animation-delay: 0.1s; }

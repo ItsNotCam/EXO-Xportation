@@ -46,43 +46,43 @@ if(allBtns.length > 0) {
 
 const startAnimation = (entries, observer) => {
   entries.forEach(entry => {
-		const animation = entry.target.getAttribute("data-anim")
+    const animation = entry.target.getAttribute("data-anim")
     entry.target.classList.toggle(animation, entry.isIntersecting);
   });
 };
 
 window.onload = function() {
-	gsap.registerPlugin(ScrollTrigger);
-	
-	var scroll = new Lenis({
-		duration: 1.25,
-	})
+  gsap.registerPlugin(ScrollTrigger);
+  
+  var scroll = new Lenis({
+    duration: 1.25,
+  })
 
-	scroll.on('scroll', ScrollTrigger.update);
+  scroll.on('scroll', ScrollTrigger.update);
 
-	gsap.ticker.add((time) => {
-		scroll.raf(time * 1000);
-	});
+  gsap.ticker.add((time) => {
+    scroll.raf(time * 1000);
+  });
 
-	gsap.ticker.lagSmoothing(0);
+  gsap.ticker.lagSmoothing(0);
  
-	// smooth scrolling
-	// const lenis = new Lenis({
-	// 	duration: 2,
-	// 	smoothWheel: true
-	// })
-	// lenis.stop();
-	
-	// lenis.start();
-	function raf(time) {
-		// lenis.raf(time)
-		scroll.raf(time)
-		requestAnimationFrame(raf)
-	}
-	requestAnimationFrame(raf)	
+  // smooth scrolling
+  // const lenis = new Lenis({
+  //   duration: 2,
+  //   smoothWheel: true
+  // })
+  // lenis.stop();
+  
+  // lenis.start();
+  function raf(time) {
+    // lenis.raf(time)
+    scroll.raf(time)
+    requestAnimationFrame(raf)
+  }
+  requestAnimationFrame(raf)  
 
-	const observer = new IntersectionObserver(startAnimation);
-	const options = { root: null, rootMargin: '0px', threshold: 1 }; 
-	const elements = document.querySelectorAll('.animate-when-visible');
-	elements.forEach(el => observer.observe(el, options));
+  const observer = new IntersectionObserver(startAnimation);
+  const options = { root: null, rootMargin: '0px', threshold: 1 }; 
+  const elements = document.querySelectorAll('.animate-when-visible');
+  elements.forEach(el => observer.observe(el, options));
 }

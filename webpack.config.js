@@ -6,29 +6,29 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const templateFiles = glob.sync(`./src/**/*.html`);
 const htmlPlugins = templateFiles.map((filePath) => {
-	let chunks = ["main"];
-	const filename = filePath.split(path.sep).pop();
-	if(filename === "index.html") {
-		chunks.push("home");
-	} else {
-		chunks.push(filename.split(".")[0]);
-	}
-	
-	return new HtmlWebpackPlugin({
-		filename: filename,
-		template: filePath,
-		chunks: chunks
-	}
+  let chunks = ["main"];
+  const filename = filePath.split(path.sep).pop();
+  if(filename === "index.html") {
+    chunks.push("home");
+  } else {
+    chunks.push(filename.split(".")[0]);
+  }
+  
+  return new HtmlWebpackPlugin({
+    filename: filename,
+    template: filePath,
+    chunks: chunks
+  }
 )});
 
 module.exports = {
   mode: 'development',
   entry: {
-		main: './src/index.js', 
-		home: './src/scripts/pages/home.js', 
-		flights: './src/scripts/pages/flights.js', 
-		journey: './src/scripts/pages/journey.js'
-	},
+    main: './src/index.js', 
+    home: './src/scripts/pages/home.js', 
+    flights: './src/scripts/pages/flights.js', 
+    journey: './src/scripts/pages/journey.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'scripts/[name].bundle.js',
@@ -49,8 +49,8 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({ 
-			filename: 'styles/[name].bundle.css',
-		}),
+      filename: 'styles/[name].bundle.css',
+    }),
     ...htmlPlugins
   ],
   module: {

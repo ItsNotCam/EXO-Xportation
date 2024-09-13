@@ -5,34 +5,34 @@ class Nav extends HTMLElement {
     const path = window.location.pathname;
     const blurColor = this.getAttribute("blur-color") || "rgba(12,12,12,0.45)";
 
-		let hidden = false;
-		let expanded = false;
+    let hidden = false;
+    let expanded = false;
 
     this.innerHTML = /*html*/ `
     <div style="background: linear-gradient(to bottom, ${blurColor} 0%, #FFFFFF 100%);" class="
-			nav-bg-gradient 
-			fixed top-0 h-24 w-full 
-			bg-blend-multiply mix-blend-multiply 
-			z-10 
-			pointer-events-none
-			nav:h-[5.3rem]
-			nav:w-full
-			nav:justify-end
-		"></div>
+      nav-bg-gradient 
+      fixed top-0 h-24 w-full 
+      bg-blend-multiply mix-blend-multiply 
+      z-10 
+      pointer-events-none
+      nav:h-[5.3rem]
+      nav:w-full
+      nav:justify-end
+    "></div>
     <nav id="nav-container"
-			class="
-				fixed w-full
-				flex flex-col gap-4 items-center justify-center 
-				py-9 z-50
-				transition-transform duration-200
-			" 
-			data-expanded="false">
+      class="
+        fixed w-full
+        flex flex-col gap-4 items-center justify-center 
+        py-9 z-50
+        transition-transform duration-200
+      " 
+      data-expanded="false">
       <a href="/" class="
-				cch 
-				fixed left-4 
-				aldrich text-custom-light-100 text-3xl
-				nav:absolute nav:left-1/2 nav:-translate-x-1/2 nav:top-4
-			">EXO</a>
+        cch 
+        fixed left-4 
+        aldrich text-custom-light-100 text-3xl
+        nav:absolute nav:left-1/2 nav:-translate-x-1/2 nav:top-4
+      ">EXO</a>
       <ul id="nav-main" class="nav-links" data-expanded="false">
         <li><a href="index.html" class="nav-link cch" data-active='${path.endsWith("/") || path.endsWith("/index.html") ? "true" : "false" }'>HOME</a></li>
         <li><a href="flights.html" class="nav-link cch" data-active='${path.endsWith("/flights.html") ? "true" : "false" }'>FLIGHTS</a></li>
@@ -78,13 +78,13 @@ class Nav extends HTMLElement {
 
     $(document).on("click", (e) => {
       if (e.target.closest("#nav-dropdown-button") !== null) {
-				expanded = !(mainNav.attr("data-expanded") === "true");
+        expanded = !(mainNav.attr("data-expanded") === "true");
         mainNav.attr("data-expanded", expanded);
         return;
       }
 
       if (e.target.closest("#nav-main") === null && mainNav.attr("data-expanded") === "true") {
-				expanded = false;
+        expanded = false;
         mainNav.attr("data-expanded", false);
         $(`#nav-dropdown-button #reverse`).each(function() {
           this.beginElement();
@@ -94,7 +94,7 @@ class Nav extends HTMLElement {
 
     window.addEventListener("resize", () => {
       if (window.innerWidth >= 960 && mainNav.attr("data-expanded") === "true") {
-				expanded = false;
+        expanded = false;
         mainNav.attr("data-expanded", false);
         $("#nav-dropdown-button #reverse").each(function() {
           this.beginElement();
@@ -102,28 +102,28 @@ class Nav extends HTMLElement {
       }
     });
 
-		let lastScrollPositionY = window.scrollY;
-		window.addEventListener("scroll", () => {
-			// scroll position increases as you scroll down and decreases when you scroll up
-			const curScrollPositionY = window.scrollY;
-			const scrollDelta = curScrollPositionY - lastScrollPositionY;
+    let lastScrollPositionY = window.scrollY;
+    window.addEventListener("scroll", () => {
+      // scroll position increases as you scroll down and decreases when you scroll up
+      const curScrollPositionY = window.scrollY;
+      const scrollDelta = curScrollPositionY - lastScrollPositionY;
 
-			if(scrollDelta > 0 && !hidden) {
-				hidden = true;
-				navContainer.css("transform", "translateY(-100%)");
-				if(expanded) {
-					$("#nav-dropdown-button #reverse").each(function() {
-						this.beginElement();
-					});
-					mainNav.attr("data-expanded", false);
-				}
-			} else if(scrollDelta <= 0 && hidden) {
-				hidden = false;
-				navContainer.css("transform", "translateY(0)");	
-			}
+      if(scrollDelta > 0 && !hidden) {
+        hidden = true;
+        navContainer.css("transform", "translateY(-100%)");
+        if(expanded) {
+          $("#nav-dropdown-button #reverse").each(function() {
+            this.beginElement();
+          });
+          mainNav.attr("data-expanded", false);
+        }
+      } else if(scrollDelta <= 0 && hidden) {
+        hidden = false;
+        navContainer.css("transform", "translateY(0)");  
+      }
 
-			lastScrollPositionY = curScrollPositionY;
-		});
+      lastScrollPositionY = curScrollPositionY;
+    });
   }
 }
 

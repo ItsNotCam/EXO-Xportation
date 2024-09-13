@@ -11,7 +11,7 @@ class ExoBtn extends HTMLElement {
 
     this.innerHTML = /*html*/ `
     <button class="${isLight ? "btn-angled-light" : "text-exo-light-100 hover:text-exo-dark-500" } cch relative w-max grid items-center grid-cols-1 grid-rows-1 transition-colors duration-200">
-    	<svg class=" pointer-events-none col-start-1 col-end-2 row-start-1 row-end-2" xmlns="http://www.w3.org/2000/svg" width="200" height="49" viewBox="0 0 203 49" fill="transparent">
+      <svg class=" pointer-events-none col-start-1 col-end-2 row-start-1 row-end-2" xmlns="http://www.w3.org/2000/svg" width="200" height="49" viewBox="0 0 203 49" fill="transparent">
       <defs>
         <clipPath id="hover-clip-${clipUUID}">
           <rect x="0" y="100%" width="100%" height="100%" fill="orange">

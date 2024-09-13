@@ -1,37 +1,37 @@
 /* Buttons */
 .btn-white {
-	position: relative;
-	display: grid;
-	align-items: center;
-	margin: 1rem auto;
-	padding: 1rem 3rem;
-	font-size: 1rem;
-	font-weight: bold;
-	box-shadow: 0 10px 15px -3px rgba(0,0,0,0.45);
-	transition: color 300ms;
+  position: relative;
+  display: grid;
+  align-items: center;
+  margin: 1rem auto;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.45);
+  transition: color 300ms;
 
-	&::before {
-		content: '';
-		height: 100%;
-		width: 100%;
-		position: absolute;
-		z-index: -1;
-		transform-origin: top;
-		transform: scaleY(0);
-		transition: transform 300ms;
-		@apply bg-exo-dark-500
-	}
+  &::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 300ms;
+    @apply bg-exo-dark-500
+  }
 
-	&:hover {
-		@apply text-exo-light-100;
+  &:hover {
+    @apply text-exo-light-100;
 
-		&::before {
-			transform: scaleY(100%);
-			transform-origin: bottom;
-		}
-	}
+    &::before {
+      transform: scaleY(100%);
+      transform-origin: bottom;
+    }
+  }
 
-	@apply bg-exo-light-100 text-exo-dark-500;
+  @apply bg-exo-light-100 text-exo-dark-500;
 }
 
 .btn {
@@ -104,11 +104,11 @@
 }
 
 .btn-angled-light {
-	color: rgb(18 18 18) !important;
+  color: rgb(18 18 18) !important;
 
-	&:hover {
-		color: white !important;
-	}
+  &:hover {
+    color: white !important;
+  }
 
   & svg g {
     & :nth-child(1) { @apply fill-exo-light-100 stroke-transparent; }

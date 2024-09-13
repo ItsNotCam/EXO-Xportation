@@ -7,21 +7,21 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx,vue}'
   ],
   theme: {
-		data: {
-			visible: `visible="true"`
-		},
+    data: {
+      visible: `visible="true"`
+    },
     extend: {
-			objectPosition: {
-				"exo-parallax-bg": "30% bottom" 
-			},
+      objectPosition: {
+        "exo-parallax-bg": "30% bottom" 
+      },
       textShadow: {
         sm: '0 1px 2px var(--tw-shadow-color)',
         DEFAULT: '0 2px 4px var(--tw-shadow-color)',
-				md: '0 0.05em 0.06em var(--tw-shadow-color)',
+        md: '0 0.05em 0.06em var(--tw-shadow-color)',
         lg: '0 0.037em 0.046em var(--tw-shadow-color)',
         bloom: '0 0 0.1em var(--tw-shadow-color)',
       },
-			fontSize: {
+      fontSize: {
         'em-0.1': '0.1em',
         'em-0.2': '0.2em',
         'em-0.3': '0.3em',
@@ -37,7 +37,7 @@ module.exports = {
         'em-1.3': '1.3em',
         'em-1.4': '1.4em',
         'em-1.5': '1.5em'
-			},
+      },
       screens: {
         '720p': {'max': '1280px'},
         'home-lg': {'max': '1140px'},
@@ -77,7 +77,7 @@ module.exports = {
         "7/10": "70%",
         "8/10": "80%",
         "9/10": "90%",
-				"launch-col": "clamp(350px, 80vw, 600px)"
+        "launch-col": "clamp(350px, 80vw, 600px)"
       },
       colors: {
         exo: {
@@ -106,7 +106,7 @@ module.exports = {
         { values: theme('textShadow') }
       )
     }),
-		plugin(function ({ addComponents, theme }) {
+    plugin(function ({ addComponents, theme }) {
       addComponents({
         '.card': {
           backgroundColor: theme('colors.white'),

@@ -10,7 +10,7 @@ class ExoCursor extends HTMLElement {
         customCursor.css({
           top: `${e.clientY}px`,
           left: `${e.clientX}px`,
-					display: this.getAttribute("hidden") === "true" ? "none" : "block"
+          display: this.getAttribute("hidden") === "true" ? "none" : "block"
         });
 
         const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);

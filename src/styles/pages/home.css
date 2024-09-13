@@ -85,6 +85,6 @@
 @media (max-width: 32.5rem) {
   .hero .hero-buttons {
     justify-content: center;
-		flex-direction: column;
+    flex-direction: column;
   }
 }
