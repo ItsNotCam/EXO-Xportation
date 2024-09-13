@@ -2,20 +2,241 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EXO</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>EXO | Flights</title>
 </head>
 
 <body>
-  <!-- src/components/exo-cursor.js -->
-  <exo-cursor class="hidden"></exo-cursor>
+	<!-- src/components/exo-nav.js -->
+	<exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
+	<main style="display: none">
+		<section id="exo-launches" class="flex flex-row bg-[#04050a] overflow-hidden relative h-screen w-screen">
+			<!-- one -->
+			<div>
+				<!-- src/components/exo-launch-item-more.js -->
+				<exo-launch-item-more id="launch0-more-container">
+					<span slot="mission-name">ENDEAVOR</span>
+					<span slot="manufacturer">Seabloom</span>
+					<span slot="ship-model">POLARIS-IV</span>
+					<span slot="start-planet">Earth</span>
+					<span slot="start-city">Washington D.C.</span>
+					<span slot="end-planet">Jupiter / IO</span>
+					<span slot="end-city">New Solara</span>
+					<span slot="distance-au">4.2 AU</span>
+					<span slot="distance-km">628e<sup>6</sup> KM</span>
+					<span slot="duration-sols">0.42 Sols</span>
+					<span slot="duration-months">5 Months</span>
+					<span slot="speedC">0.04c</span>
+					<span slot="speedKms">300e<sup>3</sup> KM/s</span>
+					<span slot="energyTJ">150 TJ</span>
+					<span slot="energyPwr">US Pwr 175 Days</span>
+					<p slot="description">
+						The ENDEAVOR, a POLARIS-IV class ship manufactured by Seabloom, embarks on its maiden voyage from Washington D.C., Earth to New Solara, a bustling colony on Io, Jupiter's most volcanic moon. This 628 million-kilometer journey (4.2 AU) takes passengers through the vast expanse of space at an incredible speed of 300,000 km/s (0.04c), pushing the limits of human ingenuity and technology.
+					</p>
+				</exo-launch-item-more>
+				<!-- src/components/exo-launch-item.js -->
+				<exo-launch-item data-state="visible" data-align="left" id="launch0" class="launch-container">
+					<img slot="background" src="public/images/alien_planet.webp" alt="spaceship">
+					<span slot="subtitle">Upcoming Launch</span>
+					<p slot="title">
+						<span class="text-3xl text-exo-light-100">ENDEAVOR</span>
+						<span class="text-2xl text-exo-light-300 font-normal">POLARIS-IV</span>
+					</p>
+					<h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
+					<h1 slot="to" loc="[ JUPITER-IO / INTL. ]">IJP</h1>
+					<p slot="description">
+						The Seabloom mission is a highly anticipated upcoming launch using
+						<span href="" class="cursor-pointer text-red-400 font-semibold">Seabloom's POLARIS-IV</span>
+						rocket. This mission aims to transport a payload from Earth (IAD) to
+						<span href="" class="cursor-pointer text-red-400 font-semibold">Jupiter's moon IO</span> (IJP).
+						The POLARIS-IV, known for its impressive capabilities, will be used for this mission. Stay tuned
+						for more updates and exciting developments!
+					</p>
+				</exo-launch-item>
+			</div>
 
-  <!-- src/components/exo-nav.js -->
-  <exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
-  <main>
-    <div id="carousel-controls-container" class="fixed w-full z-20">
-      <div id="carousel-controls" class="
+			<!-- two -->
+			<div>
+				<!-- src/components/exo-launch-item-more.js -->
+				<exo-launch-item-more id="launch1-more-container">
+					<span slot="mission-name">HORIZON</span>
+					<span slot="manufacturer">Seabloom</span>
+					<span slot="ship-model">ATLAS-II</span>
+					<span slot="start-planet">Earth</span>
+					<span slot="start-city">Los Angeles</span>
+					<span slot="end-planet">Selene</span>
+					<span slot="end-city">New Mombasa</span>
+					<span slot="distance-au">0.003 AU</span>
+					<span slot="distance-km">150e<sup>6</sup> KM</span>
+					<span slot="duration-sols">0.01 Sols</span>
+					<span slot="duration-months">2 Days</span>
+					<span slot="speedC">0.02c</span>
+					<span slot="speedKms">100e<sup>3</sup> KM/s</span>
+					<span slot="energyTJ">50 TJ</span>
+					<span slot="energyPwr">US Pwr 56 Days</span>
+					<p slot="description">
+						The HORIZON mission, operated by Seabloom's ATLAS-II model spacecraft, embarks from Earth, specifically Los Angeles, with a destination of New Mombasa on the planet Selene. Covering a distance of 0.003 AU (150 million kilometers), this journey is remarkably quick, lasting only 0.01 Sols, or 2 days. Traveling at 0.02c, equivalent to 100,000 kilometers per second, the mission requires 50 terajoules of energy—an amount equivalent to the energy consumed by the entire United States over 56 days.
+					</p>
+				</exo-launch-item-more>
+				<!-- src/components/exo-launch-item.js -->
+				<exo-launch-item data-state="enter" data-align="left" id="launch1" class="launch-container">
+					<img slot="background" alt="moon base" src="public/images/moon_settlement.webp">
+					<span slot="subtitle">Upcoming Launch</span>
+					<p slot="title">
+						<span class="text-3xl text-exo-light-100">HORIZON</span>
+						<span class="text-2xl text-exo-light-300 font-normal">ATLAS-II</span>
+					</p>
+					<h1 slot="from" loc="[ EARTH / US ]">LAX</h1>
+					<h1 slot="to" loc="[ SELENE / INTL. ]">OKO</h1>
+					<p slot="description">
+						The Seabloom mission is an exciting upcoming spaceship launch. This mission will utilize Seabloom's
+						ATLAS-II
+						to transport a payload from Earth (IAD) to Jupiter's moon IO (IJP). The Falcon Heavy rocket is
+						renowned
+						for
+						its impressive capabilities and will play a crucial role in this mission. Stay tuned for more updates
+						and thrilling developments!
+					</p>
+				</exo-launch-item>
+			</div>
+
+			<!-- three -->
+			<div>
+				<!-- src/components/exo-launch-item-more.js -->
+				<exo-launch-item-more id="launch2-more-container">
+					<span slot="mission-name">ODYSSEY</span>
+					<span slot="manufacturer">SpaceX</span>
+					<span slot="ship-model">FALCON HEAVY</span>
+					<span slot="start-planet">Earth</span>
+					<span slot="start-city">Washington D.C.</span>
+					<span slot="end-planet">Mars</span>
+					<span slot="end-city">New Vegas</span>
+					<span slot="distance-au">2.52 AU</span>
+					<span slot="distance-km">401e<sup>6</sup> KM</span>
+					<span slot="duration-sols">0.1 Sols</span>
+					<span slot="duration-months">1 Month</span>
+					<span slot="speedC">0.1c</span>
+					<span slot="speedKms">500 Km/s</span>
+					<span slot="energyTJ">85 TJ</span>
+					<span slot="energyPwr">US Pwr 100 Days</span>
+					<p slot="description">
+						The ODYSSEY mission, operated by SpaceX's FALCON HEAVY spacecraft, departs from Washington D.C. on Earth with a destination of New Vegas on Mars. Spanning a distance of 2.52 AU (401 million kilometers), this journey takes just 0.1 Sols, or 1 month. With an impressive speed of 0.1c (500 kilometers per second), the mission consumes 85 terajoules of energy—comparable to the energy used by the United States over 100 days.
+					</p>
+				</exo-launch-item-more>
+				<!-- src/components/exo-launch-item.js -->
+				<exo-launch-item data-state="enter" data-align="left" id="launch2" class="launch-container">
+					<img slot="background" alt="alien base" src="public/images/mars_settlement.webp">
+					<span slot="subtitle">Upcoming Launch</span>
+					<p slot="title">
+						<span class="text-3xl text-exo-light-100">ODYSSEY</span>
+						<span class="text-2xl text-exo-light-300 font-normal">FALCON HEAVY</span>
+					</p>
+					<h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
+					<h1 slot="to" loc="[ MARS / JP ]">IJP</h1>
+					<p slot="description">
+						The Falcon Heavy mission is a highly anticipated upcoming launch using
+						<a href="" class="cursor-pointer underline text-red-400 font-semibold">SpaceX's Falcon Heavy</a>
+						rocket.
+						This mission aims to transport passengers from Earth (IAD) to
+						<a href="" class="cursor-pointer underline text-red-400 font-semibold">Mars</a> (IJP).
+						The Falcon Heavy rocket, known for its impressive capabilities, will be
+						used for this mission. Stay tuned for more updates and exciting developments!
+					</p>
+				</exo-launch-item>
+			</div>
+
+			<!-- four -->
+			<div>
+				<!-- src/components/exo-launch-item-more.js -->
+				<exo-launch-item-more id="launch3-more-container">
+					<span slot="mission-name">ORIGIN</span>
+					<span slot="manufacturer">Airbus</span>
+					<span slot="ship-model">SA-990</span>
+					<span slot="start-planet">Earth</span>
+					<span slot="start-city">Washington D.C.</span>
+					<span slot="end-planet">Earth</span>
+					<span slot="end-city">Frankfurt</span>
+					<span slot="distance-au">4.36e<sup>-8</sup> AU</span>
+					<span slot="distance-km">6,530 KM</span>
+					<span slot="duration-sols">0 Sols</span>
+					<span slot="duration-months">20 Minutes</span>
+					<span slot="speedC">1e<sup>-9</sup>c</span>
+					<span slot="speedKms">500 KM/s</span>
+					<span slot="energyTJ">10 TJ</span>
+					<span slot="energyPwr">US Pwr 2 Days</span>
+					<p slot="description">
+						The ORIGIN mission, carried out by Airbus’s SA-990 spacecraft, is a short intra-planetary journey departing from Washington D.C. and arriving in Frankfurt, Earth. The mission covers a modest distance of 6,530 kilometers (4.36e-8 AU) and is completed in just 20 minutes, without spanning any Sols. Traveling at a speed of 500 kilometers per second (1e-9c), the mission requires 10 terajoules of energy—equivalent to the power consumption of the United States over 2 days.
+					</p>
+				</exo-launch-item-more>
+				<!-- src/components/exo-launch-item.js -->
+				<exo-launch-item data-state="enter" data-align="left" id="launch3" class="launch-container">
+					<img slot="background" alt="Frankfurt City" src="public/images/frankfurt.webp">
+					<span slot="subtitle">Upcoming Launch</span>
+					<p slot="title">
+						<span class="text-3xl text-exo-light-100">ORIGIN</span>
+						<span class="text-2xl text-exo-light-300 font-normal">SA-990</span>
+					</p>
+					<h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
+					<h1 slot="to" loc="[ EARTH / GER ]">FRA</h1>
+					<p slot="description">
+						The Airbus SA-990 mission is a routine intraplanetary flight using
+						<a href="" class="cursor-pointer underline text-red-400 font-semibold">Airbus' SA-990</a> rocket.
+						<td class="launch-col-1">🗿</td>
+						This mission will start in Washington, D.C. and aims to take 30 humans into low earth orbit. Their
+						destination is Frankfurt Spaceport in Germany. The SA-990, known for its impressive capabilities, will
+						be
+						used for this mission. Stay tuned for more updates and exciting developments!
+					</p>
+				</exo-launch-item>
+			</div>
+
+			<!-- five -->
+			<div>
+				<!-- src/components/exo-launch-item-more.js -->
+				<exo-launch-item-more id="launch4-more-container">
+					<span slot="mission-name">PURSUIT</span>
+					<span slot="manufacturer">Airbus</span>
+					<span slot="ship-model">LEO-690</span>
+					<span slot="start-planet">Earth</span>
+					<span slot="start-city">Washington D.C.</span>
+					<span slot="end-planet">Earth</span>
+					<span slot="end-city">Tokyo</span>
+					<span slot="distance-au">4e<sup>-8</sup> AU</span>
+					<span slot="distance-km">10,850 KM</span>
+					<span slot="duration-sols">0 Sols</span>
+					<span slot="duration-months">30 Minutes</span>
+					<span slot="speedC">1e<sup>-9</sup>c</span>
+					<span slot="speedKms">50 KM/s</span>
+					<span slot="energyTJ">10 TJ</span>
+					<span slot="energyPwr">US Pwr 2 Days</span>
+					<p slot="description">
+						The PURSUIT mission, manufactured by Airbus, features the LEO-690 spacecraft designed for rapid intercity travel. Departing from Washington D.C., Earth, it heads to Tokyo, Earth, covering a distance of 10,850 km. Despite its seemingly short trip within planetary boundaries, the mission highlights advanced technology, with the ship traveling at 50 km/s—about 1e⁻⁹c of light speed. The journey lasts a mere 30 minutes, making it an ideal option for urgent travel. The total energy consumption is 10 TJ, which is comparable to the energy used by the U.S. over 2 days. The LEO-690 offers an efficient and quick method for global travel.
+					</p>
+				</exo-launch-item-more>
+				<!-- src/components/exo-launch-item.js -->
+				<exo-launch-item data-state="enter" data-align="left" id="launch4" class="launch-container">
+					<img slot="background" alt="futuristic airport" src="public/images/airport.webp">
+					<span slot="subtitle">Upcoming Launch</span>
+					<p slot="title">
+						<span class="text-3xl text-exo-light-100">PURSUIT</span>
+						<span class="text-2xl text-exo-light-300 font-normal">LEO-690</span>
+					</p>
+					<h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
+					<h1 slot="to" loc="[ EARTH / JP ]">NRT</h1>
+					<p slot="description">
+						The LEO-990 mission is a routine intraplanetary flight using
+						<a href="" class="cursor-pointer underline text-red-400 font-semibold">Airbus' SA-990</a> rocket.
+						<td class="launch-col-1">🗿</td>
+						This mission will start in Washington, D.C. and aims to take 30 humans into low earth orbit. Their
+						destination is Japan Space Port. The SA-990, known for its impressive capabilities, will be
+						used for this mission. Stay tuned for more updates and exciting developments!
+					</p>
+				</exo-launch-item>
+			</div>
+		</section>
+		<section id="carousel-controls-container" class="fixed w-full">
+			<div id="carousel-controls" class="
         w-fit mx-auto
         flex flex-row items-center justify-between 
         rounded-full 
@@ -23,156 +244,18 @@
         backdrop-blur-sm 
         slide-fade-in delay-5
       ">
-        <svg id="img-back" class="rotate-180 cursor-pointer" data-enabled="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 10" fill="inherit" >
-          <path d="M1.0125 10L0.125 9.1125L4.2375 5L0.125 0.8875L1.0125 0L6.0125 5L1.0125 10Z" fill="white"/>
-        </svg>
-        <div id="img-selectors" class="flex flex-row">
-          <button class="circle" data-selected="true"  id="img-select-0"></button>
-          <button class="circle" data-selected="false" id="img-select-1"></button>
-          <button class="circle" data-selected="false" id="img-select-2"></button>
-          <button class="circle" data-selected="false" id="img-select-3"></button>
-          <button class="circle" data-selected="false" id="img-select-4"></button>
-        </div>
-        <svg id="img-next" data-enabled="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 10" fill="inherit" class="cursor-pointer">
-          <path d="M1.0125 10L0.125 9.1125L4.2375 5L0.125 0.8875L1.0125 0L6.0125 5L1.0125 10Z" fill="white"/>
-        </svg>
-      </div>
-    </div>
-    <section id="exo-launches" class="flex flex-row bg-[#04050a] overflow-hidden relative h-screen w-screen">
-      
-      <!-- one -->
-      <div data-state="visible" class="exo-launch absolute left-0 top-0 h-full w-full" id="launch0">
-        <div class="exo-launch-container">
-          <img class="exo-launch-img opacity-fade-in" alt="spaceship" src="public/images/alien_planet.png">
-          <div class="exo-launch-desc opacity-fade-in delay-2">
-            <!-- src/components/exo-launch-item.js -->
-            <exo-launch-item data-align="left" data-link="#polaris-mission" data-index="0">
-              <p slot="subtitle">Upcoming Launch</p>
-              <p slot="title">
-                <span class="text-3xl text-exo-light-100">ENDEAVOR</span>
-                <span class="text-2xl text-exo-light-300 font-normal">POLARIS-IV</span>
-              </p>
-              <h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
-              <h1 slot="to" loc="[ JUPITER-IO / INTL. ]">IJP</h1>
-              <p slot="description">
-                The Seabloom mission is a highly anticipated upcoming launch using
-                <a href="" class="cursor-pointer underline text-red-400 font-semibold">Seabloom's POLARIS-IV</a> rocket.
-                This mission aims to transport a payload from Earth (IAD) to
-                <a href="" class="cursor-pointer underline text-red-400 font-semibold">Jupiter's moon IO</a> (IJP).
-                The POLARIS-IV, known for its impressive capabilities, will be used for this mission. Stay tuned 
-                for more updates and exciting developments!
-              </p>
-            </exo-launch-hero>
-          </div>
-        </div>
-      </div>
-
-      <!-- two -->
-      <div data-state="enter" class="exo-launch absolute left-0 top-0 h-full w-full" id="launch1">
-        <div class="exo-launch-container">
-          <img class="exo-launch-img opacity-fade-in" alt="moon base" src="public/images/moon_settlement.jpg">
-          <div class="exo-launch-desc opacity-fade-in delay-2">
-            <!-- src/components/exo-launch-item.js -->
-            <exo-launch-item data-align="left" data-link="#polaris-mission" data-index="1">
-              <p slot="subtitle">Upcoming Launch</p>
-              <p slot="title">
-                <span class="text-3xl text-exo-light-100">HORIZON</span>
-                <span class="text-2xl text-exo-light-300 font-normal">ATLAS-II</span>
-              </p>
-              <h1 slot="from" loc="[ EARTH / US ]">LAX</h1>
-              <h1 slot="to" loc="[ SELENE / INTL. ]">OKO</h1>
-              <p slot="description">
-                The Seabloom mission is an exciting upcoming spaceship launch. This mission will utilize Seabloom's ATLAS-II 
-                to transport a payload from Earth (IAD) to Jupiter's moon IO (IJP). The Falcon Heavy rocket is renowned for 
-                its impressive capabilities and will play a crucial role in this mission. Stay tuned for more updates 
-                and thrilling developments!
-              </p>
-            </exo-launch-hero>
-          </div>
-        </div>
-      </div>
-
-      <!-- three -->
-      <div data-state="enter" class="exo-launch absolute left-0 top-0 h-full w-full" id="launch2">
-        <div class="exo-launch-container">
-          <img class="exo-launch-img opacity-fade-in" alt="moon base" src="public/images/mars_settlement.jpg">
-          <div class="exo-launch-desc opacity-fade-in delay-2">
-            <!-- src/components/exo-launch-item.js -->
-            <exo-launch-item data-align="left" data-link="#polaris-mission" data-index="2">
-              <p slot="subtitle">Upcoming Launch</p>
-              <p slot="title">
-                <span class="text-3xl text-exo-light-100">ODYSSEY</span>
-                <span class="text-2xl text-exo-light-300 font-normal">FALCON HEAVY</span>
-              </p>
-              <h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
-              <h1 slot="to" loc="[ MARS / JP ]">IJP</h1>
-              <p slot="description">
-                The Falcon Heavy mission is a highly anticipated upcoming launch using
-                <a href="" class="cursor-pointer underline text-red-400 font-semibold">SpaceX's Falcon Heavy</a> rocket.
-                This mission aims to transport passengers from Earth (IAD) to
-                <a href="" class="cursor-pointer underline text-red-400 font-semibold">Mars</a> (IJP).
-                The Falcon Heavy rocket, known for its impressive capabilities, will be
-                used for this mission. Stay tuned for more updates and exciting developments!
-              </p>
-            </exo-launch-hero>
-          </div>
-        </div>
-      </div>
-
-      <!-- four -->
-      <div data-state="enter" class="exo-launch absolute left-0 top-0 h-full w-full" id="launch3">
-        <div class="exo-launch-container">
-          <img class="exo-launch-img opacity-fade-in" alt="Frankfurt" src="public/images/frankfurt.jpg">
-          <!-- <video alt="earth from space" src="public/videos/earth_rotation.mp4" class="exo-launch-img opacity-fade-in" autoplay loop muted></video> -->
-          <div class="exo-launch-desc opacity-fade-in delay-2">
-            <!-- src/components/exo-launch-item.js -->
-            <exo-launch-item data-align="left" data-link="#polaris-mission" data-index="3">
-              <p slot="subtitle">Upcoming Launch</p>
-              <p slot="title">
-                <span class="text-3xl text-exo-light-100">ORIGIN</span>
-                <span class="text-2xl text-exo-light-300 font-normal">SA-990</span>
-              </p>
-              <h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
-              <h1 slot="to" loc="[ EARTH / GER ]">FRA</h1>
-              <p slot="description">
-                The Airbus SA-990 mission is a routine intraplanetary flight using
-                <a href="" class="cursor-pointer underline text-red-400 font-semibold">Airbus' SA-990</a> rocket.
-                This mission will start in Washington, D.C. and aims to take 30 humans into low earth orbit. Their 
-                destination is Frankfurt Spaceport in Germany. The SA-990, known for its impressive capabilities, will be
-                used for this mission. Stay tuned for more updates and exciting developments!
-              </p>
-            </exo-launch-hero>
-          </div>
-        </div>
-      </div>
-
-      <!-- five -->
-      <div data-state="enter" class="exo-launch absolute left-0 top-0 h-full w-full" id="launch4">
-        <div class="exo-launch-container">
-          <img class="exo-launch-img opacity-fade-in" alt="moon base" src="public/images/airport.png">
-          <div class="exo-launch-desc opacity-fade-in delay-2">
-            <!-- src/components/exo-launch-item.js -->
-            <exo-launch-item data-align="left" data-link="#polaris-mission" data-index="4">
-              <p slot="subtitle">Upcoming Launch</p>
-              <p slot="title">
-                <span class="text-3xl text-exo-light-100">PURSUIT</span>
-                <span class="text-2xl text-exo-light-300 font-normal">LEO-690</span>
-              </p>
-              <h1 slot="from" loc="[ EARTH / US ]">IAD</h1>
-              <h1 slot="to" loc="[ EARTH / JP ]">NRT</h1>
-              <p slot="description">
-                The LEO-990 mission is a routine intraplanetary flight using
-                <a href="" class="cursor-pointer underline text-red-400 font-semibold">Airbus' SA-990</a> rocket.
-                This mission will start in Washington, D.C. and aims to take 30 humans into low earth orbit. Their 
-                destination is Japan Space Port. The SA-990, known for its impressive capabilities, will be
-                used for this mission. Stay tuned for more updates and exciting developments!
-              </p>
-            </exo-launch-hero>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+				<svg id="img-back" class="rotate-180 cursor-pointer" data-enabled="false" xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 7 10" fill="inherit">
+					<path d="M1.0125 10L0.125 9.1125L4.2375 5L0.125 0.8875L1.0125 0L6.0125 5L1.0125 10Z" fill="white" />
+				</svg>
+				<div id="img-selectors" class="flex flex-row"></div>
+				<svg id="img-next" data-enabled="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 10" fill="inherit"
+					class="cursor-pointer">
+					<path d="M1.0125 10L0.125 9.1125L4.2375 5L0.125 0.8875L1.0125 0L6.0125 5L1.0125 10Z" fill="white" />
+				</svg>
+			</div>
+		</section>
+	</main>
 </body>
 
 </html>
