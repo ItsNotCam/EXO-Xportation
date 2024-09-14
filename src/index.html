@@ -12,6 +12,28 @@
   <exo-cursor class="hidden"></exo-cursor>
   <!-- src/components/exo-nav.js -->
   <exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
+	<button id="open-disclaimer-btn" class="fixed bottom-4 right-4 underline cursor-pointer z-[1]">
+		Disclaimer
+	</button>
+	<div id="disclaimer" data-visible="false">
+		<button id="close-disclaimer-btn" class="absolute top-4 right-4 h-12 w-12 rounded-full hover:bg-exo-light-400 p-1 transition-colors duration-200">
+			<svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<line x1="18" y1="6" x2="6" y2="18" />
+				<line x1="6" y1="6" x2="18" y2="18" />
+			</svg>
+		</button>
+		<div class="max-w-[800px] m-4 text-2xl relative disclaimer-content-before">
+			<!-- <div class="w-full flex flex-row justify-between text-3xl items-center mb-4"> -->
+					<h1 class="text-3xl mb-2">This website is developed as an educational project.</h1>
+			<!-- </div> -->
+			<div class="text-2xl">
+				Certain materials are included under the fair use exemption of the U.S. Copyright Law and 
+				have been prepared according to the multimedia fair use guidelines and are restricted from 
+				further use.
+			</div>
+		</div>
+	</div>
   <main>
     <div class="h-screen min-w-screen grid items-center">
       <img src="public/images/snowboard_astro.webp" alt="space man" class="

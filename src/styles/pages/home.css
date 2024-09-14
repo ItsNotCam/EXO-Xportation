@@ -22,6 +22,57 @@
   }
 }
 
+#disclaimer {
+	position: fixed;
+	inset: 0;
+	z-index: 500;
+	height: 100vh;
+	width: 100vw;
+	display: grid;
+	place-items: center;	
+	backdrop-filter: blur(5px);
+	transition: opacity 200ms;
+	@apply bg-exo-dark-500/85;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: -1rem;
+		width: 1px;
+		height: 100%;
+		animation: before-anim 5s ease-in-out infinite;
+		@apply bg-exo-light-100;
+	}
+
+	&[data-visible="false"] {
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+
+@keyframes before-anim {
+	from { 
+		transform: scaleY(0);
+		transform-origin: top;
+	}
+
+	49% {
+		transform-origin: top;
+	}
+	50% {
+		transform: scaleY(100%);
+		transform-origin: bottom;
+	}
+
+	99% {
+		transform-origin: bottom;
+	}
+	to {
+		transform: scaleY(0);
+		transform-origin: top;
+	}
+}
+
 /* Media Queries */
 /* 1280px */
 @media screen and (max-width: 80rem) {
