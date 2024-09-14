@@ -29,7 +29,6 @@
 }
 
 .parallax-images {
-  /* height: var(--parallax-height); */
   position: fixed;
   top: 0;
   width: 100%;
@@ -41,7 +40,6 @@
   grid-auto-flow: column;
 
   gap: var(--parallax-gap);
-  /* padding-inline: var(--parallax-gap); */
   padding-inline: 1rem;
 
   @apply bg-exo-dark-900;
