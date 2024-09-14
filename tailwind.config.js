@@ -44,7 +44,10 @@ module.exports = {
         'home-md': {'max': '645px'},
         'home-sm': {'max': '450px'},
         'home-xs': {'max': '428px'},
-        "nav": {"max": "960px"},
+        'nav': {"max": "960px"},
+				'txt': {'max': '741px'},
+				'1000': {'max': '1000px'},
+				'1550': {'max': '1550px'}
       },
       lineHeight: {
         'em-0.1': '0.1em',

@@ -39,6 +39,25 @@ html.lenis, html.lenis body {
   src: url('../../public/fonts/D-DIN-Bold.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: 'Archivo';
+	src: url('../../public/fonts/Archivo-Variable.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Archivo-Italic';
+	src: url('../../public/fonts/Archivo-Italic-Variable.ttf') format('truetype');
+}
+
+.archivo {
+	font-family: 'Archivo', 'D-Din', 'sans-serif';
+}
+
+.archivo .font-italic {
+	font-family: 'Archivo-Italic', 'D-Din', 'sans-serif';
+	font-style: italic;
+}
+
 /* Fonts */
 .ddin {
   font-family: 'D-DIN', sans-serif;

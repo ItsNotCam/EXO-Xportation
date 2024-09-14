@@ -95,3 +95,43 @@
     grid-area: 1 / 1 / -1 / -1;
   }
 } 
+
+/* .test-one {
+	position: relative;
+	grid-column: 5 / 8;
+	grid-row: 1 / 2;
+	height: 100%;
+	object-fit: cover;
+	padding-bottom: 0.5em;
+}
+
+.test-one::after {
+	position: absolute;
+	content: '';
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+
+	@apply bg-exo-light-100;
+} */
+
+.test-one {
+	position: relative;
+	grid-column: 5 / 8;
+	grid-row: 1 / 2;
+	height: 100%;
+	padding-bottom: 0.5em;
+	z-index: 0;
+	/* Optional: set width explicitly to see changes */
+	/* width: 65%; */
+}
+
+.test-one::after {
+	position: absolute;
+	content: '';
+	inset: 0;
+	z-index: 1;
+	
+	background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 1));
+}
