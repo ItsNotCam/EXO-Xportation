@@ -81,7 +81,7 @@
           </a>
         </div>
       </div>
-      <div class="h-screen relative pointer-events-none" id="parallax-spacer">
+      <div class="min-h-screen relative pointer-events-none" id="parallax-spacer">
         <a href="#cringe-space-quote"class="
           absolute grid items-center 
           bottom-6 left-1/2 -translate-x-1/2 
@@ -95,7 +95,7 @@
       </a>
       </div>
     </section>
-    <section id="cringe-space-quote" class="relative flex flex-col h-screen min-w-screen justify-center items-center mx-auto pointer-events-none bt-exo-dark-900">
+    <section id="cringe-space-quote" class="relative flex flex-col min-h-screen min-w-screen justify-center items-center mx-auto pointer-events-none bt-exo-dark-900">
         <video src="public/videos/earth_rotation.mp4" alt="video of earth from space" class="absolute inset-0 w-full h-full object-cover" autoplay loop muted></video>
         <div id="content" class="self-center w-fit text-[clamp(1.3rem,3.5vw,2rem)] sm:mx-auto mx-2 flex flex-col gap-[0.2em] grid-center z-[2]">
           <p data-anim="slide-fade-in" class="animate-when-visible opacity-0 anim-delay-2 w-fit">
@@ -153,62 +153,171 @@
         </div>
       </div>
     </section>
-    <section class="bg-exo-dark-500 h-screen grid place-items-center w-screen relative">
-			<div class="w-full h-[70%] p-4 grid grid-cols-8 grid-rows-1 text-[clamp(3rem,8vw,6rem)] tracking-wide font-bold leading-em-0.9 archivo">
+    <section class="bg-exo-dark-500 min-h-screen grid place-items-center w-screen relative">
+			<div class="w-full h-[70%] p-4 grid grid-cols-8 grid-rows-1 text-[clamp(3rem,7vw,6rem)] tracking-wide font-bold leading-em-0.9 archivo">
 				<div class="col-start-1 -col-end-1 row-start-1 row-end-2 z-10 self-end mx-auto flex flex-col gap-2 items-left justify-end">
 					<h1 data-anim="slide-fade-in" class="opacity-0 animate-when-visible">LIVE IN</h1>
-					<h1 data-anim="slide-fade-in" class="ml-[clamp(0px,6vw,2em)] txt:ml-0 opacity-0 animate-when-visible anim-delay-1">LUXURIOUS</h1>
-					<h1 data-anim="slide-fade-in" class="ml-[clamp(0px,25vw,5em)] txt:ml-0 opacity-0 animate-when-visible anim-delay-2">SPACES,</h1>
-					<h1 data-anim="slide-fade-in" class="ml-[clamp(0px,18vw,4em)] txt:ml-0 opacity-0 animate-when-visible anim-delay-3">WHERE COMFORT</h1>
-					<h1 data-anim="slide-fade-in" class="ml-[clamp(0px,41vw,7em)] txt:ml-0 opacity-0 animate-when-visible anim-delay-4">IS PARAMOUNT</h1>
+					<h1 data-anim="slide-fade-in" class="ml-[clamp(0px,6vw,2em)] txt:ml-0 opacity-0 animate-when-visible">LUXURIOUS</h1>
+					<h1 data-anim="slide-fade-in" class="ml-[clamp(0px,25vw,5em)] txt:ml-0 opacity-0 animate-when-visible">SPACES,</h1>
+					<h1 data-anim="slide-fade-in" class="ml-[clamp(0px,18vw,4em)] txt:ml-0 opacity-0 animate-when-visible">WHERE COMFORT</h1>
+					<h1 data-anim="slide-fade-in" class="ml-[clamp(0px,38vw,7em)] txt:ml-0 opacity-0 animate-when-visible">IS PARAMOUNT</h1>
 				</div>
-				<div class="
-					relative col-start-5 col-end-8 row-start-1 row-end-2 h-full pb-[0.5em] z-0 
-					after:absolute after:content-[''] after:inset-0 after:z-[1] 
-					after:bg-gradient-to-b after:from-transparent via-[70%]:transparent after:to-exo-dark-500
-					txt:col-start-2 txt:col-end-8
-					1000:col-start-3 1000:col-end-7
-					1550:col-end-8
-				">
-					<img src="public/images/comfy2.png" class="
-						h-full w-[70%] object-cover 1550:w-full
-					">
+				<div data-anim="opacity-fade-in" class="luxurious-spaces-img animate-when-visible opacity-0 anim-delay-2">
+					<img src="public/images/comfy2.png" class="h-full object-cover">
 				</div>
 			</div>
 		</section>
-		<section class="bg-exo-dark-900 grid place-items-start sticky top-0 p-[5rem]">
-			<div class="grid grid-cols-2 grid-rows-1 gap-8">
-				<div class="my-auto text-lg">
-					<h1>Your Home Away from Home</h1>
+		<section class="bg-exo-dark-900 grid place-items-start grid-flow-row gap-8 p-[5rem]">
+			<div class="grid grid-cols-2 grid-rows-1 gap-8 1000:grid-rows-1 1000:grid-cols-1">
+				<div class="
+					my-auto text-lg 
+					[&>p]:text-exo-light-300 [&>p]:mb-4 
+					[&>h1]:font-bold [&>h1]:text-4xl [&>h1]:mb-6 [&>h1]:mt-4
+					[&>h2]:font-bold [&>h2]:uppercase [&>h2]:text3xl
+				">
+					<h1 class="uppercase">Your Home Away from Home</h1>
 					<p>
 						State-of-the-art custom-pressurized apartments are available and are at 
 						the pinnacle of our priorities when it comes to amenities. These apartments
 						will be your home away from home, and we aim to ensure your comfort
 						throughout your journey.
+					</p>
 
-						Atmospheric Pressure
+					<h2>Atmospheric Pressure</h2>
+					<p>
 						Set the atmospheric pressure that you are most comfortable with,
 						and it will take care of the rest
+					</p>
 
-						Climate Control
+					<h2>Climate Control</h2>
+					<p>
 						Each unit comes equipped with its own climate-control settings. Access 
 						your climate controls with voice commands or with the included datapad.
+					</p>
 
-						Gravity
+					<h2>Gravity</h2>
+					<p>
 						Each unit comes equipped with its own customizable gravity generator. 
 						Whether you want your traversal within your unit to feel like Earth, your 
 						destination, space itself, or something in between, you may modify the
 						gravity your unit at will.
+					</p>
 
-						Decor Variants
+					<h2>Decor Variants</h2>
+					<p>
 						You are not limited to just one suite aesthetic. You may choose from many
 						various interiors.
 					</p>
 				</div>
-				<img src="public/images/10.png" class="w-full object-cover">
+				<img src="public/images/10.png" class="1000:hidden w-full h-full object-cover transform my-auto">
 			</div>	
+			<div class="grid grid-cols-2 grid-rows-1 gap-8 1000:grid-cols-1">
+				<img src="public/images/10.png" class="1000:hidden w-full h-full object-cover transform my-auto">
+				<div class="
+					my-auto text-lg 
+					[&>p]:text-exo-light-300 [&>p]:mb-4 
+					[&>h1]:font-bold [&>h1]:text-4xl [&>h1]:mb-6 [&>h1]:mt-4
+					[&>h2]:font-bold [&>h2]:uppercase [&>h2]:text3xl
+				">
+					<h1 class="uppercase">Personalized Care</h1>
+					<p>
+						A <strong>custom-tailored AI</strong> attendant will be assigned to you that, given your
+						permission, will be given private, encrypted, and secure access to your personal such that it can assume a personality of one that will 
+						complement your own.
+					</p>
+					<p>
+						This AI can come in the form of a physical entity of your choosing, whether it be humanoid, house cat, dog, or others, or can be implanted directly into neural network.
+					</p>
+					<p>
+						What the AI learns from your interactions may be transferred to your 
+						personal home network free of charge, or the AI can be purchased
+						separately in the case that you wish to continue your interactions. 
+					</p>
+				</div>
+			</div>
+			<div class="grid grid-cols-2 grid-rows-1 gap-8 1000:grid-cols-1">
+				<div class="
+					my-auto text-lg 
+					[&>p]:text-exo-light-300 [&>p]:mb-4 
+					[&>h1]:font-bold [&>h1]:text-4xl [&>h1]:mb-6 [&>h1]:mt-4
+					[&>h2]:font-bold [&>h2]:uppercase [&>h2]:text3xl
+				">
+					<h1 class="uppercase">Fine Dining</h1>
+					<p>
+						On EXO-accredited vessels, a vast assortment of dining options is available to you, tailored to meet your every craving.
+					</p>
+					<p>
+						Whether you're in the mood for something familiar from Earth or eager to try cuisine inspired by the planets you'll be visiting, our culinary team is ready to serve. 
+					</p>
+					<p>
+						Have specific dietary needs or preferences? With our customizable meal plan, you can easily select your desired foods, portion sizes, and meal times. At an average as low as of $8 USD* per meal, we offer an incredible deal on an incredible selection. 
+					</p>
+					<p>
+						Every dish is prepared with the freshest ingredients, grown sustainably in our onboard biomes, ensuring both quality and variety throughout your journey.
+					</p>
+				</div>
+				<img src="public/images/10.png" class="1000:hidden w-full h-full object-cover transform my-auto">
+			</div>
+			<div class="grid grid-cols-2 grid-rows-1 gap-8 1000:grid-cols-1">
+				<img src="public/images/10.png" class="1000:hidden w-full h-full object-cover transform my-auto">
+				<div class="
+					my-auto text-lg 
+					[&>p]:text-exo-light-300 [&>p]:mb-4 
+					[&>h1]:font-bold [&>h1]:text-4xl [&>h1]:mb-6 [&>h1]:mt-4
+					[&>h2]:font-bold [&>h2]:uppercase [&>h2]:text3xl
+				">
+					<h1 class="uppercase">ENTERTAINMENT</h1>
+					<p>
+						Entertainment aboard EXO-accredited vessels is designed to keep you engaged and entertained throughout the entire journey. 
+					</p>
+					<p>
+						Our ships are equipped with immersive virtual reality suites, allowing you to experience everything from exploring alien landscapes to enjoying virtual concerts and movies in stunning detail. 
+					</p>
+					<p>
+						For more social activities, our zero-gravity recreation rooms offer unique games and experiences that can only be enjoyed in space. 
+					</p>
+					<p>
+						Whether you're into interactive storytelling, competitive gaming, or simply want to relax with a good book in our digital library, there’s always something to keep you entertained while traveling.
+					</p>
+				</div>
+			</div>
+			<div class="grid grid-cols-2 grid-rows-1 gap-8 1000:grid-cols-1">
+				<div class="
+					my-auto text-lg 
+					[&>p]:text-exo-light-300 [&>p]:mb-4 
+					[&>h1]:font-bold [&>h1]:text-4xl [&>h1]:mb-6 [&>h1]:mt-4
+					[&>h2]:font-bold [&>h2]:uppercase [&>h2]:text3xl
+				">
+					<h1 class="uppercase">Exercise</h1>
+					<p><strong>Participation in exercise may be waived*</strong></p>
+					<p>
+						Maintaining physical health on your journey is essential, especially given the ship's internal gravity is set to the gravity level of the destination planet. 
+					</p>
+					<p>
+						These gravity levels means that regular exercise isn't just recommended — it's crucial for keeping your muscles and bones strong. 
+					</p>
+					<p>
+						To support your wellness, you'll have access to your very own personal trainer and a workout plan custom-tailored to your needs. Our advanced systems analyze your body and physical requirements, ensuring that every exercise session is of adequate intensity and keeps you in peak condition for life on new worlds.
+					</p>
+				</div>
+				<img src="public/images/10.png" class="1000:hidden w-full h-full object-cover transform my-auto">
+			</div>
+			<div class="grid grid-cols-2 grid-rows-1 gap-8 1000:grid-cols-1">
+				<img src="public/images/10.png" class="1000:hidden w-full h-full object-cover transform my-auto">
+				<div class="
+					my-auto text-lg 
+					[&>p]:text-exo-light-300 [&>p]:mb-4 
+					[&>h1]:font-bold [&>h1]:text-4xl [&>h1]:mb-6 [&>h1]:mt-4
+					[&>h2]:font-bold [&>h2]:uppercase [&>h2]:text3xl
+				">
+					<h1 class="uppercase">Skip the Wait</h1>
+					<p>For those who prefer a faster journey with less down-time, our Extended Sleep Modules offer the perfect solution*. </p>
+					<p>Instead of passing the time aboard the vessel, you can opt to be placed in suspended animation, where the entire trip feels like it happens in an instant. </p>
+					<p>This advanced technology puts you into a suspended state, and before you know it, you'll wake up at your destination as if no time has passed at all. </p>
+					<p>Extended Sleep is the ultimate choice for travelers who want to travel on a budget or those who wish to simply skip the wait and jump straight to the experience of exploring a new world.</p>
+				</div>
+			</div>
     </section>
-		<section class="bg-exo-dark-900 h-[300vh]">
 			<!-- <h1 class="text-4xl font-bold mb-4">FLY EXO</h1>
 			<p>
 				EXO offers a modern, safe, and luxurious industry-leading approach to interplanetary travel.
@@ -227,7 +336,6 @@
 				available at a reduced charge, ensuring that passengers feel as though they've arrived in the blink
 				of an eye, waking up ready to begin their adventure.
 			</p> -->
-    </section>
   </main>
 </body>
 
