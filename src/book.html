@@ -7,220 +7,195 @@
 	<title>EXO | Flights</title>
 </head>
 <body class="bg-exo-dark-500">
-	<exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
-	<main class="max-h-screen max-w-[100vw] overflow-hidden">
+	<exo-nav class="relative" blur-color="rgba(74,95,121,0.85)"></exo-nav>
+	<main class="min-h-screen max-w-[100vw] overflow-hidden grid grid-cols-2 grid-rows-1 opacity-fade-in">
 		<div id="bg-images" class="fixed inset-0 min-h-screen">
 			<img src="public/images/europa.jpg" class="h-full w-full object-cover">
 		</div>
-		<div class="fixed w-screen min-h-screen backdrop-blur-md z-50">
+		<div class="grid grid-cols-[auto,auto] grid-rows-3 w-fit h-full">
+			<h1 class="col-start-1 col-end-2 row-start-1 -row-end-1 my-auto text-[4rem] text-center font-bold writing-mode-vertical-lr place-self-start z-[1] h-full bg-exo-dark-500/60">
+				EUROPA
+			</h1>
+			<button id="book-open" data-title="GO HERE" class="
+				col-start-2 col-end-3 row-start-3 row-end-4 self-end m-8
+				btn btn-light h-[4.5rem] w-[12.25rem] text-xl
+			">GO HERE</button>
+		</div>
+		<div id="book-flight-form" data-visible="false" class="
+			fixed w-screen min-h-screen opacity-0 pointer-events-none backdrop-blur-0 
+			transition-all duration-200
+			data-[visible='true']:opacity-100
+			data-[visible='true']:pointer-events-auto 
+			data-[visible='true']:z-50
+			data-[visible='true']:backdrop-blur-md
+		">
 			<div class="book-item-container">
+				<button id="book-close" class="book-close-btn w-10 h-10 fixed right-6 top-6 rounded-full p-1 hover:bg-exo-dark-500 transition-colors duration-200">
+					<svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+						stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<line x1="18" y1="6" x2="6" y2="18" />
+						<line x1="6" y1="6" x2="18" y2="18" />
+					</svg>
+				</button>
 				<div class="h-full relative rounded-lg overflow-hidden row-start-2 shadow-xl">
 					<img src="public/images/alien_planet.webp" class="h-full w-full object-cover">
 					<h1 class="absolute bottom-8 left-8 text-5xl tracking-wide font-bold">EUROPA</h1>
 				</div>
-				<div class="h-full col-span-2 col-start-2">
-					<h1 class="text-4xl tracking-wide font-bold text-exo-dark-500">PICK A FLIGHT</h1>
-				</div>
-				<div class="book-item-form">
+				<div class="h-full col-span-2 col-start-2"></div>
+				<div class="book-item-form bg-exo-dark-500/30 p-4 rounded-lg">
+					<h1 class="text-4xl tracking-wide font-bold pb-2">PICK A FLIGHT</h1>
 					<div class="book-item-flights">
-						<div id="flight1" class="book-item-flight">
-							<div class="flex justify-between items-center [&>h1]:text-2xl">
-								<h1>SPACEX</h1>
-								<h1>CRYO SLEEP</h1>
-							</div>
-							<div class="flex flex-col w-full">
-								<div class="w-full">
-									<span class="font-bold">10:00 AM</span>
-									<span>Dec. 22nd 2135</span>
-									-
-									<span class="font-bold">12:00 PM</span>
-									<span>March 24th 2136</span>
-								</div>
-								<div class="w-full text-xl">
-									<span class="font-bold">Baltimore</span>
-									<span>(BWI)</span>
-									-
-									<span class="font-bold">NEW MOMBASA</span>
-									<span>(NMA)</span>
-								</div>
-								<div class="w-full">
-									<span>Earth</span>
-									<span>IO</span>
-								</div>
-							</div>
-							<div class="flex flex-row justify-between w-full mt-auto items-center">
-								<button class="btn h-[2.5rem] w-[7rem]" data-light="true" data-title="SELECTED"></button>
-								<div class="text-right">
-									<p class="font-bold text-2xl">$12,000 USD</p>
-									<p>one way per traveller</p>
-								</div>
-							</div>
-						</div>
-						<div id="flight2" class="book-item-flight">
-							<div class="flex justify-between items-center [&>h1]:text-2xl">
-								<h1>SPACEX</h1>
-								<h1>CRYO SLEEP</h1>
-							</div>
-							<div class="flex flex-col w-full">
-								<div class="w-full">
-									<span class="font-bold">12:00 PM</span>
-									<span>Jan. 15th 2136</span>
-									-
-									<span class="font-bold">1:00 PM</span>
-									<span>Jan. 15th 2136</span>
-								</div>
-								<div class="w-full text-xl">
-									<span class="font-bold">Washington D.C.</span>
-									<span>(IAD)</span>
-									-
-									<span class="font-bold">NEW Vegas</span>
-									<span>(FNV)</span>
-								</div>
-								<div class="w-full">
-									<span>Earth</span>
-									<span>Mars</span>
-								</div>
-							</div>
-							<div class="flex flex-row justify-between w-full mt-auto items-center">
-								<button class="btn h-[2.5rem] w-[7rem]" data-title="SELECT"></button>
-								<div class="text-right">
-									<p class="font-bold text-2xl">$9,000 USD</p>
-									<p>one way per traveller</p>
-								</div>
-							</div>
-						</div>
-						<div id="flight3" class="book-item-flight">
-							<div class="flex justify-between items-center [&>h1]:text-2xl">
-								<h1>SPACEX</h1>
-								<h1>CRYO SLEEP</h1>
-							</div>
-							<div class="flex flex-col w-full">
-								<div class="w-full">
-									<span class="font-bold">12:00 PM</span>
-									<span>Jan. 10th 2136</span>
-									-
-									<span class="font-bold">1:00 PM</span>
-									<span>Jan. 10th 2136</span>
-								</div>
-								<div class="w-full text-xl">
-									<span class="font-bold">Los Angeles</span>
-									<span>(LAX)</span>
-									-
-									<span class="font-bold">Frankfurt</span>
-									<span>(FGA)</span>
-								</div>
-								<div class="w-full">
-									<span>Earth</span>
-									<span>Earth</span>
-								</div>
-							</div>
-							<div class="flex flex-row justify-between w-full mt-auto items-center">
-								<button class="btn h-[2.5rem] w-[7rem]" data-title="SELECT"></button>
-								<div class="text-right">
-									<p class="font-bold text-2xl">$9,000 USD</p>
-									<p>one way per traveller</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="w-full h-[1px] bg-exo-light-100 my-4"></div>
-					<div id="selected-flight" class="relative overflow-hidden h-[130px] rounded-lg w-full p-4 bg-exo-dark-500/60 flex flex-row justify-between items-center">
-						<div class="flex flex-col">
-							<h1 class="text-lg">SpaceX</h1>
-							<div class="w-full">
-								<span class="font-bold">10:00 AM</span>
-								<span>Dec. 22nd 2135</span>
-								-
-								<span class="font-bold">12:00 PM</span>
-								<span>March 24th 2136</span>
-							</div>
-							<div class="w-full text-xl">
-								<span class="font-bold">Baltimore</span>
-								<span>(BWI)</span>
-								-
-								<span class="font-bold">NEW MOMBASA</span>
-								<span>(NMA)</span>
-							</div>
-							<div class="w-full">
-								<span>Earth</span>
-								<span>IO</span>
-							</div>
-						</div>
-						<h1 class="text-3xl tracking-wide font-bold w-fit">$12,000 USD</h1>
+						<exo-book-flight-item id="europa-flight-1" class="data-[selected='true']:pointer-events-none">
+							<span slot="company">SpaceX</span>
+							<span slot="method">CRYO</span>
+							<span slot="start-time">10:00 AM</span>
+							<span slot="start-date">Dec. 22nd 2135</span>
+							<span slot="end-time">12:00 PM</span>
+							<span slot="end-date">March 24th 2136</span>
+							<span slot="start-location">Baltimore</span>
+							<span slot="start-airport">(BWI)</span>
+							<span slot="end-location">NEW MOMBASA</span>
+							<span slot="end-airport">(NMA)</span>
+							<span slot="start-planet">Earth</span>
+							<span slot="end-planet">Europa</span>
+							<span slot="cost">$12,000</span>
+							<span slot="traveller-amount">one way per traveller</span>
+						</exo-book-flight-item>
+
+						<exo-book-flight-item id="europa-flight-2" class="data-[selected='true']:pointer-events-none">
+							<span slot="company">Blue Origin</span>
+							<span slot="method">ECON</span>
+							<span slot="start-time">8:30 AM</span>
+							<span slot="start-date">Jan. 15th 2136</span>
+							<span slot="end-time">2:00 PM</span>
+							<span slot="end-date">Feb. 10th 2136</span>
+							<span slot="start-location">Los Angeles</span>
+							<span slot="start-airport">(LAX)</span>
+							<span slot="end-location">New Mombasa</span>
+							<span slot="end-airport">(NMA)</span>
+							<span slot="start-planet">Earth</span>
+							<span slot="end-planet">Europa</span>
+							<span slot="cost">$30,250</span>
+							<span slot="traveller-amount">round trip per traveller</span>
+					</exo-book-flight-item>
+					
+					<exo-book-flight-item id="europa-flight-3" class="data-[selected='true']:pointer-events-none">
+							<span slot="company">EXO</span>
+							<span slot="method">LUXURY</span>
+							<span slot="start-time">7:15 PM</span>
+							<span slot="start-date">Nov. 2nd 2135</span>
+							<span slot="end-time">9:30 AM</span>
+							<span slot="end-date">Nov. 12th 2135</span>
+							<span slot="start-location">Tokyo</span>
+							<span slot="start-airport">(HND)</span>
+							<span slot="end-location">New Mombasa</span>
+							<span slot="end-airport">(NMA)</span>
+							<span slot="start-planet">Earth</span>
+							<span slot="end-planet">Europa</span>
+							<span slot="cost">$18,000</span>
+							<span slot="traveller-amount">one way per traveller</span>
+					</exo-book-flight-item>
+					
+					<exo-book-flight-item id="europa-flight-4" class="data-[selected='true']:pointer-events-none">
+							<span slot="company">Galactic Ventures</span>
+							<span slot="method">FIRST CLASS</span>
+							<span slot="start-time">1:45 PM</span>
+							<span slot="start-date">March 10th 2136</span>
+							<span slot="end-time">9:00 PM</span>
+							<span slot="end-date">April 15th 2136</span>
+							<span slot="start-location">New York</span>
+							<span slot="start-airport">(JFK)</span>
+							<span slot="end-location">Europa Station</span>
+							<span slot="end-airport">(EURO)</span>
+							<span slot="start-planet">Earth</span>
+							<span slot="end-planet">Europa</span>
+							<span slot="cost">$45,000</span>
+							<span slot="traveller-amount">round trip per traveller</span>
+					</exo-book-flight-item>
+					
+					<exo-book-flight-item id="europa-flight-5" class="data-[selected='true']:pointer-events-none">
+							<span slot="company">Seabloom</span>
+							<span slot="method">FIRST CLASS</span>
+							<span slot="start-time">9:00 AM</span>
+							<span slot="start-date">May 3rd 2136</span>
+							<span slot="end-time">6:30 PM</span>
+							<span slot="end-date">May 12th 2136</span>
+							<span slot="start-location">Sydney</span>
+							<span slot="start-airport">(SYD)</span>
+							<span slot="end-location">Europa Station</span>
+							<span slot="end-airport">(EURO)</span>
+							<span slot="start-planet">Earth</span>
+							<span slot="end-planet">Europa</span>
+							<span slot="cost">$19,500</span>
+							<span slot="traveller-amount">one way per traveller</span>
+					</exo-book-flight-item>
+					
 					</div>
 					<div class="w-full h-[1px] bg-exo-light-100 mt-4"></div>
+					<h1 class="my-2 text-4xl font-bold uppercase">ENTER YOUR INFORMATION</h1>
 					<form class="form">
-						<div id="personal">
-							<h1 class="text-2xl font-bold">Personal</h1>
-							<div class="grid grid-cols-2 grid-rows-2">
-								<div>
-									<span class="text-xl">First Name</span>
+						<div id="personal" class="w-full">
+							<h1 class="text-2xl font-bold mb-1">Personal</h1>
+							<div class="flex flex-row flex-wrap gap-4 [&>*]:flex-shrink-0 [&>*]:flex-grow">
+								<exo-text-field id="first-name-field">
+									<span slot="icon">
+										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg>
+									</span>
+									<span slot="title">First Name</span>
 									<input type="text" name="first-name" id="first-name" placeholder="" required>
-								</div>
-								<div>
-									<span class="text-xl">Last Name</span>
+								</exo-text-field>
+								<exo-text-field id="last-name-field">
+									<span slot="icon">
+										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg>
+									</span>
+									<span slot="title">Last Name</span>
 									<input type="text" name="last-name" id="last-name" placeholder="" required>
-								</div>
-								<div>
-									<span class="text-xl">Email</span>
+								</exo-text-field>
+								<exo-text-field class="w-full" id="email-field">
+									<span slot="icon">
+										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
+									</span>
+									<span slot="title">Email</span>
 									<input type="email" name="email" id="email" placeholder="" required>
-								</div>
+								</exo-text-field>
 							</div>
 						</div>
-						<div id="location">
-							<h1 class="text-2xl font-bold">Location</h1>
-							<div class="flex flex-col">
-								<div>
-									<span class="text-xl">Address 1</span>
+						<div id="location" class="w-full">
+							<h1 class="text-2xl font-bold mb-1">Location</h1>
+							<div class="flex flex-row flex-wrap gap-4 [&>*]:flex-shrink-0 [&>*]:flex-grow [&>*]:basis-[50%] [&>*]:max-w-1/2">
+								<exo-text-field id="address-1-field">
+									<span slot="icon">
+										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+									</span>
+									<span slot="title">Address 1</span>
 									<input type="text" name="address-1" id="address-1" placeholder="" required>
-								</div>
-								<div>
-									<span class="text-xl">Address 2</span>
+								</exo-text-field>
+								<exo-text-field id="address-2-field">
+									<span slot="icon">
+										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+									</span>
+									<span slot="title">Address 2</span>
 									<input type="text" name="address-2" id="address-2" placeholder="" required>
-								</div>
-								<div>
-									<span class="text-xl">City</span>
+								</exo-text-field>
+								<exo-text-field id="city-field">
+									<span slot="icon">
+										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-120v-560h160v-160h400v320h160v400H520v-160h-80v160H120Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Z"/></svg>
+									</span>
+									<span slot="title">City</span>
 									<input type="text" name="city" id="city" placeholder="" required>
-								</div>
-								<div>
-									<span class="text-xl">Zipcode</span>
-									<input type="text" name="zipcode" id="zipcode" placeholder="" required>
-								</div>
+								</exo-text-field>
+								<exo-text-field id="zipcode-field">
+									<span slot="icon">
+										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m240-160 40-160H120l20-80h160l40-160H180l20-80h160l40-160h80l-40 160h160l40-160h80l-40 160h160l-20 80H660l-40 160h160l-20 80H600l-40 160h-80l40-160H360l-40 160h-80Zm140-240h160l40-160H420l-40 160Z"/></svg>
+									</span>
+									<span slot="title">Zipcode</span>
+									<input type="number" name="zipcode" id="zipcode" placeholder="" required>
+								</exo-text-field>
 							</div>
 						</div>
 					</form>
 			</div>
 		</div>
-		<!-- <div class="fixed bottom-16 left-16 grid place-items-center">
-			<h1 class="text-4xl font-bold mr-auto">EUROPA</h1>
-			<button class="btn btn-light h-[4rem] mt-2 w-[10rem]" data-title="GO HERE" data-light="true"></button>
-		</div>
-		<div class="fixed bottom-8 grid grid-cols-12 overflow-auto translate-x-[60%]">
-			<div class="location-card h-[280px] w-[220px] grid place-items-center bg-exo-dark-500 right-8 bottom-8 shadow-lg rounded-md z-10 mt-auto col-start-1 overflow-hidden">
-				<img src="public/images/europa.jpg" class="col-start-1 col-end-1 row-start-1 row-end-1 inset-0 w-full h-full object-cover">
-				<h1 class="text-3xl font-bold tracking-wide right-4 ml-auto mt-auto mb-2 mr-2 bottom-2 col-start-1 col-end-1 row-start-1 row-end-1">
-					EUROPA
-				</h1>
-			</div>
-			<div class="location-card h-[240px] w-[200px] grid place-items-center bg-exo-dark-500 right-8 bottom-8 shadow-lg rounded-md z-[9] mt-auto overflow-hidden">
-				<img src="public/images/mars_settlement.webp" class="col-start-1 col-end-1 row-start-1 row-end-1 inset-0 w-full h-full object-cover">
-				<h1 class="text-3xl font-bold tracking-wide right-4 ml-auto mt-auto mb-2 mr-2 bottom-2 col-start-1 col-end-1 row-start-1 row-end-1">
-					MARS
-				</h1>
-			</div>
-			<div class="location-card h-[240px] w-[200px] grid place-items-center bg-exo-dark-500 right-8 bottom-8 shadow-lg rounded-md z-[8] mt-auto overflow-hidden">
-				<img src="public/images/alien_planet.webp" class="col-start-1 col-end-1 row-start-1 row-end-1 inset-0 w-full h-full object-cover">
-				<h1 class="text-3xl font-bold tracking-wide right-4 ml-auto mt-auto mb-2 mr-2 bottom-2 col-start-1 col-end-1 row-start-1 row-end-1">
-					IO
-				</h1>
-			</div>
-			<div class="location-card h-[240px] w-[200px] grid place-items-center bg-exo-dark-500 right-8 bottom-8 shadow-lg rounded-md z-[7] mt-auto overflow-hidden">
-				<img src="public/images/moon_settlement.webp" class="col-start-1 col-end-1 row-start-1 row-end-1 inset-0 w-full h-full object-cover">
-				<h1 class="text-3xl font-bold tracking-wide right-4 ml-auto mt-auto mb-2 mr-2 bottom-2 col-start-1 col-end-1 row-start-1 row-end-1">
-					JUPITER
-				</h1>
-			</div>
-		</div> -->
 	</main>
 </body>
 </html>
