@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import '../../styles/pages/flights.css';
-  
+import './flights/exo-launch-item';
+import './flights/exo-launch-item-more';
 
 $(function() { $("main").css("display", "block")  });
 
