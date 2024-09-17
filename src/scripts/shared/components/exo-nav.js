@@ -37,7 +37,7 @@ class Nav extends HTMLElement {
         <li><a href="index.html" class="nav-link cch" data-active='${path.endsWith("/") || path.endsWith("/index.html")}'>HOME</a></li>
         <li><a href="flights.html" class="nav-link cch" data-active='${path.endsWith("/flights.html")}'>FLIGHTS</a></li>
         <li><a href="journey.html" class="nav-link cch" data-active='${path.endsWith("/journey.html")}'>JOURNEY</a></li>
-        <li><a href="mission.html" class="nav-link cch" data-active='${path.endsWith("/book.html")}'>BOOK A FLIGHT</a></li>
+        <li><a href="book.html" class="nav-link cch" data-active='${path.endsWith("/book.html")}'>BOOK A FLIGHT</a></li>
         <li class="hidden flex-row gap-4 justify-end items-center mt-auto mb-4 border-none nav:flex">
           <a class="cch group" href="https://www.figma.com/design/wM1QwepxhQEqXILXFCVqTv/IT-331-Project-1?node-id=0-1&t=lRgPOmWjdUkPz3k1-1" target="_blank">
             <svg class="transition-transform duration-150 fill-[#E0E0E0] group-hover:fill-white group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 42 62" fill="none">

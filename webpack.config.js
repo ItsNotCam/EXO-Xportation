@@ -27,7 +27,8 @@ module.exports = {
     main: './src/index.js', 
     home: './src/scripts/pages/home.js', 
     flights: './src/scripts/pages/flights.js', 
-    journey: './src/scripts/pages/journey.js'
+    journey: './src/scripts/pages/journey.js', 
+    book: './src/scripts/pages/book.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

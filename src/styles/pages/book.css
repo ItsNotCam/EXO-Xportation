@@ -1,0 +1,100 @@
+.book-item-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto 1fr;
+	height: 100vh;
+	padding-top: 6rem;
+	padding-bottom: 4rem;
+	padding-inline: 5rem;
+	gap: 1rem;
+}
+
+.book-item-form {
+	grid-area: 2 / 2 / 3 / 4;
+}
+
+.book-item-flights {
+	--scrollbar-padding: 1rem;
+
+	display: grid;
+	grid-auto-flow: row;
+	overflow: auto;
+	position: relative;
+	height: calc(224px + var(--scrollbar-padding));
+	grid-auto-flow: column;
+	grid-auto-columns: 427px;
+	grid-template-rows: 1fr;
+	gap: calc(var(--scrollbar-padding) * 1.5);
+	padding-bottom: var(--scrollbar-padding);
+}
+
+.book-item-flight {
+	border-radius: 0.5rem;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	position: relative;
+	overflow: hidden;
+	@apply bg-exo-dark-500/60;
+
+	&::after {
+		content: '';
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+}
+
+#flight1::after {
+	background: url("../../public/images/airport.webp") no-repeat center bottom / cover;
+}
+
+#flight2::after {
+	background: url("../../public/images/moon_settlement.webp") no-repeat center bottom / cover;
+}
+
+#flight3::after {
+	background: url("../../public/images/green_future_city.jpg") no-repeat center bottom / cover;
+}
+
+.book-item-flights {
+	--sb-track-color: #131313;
+	--sb-thumb-color: #484848;
+	--sb-size: 5px;
+
+	&::-webkit-scrollbar {
+		width: var(--sb-size)
+	}
+
+	&::-webkit-scrollbar-track {
+		background: var(--sb-track-color);
+		border-radius: 1rem;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: var(--sb-thumb-color);
+		border-radius: 1rem;
+	}
+
+	@supports not selector(::-webkit-scrollbar) {
+		& {
+			scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+		}
+	}
+}
+
+#selected-flight::after {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	background: url("../../public/images/airport.webp") no-repeat center bottom / cover;
+}

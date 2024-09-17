@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>EXO | Flights</title>
+</head>
+<body class="bg-exo-dark-500">
+	<exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
+	<main class="max-h-screen max-w-[100vw] overflow-hidden">
+		<div id="bg-images" class="fixed inset-0 min-h-screen">
+			<img src="public/images/europa.jpg" class="h-full w-full object-cover">
+		</div>
+		<div class="fixed w-screen min-h-screen backdrop-blur-md z-50">
+			<div class="book-item-container">
+				<div class="h-full relative rounded-lg overflow-hidden row-start-2 shadow-xl">
+					<img src="public/images/alien_planet.webp" class="h-full w-full object-cover">
+					<h1 class="absolute bottom-8 left-8 text-5xl tracking-wide font-bold">EUROPA</h1>
+				</div>
+				<div class="h-full col-span-2 col-start-2">
+					<h1 class="text-4xl tracking-wide font-bold text-exo-dark-500">PICK A FLIGHT</h1>
+				</div>
+				<div class="book-item-form">
+					<div class="book-item-flights">
+						<div id="flight1" class="book-item-flight">
+							<div class="flex justify-between items-center [&>h1]:text-2xl">
+								<h1>SPACEX</h1>
+								<h1>CRYO SLEEP</h1>
+							</div>
+							<div class="flex flex-col w-full">
+								<div class="w-full">
+									<span class="font-bold">10:00 AM</span>
+									<span>Dec. 22nd 2135</span>
+									-
+									<span class="font-bold">12:00 PM</span>
+									<span>March 24th 2136</span>
+								</div>
+								<div class="w-full text-xl">
+									<span class="font-bold">Baltimore</span>
+									<span>(BWI)</span>
+									-
+									<span class="font-bold">NEW MOMBASA</span>
+									<span>(NMA)</span>
+								</div>
+								<div class="w-full">
+									<span>Earth</span>
+									<span>IO</span>
+								</div>
+							</div>
+							<div class="flex flex-row justify-between w-full mt-auto items-center">
+								<button class="btn h-[2.5rem] w-[7rem]" data-light="true" data-title="SELECTED"></button>
+								<div class="text-right">
+									<p class="font-bold text-2xl">$12,000 USD</p>
+									<p>one way per traveller</p>
+								</div>
+							</div>
+						</div>
+						<div id="flight2" class="book-item-flight">
+							<div class="flex justify-between items-center [&>h1]:text-2xl">
+								<h1>SPACEX</h1>
+								<h1>CRYO SLEEP</h1>
+							</div>
+							<div class="flex flex-col w-full">
+								<div class="w-full">
+									<span class="font-bold">12:00 PM</span>
+									<span>Jan. 15th 2136</span>
+									-
+									<span class="font-bold">1:00 PM</span>
+									<span>Jan. 15th 2136</span>
+								</div>
+								<div class="w-full text-xl">
+									<span class="font-bold">Washington D.C.</span>
+									<span>(IAD)</span>
+									-
+									<span class="font-bold">NEW Vegas</span>
+									<span>(FNV)</span>
+								</div>
+								<div class="w-full">
+									<span>Earth</span>
+									<span>Mars</span>
+								</div>
+							</div>
+							<div class="flex flex-row justify-between w-full mt-auto items-center">
+								<button class="btn h-[2.5rem] w-[7rem]" data-title="SELECT"></button>
+								<div class="text-right">
+									<p class="font-bold text-2xl">$9,000 USD</p>
+									<p>one way per traveller</p>
+								</div>
+							</div>
+						</div>
+						<div id="flight3" class="book-item-flight">
+							<div class="flex justify-between items-center [&>h1]:text-2xl">
+								<h1>SPACEX</h1>
+								<h1>CRYO SLEEP</h1>
+							</div>
+							<div class="flex flex-col w-full">
+								<div class="w-full">
+									<span class="font-bold">12:00 PM</span>
+									<span>Jan. 10th 2136</span>
+									-
+									<span class="font-bold">1:00 PM</span>
+									<span>Jan. 10th 2136</span>
+								</div>
+								<div class="w-full text-xl">
+									<span class="font-bold">Los Angeles</span>
+									<span>(LAX)</span>
+									-
+									<span class="font-bold">Frankfurt</span>
+									<span>(FGA)</span>
+								</div>
+								<div class="w-full">
+									<span>Earth</span>
+									<span>Earth</span>
+								</div>
+							</div>
+							<div class="flex flex-row justify-between w-full mt-auto items-center">
+								<button class="btn h-[2.5rem] w-[7rem]" data-title="SELECT"></button>
+								<div class="text-right">
+									<p class="font-bold text-2xl">$9,000 USD</p>
+									<p>one way per traveller</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="w-full h-[1px] bg-exo-light-100 my-4"></div>
+					<div id="selected-flight" class="relative overflow-hidden h-[130px] rounded-lg w-full p-4 bg-exo-dark-500/60 flex flex-row justify-between items-center">
+						<div class="flex flex-col">
+							<h1 class="text-lg">SpaceX</h1>
+							<div class="w-full">
+								<span class="font-bold">10:00 AM</span>
+								<span>Dec. 22nd 2135</span>
+								-
+								<span class="font-bold">12:00 PM</span>
+								<span>March 24th 2136</span>
+							</div>
+							<div class="w-full text-xl">
+								<span class="font-bold">Baltimore</span>
+								<span>(BWI)</span>
+								-
+								<span class="font-bold">NEW MOMBASA</span>
+								<span>(NMA)</span>
+							</div>
+							<div class="w-full">
+								<span>Earth</span>
+								<span>IO</span>
+							</div>
+						</div>
+						<h1 class="text-3xl tracking-wide font-bold w-fit">$12,000 USD</h1>
+					</div>
+					<div class="w-full h-[1px] bg-exo-light-100 mt-4"></div>
+					<form class="form">
+						<div id="personal">
+							<h1 class="text-2xl font-bold">Personal</h1>
+							<div class="grid grid-cols-2 grid-rows-2">
+								<div>
+									<span class="text-xl">First Name</span>
+									<input type="text" name="first-name" id="first-name" placeholder="" required>
+								</div>
+								<div>
+									<span class="text-xl">Last Name</span>
+									<input type="text" name="last-name" id="last-name" placeholder="" required>
+								</div>
+								<div>
+									<span class="text-xl">Email</span>
+									<input type="email" name="email" id="email" placeholder="" required>
+								</div>
+							</div>
+						</div>
+						<div id="location">
+							<h1 class="text-2xl font-bold">Location</h1>
+							<div class="flex flex-col">
+								<div>
+									<span class="text-xl">Address 1</span>
+									<input type="text" name="address-1" id="address-1" placeholder="" required>
+								</div>
+								<div>
+									<span class="text-xl">Address 2</span>
+									<input type="text" name="address-2" id="address-2" placeholder="" required>
+								</div>
+								<div>
+									<span class="text-xl">City</span>
+									<input type="text" name="city" id="city" placeholder="" required>
+								</div>
+								<div>
+									<span class="text-xl">Zipcode</span>
+									<input type="text" name="zipcode" id="zipcode" placeholder="" required>
+								</div>
+							</div>
+						</div>
+					</form>
+			</div>
+		</div>
+		<!-- <div class="fixed bottom-16 left-16 grid place-items-center">
+			<h1 class="text-4xl font-bold mr-auto">EUROPA</h1>
+			<button class="btn btn-light h-[4rem] mt-2 w-[10rem]" data-title="GO HERE" data-light="true"></button>
+		</div>
+		<div class="fixed bottom-8 grid grid-cols-12 overflow-auto translate-x-[60%]">
+			<div class="location-card h-[280px] w-[220px] grid place-items-center bg-exo-dark-500 right-8 bottom-8 shadow-lg rounded-md z-10 mt-auto col-start-1 overflow-hidden">
+				<img src="public/images/europa.jpg" class="col-start-1 col-end-1 row-start-1 row-end-1 inset-0 w-full h-full object-cover">
+				<h1 class="text-3xl font-bold tracking-wide right-4 ml-auto mt-auto mb-2 mr-2 bottom-2 col-start-1 col-end-1 row-start-1 row-end-1">
+					EUROPA
+				</h1>
+			</div>
+			<div class="location-card h-[240px] w-[200px] grid place-items-center bg-exo-dark-500 right-8 bottom-8 shadow-lg rounded-md z-[9] mt-auto overflow-hidden">
+				<img src="public/images/mars_settlement.webp" class="col-start-1 col-end-1 row-start-1 row-end-1 inset-0 w-full h-full object-cover">
+				<h1 class="text-3xl font-bold tracking-wide right-4 ml-auto mt-auto mb-2 mr-2 bottom-2 col-start-1 col-end-1 row-start-1 row-end-1">
+					MARS
+				</h1>
+			</div>
+			<div class="location-card h-[240px] w-[200px] grid place-items-center bg-exo-dark-500 right-8 bottom-8 shadow-lg rounded-md z-[8] mt-auto overflow-hidden">
+				<img src="public/images/alien_planet.webp" class="col-start-1 col-end-1 row-start-1 row-end-1 inset-0 w-full h-full object-cover">
+				<h1 class="text-3xl font-bold tracking-wide right-4 ml-auto mt-auto mb-2 mr-2 bottom-2 col-start-1 col-end-1 row-start-1 row-end-1">
+					IO
+				</h1>
+			</div>
+			<div class="location-card h-[240px] w-[200px] grid place-items-center bg-exo-dark-500 right-8 bottom-8 shadow-lg rounded-md z-[7] mt-auto overflow-hidden">
+				<img src="public/images/moon_settlement.webp" class="col-start-1 col-end-1 row-start-1 row-end-1 inset-0 w-full h-full object-cover">
+				<h1 class="text-3xl font-bold tracking-wide right-4 ml-auto mt-auto mb-2 mr-2 bottom-2 col-start-1 col-end-1 row-start-1 row-end-1">
+					JUPITER
+				</h1>
+			</div>
+		</div> -->
+	</main>
+</body>
+</html>
