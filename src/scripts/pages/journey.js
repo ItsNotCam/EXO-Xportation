@@ -93,9 +93,9 @@ $(function() {
 			const nav = $(this).find(".journey-nav-js");
 			$(nav).html(
 				/*html*/ `
-				<ul class="exo-journey-nav-selector flex flex-row gap-3 info-item:gap-4 justify-center items-center [&>*]:cursor-pointer transition-colors duration-200 info-item:w-full ">
-					<li class="mr-0 info-item:mr-auto">
-						<svg class="hover:fill-white h-[36px] w-[36px] info-item:h-[50px] info-item:w-[50px]" aria-label="leftward arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#e8eaed">
+				<ul class="exo-journey-nav-selector flex flex-row gap-3 nav:gap-4 justify-center items-center [&>*]:cursor-pointer transition-colors duration-200 nav:w-full ">
+					<li class="mr-0 nav:mr-auto">
+						<svg class="hover:fill-white h-[36px] w-[36px] nav:h-[50px] nav:w-[50px]" aria-label="leftward arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#e8eaed">
 							<path d="M480-480 664-296l-56 56-240-240 240-240 56 56-184 184Z" />
 						</svg>
 					</li>
@@ -115,8 +115,8 @@ $(function() {
 							`
 						}).get().join("\n")
 					}
-					<li class="ml-0 info-item:ml-auto">
-						<svg class="hover:fill-white h-[36px] w-[36px] info-item:h-[50px] info-item:w-[50px]" aria-label="rightward arrow" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#e8eaed">
+					<li class="ml-0 nav:ml-auto">
+						<svg class="hover:fill-white h-[36px] w-[36px]" aria-label="rightward arrow" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#e8eaed">
 							<path d="M480-480 296-664l56-56 240 240-240 240-56-56 184-184Z" />
 						</svg>
 					</li>
