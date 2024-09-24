@@ -11,6 +11,10 @@ module.exports = {
       visible: `visible="true"`
     },
     extend: {
+			gridTemplateColumns: {
+			},
+			gridTemplateRows: {
+			},
       objectPosition: {
         "exo-parallax-bg": "30% bottom" 
       },

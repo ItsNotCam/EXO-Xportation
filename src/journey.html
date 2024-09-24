@@ -37,7 +37,7 @@
 <body id="journey-body">
   <exo-cursor hidden="true"></exo-cursor>
   <exo-nav blur-color="rgba(12,12,12,1)"></exo-nav>
-  <a id="link-to-top" aria-label="Return to top of page" href="#hero" class="fixed bottom-8 right-8 p-2 rounded-full transition-colors duration-200 hover:bg-exo-dark-500 z-[0]"
+  <a id="link-to-top" aria-label="Return to top of page" href="#hero" class="fixed bottom-8 right-8 p-2 rounded-full transition-colors duration-200 hover:bg-exo-dark-500 z-[2]"
     title="Return to Top">
     <svg aria-label="upward arrow" class="-rotate-90" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px"
       fill="#e8eaed">
@@ -82,7 +82,7 @@
         </div>
       </div>
       <div class="min-h-screen relative pointer-events-none" id="parallax-spacer">
-        <a href="#cringe-space-quote"class="
+        <a href="#space"class="
           absolute grid items-center 
           bottom-6 left-1/2 -translate-x-1/2 
           text-center cursor-pointer
@@ -95,9 +95,9 @@
       </a>
       </div>
     </section>
-    <section id="cringe-space-quote" class="relative flex flex-col min-h-screen min-w-screen justify-center items-center mx-auto pointer-events-none bt-exo-dark-900">
-        <video src="public/videos/earth_rotation.mp4" alt="video of earth from space" class="absolute inset-0 w-full h-full object-cover" autoplay loop muted></video>
-        <div id="content" class="self-center w-fit text-[clamp(1.3rem,3.5vw,2rem)] sm:mx-auto mx-2 flex flex-col gap-[0.2em] grid-center z-[2]">
+    <section class="relative flex flex-col min-h-screen min-w-screen justify-center items-center mx-auto pointer-events-none bt-exo-dark-900">
+        <video src="public/videos/earth_rotation.mp4" alt="video of earth from space" class="absolute inset-0 w-full h-full object-cover bg-exo-dark-500" autoplay loop muted></video>
+        <div id="space" class="self-center w-fit text-[clamp(1.3rem,3.5vw,2rem)] sm:mx-auto mx-2 flex flex-col gap-[0.2em] grid-center z-[2]">
           <p data-anim="slide-fade-in" class="animate-when-visible opacity-0 anim-delay-2 w-fit">
             When the Milky Way is your midnight skyline....
           </p>
@@ -115,7 +115,7 @@
 					animate-when-visible anim-delay-4
 					grid-center
 				">
-				<svg aria-label="downard arrow" class="mx-auto -my-2 animate-learn-more-arrow" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#e8eaed">
+				<svg aria-label="downward arrow" class="mx-auto -my-2 animate-learn-more-arrow" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#e8eaed">
 					<path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
 				</svg>
 			</a>
@@ -153,6 +153,119 @@
         </div>
       </div>
     </section>
+		<section id="journey-amenities" class="relative min-h-screen [&>*]:w-full [&>*]:flex-shrink-0 [&>*]:bg-exo-dark-500 flex flex-row bg-exo-dark-500 overflow-auto">
+			<exo-journey-info-item data-index="0" data-selected="true">
+				<h1 slot="title">
+					Custom Pressurization
+				</h1>
+				<p slot="description">
+					Make sure your unit feels however you want - custom pressurization
+					is available is just the start of your living customization.
+				</p>
+				<img slot="img" src="public/images/altitude.png">
+				<span slot="footer">ALTITUDE</span>
+			</exo-journey-info-item>
+			<exo-journey-info-item data-index="1" data-selected="false">
+				<h1 slot="title">
+					Climate Control
+				</h1>
+				<p slot="description">
+					Each unit comes equipped with its own climate-control settings. Access 
+					your climate controls with voice commands or with the included datapad.
+				</p>
+				<img slot="img" src="public/images/sweater.png">
+				<span slot="footer">CLIMATE</span>
+			</exo-journey-info-item>
+			<exo-journey-info-item data-index="2" data-selected="false">
+				<h1 slot="title">
+					Gravity
+				</h1>
+				<p slot="description">
+					Each unit comes equipped with its own customizable gravity generator. 
+					Whether you want your traversal within your unit to feel like Earth, 
+					your destination, space itself, or something in between, you may modify the
+					gravity your unit at will.
+				</p>
+				<img slot="img" src="public/images/gravity.png">
+				<span slot="footer">Gravity</span>
+			</exo-journey-info-item>
+			<exo-journey-info-item data-index="3" data-selected="false">
+				<h1 slot="title">
+					Aesthetic
+				</h1>
+				<p slot="description">
+					Your unit can look however you want - from chique and modern to old and 
+					classic and everything in between. Pick your favorite colors and designs 
+					and we will make your dream a reality
+				</p>
+				<img slot="img" src="public/images/decor.png">
+				<span slot="footer">Aesthetic</span>
+			</exo-journey-info-item>
+		</section>
+		<section class="h-[300vh] w-full bg-black flex flex-col relative [&>*]:z-[1]">
+			<video src="public/videos/freedom.mp4" 
+			style="z-index: 0"
+			class="
+				h-screen w-full object-cover opacity-70 
+				sticky top-0" 
+				autoplay loop muted
+			></video>
+			<div class="h-screen z-[1] top-0 -mt-[100vh] grid place-items-center">
+				<h1 class="w-fit text-[clamp(1rem,10vw,6rem)] leading-[1em] font-bold uppercase text-right ml-auto mr-8">
+					ANYTHING<br>
+				  YOU WANT,<br>
+					AT YOUR<br>
+					FINGERTIPS
+				</h1>
+			</div>
+			<div class="ai-attendant">
+				<h1>
+					01. PERSONAL AI ATTENDANT
+				</h1>
+				<div>
+					<h1 class="text-2xl font-bold">What?</h1>
+					<p class="w-fit ml-auto">
+						Your AI assistant is a device that will take care of any of your physical needs.
+						<span class="block my-3"></span>
+						It can come in the form of a physical entity of your choosing, whether it be humanoid,
+						house cat, robot, or anything else that you can imagine.
+						<span class="block my-3"></span>
+						Given your permission, your AI assistant will be given private, encrypted, and 
+						secure access to your personal data such that 
+						<span class="text-red-400">it can assume a personality of one that will complement your own</span>.
+					</p>
+
+					<div class="line my-4"></div>
+
+					<h1 class="text-2xl font-bold">Where?</h1>
+					Your AI assistant can be wherever you like:
+					<ul class="list-disc ml-8">
+						<li>Remain in your unit</li>
+						<li>Follow you to your destination</li>
+						<li>Meet you at your destination</li>
+						<li>Many more...</li>
+					</ul>
+
+					<div class="line my-4"></div>
+
+					<h1 class="text-2xl ml-auto font-bold">Features</h1>
+					The AI assistant may perform <em>any duty</em> or provide assistance with <em>anything</em>
+					that you may not want to perform.
+					<span class="block my-3"></span>
+					Additionally, what the AI learns from your interactions may be <span class="text-red-400">transferred to your 
+					personal home network free of charge</span>, or the AI can be <span class="text-red-400">purchased
+					separately</span> in the case that you wish to continue your interactions. 
+			</div>
+			<img src="public/images/ai_boi.png">
+		</section>
+		<section class="w-full px-8 bg-exo-dark-500 h-screen grid place-items-center">
+			<h1 class="text-2xl text-center">
+				Ran out of energy
+				<br>
+				More to come
+			</h1>
+		</section>
+		<!-- 
     <section class="bg-exo-dark-500 min-h-screen grid place-items-center w-screen relative">
 			<div class="w-full h-[70%] p-4 grid grid-cols-8 grid-rows-1 text-[clamp(3rem,7vw,6rem)] tracking-wide font-bold leading-em-0.9 archivo">
 				<div class="col-start-1 -col-end-1 row-start-1 row-end-2 z-10 self-end mx-auto flex flex-col gap-2 items-left justify-end">
@@ -163,7 +276,7 @@
 					<h1 data-anim="slide-fade-in" class="ml-[clamp(0px,38vw,7em)] txt:ml-0 opacity-0 animate-when-visible">IS PARAMOUNT</h1>
 				</div>
 				<div data-anim="opacity-fade-in" class="luxurious-spaces-img animate-when-visible opacity-0 anim-delay-2">
-					<img src="public/images/comfy2.png" class="h-full object-cover">
+					<img src="public/images/female-astro-comfy.jpg	" class="h-full object-cover">
 				</div>
 			</div>
 		</section>
@@ -318,7 +431,7 @@
 				</div>
 			</div>
     </section>
-			<!-- <h1 class="text-4xl font-bold mb-4">FLY EXO</h1>
+			<h1 class="text-4xl font-bold mb-4">FLY EXO</h1>
 			<p>
 				EXO offers a modern, safe, and luxurious industry-leading approach to interplanetary travel.
 			</p>
