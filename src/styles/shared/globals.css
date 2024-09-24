@@ -121,6 +121,10 @@ exo-link-btn {
     opacity: 0;
     animation: slide-fade-in 1.75s var(--star-bezier) forwards;
   }
+  .slide-fade-in-rev {
+    opacity: 0;
+    animation: slide-fade-in-rev	 1.75s var(--star-bezier) forwards;
+  }
 
   .slide-fade-in-slow {
     opacity: 0;
