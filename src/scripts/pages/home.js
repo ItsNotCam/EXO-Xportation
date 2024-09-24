@@ -131,6 +131,6 @@ const links = [
 
 $("#attribution-list").html(links.map(link => /* html */`
 	<li>
-		<a class="hover:text-white visited:text-blue-400 underline" href="${link.link}" target="_blank">${link.title}</a>
+		<a class="hover:text-white visited:text-blue-400 underline flex-grow" href="${link.link}" target="_blank">${link.title}</a>
 	</li>
 `).join(''));
