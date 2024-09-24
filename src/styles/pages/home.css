@@ -22,7 +22,7 @@
   }
 }
 
-#disclaimer {
+#disclaimer, #attribution {
 	position: fixed;
 	inset: 0;
 	z-index: 500;

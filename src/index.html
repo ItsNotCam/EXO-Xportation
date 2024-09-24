@@ -12,9 +12,14 @@
   <exo-cursor class="hidden"></exo-cursor>
   <!-- src/components/exo-nav.js -->
   <exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
-	<button id="open-disclaimer-btn" class="fixed bottom-4 right-4 underline cursor-pointer z-[1]">
-		Disclaimer
-	</button>
+	<div class="fixed bottom-0 p-4 z-[1] w-screen flex justify-between">
+		<button id="open-attribution-btn" class="underline cursor-pointer z-[1]">
+			Attribution
+		</button>
+		<button id="open-disclaimer-btn" class="underline cursor-pointer z-[1]">
+			Disclaimer
+		</button>
+	</div>
 	<div id="disclaimer" data-visible="false">
 		<button id="close-disclaimer-btn" class="absolute top-4 right-4 h-12 w-12 rounded-full hover:bg-exo-light-400 p-1 transition-colors duration-200">
 			<svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -32,6 +37,29 @@
 				have been prepared according to the multimedia fair use guidelines and are restricted from 
 				further use.
 			</p>
+		</div>
+	</div>
+	<div id="attribution" data-visible="false">
+		<button id="close-attribution-btn" class="absolute top-4 right-4 h-12 w-12 rounded-full hover:bg-exo-light-400 p-1 transition-colors duration-200">
+			<svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<line x1="18" y1="6" x2="6" y2="18" />
+				<line x1="6" y1="6" x2="18" y2="18" />
+			</svg>
+		</button>
+		<div class="w-[min(85vw,800px)] m-4 text-xl relative disclaimer-content-before">
+			<h1 class="text-3xl mb-2 font-bold uppercase tracking-wide text-center">
+				Images
+			</h1>
+			<p class="mb-4">
+				All of my images are AI generated and come from <a class="hover:text-white visited:text-blue-400 underline" href="https://www.freepik.com/">FreePik</a>
+			</p>
+			<p class="text-base p-4 mb-4 border border-white">
+				Using <strong>some</strong> of these links gives you a 403 forbidden due to what I think is the redirect in the header, 
+				just click in the url bar and hit enter once you see the 403 forbidden message. Hitting refresh will <strong>not</strong> work. 
+				You're just resending the same request.
+			</p>
+			<ul id="attribution-list" class="text-lg text-exo-light-300 flex flex-row gap-2 flex-wrap"></ul>
 		</div>
 	</div>
   <main>
