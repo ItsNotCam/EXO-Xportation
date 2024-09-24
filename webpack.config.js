@@ -1,8 +1,10 @@
 const path = require('path');
 const glob = require('glob');
+const { merge } = require('webpack-merge');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const templateFiles = glob.sync(`./src/**/*.html`);
 const htmlPlugins = templateFiles.map((filePath) => {
@@ -36,8 +38,10 @@ module.exports = {
   },
   optimization: {
     minimize: true,
+    minimizer: [
+      '...', new CssMinimizerPlugin()
+    ],
   },
-  // devtool: false,
   devServer: {
     static: {
       directory: path.resolve(__dirname, 'src'),
@@ -49,8 +53,8 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [
-    new MiniCssExtractPlugin({ 
-      filename: 'styles/[name].bundle.css',
+    new MiniCssExtractPlugin({
+      filename: 'styles/[name].bundle.css'
     }),
     ...htmlPlugins
   ],
