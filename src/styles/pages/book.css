@@ -63,33 +63,33 @@
 	}
 }
 
-#europa-flight-1::after {
+#Europa-flight-1::after {
 	background: url("../../public/images/airport.webp") no-repeat center bottom / cover;
 }
 
-#europa-flight-2::after {
+#Europa-flight-2::after {
 	background: url("../../public/images/moon_settlement.webp") no-repeat center bottom / cover;
 }
 
-#europa-flight-3::after {
+#Europa-flight-3::after {
 	background: url("../../public/images/green_future_city.jpg") no-repeat center bottom / cover;
 }
 
-#europa-flight-4::after {
+#Europa-flight-4::after {
 	background: url("../../public/images/frankfurt.webp") no-repeat center bottom / cover;
 }
 
-#europa-flight-5::after {
+#Europa-flight-5::after {
 	background: url("../../public/images/mars_settlement.webp") no-repeat center bottom / cover;
 }
 
-.book-item-flights {
+.custom-scrollbar {
 	--sb-track-color: #131313;
 	--sb-thumb-color: #484848;
 	--sb-size: 5px;
 
 	&::-webkit-scrollbar {
-		width: var(--sb-size)
+		width: 15px;
 	}
 
 	&::-webkit-scrollbar-track {

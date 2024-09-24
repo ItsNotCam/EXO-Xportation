@@ -12,15 +12,15 @@
 		<div id="bg-images" class="fixed inset-0 min-h-screen">
 			<img src="public/images/europa.jpg" class="h-full w-full object-cover">
 		</div>
-		<div class="grid grid-cols-[auto,auto] grid-rows-3 w-fit h-full">
-			<h1 class="col-start-1 col-end-2 row-start-1 -row-end-1 my-auto text-[4rem] text-center font-bold writing-mode-vertical-lr place-self-start z-[1] h-full bg-exo-dark-500/60">
+		<div class="col-start-1 col-end-3 flex flex-row justify-between items-end m-8">
+			<h1 class="text-[4rem] text-center font-bold z-[1]">
 				EUROPA
 			</h1>
 			<button id="book-open" data-title="GO HERE" class="
-				col-start-2 col-end-3 row-start-3 row-end-4 self-end m-8
+				col-start-2 col-end-3 row-start-3 row-end-4 self-end
 				btn btn-light h-[4.5rem] w-[12.25rem] text-xl
 			">GO HERE</button>
-		</div>
+		</div> 
 		<div id="book-flight-form" data-visible="false" class="
 			fixed w-screen min-h-screen opacity-0 pointer-events-none backdrop-blur-0 
 			transition-all duration-200
@@ -42,10 +42,10 @@
 					<h1 class="absolute bottom-8 left-8 text-5xl tracking-wide font-bold">EUROPA</h1>
 				</div>
 				<div class="h-full col-span-2 col-start-2"></div>
-				<div class="book-item-form bg-exo-dark-500/30 p-4 rounded-lg">
+				<div class="book-item-form bg-exo-dark-500/30 p-4 rounded-lg custom-scrollbar">
 					<h1 class="text-4xl tracking-wide font-bold pb-2">PICK A FLIGHT</h1>
-					<div class="book-item-flights">
-						<exo-book-flight-item id="europa-flight-1" class="data-[selected='true']:pointer-events-none">
+					<div class="book-item-flights custom-scrollbar">
+						<!-- <exo-book-flight-item id="europa-flight-1" class="data-[selected='true']:pointer-events-none">
 							<span slot="company">SpaceX</span>
 							<span slot="method">CRYO</span>
 							<span slot="start-time">10:00 AM</span>
@@ -128,33 +128,26 @@
 							<span slot="end-planet">Europa</span>
 							<span slot="cost">$19,500</span>
 							<span slot="traveller-amount">one way per traveller</span>
-					</exo-book-flight-item>
-					
+					</exo-book-flight-item> -->
 					</div>
 					<div class="w-full h-[1px] bg-exo-light-100 mt-4"></div>
-					<h1 class="my-2 text-4xl font-bold uppercase">ENTER YOUR INFORMATION</h1>
+					<h1 class="my-4 text-4xl font-bold uppercase">ENTER YOUR INFORMATION</h1>
 					<form class="form">
 						<div id="personal" class="w-full">
 							<h1 class="text-2xl font-bold mb-1">Personal</h1>
 							<div class="flex flex-row flex-wrap gap-4 [&>*]:flex-shrink-0 [&>*]:flex-grow">
 								<exo-text-field id="first-name-field">
-									<span slot="icon">
-										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg>
-									</span>
+									<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg></span>
 									<span slot="title">First Name</span>
 									<input type="text" name="first-name" id="first-name" placeholder="" required>
 								</exo-text-field>
 								<exo-text-field id="last-name-field">
-									<span slot="icon">
-										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg>
-									</span>
+									<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg></span>
 									<span slot="title">Last Name</span>
 									<input type="text" name="last-name" id="last-name" placeholder="" required>
 								</exo-text-field>
 								<exo-text-field class="w-full" id="email-field">
-									<span slot="icon">
-										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
-									</span>
+									<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg></span>
 									<span slot="title">Email</span>
 									<input type="email" name="email" id="email" placeholder="" required>
 								</exo-text-field>
@@ -164,30 +157,22 @@
 							<h1 class="text-2xl font-bold mb-1">Location</h1>
 							<div class="flex flex-row flex-wrap gap-4 [&>*]:flex-shrink-0 [&>*]:flex-grow [&>*]:basis-[50%] [&>*]:max-w-1/2">
 								<exo-text-field id="address-1-field">
-									<span slot="icon">
-										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
-									</span>
+									<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></span>
 									<span slot="title">Address 1</span>
 									<input type="text" name="address-1" id="address-1" placeholder="" required>
 								</exo-text-field>
 								<exo-text-field id="address-2-field">
-									<span slot="icon">
-										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
-									</span>
+									<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></span>
 									<span slot="title">Address 2</span>
 									<input type="text" name="address-2" id="address-2" placeholder="" required>
 								</exo-text-field>
 								<exo-text-field id="city-field">
-									<span slot="icon">
-										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-120v-560h160v-160h400v320h160v400H520v-160h-80v160H120Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Z"/></svg>
-									</span>
+									<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-120v-560h160v-160h400v320h160v400H520v-160h-80v160H120Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Z"/></svg></span>
 									<span slot="title">City</span>
 									<input type="text" name="city" id="city" placeholder="" required>
 								</exo-text-field>
 								<exo-text-field id="zipcode-field">
-									<span slot="icon">
-										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m240-160 40-160H120l20-80h160l40-160H180l20-80h160l40-160h80l-40 160h160l40-160h80l-40 160h160l-20 80H660l-40 160h160l-20 80H600l-40 160h-80l40-160H360l-40 160h-80Zm140-240h160l40-160H420l-40 160Z"/></svg>
-									</span>
+									<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m240-160 40-160H120l20-80h160l40-160H180l20-80h160l40-160h80l-40 160h160l40-160h80l-40 160h160l-20 80H660l-40 160h160l-20 80H600l-40 160h-80l40-160H360l-40 160h-80Zm140-240h160l40-160H420l-40 160Z"/></svg></span>
 									<span slot="title">Zipcode</span>
 									<input type="number" name="zipcode" id="zipcode" placeholder="" required>
 								</exo-text-field>
