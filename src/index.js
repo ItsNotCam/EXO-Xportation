@@ -1,5 +1,6 @@
 import './scripted_imports';
 import Lenis from 'lenis';
+import $ from 'jquery';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -7,6 +8,63 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 if (window.location.pathname.endsWith("index.html")) {
   window.history.replaceState({}, document.title, window.location.pathname.replace("index.html", ""));
 }
+
+/*
+const exoName = localStorage.getItem("exo-name");
+console.log(exoName);
+if(exoName !== null) {
+	console.log(`Welcome ${exoName}`)
+} else {
+	let name = ""
+
+	console.log("Exo name is null");
+	const centeredDiv = $("<div>", {
+		class: `
+			fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+			p-4 w-screen h-screen
+			bg-white/1 backdrop-blur-sm text-center 
+			z-[1000]
+			grid place-items-center
+		`,
+	})
+
+	const textField = $("<input>", {
+		id: "exo-name-input",
+		type: "text",
+		placeholder: "John Doe",
+		class: "p-4 my-auto text-exo-dark-500"
+	})
+
+	textField.on("input", function() {
+		name = $(this).val();
+	});
+
+	const submitButton = $("<button>", {
+		id: "exo-name-submit",
+		text: "Submit",
+		class: "p-4 my-auto text-exo-dark-500"
+	});
+
+	submitButton.on("click", function() {
+		if (name.trim() !== "") {
+			localStorage.setItem("exo-name", name);
+			centeredDiv.remove();
+		} else {
+			alert("Please enter a valid name.");
+		}
+	});
+
+
+	$("<p>", {
+		text: "Enter your name",
+		class: "text-lg text-white"
+	}).appendTo(centeredDiv)
+
+	textField.appendTo(centeredDiv);
+	submitButton.appendTo(centeredDiv);
+	centeredDiv.appendTo("body");
+}
+*/
 
 // update the scale of the special buttons based on the window width
 const updateBtnScale = (buttonElement, baseWidth) => {

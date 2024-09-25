@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "./scripts/update_imports.sh; webpack serve",
-    "build": "./scripts/update_imports.sh; webpack"
+    "build": "./scripts/update_imports.sh; ./scripts/compile_css.sh; webpack"
   },
   "author": "",
   "license": "ISC",
