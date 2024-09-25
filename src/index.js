@@ -1,6 +1,5 @@
 import './scripted_imports';
 import Lenis from 'lenis';
-import $ from 'jquery';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,6 +9,7 @@ if (window.location.pathname.endsWith("index.html")) {
 }
 
 /*
+import $ from 'jquery';
 const exoName = localStorage.getItem("exo-name");
 console.log(exoName);
 if(exoName !== null) {
