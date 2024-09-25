@@ -25,6 +25,12 @@
   padding-inline: 1rem;
 }
 
+@media screen and (max-width: 960px) {
+	.book-item-form {
+		grid-area: 1 / 1 / -1 / -1;
+	}
+}
+
 .book-item-flights {
   --scrollbar-padding: 1rem;
 

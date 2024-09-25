@@ -43,11 +43,11 @@
 						<line x1="6" y1="6" x2="18" y2="18" />
 					</svg>
 				</button>
-				<div class="h-full relative rounded-lg overflow-hidden row-start-2 shadow-xl">
+				<div class="h-full relative rounded-lg overflow-hidden row-start-2 shadow-xl nav:hidden">
 					<img src="public/images/alien_planet.webp" class="h-full w-full object-cover">
 					<h1 class="absolute bottom-8 left-8 text-5xl tracking-wide font-bold">EUROPA</h1>
 				</div>
-				<div class="h-full col-span-2 col-start-2"></div>
+				<div class="h-full col-start-2 -col-end-1 nav:hidden"></div>
 				<div class="book-item-form bg-exo-dark-500/30 p-4 rounded-lg custom-scrollbar">
 					<h1 class="text-4xl tracking-wide font-bold pb-2">PICK A FLIGHT</h1>
 					<div class="book-item-flights custom-scrollbar"></div>
@@ -154,6 +154,7 @@
 								</select>
 								</div> -->
 							</fieldset>
+							<button type="submit" class="btn btn-light w-64 h-12 text-xl" data-title="Submit">Submit</button>
 						</div>
 					</form>
 			</div>
