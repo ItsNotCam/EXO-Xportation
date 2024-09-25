@@ -1,16 +1,28 @@
+.form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	overflow: auto;
+	max-width: max(45vw, 800px);
+	margin-inline: auto;
+	margin-block: auto;
+}
+
 .book-item-container {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: auto 1fr;
 	height: 100vh;
-	padding-top: 6rem;
-	padding-bottom: 4rem;
-	padding-inline: 5rem;
+	padding: 4rem;
 	gap: 1rem;
+	position: relative;
+	z-index: 1000;
 }
 
 .book-item-form {
 	grid-area: 2 / 2 / 3 / 4;
+	overflow: auto;
+	padding-inline: 1rem;
 }
 
 .book-item-flights {
@@ -18,7 +30,8 @@
 
 	display: grid;
 	grid-auto-flow: row;
-	overflow: auto;
+	overflow-x: auto;
+	overflow-y: hidden;
 	position: relative;
 	height: calc(224px + var(--scrollbar-padding));
 	grid-auto-flow: column;
@@ -37,6 +50,7 @@
 	gap: 0.5rem;
 	position: relative;
 	overflow: hidden;
+	max-height: 100%;
 	@apply bg-exo-dark-500/60;
 
 	&::after {
@@ -50,25 +64,33 @@
 	}
 }
 
-#flight1::after {
+#Europa-flight-1::after {
 	background: url("../../public/images/airport.webp") no-repeat center bottom / cover;
 }
 
-#flight2::after {
+#Europa-flight-2::after {
 	background: url("../../public/images/moon_settlement.webp") no-repeat center bottom / cover;
 }
 
-#flight3::after {
+#Europa-flight-3::after {
 	background: url("../../public/images/green_future_city.jpg") no-repeat center bottom / cover;
 }
 
-.book-item-flights {
+#Europa-flight-4::after {
+	background: url("../../public/images/frankfurt.webp") no-repeat center bottom / cover;
+}
+
+#Europa-flight-5::after {
+	background: url("../../public/images/mars_settlement.webp") no-repeat center bottom / cover;
+}
+
+.custom-scrollbar {
 	--sb-track-color: #131313;
 	--sb-thumb-color: #484848;
 	--sb-size: 5px;
 
 	&::-webkit-scrollbar {
-		width: var(--sb-size)
+		width: 15px;
 	}
 
 	&::-webkit-scrollbar-track {

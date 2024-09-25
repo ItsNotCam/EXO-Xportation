@@ -113,6 +113,27 @@ module.exports = {
         { values: theme('textShadow') }
       )
     }),
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'writing-mode': (value) => ({
+            writingMode: value,
+          }),
+        },
+        { values: {
+					"h-tb":"horizontal-tb",
+					"lr":"lr",
+					"lr-tb":"lr-tb",
+					"rl":"rl",
+					"rl-tb":"rl-tb",
+					"s-lr":"s-lr",
+					"tb":"tb",
+					"tb-rl":"tb-rl",
+					"vertical-lr":"vertical-lr",
+					"vertical-rl":"vertical-rl",
+				} }
+      )
+    }),
     plugin(function ({ addComponents, theme }) {
       addComponents({
         '.card': {
