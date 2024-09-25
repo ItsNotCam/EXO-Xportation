@@ -3,6 +3,9 @@
 mkdir -p dist/styles
 echo -n "COMBINING CSS FILES ... "
 COMBINED_PATH="./master.css"
+# Initialize the combined file
+echo "" > $COMBINED_PATH
+
 for file in ./src/styles/**/*.css; do
 	echo -e "\n\n/* FROM: '$file' */\n" >> $COMBINED_PATH
 	cat "$file" >> $COMBINED_PATH
