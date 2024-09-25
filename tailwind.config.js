@@ -11,10 +11,10 @@ module.exports = {
       visible: `visible="true"`
     },
     extend: {
-			gridTemplateColumns: {
-			},
-			gridTemplateRows: {
-			},
+      gridTemplateColumns: {
+      },
+      gridTemplateRows: {
+      },
       objectPosition: {
         "exo-parallax-bg": "30% bottom" 
       },
@@ -49,9 +49,9 @@ module.exports = {
         'home-sm': {'max': '450px'},
         'home-xs': {'max': '428px'},
         'nav': {"max": "960px"},
-				'txt': {'max': '741px'},
-				'1000': {'max': '1000px'},
-				'1550': {'max': '1550px'}
+        'txt': {'max': '741px'},
+        '1000': {'max': '1000px'},
+        '1550': {'max': '1550px'}
       },
       lineHeight: {
         'em-0.1': '0.1em',
@@ -121,17 +121,17 @@ module.exports = {
           }),
         },
         { values: {
-					"h-tb":"horizontal-tb",
-					"lr":"lr",
-					"lr-tb":"lr-tb",
-					"rl":"rl",
-					"rl-tb":"rl-tb",
-					"s-lr":"s-lr",
-					"tb":"tb",
-					"tb-rl":"tb-rl",
-					"vertical-lr":"vertical-lr",
-					"vertical-rl":"vertical-rl",
-				} }
+          "h-tb":"horizontal-tb",
+          "lr":"lr",
+          "lr-tb":"lr-tb",
+          "rl":"rl",
+          "rl-tb":"rl-tb",
+          "s-lr":"s-lr",
+          "tb":"tb",
+          "tb-rl":"tb-rl",
+          "vertical-lr":"vertical-lr",
+          "vertical-rl":"vertical-rl",
+        } }
       )
     }),
     plugin(function ({ addComponents, theme }) {

@@ -1,8 +1,8 @@
 #exo-launches a {
-	cursor: pointer;
-	text-decoration: underline;
-	font-weight: bold;
-	@apply underline visited:text-blue-300 hover:text-blue-200 text-red-400;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+  @apply underline visited:text-blue-300 hover:text-blue-200 text-red-400;
 }
 
 .launch-table-row {
@@ -132,9 +132,9 @@
     align-items: center;
   }
 
-	& table tr, table td{
-		background-color: rgba(12,12,12,0.05);
-	}
+  & table tr, table td{
+    background-color: rgba(12,12,12,0.05);
+  }
 }
 
 @keyframes blur-fade-in {

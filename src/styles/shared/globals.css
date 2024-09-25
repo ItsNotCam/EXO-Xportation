@@ -40,22 +40,22 @@ html.lenis, html.lenis body {
 }
 
 @font-face {
-	font-family: 'Archivo';
-	src: url('../../public/fonts/Archivo-Variable.ttf') format('truetype');
+  font-family: 'Archivo';
+  src: url('../../public/fonts/Archivo-Variable.ttf') format('truetype');
 }
 
 @font-face {
-	font-family: 'Archivo-Italic';
-	src: url('../../public/fonts/Archivo-Italic-Variable.ttf') format('truetype');
+  font-family: 'Archivo-Italic';
+  src: url('../../public/fonts/Archivo-Italic-Variable.ttf') format('truetype');
 }
 
 .archivo {
-	font-family: 'Archivo', 'D-Din', 'sans-serif';
+  font-family: 'Archivo', 'D-Din', 'sans-serif';
 }
 
 .archivo .font-italic {
-	font-family: 'Archivo-Italic', 'D-Din', 'sans-serif';
-	font-style: italic;
+  font-family: 'Archivo-Italic', 'D-Din', 'sans-serif';
+  font-style: italic;
 }
 
 /* Fonts */
@@ -123,7 +123,7 @@ exo-link-btn {
   }
   .slide-fade-in-rev {
     opacity: 0;
-    animation: slide-fade-in-rev	 1.75s var(--star-bezier) forwards;
+    animation: slide-fade-in-rev   1.75s var(--star-bezier) forwards;
   }
 
   .slide-fade-in-slow {
