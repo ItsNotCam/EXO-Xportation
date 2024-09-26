@@ -50,7 +50,11 @@
 				<div class="h-full col-start-2 -col-end-1 nav:hidden"></div>
 				<div class="book-item-form bg-exo-dark-500/30 p-4 rounded-lg custom-scrollbar">
 					<h1 class="text-4xl tracking-wide font-bold pb-2">PICK A FLIGHT</h1>
+
+					<!-- Contains Generated Content | scripts/book.js -->
 					<div class="book-item-flights custom-scrollbar"></div>
+					<!-- Contains Generated Content | scripts/book.js -->
+
 					<div class="w-full h-[1px] bg-exo-light-100 mt-4"></div>
 					<h1 class="my-6 text-4xl font-bold uppercase">ENTER YOUR INFORMATION</h1>
 					<form class="form">
@@ -74,26 +78,36 @@
 										</div>
 									</div>
 									<div class="grid grid-cols-[1fr,1fr,minmax(auto,9rem)] gap-2 items-center">
+
+										<!-- scripts/shared/components/exo-text-field.js -->
 										<exo-text-field id="first-name-field">
 											<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg></span>
 											<span slot="title">First Name</span>
 											<input type="text" name="first-name" id="first-name" placeholder="" required>
 										</exo-text-field>
+
+										<!-- scripts/shared/components/exo-text-field.js -->
 										<exo-text-field id="last-name-field">
 											<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg></span>
 											<span slot="title">Last Name</span>
 											<input type="text" name="last-name" id="last-name" placeholder="" required>
 										</exo-text-field>
+
+										<!-- scripts/shared/components/exo-text-field.js -->
 										<exo-text-field id="age-field">
 											<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M580-490q-21 0-35.5-14.5T530-540q0-21 14.5-35.5T580-590q21 0 35.5 14.5T630-540q0 21-14.5 35.5T580-490Zm-200 0q-21 0-35.5-14.5T330-540q0-21 14.5-35.5T380-590q21 0 35.5 14.5T430-540q0 21-14.5 35.5T380-490Zm100 210q-60 0-108.5-33T300-400h360q-23 54-71.5 87T480-280Zm0 160q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T120-480q0-75 28.5-140.5t77-114q48.5-48.5 114-77T480-840q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-120Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82h-12q-6 0-12 2-6 6-8 13t-2 15q0 21 14.5 35.5T496-680q9 0 16.5-3t15.5-3q12 0 20 9t8 21q0 23-21.5 29.5T496-620q-45 0-77.5-32.5T386-730v-6q0-3 1-8-83 30-135 101t-52 163q0 116 82 198t198 82Zm0-280Z"/></svg></span>
 											<span slot="title">Age</span>
 											<input type="number" name="age" id="age" placeholder="" required>
 										</exo-text-field>
+
+										<!-- scripts/shared/components/exo-text-field.js -->
 										<exo-text-field id="email-field" class="col-span-3">
 											<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg></span>
 											<span slot="title">Email</span>
 											<input type="email" name="email" id="email" placeholder="" required>
 										</exo-text-field>
+
+										<!-- scripts/shared/components/exo-text-field.js -->
 										<div class="col-start-1 -col-end-1 flex items-center gap-4 mt-4">
 											<label for="color">Favorite Color:</label>
 											<input type="color" id="color" name="color" class="flex-grow outline-none border-none">
@@ -111,21 +125,28 @@
 								[&>*]:basis-[50%] 
 								[&>*]:max-w-1/2
 							">
+								<!-- scripts/shared/components/exo-text-field.js -->
 								<exo-text-field id="address-1-field">
 									<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></span>
 									<span slot="title">Address 1</span>
 									<input type="text" name="address-1" id="address-1" placeholder="" required>
 								</exo-text-field>
+								
+								<!-- scripts/shared/components/exo-text-field.js -->
 								<exo-text-field id="address-2-field">
 									<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></span>
 									<span slot="title">Address 2</span>
 									<input type="text" name="address-2" id="address-2" placeholder="" required>
 								</exo-text-field>
+								
+								<!-- scripts/shared/components/exo-text-field.js -->
 								<exo-text-field id="city-field">
 									<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-120v-560h160v-160h400v320h160v400H520v-160h-80v160H120Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Z"/></svg></span>
 									<span slot="title">City</span>
 									<input type="text" name="city" id="city" placeholder="" required>
 								</exo-text-field>
+								
+								<!-- scripts/shared/components/exo-text-field.js -->
 								<exo-text-field id="zipcode-field">
 									<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m240-160 40-160H120l20-80h160l40-160H180l20-80h160l40-160h80l-40 160h160l40-160h80l-40 160h160l-20 80H660l-40 160h160l-20 80H600l-40 160h-80l40-160H360l-40 160h-80Zm140-240h160l40-160H420l-40 160Z"/></svg></span>
 									<span slot="title">Zipcode</span>
@@ -140,19 +161,6 @@
 									<input type="checkbox" id="newsletter" name="newsletter">
 									<label for="newsletter">Subscribe to newsletter</label>
 								</div>
-								<!-- <div class="gap-2">
-									<label for="age">Age Range:</label>
-									<input type="range" id="age" name="age" min="18" max="100">
-								</div>
-								<div class="gap-2">
-									<label for="country">Country:</label>
-									<select id="country" name="country">
-											<option value="us">United States</option>
-											<option value="uk">United Kingdom</option>
-											<option value="ca">Canada</option>
-											<option value="other">Other</option>
-								</select>
-								</div> -->
 							</fieldset>
 							<button type="submit" class="btn btn-light w-64 h-12 text-xl" data-title="Submit">Submit</button>
 						</div>
