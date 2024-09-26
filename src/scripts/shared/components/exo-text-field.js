@@ -1,27 +1,4 @@
-const css = /*css*/ `
-  .exo-text-field-placeholder {
-    display: inline;
-    font-size: 1em;
-    margin-block: auto;
-    pointer-events: none;
-    transform-origin: top left;
-    transition: transform 200ms, font-size 200ms, position 200ms;
-  }
-
-  exo-text-field input {
-    width: 100%;
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    background-color: transparent;
-    border: none;
-    outline: none;
-  }
-
-  exo-text-field input:focus + div > .exo-text-field-placeholder,
-  exo-text-field input:not(:placeholder-shown) +  div > .exo-text-field-placeholder {
-    transform: translateY(-0.85rem) scale(0.8);
-  }
-`
+import './exo-text-field.css';
 
 class ExoTextField extends HTMLElement {
   constructor() {
@@ -39,8 +16,7 @@ class ExoTextField extends HTMLElement {
     const inputRequired = input.hasAttribute("required");
 
     this.innerHTML = /*html*/ `
-      <style>${css}</style>
-      <div id="${id}"
+      <div
         class="relative 
           py-2
           px-1

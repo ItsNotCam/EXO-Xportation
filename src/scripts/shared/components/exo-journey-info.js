@@ -39,7 +39,7 @@ class ExoJourneyInfoItem extends HTMLElement {
             nav:bg-exo-dark-500/75
             opacity-0
           ">
-            <h1 id="journey-info-index-${index}" class="text-3xl mx-auto nav:text-2xl nav:hidden">
+            <h1 id="journey-info-number-${index}" class="text-3xl mx-auto nav:text-2xl nav:hidden">
               0${parseInt(index)+1}
             </h1>
             <div class="
@@ -64,6 +64,7 @@ class ExoJourneyInfoItem extends HTMLElement {
             nav:z-[1] nav:w-full
           "></div>
           <img id="journey-info-img-${index}" 
+						alt="${img.getAttribute("alt")}"
             data-anim="slide-fade-in-rev" 
             class="
               anim-delay-2 

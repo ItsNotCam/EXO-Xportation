@@ -67,7 +67,7 @@ const setFlights = (planet) => {
   bookedFlights[planet].forEach((flight, index) => {
     const id = `${planet}-flight-${index + 1}`;
     const flightItem = $(`
-      <exo-book-flight-item id="${id}" data-selected="false" class="data-[selected='true']:pointer-events-none">
+      <exo-book-flight-item data-id="${id}" data-selected="false" class="data-[selected='true']:pointer-events-none">
         <span slot="company">${flight.company}</span>
         <span slot="method">${flight.method}</span>
         <span slot="start-time">${flight.startTime}</span>

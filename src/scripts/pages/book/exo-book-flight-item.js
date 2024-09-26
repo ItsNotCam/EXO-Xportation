@@ -2,7 +2,7 @@ class ExoBookFlightItem extends HTMLElement {
   constructor() {
     super();
 
-    const id = this.id;
+    const id = this.getAttribute("data-id");
     const company = this.querySelector('[slot="company"]').innerHTML;
     const method = this.querySelector('[slot="method"]').innerHTML;
     const startTime = this.querySelector('[slot="start-time"]').innerHTML;

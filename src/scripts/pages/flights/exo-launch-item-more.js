@@ -21,7 +21,7 @@ class ExoLaunchItemMore extends HTMLElement {
     const id = this.id.replace("-more-container", "");
 
     this.innerHTML = /*html*/ `
-    <div id="${id}-more" class="launch-details-container" data-visible="false" aria-label="details for launch ENDEAVOR">
+    <div id="${id}-more" class="launch-details-container" data-visible="false">
       <div class="slide-fade-in flex flex-col gap-2 w-launch-col">
         <div class="launches-more-table-title">
           <div>

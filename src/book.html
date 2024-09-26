@@ -10,12 +10,12 @@
 	<exo-nav class="relative" blur-color="rgba(74,95,121,0.85)"></exo-nav>
 	<main class="min-h-screen max-w-[100vw] overflow-hidden grid grid-cols-2 grid-rows-1 opacity-fade-in">
 		<div id="bg-images" class="fixed inset-0 min-h-screen grid grid-cols-1 grid-rows-1">
-			<img src="public/images/europa.webp" class="h-full w-full object-cover grid-col-start-1 -grid-col-end-1 grid-row-start-1 -grid-row-start-1">
+			<img src="public/images/europa.webp" alt="europa" class="h-full w-full object-cover grid-col-start-1 -grid-col-end-1 grid-row-start-1 -grid-row-start-1">
 			<div class="bg-exo-dark-500/40 p-4 grid place-items-center my-4 grid-col-start-1 -grid-col-end-1 grid-row-start-1 -grid-row-start-1 nav:hidden">
 				<h1 class="text-xl uppercase text-center mb-4">
 					This is a work heavily in progress<br>
 					Meets requirements but only half done
-				</p>
+				</h1>
 			</div>
 		</div>
 		<div class="col-start-1 col-end-3 flex flex-row justify-between items-end m-8">
@@ -44,7 +44,7 @@
 					</svg>
 				</button>
 				<div class="h-full relative rounded-lg overflow-hidden row-start-2 shadow-xl nav:hidden">
-					<img src="public/images/alien_planet.webp" class="h-full w-full object-cover">
+					<img src="public/images/alien_planet.webp" class="h-full w-full object-cover" alt="alien planet">
 					<h1 class="absolute bottom-8 left-8 text-5xl tracking-wide font-bold">EUROPA</h1>
 				</div>
 				<div class="h-full col-start-2 -col-end-1 nav:hidden"></div>
@@ -61,7 +61,7 @@
 									<div class="w-max flex flex-col q gap-2 [&>*]:mx-2">
 										<h1 class="text-lg font-bold">Gender</h1>
 										<div class="w-fit">
-											<input type="radio" id="female" name="gender" value="female">
+											<input type="radio" id="male" name="gender" value="male">
 											<label for="male">Male</label>
 										</div>
 										<div class="w-fit">
@@ -129,7 +129,7 @@
 								<exo-text-field id="zipcode-field">
 									<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m240-160 40-160H120l20-80h160l40-160H180l20-80h160l40-160h80l-40 160h160l40-160h80l-40 160h160l-20 80H660l-40 160h160l-20 80H600l-40 160h-80l40-160H360l-40 160h-80Zm140-240h160l40-160H420l-40 160Z"/></svg></span>
 									<span slot="title">Zipcode</span>
-									<input type="string" name="zipcode" id="zipcode" placeholder="" required>
+									<input type="text" name="zipcode" id="zipcode" required>
 								</exo-text-field>
 							</div>
 						</fieldset>
