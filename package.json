@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "./scripts/update_imports.sh; webpack serve",
-    "build": "./scripts/update_imports.sh; ./scripts/compile_css.sh; webpack"
+    "build": "./scripts/update_imports.sh; ./scripts/compile_css.sh; webpack",
+		"deploy": "npm run build; scp -r dist/* cyoung35@mason.gmu.edu:~cyoung35/public_html/exo"
   },
   "author": "",
   "license": "ISC",
