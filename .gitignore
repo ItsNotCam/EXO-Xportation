@@ -1,9 +1,6 @@
 node_modules
 package-lock.json
 dist
-src/launch.bak
 **/unused
-/videos/*
-!/videos/earth_rotate.mp4
 src/scripted_imports.js
 .vscode
