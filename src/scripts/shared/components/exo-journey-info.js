@@ -64,7 +64,7 @@ class ExoJourneyInfoItem extends HTMLElement {
             nav:z-[1] nav:w-full
           "></div>
           <img id="journey-info-img-${index}" 
-						alt="${img.getAttribute("alt")}"
+            alt="${img.getAttribute("alt")}"
             data-anim="slide-fade-in-rev" 
             class="
               anim-delay-2 
