@@ -34,6 +34,7 @@ class Nav extends HTMLElement {
         nav:absolute nav:left-1/2 nav:-translate-x-1/2 nav:top-4
       ">EXO</a>
       <ul id="nav-main" class="nav-links" data-expanded="false">
+				<p class="display-name hidden after:content-none ml-auto border-none text-lg nav:block"></p>
         <li><a href="index.html" class="nav-link cch" data-active='${path.endsWith("/") || path.endsWith("/index.html")}'>HOME</a></li>
         <li><a href="flights.html" class="nav-link cch" data-active='${path.endsWith("/flights.html")}'>FLIGHTS</a></li>
         <li><a href="journey.html" class="nav-link cch" data-active='${path.endsWith("/journey.html")}'>JOURNEY</a></li>
@@ -70,6 +71,10 @@ class Nav extends HTMLElement {
           </rect>
         </svg>
       </button>
+			<div class="display-name
+				block after:content-none text-center border-none text-lg absolute right-4 top-8
+				nav:hidden
+			"></div>
     </nav>
     `;
 

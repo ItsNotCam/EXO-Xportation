@@ -28,12 +28,13 @@
 			">GO HERE</button>
 		</div> 
 		<div id="book-flight-form" data-visible="false" class="
-			fixed w-screen min-h-screen opacity-0 pointer-events-none backdrop-blur-0 
-			transition-all duration-200
+			fixed w-screen min-h-screen opacity-0 pointer-events-none backdrop-blur-0 bg-transparent
+			transition-colors duration-200
 			data-[visible='true']:opacity-100
 			data-[visible='true']:pointer-events-auto 
 			data-[visible='true']:z-50
 			data-[visible='true']:backdrop-blur-md
+			data-[visible='true']:bg-exo-dark-500/60
 		">
 			<div class="book-item-container">
 				<button id="book-close" class="book-close-btn w-10 h-10 fixed right-6 top-6 rounded-full p-1 hover:bg-exo-dark-500 transition-colors duration-200">
@@ -149,7 +150,7 @@
 								<exo-text-field id="zipcode-field">
 									<span slot="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m240-160 40-160H120l20-80h160l40-160H180l20-80h160l40-160h80l-40 160h160l40-160h80l-40 160h160l-20 80H660l-40 160h160l-20 80H600l-40 160h-80l40-160H360l-40 160h-80Zm140-240h160l40-160H420l-40 160Z"/></svg></span>
 									<span slot="title">Zipcode</span>
-									<input type="text" name="zipcode" id="zipcode" required>
+									<input type="text" name="zipcode" id="zipcode" placeholder="" required>
 								</exo-text-field>
 							</div>
 						</fieldset>

@@ -45,6 +45,7 @@
   backdrop-filter: blur(4px);
   letter-spacing: 0.1rem;
   transition: color 0.2s, border 0.2s, scale 0.2s, font-size 0.2s;
+	color: transparent;
 
   @apply border-exo-light-100 text-exo-dark-500;
 
