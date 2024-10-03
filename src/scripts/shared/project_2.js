@@ -83,7 +83,10 @@ const setDisplayName = (name) => {
 	// Update each of the elements that display the welcome message
 	$(".display-name").each(function() {
 		// Find the span with class "username" and set its text to the inputted name
-		$(this).find(".username").text(name);
+		$(this).find(".username").html(/* html */ `
+			<span class="text-base">Welcome,</span>
+			<span class="username text-exo-light-100 text-lg"> ${name}</span>
+		`);
 	});
 };
 
