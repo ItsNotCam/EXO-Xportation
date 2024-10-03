@@ -117,4 +117,15 @@ $(function() {
 			alert("No name was given"); // Alert the user if no name was provided
 		}
 	})
+
+
+	/**********************/
+	/* OPEN A NEW WINDOW  */
+	/**********************/
+	$("#open-window-btn").on("click", function() {
+		window.open(
+			$(this).attr("href"), 
+			$(this).attr("target")
+		);
+	})
 })
