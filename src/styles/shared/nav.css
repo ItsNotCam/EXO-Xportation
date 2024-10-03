@@ -1,3 +1,16 @@
+.display-name {
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+	border: none;
+	gap: 0.25rem;
+
+	& button {
+		border-radius: 50%;
+		@apply p-2 hover:bg-exo-light-400/20;
+	}
+}
+
 .nav-link {
   position: relative;
   text-align: center;
@@ -40,7 +53,7 @@
 }
 
 /* 960px */
-@media screen(nav) {
+@media screen and (max-width: 960px) {
   .nav-links {
     width: 275px;
     height: 100svh;

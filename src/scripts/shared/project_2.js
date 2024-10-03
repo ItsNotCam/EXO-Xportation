@@ -1,11 +1,27 @@
-import $ from 'jquery';
+import $ from "jquery";
 
-
-// Create the form content
-const formContent = /* html */ `
+// Create the form element with jQuery
+const transitionDurationMs = 200;
+const form = $("<form>", {
+	class: `
+		z-[1000]
+		fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+		place-items-center
+		p-4 w-screen h-screen
+		bg-white/1 backdrop-blur-sm text-center 
+		transition-opacity
+	`,
+	css: {
+		display: "grid",
+		transitionDuration: `${transitionDurationMs}ms`,
+		opacity: 0,
+		pointerEvents: "none"
+	},
+	"data-visible": "false",
+	html: /* html */ `
 	<div class="flex flex-col justify-start border border-exo-light-100 p-4 bg-exo-dark-500/75">
 		<label for="username" class="text-left">Please enter your name</label>
-		<input type="text" class="
+		<input type="text" autocomplete="off" class="
 			px-2 pt-2 pb-1 bg-transparent outline-one text-exo-light-100
 			border-b border-exo-light-100 focus:outline-none
 		" placeholder="John Doe" name="username" id="username">
@@ -13,42 +29,92 @@ const formContent = /* html */ `
 			Submit
 		</button>
 	</div>
-`
+	`,
+	appendTo: "body"
+});
 
-// get the name from the local storage
-localStorage.removeItem("exo-name");
-const exoName = localStorage.getItem("exo-name");
-
-// 
-if(exoName !== null && exoName.length > 0) {
-	$(function() {
-		$(".display-name").text(`Welcome, ${exoName}`);
-	})
-} else {
-	const form = $("<form>", {
-		class: /* html */ `
-			fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-			p-4 w-screen h-screen
-			bg-white/1 backdrop-blur-sm text-center 
-			z-[1000]
-			grid place-items-center
-		`,
-		html: formContent
+/**
+ * Sets the visibility of a form element by adjusting its CSS properties, then hiding it
+ * after 'transitionDurationMs' has elapsed
+ * @param {boolean} visible - A boolean indicating whether the form should be visible.
+ */
+const setFormVisible = (visible) => {
+	// set the visibility of the form
+	form.css({
+		"display": "grid",
+		"opacity": visible ? "100%" : "0",
+		"pointerEvents": visible ? "auto" : "none"
 	})
 
-	form.on("submit", function(event) {
-		event.preventDefault();
-		const exoName = $("#username").val().trim();
-		if (exoName !== "") {
-			localStorage.setItem("exo-name", exoName);
-			form.remove();
-			console.log("ok")
-		}
-		
-		$(function() {
-			$(".display-name").text(`Welcome, ${exoName}`);
-		})
-	});
-
-	$("body").append(form)
+	if(!visible) {
+		setTimeout(() => 
+			form.css({"display": "none"}), transitionDurationMs
+		); // set its diaplay to none after the opacity transition duration has elapsed
+	} else {
+		// set the user to focus and select all text within the element
+		$("#username")
+			.trigger("focus")
+			.trigger("select");
+	}
 }
+
+/**
+ * Sets the display name in the local storage
+ * Update each of the elements that display the welcome message.
+ * @param {string} name - The name to be set as the display name.
+ */
+const setDisplayName = (name) => {
+	// Set the name in local storage
+	localStorage.setItem("exo-name", name);
+
+	// Update each of the elements that display the welcome message
+	$(".display-name").each(function() {
+		// Find the span with class "username" and set its text to the inputted name
+		$(this).find(".username").text(name);
+	});
+};
+
+
+// JQuery function to wait for the entire page to load
+$(function() {
+	/*************************************/
+	/* SET THE DISPLAY NAME FROM STORAGE */
+	/* OR SHOW DISPLAY NAME INPUT FORM   */
+	/*************************************/
+	const exoName = localStorage.getItem("exo-name");	// get the name from the local storage
+	if (exoName !== null && exoName.length > 0) {
+		setDisplayName(exoName); // set the display name 
+		setFormVisible(false);   // hide the name editing form
+		form.find("input[type='text']").val(exoName); // set the form's text to the current name
+	} else {
+		setFormVisible(true); // show the name editing form
+	}
+
+	// Each of these buttons will show the name editing form
+	$(".display-name").find("button").each(function() {
+		$(this).on("click", function() {
+			setFormVisible(true);
+		})}
+	);
+
+
+	/**************************/
+	/* SET LAST TIME MODIFIED */
+	/**************************/
+	$("#last-modified").text(`Last Updated: ${document.lastModified}`)
+
+
+	/**************************/
+	/* NAME EDITING FORM INIT */
+	/**************************/
+	form.on("submit", (e) => { // handle the form submission event
+		e.preventDefault(); // Prevent the form from
+		const username = $("#username"); // Get the username element
+		if(username.val().length > 0) {
+			setDisplayName(username.val()); // Set the display name with the input value
+			setFormVisible(false); // Hide the form
+		} else {
+			alert("No name was given"); // Alert the user if no name was provided
+		}
+	})
+})

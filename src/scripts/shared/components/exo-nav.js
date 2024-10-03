@@ -34,7 +34,17 @@ class Nav extends HTMLElement {
         nav:absolute nav:left-1/2 nav:-translate-x-1/2 nav:top-4
       ">EXO</a>
       <ul id="nav-main" class="nav-links" data-expanded="false">
-				<p class="display-name hidden after:content-none ml-auto border-none text-lg nav:block"></p>
+				<li id="display-name-list" class="display-name hidden nav:flex">
+					<button class="show-name-edit-form flex flex-row gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed">
+							<path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/>
+						</svg>
+					</button>
+					<p class="inline text-exo-light-300">
+						<span class="text-base">Welcome,</span>
+						<span class="username text-exo-light-100 text-lg"> user</span>
+					</p>
+				</li>
         <li><a href="index.html" class="nav-link cch" data-active='${path.endsWith("/") || path.endsWith("/index.html")}'>HOME</a></li>
         <li><a href="flights.html" class="nav-link cch" data-active='${path.endsWith("/flights.html")}'>FLIGHTS</a></li>
         <li><a href="journey.html" class="nav-link cch" data-active='${path.endsWith("/journey.html")}'>JOURNEY</a></li>
@@ -71,10 +81,17 @@ class Nav extends HTMLElement {
           </rect>
         </svg>
       </button>
-			<div class="display-name
-				block after:content-none text-center border-none text-lg absolute right-4 top-8
-				nav:hidden
-			"></div>
+			<div id="display-name-full" class="display-name absolute top-7 right-7 flex nav:hidden">
+				<p class="inline text-exo-light-300">
+					<span class="text-base">Welcome,</span>
+					<span class="username text-exo-light-100 text-lg"> user</span>
+				</p>
+				<button>
+					<svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#e8eaed">
+						<path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/>
+					</svg>
+				</button>
+			</div>
     </nav>
     `;
 
