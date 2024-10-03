@@ -33,6 +33,19 @@ const form = $("<form>", {
 	appendTo: "body"
 });
 
+// handle form submission event to change the display name
+form.on("submit", (e) => {
+	e.preventDefault(); // Prevent the form from
+	const username = $("#username"); // Get the username element
+	if(username.val().length > 0) {
+		setDisplayName(username.val()); // Set the display name with the input value
+		setFormVisible(false); // Hide the form
+	} else {
+		alert("No name was given"); // Alert the user if no name was provided
+	}
+})
+
+
 /**
  * Sets the visibility of a form element by adjusting its CSS properties, then hiding it
  * after 'transitionDurationMs' has elapsed
@@ -75,6 +88,12 @@ const setDisplayName = (name) => {
 };
 
 
+
+/**************************/
+/* ASSIGNMENT REQUIREMENT */
+/*   FULFILLMENT SECTION  */
+/**************************/
+
 // JQuery function to wait for the entire page to load
 $(function() {
 	/*************************************/
@@ -102,21 +121,6 @@ $(function() {
 	/* SET LAST TIME MODIFIED */
 	/**************************/
 	$("#last-modified").text(`Last Updated: ${document.lastModified}`)
-
-
-	/**************************/
-	/* NAME EDITING FORM INIT */
-	/**************************/
-	form.on("submit", (e) => { // handle the form submission event
-		e.preventDefault(); // Prevent the form from
-		const username = $("#username"); // Get the username element
-		if(username.val().length > 0) {
-			setDisplayName(username.val()); // Set the display name with the input value
-			setFormVisible(false); // Hide the form
-		} else {
-			alert("No name was given"); // Alert the user if no name was provided
-		}
-	})
 
 
 	/**********************/
