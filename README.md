@@ -1,5 +1,5 @@
 # Parallax Effect
-The first section of the Journey page makes use of a four-layer parallax effect in which three different images and the main heading move at various speeds as the user scrolls down the page which creates a feeling of depth. The JavaScript for this can be found on lines [41-83 of this file](https://github.com/ItsNotCam/EXO-Xportation/blob/master/src/scripts/pages/journey.js).
+The first section of the Journey page makes use of a four-layer parallax effect in which three different images and the main heading move at various speeds as the user scrolls down the page which creates a feeling of depth. The JavaScript for this can be found on lines [41-83 of this file](https://github.com/ItsNotCam/EXO-Xportation/blob/3905cf1aacbd79bec9cd81a0de0857974faafee2/src/scripts/pages/journey.js#L41).
 
 The magic here is in the JavaScript: In order to keep the animation smooth, the four elements are all set to position: fixed and as the user scrolls down, the images are translated up at various rates. 
 
