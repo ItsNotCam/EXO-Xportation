@@ -8,7 +8,7 @@ module.exports = {
   ],
   theme: {
     data: {
-      visible: `visible="true"`
+      visible: `visible=true`
     },
     extend: {
       gridTemplateColumns: {
