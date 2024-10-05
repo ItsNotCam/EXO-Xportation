@@ -22,6 +22,14 @@ $(function() {
 });
 
 const links = [
+	{
+		link: "https://www.freepik.com/free-ai-image/anthropomorphic-robot-performing-regular-human-job-future_94214682.htm#fromView=search&page=1&position=14&uuid=da562e5b-e222-4cae-96ff-f5d353beb98a",
+		title: "AI performing Chores"
+	},
+	{
+		link: "https://www.freepik.com/free-ai-image/futuristic-kitchen-interior-design_320252041.htm#fromView=search&page=2&position=14&uuid=08795428-b383-411e-8e45-fe8e6b25f1fd",
+		title: "Spaceship Interior"
+	},
   {
     link: "https://www.freepik.com/free-ai-image/exploration-settlements-different-planets_279273198.htm",
     title: "Moon Settlement"

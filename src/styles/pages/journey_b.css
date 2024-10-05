@@ -1,0 +1,31 @@
+.info-card {
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 1fr;
+  padding: 2rem;
+  gap: 2rem;
+
+  @apply bg-exo-dark-500/80;
+
+  & > h1 {
+    font-weight: bold;
+    margin-bottom: auto;
+    grid-column: 1 / 2;
+    @apply text-3xl;
+  }
+
+  & > div {
+    @apply text-lg;
+  }
+
+  & img {
+    max-height: 700px;
+    width: 100%;
+    z-index: 0;
+    object-fit: cover;
+    grid-row: 1 / -1;
+    grid-column: 2 / -1;
+    margin-block: auto;
+  }
+}
