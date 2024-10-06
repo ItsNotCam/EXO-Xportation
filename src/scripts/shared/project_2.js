@@ -103,7 +103,21 @@ $(function() {
 	/*****************/
 	/* RANDOM IMAGES */
 	/*****************/
-	const randomImgIdx = Math.floor(Math.random() * 3);
+	// get the last opened image so we dont repeat the same image twice
+	let lastRngImage = localStorage.getItem("exo-last-rng-image");
+	if (lastRngImage === null) {
+		lastRngImage = 0;
+	} else {
+		lastRngImage = parseInt(lastRngImage);
+	}
+	let randomImgIdx;
+	do {
+		randomImgIdx = Math.floor(Math.random() * 3);
+	} while (randomImgIdx === lastRngImage);
+
+	localStorage.setItem("exo-last-rng-image", randomImgIdx);
+
+	// set the image
 	$(".exo-astro-bg").each(function(index) {
 		console.log(randomImgIdx, index)
 		$(this).css({ display: randomImgIdx === index ? "block" : "none" })
