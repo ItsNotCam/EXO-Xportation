@@ -1,4 +1,3 @@
-import '../../styles/pages/journey.css'
 import '../../styles/pages/journey_b.css'
 import $ from 'jquery';
 
@@ -8,6 +7,10 @@ $(function() {
 	const containers = $(".exo-journey-info-item-container");
 	containers.each(function() {
 		const journeyInfoItems = $(this).find("exo-journey-info-item");
+		if(journeyInfoItems.length <= 1) {
+			return;
+		}
+
 		const renderInfoItemSelectors = () => {
 			journeyInfoItems.each(function(index) {
 				$(this).css("display", index === journeyInfoIndex ? "block" : "none");
@@ -35,7 +38,7 @@ $(function() {
 										cursor-pointer
 									"></li>
 								`
-							}).get().join("\n")
+							}).get().join("\0")
 						}
 						<li class="ml-0 nav:ml-auto">
 							<svg class="hover:fill-white h-[36px] w-[36px]" aria-label="rightward arrow" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#e8eaed">

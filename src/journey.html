@@ -1,30 +1,3 @@
-
-      <!-- <div class="p-8 grid grid-cols-2 grid-rows-1 gap-8 items-center bg-exo-dark-500"> -->
-      <!-- <img loading="lazy" alt="" src="public/images/planets.webp" class="w-full object-cover"> -->
-      <!-- <div>
-          <h1 class="text-4xl font-bold mb-4">FLY EXO</h1>
-          <p>
-            EXO offers a modern, safe, and luxurious industry-leading approach to interplanetary travel. 
-          </p>
-          <p>
-            Thanks to our integration of the revolutionary <strong>Murphy Accelerator</strong>, you can now reach even 
-            the most distant destinations, like <a href="" class="font-bold underline text-red-400">Europa</a>, 
-            in just two months. 
-          </p>
-          <p>
-            Due to the immense energy and maintenance required to cross such vast distances so quickly, EXO only 
-            offers one-way trips. 
-          </p>
-          <p>
-            For those who prefer to bypass the journey altogether, our <strong>Extended Sleep Modules</strong> are 
-            available at a reduced charge, ensuring that passengers feel as though they've arrived in the blink 
-            of an eye, waking up ready to begin their adventure.
-          </p>
-        </div>
-      </div> -->
-      <!-- <div class="relative min-w-screen h-[100svh] grid grid-cols-1 grid-rows-1 place-items-center bg-exo-dark-900"> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,9 +10,16 @@
 <body id="journey-body">
   <exo-cursor hidden="true"></exo-cursor>
   <exo-nav blur-color="rgba(12,12,12,1)"></exo-nav>
-  <a id="link-to-top" aria-label="Return to top of page" href="#hero" class="fixed bottom-8 right-8 p-2 rounded-full transition-colors duration-200 hover:bg-exo-dark-500 z-[2]"
+  <a id="link-to-top" aria-label="Return to top of page" href="#hero" class="fixed bottom-8 left-8 p-2 rounded-full transition-colors duration-200 hover:bg-exo-dark-500 z-[2]"
     title="Return to Top">
     <svg aria-label="upward arrow" class="-rotate-90" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px"
+      fill="#e8eaed">
+      <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+    </svg>
+  </a>
+  <a id="go-next" aria-label="Return to top of page" href="/journey_b.html" class="fixed bottom-8 right-8 p-2 rounded-full transition-colors duration-200 hover:bg-exo-dark-500 z-[2]"
+    title="Next">
+    <svg aria-label="upward arrow" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px"
       fill="#e8eaed">
       <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
     </svg>
@@ -153,7 +133,7 @@
         </div>
       </div>
     </section>
-		<section id="journey-amenities" class="relative min-h-screen [&>*]:w-full [&>*]:flex-shrink-0 [&>*]:bg-exo-dark-500 flex flex-row bg-exo-dark-500 overflow-auto">
+		<section id="journey-amenities" class="sticky top-0 h-[125vh] min-h-screen [&>*]:w-full [&>*]:flex-shrink-0 [&>*]:bg-exo-dark-500 flex flex-row bg-exo-dark-500 overflow-auto">
 			<exo-journey-info-item data-index="0" data-selected="true">
 				<span slot="header">YOUR SPACE .... </span>
 				<h1 slot="title">
@@ -206,251 +186,11 @@
 				<span slot="footer">Aesthetic</span>
 			</exo-journey-info-item>
 		</section>
-		<!-- <section class="h-[300vh] w-full bg-black flex flex-col relative [&>*]:z-[1]">
-			<video src="public/videos/freedom.mp4" 
-			style="z-index: 0"
-			class="
-				h-screen w-full object-cover opacity-70 
-				sticky top-0" 
-				autoplay loop muted
-			></video>
-			<div class="h-screen z-[1] top-0 -mt-[100vh] grid place-items-center">
-				<h1 class="w-fit text-[clamp(1rem,10vw,6rem)] leading-[1em] font-bold uppercase text-right ml-auto mr-8">
-					ANYTHING<br>
-				  YOU WANT,<br>
-					AT YOUR<br>
-					FINGERTIPS
-				</h1>
-			</div>
-			<div class="ai-attendant">
-				<h1>
-					01. PERSONAL AI ATTENDANT
-				</h1>
-				<div>
-					<h1 class="text-2xl font-bold">What?</h1>
-					<p class="w-fit ml-auto">
-						Your AI assistant is a device that will take care of any of your physical needs.
-						<span class="block my-3"></span>
-						It can come in the form of a physical entity of your choosing, whether it be humanoid,
-						house cat, robot, or anything else that you can imagine.
-						<span class="block my-3"></span>
-						Given your permission, your AI assistant will be given private, encrypted, and 
-						secure access to your personal data such that 
-						<span class="text-red-400">it can assume a personality of one that will complement your own</span>.
-					</p>
-
-					<div class="line my-4"></div>
-
-					<h1 class="text-2xl font-bold">Where?</h1>
-					Your AI assistant can be wherever you like:
-					<ul class="list-disc ml-8">
-						<li>Remain in your unit</li>
-						<li>Follow you to your destination</li>
-						<li>Meet you at your destination</li>
-						<li>Many more...</li>
-					</ul>
-
-					<div class="line my-4"></div>
-
-					<h1 class="text-2xl ml-auto font-bold">Features</h1>
-					The AI assistant may perform <em>any duty</em> or provide assistance with <em>anything</em>
-					that you may not want to perform.
-					<span class="block my-3"></span>
-					Additionally, what the AI learns from your interactions may be <span class="text-red-400">transferred to your 
-					personal home network free of charge</span>, or the AI can be <span class="text-red-400">purchased
-					separately</span> in the case that you wish to continue your interactions. 
-			</div>
-			<img src="public/images/ai_boi.webp" alt="a robot and a young girl">
-		</section> -->
-		<section class="w-full px-8 bg-exo-dark-500 h-screen grid place-items-center">
+		<section class="w-full sticky top-0 px-8 bg-black h-screen grid place-items-center">
 			<a href="journey_b.html" class="text-2xl text-center hover:underline">
 				Click for More
 			</a>
 		</section>
-		<!-- 
-    <section class="bg-exo-dark-500 min-h-screen grid place-items-center w-screen relative">
-			<div class="w-full h-[70%] p-4 grid grid-cols-8 grid-rows-1 text-[clamp(3rem,7vw,6rem)] tracking-wide font-bold leading-em-0.9 archivo">
-				<div class="col-start-1 -col-end-1 row-start-1 row-end-2 z-10 self-end mx-auto flex flex-col gap-2 items-left justify-end">
-					<h1 data-anim="slide-fade-in" class="opacity-0 animate-when-visible">LIVE IN</h1>
-					<h1 data-anim="slide-fade-in" class="ml-[clamp(0px,6vw,2em)] txt:ml-0 opacity-0 animate-when-visible">LUXURIOUS</h1>
-					<h1 data-anim="slide-fade-in" class="ml-[clamp(0px,25vw,5em)] txt:ml-0 opacity-0 animate-when-visible">SPACES,</h1>
-					<h1 data-anim="slide-fade-in" class="ml-[clamp(0px,18vw,4em)] txt:ml-0 opacity-0 animate-when-visible">WHERE COMFORT</h1>
-					<h1 data-anim="slide-fade-in" class="ml-[clamp(0px,38vw,7em)] txt:ml-0 opacity-0 animate-when-visible">IS PARAMOUNT</h1>
-				</div>
-				<div data-anim="opacity-fade-in" class="luxurious-spaces-img animate-when-visible opacity-0 anim-delay-2">
-					<img src="public/images/female-astro-comfy.jpg	" class="h-full object-cover">
-				</div>
-			</div>
-		</section>
-		<section class="bg-exo-dark-900 grid place-items-start grid-flow-row gap-8 p-[5rem]">
-			<div class="grid grid-cols-2 grid-rows-1 gap-8 1000:grid-rows-1 1000:grid-cols-1">
-				<div class="
-					my-auto text-lg 
-					[&>p]:text-exo-light-300 [&>p]:mb-4 
-					[&>h1]:font-bold [&>h1]:text-4xl [&>h1]:mb-6 [&>h1]:mt-4
-					[&>h2]:font-bold [&>h2]:uppercase [&>h2]:text3xl
-				">
-					<h1 class="uppercase">Your Home Away from Home</h1>
-					<p>
-						State-of-the-art custom-pressurized apartments are available and are at 
-						the pinnacle of our priorities when it comes to amenities. These apartments
-						will be your home away from home, and we aim to ensure your comfort
-						throughout your journey.
-					</p>
-
-					<h2>Atmospheric Pressure</h2>
-					<p>
-						Set the atmospheric pressure that you are most comfortable with,
-						and it will take care of the rest
-					</p>
-
-					<h2>Climate Control</h2>
-					<p>
-						Each unit comes equipped with its own climate-control settings. Access 
-						your climate controls with voice commands or with the included datapad.
-					</p>
-
-					<h2>Gravity</h2>
-					<p>
-						Each unit comes equipped with its own customizable gravity generator. 
-						Whether you want your traversal within your unit to feel like Earth, your 
-						destination, space itself, or something in between, you may modify the
-						gravity your unit at will.
-					</p>
-
-					<h2>Decor Variants</h2>
-					<p>
-						You are not limited to just one suite aesthetic. You may choose from many
-						various interiors.
-					</p>
-				</div>
-				<img src="public/images/10.webp" class="1000:hidden w-full h-full object-cover transform my-auto">
-			</div>	
-			<div class="grid grid-cols-2 grid-rows-1 gap-8 1000:grid-cols-1">
-				<img src="public/images/10.webp" class="1000:hidden w-full h-full object-cover transform my-auto">
-				<div class="
-					my-auto text-lg 
-					[&>p]:text-exo-light-300 [&>p]:mb-4 
-					[&>h1]:font-bold [&>h1]:text-4xl [&>h1]:mb-6 [&>h1]:mt-4
-					[&>h2]:font-bold [&>h2]:uppercase [&>h2]:text3xl
-				">
-					<h1 class="uppercase">Personalized Care</h1>
-					<p>
-						A <strong>custom-tailored AI</strong> attendant will be assigned to you that, given your
-						permission, will be given private, encrypted, and secure access to your personal such that it can assume a personality of one that will 
-						complement your own.
-					</p>
-					<p>
-						This AI can come in the form of a physical entity of your choosing, whether it be humanoid, house cat, dog, or others, or can be implanted directly into neural network.
-					</p>
-					<p>
-						What the AI learns from your interactions may be transferred to your 
-						personal home network free of charge, or the AI can be purchased
-						separately in the case that you wish to continue your interactions. 
-					</p>
-				</div>
-			</div>
-			<div class="grid grid-cols-2 grid-rows-1 gap-8 1000:grid-cols-1">
-				<div class="
-					my-auto text-lg 
-					[&>p]:text-exo-light-300 [&>p]:mb-4 
-					[&>h1]:font-bold [&>h1]:text-4xl [&>h1]:mb-6 [&>h1]:mt-4
-					[&>h2]:font-bold [&>h2]:uppercase [&>h2]:text3xl
-				">
-					<h1 class="uppercase">Fine Dining</h1>
-					<p>
-						On EXO-accredited vessels, a vast assortment of dining options is available to you, tailored to meet your every craving.
-					</p>
-					<p>
-						Whether you're in the mood for something familiar from Earth or eager to try cuisine inspired by the planets you'll be visiting, our culinary team is ready to serve. 
-					</p>
-					<p>
-						Have specific dietary needs or preferences? With our customizable meal plan, you can easily select your desired foods, portion sizes, and meal times. At an average as low as of $8 USD* per meal, we offer an incredible deal on an incredible selection. 
-					</p>
-					<p>
-						Every dish is prepared with the freshest ingredients, grown sustainably in our onboard biomes, ensuring both quality and variety throughout your journey.
-					</p>
-				</div>
-				<img src="public/images/10.webp" class="1000:hidden w-full h-full object-cover transform my-auto">
-			</div>
-			<div class="grid grid-cols-2 grid-rows-1 gap-8 1000:grid-cols-1">
-				<img src="public/images/10.webp" class="1000:hidden w-full h-full object-cover transform my-auto">
-				<div class="
-					my-auto text-lg 
-					[&>p]:text-exo-light-300 [&>p]:mb-4 
-					[&>h1]:font-bold [&>h1]:text-4xl [&>h1]:mb-6 [&>h1]:mt-4
-					[&>h2]:font-bold [&>h2]:uppercase [&>h2]:text3xl
-				">
-					<h1 class="uppercase">ENTERTAINMENT</h1>
-					<p>
-						Entertainment aboard EXO-accredited vessels is designed to keep you engaged and entertained throughout the entire journey. 
-					</p>
-					<p>
-						Our ships are equipped with immersive virtual reality suites, allowing you to experience everything from exploring alien landscapes to enjoying virtual concerts and movies in stunning detail. 
-					</p>
-					<p>
-						For more social activities, our zero-gravity recreation rooms offer unique games and experiences that can only be enjoyed in space. 
-					</p>
-					<p>
-						Whether you're into interactive storytelling, competitive gaming, or simply want to relax with a good book in our digital library, there’s always something to keep you entertained while traveling.
-					</p>
-				</div>
-			</div>
-			<div class="grid grid-cols-2 grid-rows-1 gap-8 1000:grid-cols-1">
-				<div class="
-					my-auto text-lg 
-					[&>p]:text-exo-light-300 [&>p]:mb-4 
-					[&>h1]:font-bold [&>h1]:text-4xl [&>h1]:mb-6 [&>h1]:mt-4
-					[&>h2]:font-bold [&>h2]:uppercase [&>h2]:text3xl
-				">
-					<h1 class="uppercase">Exercise</h1>
-					<p><strong>Participation in exercise may be waived*</strong></p>
-					<p>
-						Maintaining physical health on your journey is essential, especially given the ship's internal gravity is set to the gravity level of the destination planet. 
-					</p>
-					<p>
-						These gravity levels means that regular exercise isn't just recommended — it's crucial for keeping your muscles and bones strong. 
-					</p>
-					<p>
-						To support your wellness, you'll have access to your very own personal trainer and a workout plan custom-tailored to your needs. Our advanced systems analyze your body and physical requirements, ensuring that every exercise session is of adequate intensity and keeps you in peak condition for life on new worlds.
-					</p>
-				</div>
-				<img src="public/images/10.webp" class="1000:hidden w-full h-full object-cover transform my-auto">
-			</div>
-			<div class="grid grid-cols-2 grid-rows-1 gap-8 1000:grid-cols-1">
-				<img src="public/images/10.webp" class="1000:hidden w-full h-full object-cover transform my-auto">
-				<div class="
-					my-auto text-lg 
-					[&>p]:text-exo-light-300 [&>p]:mb-4 
-					[&>h1]:font-bold [&>h1]:text-4xl [&>h1]:mb-6 [&>h1]:mt-4
-					[&>h2]:font-bold [&>h2]:uppercase [&>h2]:text3xl
-				">
-					<h1 class="uppercase">Skip the Wait</h1>
-					<p>For those who prefer a faster journey with less down-time, our Extended Sleep Modules offer the perfect solution*. </p>
-					<p>Instead of passing the time aboard the vessel, you can opt to be placed in suspended animation, where the entire trip feels like it happens in an instant. </p>
-					<p>This advanced technology puts you into a suspended state, and before you know it, you'll wake up at your destination as if no time has passed at all. </p>
-					<p>Extended Sleep is the ultimate choice for travelers who want to travel on a budget or those who wish to simply skip the wait and jump straight to the experience of exploring a new world.</p>
-				</div>
-			</div>
-    </section>
-			<h1 class="text-4xl font-bold mb-4">FLY EXO</h1>
-			<p>
-				EXO offers a modern, safe, and luxurious industry-leading approach to interplanetary travel.
-			</p>
-			<p>
-				Thanks to our integration of the revolutionary <strong>Murphy Accelerator</strong>, you can now reach even
-				the most distant destinations, like <a href="" class="font-bold underline text-red-400">Europa</a>,
-				in just two months.
-			</p>
-			<p>
-				Due to the immense energy and maintenance required to cross such vast distances so quickly, EXO only
-				offers one-way trips.
-			</p>
-			<p>
-				For those who prefer to bypass the journey altogether, our <strong>Extended Sleep Modules</strong> are
-				available at a reduced charge, ensuring that passengers feel as though they've arrived in the blink
-				of an eye, waking up ready to begin their adventure.
-			</p> -->
   </main>
 </body>
 
