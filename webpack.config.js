@@ -30,6 +30,7 @@ module.exports = {
     home: './src/scripts/pages/home.js', 
     flights: './src/scripts/pages/flights.js', 
     journey: './src/scripts/pages/journey.js', 
+    "journey_b": './src/scripts/pages/journey_b.js', 
     book: './src/scripts/pages/book.js'
   },
   output: {

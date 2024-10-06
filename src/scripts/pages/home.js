@@ -22,6 +22,26 @@ $(function() {
 });
 
 const links = [
+	{
+		link: "https://www.freepik.com/free-photo/adorable-kids-with-popcorn-watching-tv_1976608.htm#fromView=search&page=1&position=13&uuid=6b8f86d7-5b5d-4bf3-9382-970f8f4720e0",
+		title: "Kids watching movie"
+	},
+	{
+		link: "https://www.freepik.com/free-photo/people-having-happy-retirement-activity_20136353.htm#fromView=search&page=1&position=51&uuid=2ceec2ec-244f-4226-aa53-e8170cd165f1",
+		title: "People playing tennis"
+	},
+	{
+		link: "https://www.freepik.com/free-ai-image/delicious-food-prepared-jewish-hanukkah-celebration_133761145.htm#fromView=image_search&page=1&position=7&uuid=81501120-ad3d-4787-898d-e24d874a1082",
+		title: "Delicious Food for Hanukkah Celebration"
+	},
+	{
+		link: "https://www.freepik.com/free-ai-image/anthropomorphic-robot-performing-regular-human-job-future_94214682.htm#fromView=search&page=1&position=14&uuid=da562e5b-e222-4cae-96ff-f5d353beb98a",
+		title: "AI performing Chores"
+	},
+	{
+		link: "https://www.freepik.com/free-ai-image/futuristic-kitchen-interior-design_320252041.htm#fromView=search&page=2&position=14&uuid=08795428-b383-411e-8e45-fe8e6b25f1fd",
+		title: "Spaceship Interior"
+	},
   {
     link: "https://www.freepik.com/free-ai-image/exploration-settlements-different-planets_279273198.htm",
     title: "Moon Settlement"
