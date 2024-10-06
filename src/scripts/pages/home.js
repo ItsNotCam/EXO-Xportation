@@ -23,6 +23,22 @@ $(function() {
 
 const links = [
 	{
+		link: "https://www.freepik.com/free-ai-image/money-fantasy-scene_236590393.htm#fromView=search&page=1&position=39&uuid=04bd67d2-4553-47c1-ae1b-59a76094f174",
+		title: "Cryo Sleep"
+	},
+	{
+		link: "https://www.freepik.com/free-ai-image/view-astronaut-spacesuit-snowboarding-moon_152374631.htm#fromView=image_search&page=1&position=26&uuid=1fe54a3e-968d-4a7f-a1fb-617e19c4cee9",
+		title: "Snowboarding astronaut 3"
+	},
+	{
+		link: "https://www.freepik.com/free-ai-image/astronaut-with-spacesuit-practicing-snowboarding-moon_152374899.htm#fromView=image_search&page=1&position=5&uuid=f1a50d12-dacd-4703-bac6-74c0ec7b28a8",
+		title: "Snowboarding astronaut 2"
+	},
+	{
+		link: "https://www.freepik.com/free-ai-image/astronaut-with-spacesuit-practicing-snowboarding-moon_152374905.htm#fromView=image_search&page=1&position=0&uuid=99c8ca95-71c5-4115-9fd3-a5c5daa07411",
+		title: "Snowboarding astronaut 1"
+	},
+	{
 		link: "https://www.freepik.com/free-photo/adorable-kids-with-popcorn-watching-tv_1976608.htm#fromView=search&page=1&position=13&uuid=6b8f86d7-5b5d-4bf3-9382-970f8f4720e0",
 		title: "Kids watching movie"
 	},

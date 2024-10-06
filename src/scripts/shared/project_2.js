@@ -94,11 +94,22 @@ const setDisplayName = (name) => {
 
 /**************************/
 /* ASSIGNMENT REQUIREMENT */
-/*   FULFILLMENT SECTION  */
+/*  FULFILLMENT SECTION   */
 /**************************/
+
 
 // JQuery function to wait for the entire page to load
 $(function() {
+	/*****************/
+	/* RANDOM IMAGES */
+	/*****************/
+	const randomImgIdx = Math.floor(Math.random() * 3);
+	$(".exo-astro-bg").each(function(index) {
+		console.log(randomImgIdx, index)
+		$(this).css({ display: randomImgIdx === index ? "block" : "none" })
+	})
+
+
 	/*************************************/
 	/* SET THE DISPLAY NAME FROM STORAGE */
 	/* OR SHOW DISPLAY NAME INPUT FORM   */

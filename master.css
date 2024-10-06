@@ -790,6 +790,41 @@
   }
 }
 
+/* FROM: './src/styles/pages/journey_b.css' */
+
+.info-card {
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 1fr;
+  padding: 2rem;
+  gap: 2rem;
+
+  @apply bg-exo-dark-500/80;
+
+  & > h1 {
+    font-weight: bold;
+    margin-bottom: auto;
+    grid-column: 1 / 2;
+    @apply text-3xl;
+  }
+
+  & > div {
+    @apply text-lg;
+  }
+
+  & img {
+    max-height: 700px;
+    width: 100%;
+    z-index: 0;
+    object-fit: cover;
+    grid-row: 1 / -1;
+    grid-column: 2 / -1;
+    margin-block: auto;
+  }
+}
+
+
 /* FROM: './src/styles/shared/animations.css' */
 
 @keyframes learn-more-arrow {
@@ -889,7 +924,7 @@
 }
 
 @keyframes fall-up {
-  0% {
+  0% {	
     opacity: 0;
     transform: translateY(25%);
   }
@@ -980,6 +1015,7 @@
   backdrop-filter: blur(4px);
   letter-spacing: 0.1rem;
   transition: color 0.2s, border 0.2s, scale 0.2s, font-size 0.2s;
+	color: transparent;
 
   @apply border-exo-light-100 text-exo-dark-500;
 
@@ -1245,6 +1281,19 @@ exo-link-btn {
 
 /* FROM: './src/styles/shared/nav.css' */
 
+.display-name {
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+	border: none;
+	gap: 0.25rem;
+
+	& button {
+		border-radius: 50%;
+		@apply p-2 hover:bg-exo-light-400/20;
+	}
+}
+
 .nav-link {
   position: relative;
   text-align: center;
@@ -1287,7 +1336,7 @@ exo-link-btn {
 }
 
 /* 960px */
-@media screen(nav) {
+@media screen and (max-width: 960px) {
   .nav-links {
     width: 275px;
     height: 100svh;

@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EXO</title>
+
+	<!-- 
+	FOR WEBPACK SCRIPTED IMPORTS
+	-->
 </head>
 
 <body>
@@ -70,7 +74,22 @@
 	</div>
   <main>
     <div class="h-screen min-w-screen grid items-center">
-      <img src="public/images/snowboard_astro.webp" alt="space man" class="
+      <img style="display: block" src="public/images/snowboard_astro_1.webp" alt="space man" class="
+				exo-astro-bg
+        opacity-0 
+        h-screen w-full object-cover 
+        col-start-1 col-end-2 row-start-1 row-end-2
+        opacity-fade-in anim-delay-2
+      "></img>
+      <img style="display: none" src="public/images/snowboard_astro_2.webp" alt="space man" class="
+				exo-astro-bg
+        opacity-0 
+        h-screen w-full object-cover 
+        col-start-1 col-end-2 row-start-1 row-end-2
+        opacity-fade-in anim-delay-2
+      "></img>
+      <img style="display: none" src="public/images/snowboard_astro_3.webp" alt="space man" class="
+				exo-astro-bg
         opacity-0 
         h-screen w-full object-cover 
         col-start-1 col-end-2 row-start-1 row-end-2
