@@ -68,6 +68,15 @@ const setFormVisible = (visible) => {
 		$("#username")
 			.trigger("focus")
 			.trigger("select");
+
+			const exoName = localStorage.getItem("exo-name");
+			if (exoName !== null && exoName.length > 0) {
+				$(document).on("keydown", (e) => {
+					if (e.key === "Escape") {
+						setFormVisible(false);
+					}
+				});
+			}
 	}
 }
 
