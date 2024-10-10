@@ -9,7 +9,7 @@ import {
 
 const pageState = {
   "book-flight-form-open": false,
-  "selected-planet-id": "europa",
+  "selected-planet": "europa",
   "selected-flight-id": -1,
   "flights": []
 }
@@ -61,6 +61,7 @@ var pageStateHandler = {
 var observedPageState = new Proxy(pageState, pageStateHandler);
 
 const setFlights = (planet) => {
+	planet = planet.toLowerCase();
   pageState.flights = [];
   $(flightsElement).html("");
 
@@ -94,6 +95,37 @@ const setFlights = (planet) => {
     flightsElement.append(flightItem);
   });
 }
+
+$(() => {
+	const bgImage = $("#bg-image");
+	const currentLocation = $("#current-location");
+	const bookLocation = $("#book-location");
+	const bgImages = $("#bg-img-selectors").children();
+
+	bgImages.on("click", function() {
+		const clickedImageSrc = $(this).find("img").attr("src");
+		const clickedImageLocation = $(this).find("h1").text();
+
+		if(bgImage.attr("src") === clickedImageSrc) {
+			return;
+		}
+
+
+		bgImage.css("opacity", 0);
+		currentLocation.css("opacity", 0);
+		setTimeout(() => {
+			currentLocation.text(clickedImageLocation);
+			bgImage.attr("src", clickedImageSrc);
+			bookLocation.find("h1").text(clickedImageLocation);
+			bookLocation.find("img").attr("src", clickedImageSrc);
+			
+			bgImage.css("opacity", 1);
+			currentLocation.css("opacity", 1);
+		}, 200);
+
+		setFlights(clickedImageLocation);
+	})
+})
 
 // $(".select-flight").each(function() {
 //   const closestFlightID = $(this).closest(".book-item-flight").attr("id");

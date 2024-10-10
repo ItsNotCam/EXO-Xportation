@@ -1,6 +1,6 @@
-export const planets = ["Europa", "IO", "Jupiter", "Mars", "Earth", "Solaris"]
+export const planets = ["europa", "io", "jupiter", "mars", "earth", "moon"]
 export const bookedFlights = {
-  "Europa": [
+  "europa": [
     {
       company: "SpaceX",
       method: "CRYO",
@@ -82,7 +82,7 @@ export const bookedFlights = {
       travellerAmount: "one way per traveller"
     }
   ],
-  "IO": [
+  "io": [
     {
       company: "Seabloom",
       method: "LUXURY",
@@ -164,7 +164,7 @@ export const bookedFlights = {
       travellerAmount: "one way per traveller"
     }
   ],
-  "Jupiter": [
+  "jupiter": [
     {
       company: "Seabloom",
       method: "FIRST CLASS",
@@ -246,7 +246,7 @@ export const bookedFlights = {
       travellerAmount: "one way per traveller"
     }
   ],
-  "Mars": [
+  "mars": [
     {
       company: "EXO",
       method: "LUXURY",
@@ -256,7 +256,7 @@ export const bookedFlights = {
       endDate: "Feb. 3rd 2136",
       startLocation: "Cape Canaveral",
       startAirport: "(CCS)",
-      endLocation: "Olympus Base",
+      endLocation: "Olympus",
       endAirport: "(OLY)",
       startPlanet: "Earth",
       endPlanet: "Mars",
@@ -272,7 +272,7 @@ export const bookedFlights = {
       endDate: "March 24th 2136",
       startLocation: "Vancouver",
       startAirport: "(YVR)",
-      endLocation: "Olympus Base",
+      endLocation: "Olympus",
       endAirport: "(OLY)",
       startPlanet: "Earth",
       endPlanet: "Mars",
@@ -288,7 +288,7 @@ export const bookedFlights = {
       endDate: "Jan. 8th 2136",
       startLocation: "Delhi",
       startAirport: "(DEL)",
-      endLocation: "Olympus Base",
+      endLocation: "Olympus",
       endAirport: "(OLY)",
       startPlanet: "Earth",
       endPlanet: "Mars",
@@ -304,7 +304,7 @@ export const bookedFlights = {
       endDate: "April 1st 2136",
       startLocation: "Rome",
       startAirport: "(FCO)",
-      endLocation: "Olympus Base",
+      endLocation: "Olympus",
       endAirport: "(OLY)",
       startPlanet: "Earth",
       endPlanet: "Mars",
@@ -320,7 +320,7 @@ export const bookedFlights = {
       endDate: "Nov. 28th 2135",
       startLocation: "Singapore",
       startAirport: "(SIN)",
-      endLocation: "Olympus Base",
+      endLocation: "Olympus",
       endAirport: "(OLY)",
       startPlanet: "Earth",
       endPlanet: "Mars",
@@ -328,7 +328,7 @@ export const bookedFlights = {
       travellerAmount: "round trip per traveller"
     }
   ],
-  "Earth": [
+  "earth": [
     {
       company: "EXO",
       method: "FIRST CLASS",
@@ -368,7 +368,7 @@ export const bookedFlights = {
       startDate: "March 2nd 2136",
       endTime: "5:30 PM",
       endDate: "March 14th 2136",
-      startLocation: "Olympus Base",
+      startLocation: "Olympus",
       startAirport: "(OLY)",
       endLocation: "Tokyo",
       endAirport: "(HND)",
@@ -410,7 +410,7 @@ export const bookedFlights = {
       travellerAmount: "round trip per traveller"
     }
   ],
-  "Solaris": [
+  "moon": [
     {
       company: "EXO",
       method: "FIRST CLASS",
