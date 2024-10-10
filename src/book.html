@@ -10,22 +10,70 @@
 	<exo-nav class="relative" blur-color="rgba(74,95,121,0.85)"></exo-nav>
 	<main class="min-h-screen max-w-[100vw] overflow-hidden grid grid-cols-2 grid-rows-1 opacity-fade-in">
 		<div id="bg-images" class="fixed inset-0 min-h-screen grid grid-cols-1 grid-rows-1">
-			<img src="public/images/europa.webp" alt="europa" class="h-full w-full object-cover grid-col-start-1 -grid-col-end-1 grid-row-start-1 -grid-row-start-1">
-			<div class="bg-exo-dark-500/40 p-4 grid place-items-center my-4 grid-col-start-1 -grid-col-end-1 grid-row-start-1 -grid-row-start-1 nav:hidden">
-				<h1 class="text-xl uppercase text-center mb-4">
-					This is a work heavily in progress<br>
-					Meets requirements but only half done
-				</h1>
-			</div>
+			<img src="public/images/europa.webp" alt="europa" class="h-full w-full object-cover">
 		</div>
-		<div class="col-start-1 col-end-3 flex flex-row justify-between items-end m-8">
+		<ul id="bg-img-selectos" class="
+			relative col-start-2 col-end-3 row-start-2 row-end-3 
+			z-[2]
+			max-w-[70%]
+			grid grid-cols-[minmax(1fr,100px)] grid-rows-1 
+			p-4 justify-self-end
+			h-[40vh]
+		">
+			<li class="
+				cursor-pointer
+				relative 
+				data-[selected='true']:z-[3] hover:scale-105 data-[selected='true']:scale-105 hover:z-[4]
+				transition-transform 
+				origin-bottom-right 
+				rounded-lg shadow-lg overflow-hidden 
+				col-start-1 col-end-3 row-start-1 row-end-2 z-[3]
+			" data-selected="true">
+				<h1 class="bottom-2 right-4 font-bold absolute text-4xl">EUROPA</h1>
+				<img src="public/images/europa.webp" alt="europa" class="h-full w-full object-cover">
+			</li>
+			<li class="
+				cursor-pointer
+				relative 
+				data-[selected='true']:z-[3] hover:scale-105 data-[selected='true']:scale-105 hover:z-[4] 
+				transition-transform 
+				origin-bottom-right 
+				rounded-lg shadow-lg overflow-hidden 
+				col-start-2 col-end-4 row-start-1 row-end-2 z-[2]
+			" data-selected="false">
+				<h1 class="bottom-2 right-4 font-bold absolute text-4xl">MARS</h1>
+				<img src="public/images/mars_settlement.webp" alt="europa" class="h-full w-full object-cover">
+			</li>
+			<li class="
+				cursor-pointer
+				relative 
+				data-[selected='true']:z-[3] hover:scale-105 data-[selected='true']:scale-105 hover:z-[3] 
+				transition-transform 
+				origin-bottom-right 
+				rounded-lg shadow-lg overflow-hidden 
+				col-start-3 col-end-5 row-start-1 row-end-2 z-[1]
+			" data-selected="false">
+				<h1 class="bottom-2 right-4 font-bold absolute text-4xl">MOON</h1>
+				<img src="public/images/moon_settlement.webp" alt="europa" class="h-full w-full object-cover">
+			</li>
+			<li class="
+				cursor-pointer
+				relative 
+				data-[selected='true']:z-[3] hover:scale-105 data-[selected='true']:scale-105 hover:z-[3] 
+				transition-transform 
+				origin-bottom-right rounded-lg 
+				shadow-lg overflow-hidden 
+				col-start-4 col-end-6 row-start-1 row-end-2 z-[0]
+			" data-selected="false">
+				<h1 class="bottom-2 right-4 font-bold absolute text-4xl">IO</h1>
+				<img src="public/images/alien_planet.webp" alt="europa" class="h-full w-full object-cover">
+			</li>
+		</ul>
+		<div class="col-start-1 col-end-2 row-start-2 row-end-3 flex flex-col justify-end items-start m-8">
 			<h1 class="text-[4rem] text-center font-bold z-[1]">
 				EUROPA
 			</h1>
-			<button id="book-open" data-title="GO HERE" class="
-				col-start-2 col-end-3 row-start-3 row-end-4 self-end
-				btn btn-light h-[4.5rem] w-[12.25rem] text-xl
-			">GO HERE</button>
+			<button id="book-open" data-title="GO HERE" class="btn btn-light h-[4.5rem] w-[12.25rem] text-xl"></button>
 		</div> 
 		<div id="book-flight-form" data-visible="false" class="
 			fixed w-screen min-h-screen opacity-0 pointer-events-none backdrop-blur-0 bg-transparent
