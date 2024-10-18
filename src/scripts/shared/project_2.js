@@ -155,6 +155,7 @@ $(function () {
   /* OPEN A NEW WINDOW  */
   /**********************/
   $("#open-window-btn").on("click", function () {
-    window.open($(this).attr("href"), $(this).attr("target"));
+		const href = $(this).attr("href");
+		window.open(href, "childWindow", "width=750,height=600");
   });
 });
