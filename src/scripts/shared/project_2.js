@@ -1,3 +1,4 @@
+import { random } from "gsap";
 import $ from "jquery";
 
 // Create the form element with jQuery
@@ -25,6 +26,13 @@ const form = $("<form>", {
 			px-2 pt-2 pb-1 bg-transparent outline-one text-exo-light-100
 			border-b border-exo-light-100 focus:outline-none
 		" placeholder="John Doe" name="username" id="username">
+		${window.location.pathname === "/" || window.location.pathname === "/index.html" ? /*html*/`
+			<label for="delay" class="text-left mt-2">Background change delay (ms)</label>
+			<input type="text" autocomplete="off" class="
+				px-2 pt-2 pb-1 bg-transparent outline-one text-exo-light-100
+				border-b border-exo-light-100 focus:outline-none
+			" placeholder="2500" name="delay" id="delay">
+		` : ""}
 		<button type="submit" class="btn h-[2.5rem] w-[15rem] mt-4" data-title="Submit">
 			Submit
 		</button>
@@ -37,8 +45,14 @@ const form = $("<form>", {
 form.on("submit", (e) => {
   e.preventDefault(); // Prevent the form from
   const username = $("#username"); // Get the username element
+	const delay = $("#delay"); // get the delay element
   if (username.val().length > 0) {
     setDisplayName(username.val()); // Set the display name with the input value
+
+		if(delay) {
+			setDelay(delay.val());
+		}
+
     setFormVisible(false); // Hide the form
   } else {
     alert("No name was given"); // Alert the user if no name was provided
@@ -62,7 +76,7 @@ const setFormVisible = (visible) => {
     setTimeout(() => form.css({ display: "none" }), transitionDurationMs); // set its diaplay to none after the opacity transition duration has elapsed
   } else {
     // set the user to focus and select all text within the element
-    $("#username").trigger("focus").trigger("select");
+    // $("#username").trigger("focus").trigger("select");
 
     const exoName = localStorage.getItem("exo-name");
     if (exoName !== null && exoName.length > 0) {
@@ -74,6 +88,19 @@ const setFormVisible = (visible) => {
     }
   }
 };
+
+const setDelay = (delay) => {
+	const isDigit = (str) => {
+		try { parseInt(str) }
+		catch { return false; }
+
+		return true;
+	}
+
+	if(isDigit(delay)) {
+		localStorage.setItem("exo-image-rotation-delay", parseInt(delay));
+	}
+}
 
 /**
  * Sets the display name in the local storage
@@ -94,6 +121,7 @@ const setDisplayName = (name) => {
   });
 };
 
+export const bgImgCount = $(".exo-astro-bg").length;
 /**************************/
 /* ASSIGNMENT REQUIREMENT */
 /*  FULFILLMENT SECTION   */
@@ -115,24 +143,31 @@ $(function () {
   do {
     randomImgIdx = Math.floor(Math.random() * 3);
   } while (randomImgIdx === lastRngImage);
+	localStorage.setItem("exo-last-rng-image", randomImgIdx);
 
-  localStorage.setItem("exo-last-rng-image", randomImgIdx);
-
-  // set the image
-  $(".exo-astro-bg").each(function (index) {
-    console.log(randomImgIdx, index);
-    $(this).css({ display: randomImgIdx === index ? "block" : "none" });
-  });
+	// set the image
+	$(".exo-astro-bg").each(function (index) {
+		$(this).css({ 
+			display: randomImgIdx === index ? "block" : "none",
+			opacity: randomImgIdx === index ? "100%" : "0%"
+		});
+	});
 
   /*************************************/
   /* SET THE DISPLAY NAME FROM STORAGE */
   /* OR SHOW DISPLAY NAME INPUT FORM   */
   /*************************************/
   const exoName = localStorage.getItem("exo-name"); // get the name from the local storage
+	const delay = localStorage.getItem("exo-image-rotation-delay")
   if (exoName !== null && exoName.length > 0) {
     setDisplayName(exoName); // set the display name
     setFormVisible(false); // hide the name editing form
-    form.find("input[type='text']").val(exoName); // set the form's text to the current name
+    form.find("#username").val(exoName); // set the form's text to the current name
+
+		const delayElement = form.find("#delay");
+		if(delayElement) {
+			form.val(delay); // set the form's delay to the current delay
+		}
   } else {
     setFormVisible(true); // show the name editing form
   }
