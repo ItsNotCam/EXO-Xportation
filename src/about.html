@@ -7,5 +7,34 @@
 </head>
 <body class="bg-exo-dark-500">
 	<exo-nav class="relative" blur-color="rgba(74,95,121,0.85)"></exo-nav>
+	<section class="about-bg h-screen grid place-items-center text-center">
+		<video src="public/videos/earth_rotation.mp4" class="absolute inset-0 w-full h-full object-cover bg-exo-dark-500 -z-[1]" autoplay loop muted></video>
+		<h1 class="max-w-[800px] text-[clamp(1rem,5vw,1.25rem)]">
+			“You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars.” -Elon Musk
+		</h1>
+	</section>
+	<section class="h-[20rem] grid place-items-center grid-cols-[repeat(4,auto)]">
+		<div class="flex flex-col justify-center animate-when-visible" data-anim="slide-fade-in">
+			<h1 class="text-center text-[3.5rem]">3,562</h1>
+			<h1 class="text-center text-xl -mt-2">Total Launches</h1>
+		</div>
+		<div class="flex flex-col justify-center animate-when-visible anim-delay-4" data-anim="slide-fade-in">
+			<h1 class="text-center text-[3.5rem]">3.5e<sup>6</sup></h1>
+			<h1 class="text-center text-xl -mt-2">AU Traversed</h1>
+		</div>
+		<div class="flex flex-col justify-center animate-when-visible anim-delay-8" data-anim="slide-fade-in">
+			<h1 class="text-center text-[3.5rem]">25,432</h1>
+			<h1 class="text-center text-xl -mt-2">Passengers Served</h1>
+		</div>
+		<div class="flex flex-col justify-center  animate-when-visible anim-delay-12" data-anim="slide-fade-in">
+			<h1 class="text-center text-[3.5rem]">0</h1>
+			<h1 class="text-center text-xl -mt-2">Aborted Missions</h1>
+		</div>
+	</section>
+	<section class="h-screen about-atmospheric-entry">
+		<a href="https://www.spacex.com/vehicles/falcon-heavy/" class="text-white underline absolute bottom-4 right-4">
+			SpaceX Falcon Heavy
+		</a>
+	</section>
 </body>
 </html>

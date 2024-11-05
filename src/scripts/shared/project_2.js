@@ -1,4 +1,3 @@
-import { random } from "gsap";
 import $ from "jquery";
 
 // Create the form element with jQuery
