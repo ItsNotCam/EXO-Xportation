@@ -134,12 +134,9 @@ $(function () {
   /*****************/
   // get the last opened image so we dont repeat the same image twice
   let lastRngImage = localStorage.getItem("exo-last-rng-image");
-  if (lastRngImage === null) {
-    lastRngImage = 0;
-  } else {
-    lastRngImage = parseInt(lastRngImage);
-  }
-  let randomImgIdx;
+	lastRngImage = (lastRngImage === null) ? parseInt(lastRngImage) : 0;
+
+  let randomImgIdx = lastRngImage;
   do {
     randomImgIdx = Math.floor(Math.random() * 3);
   } while (randomImgIdx === lastRngImage);
