@@ -30,8 +30,8 @@ if(isNaN(bgImgIdx)) {
 
 // set image rotation delay if not exists
 const entryImgRotationDelay = localStorage.getItem("exo-image-rotation-delay");
-if(!entryImgRotationDelay || isNaN(entryImgRotationDelay)) {
-	localStorage.setItem("exo-image-rotation-delay", entryImgRotationDelay);
+if(entryImgRotationDelay === undefined || entryImgRotationDelay === null || isNaN(entryImgRotationDelay)) {
+	localStorage.setItem("exo-image-rotation-delay", 2500);
 }
 
 const updateImages = () => {
