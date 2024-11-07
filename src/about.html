@@ -7,5 +7,63 @@
 </head>
 <body class="bg-exo-dark-500">
 	<exo-nav class="relative" blur-color="rgba(74,95,121,0.85)"></exo-nav>
+	<section class="about-bg h-screen grid place-items-center text-center">
+		<video src="public/videos/earth_rotation.mp4" class="absolute inset-0 w-full h-full object-cover bg-exo-dark-500 -z-[1]" autoplay loop muted></video>
+		<h1 class="max-w-[800px] text-[clamp(1rem,5vw,1.25rem)]">
+			“You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars.” -Elon Musk
+		</h1>
+	</section>
+	<section class="flex flex-row flex-wrap gap-4 mx-auto justify-around py-28 max-w-[1200px]">
+		<div class="flex flex-col justify-center animate-when-visible opacity-0" data-anim="slide-fade-in">
+			<h1 class="text-center text-[3.5rem]">3,562</h1>
+			<h1 class="text-center text-xl -mt-2">Total Launches</h1>
+		</div>
+		<div class="flex flex-col justify-center animate-when-visible anim-delay-4 opacity-0" data-anim="slide-fade-in">
+			<h1 class="text-center text-[3.5rem]">3.5e<sup>6</sup></h1>
+			<h1 class="text-center text-xl -mt-2">AU Traversed</h1>
+		</div>
+		<div class="flex flex-col justify-center animate-when-visible anim-delay-8 opacity-0" data-anim="slide-fade-in">
+			<h1 class="text-center text-[3.5rem]">25,432</h1>
+			<h1 class="text-center text-xl -mt-2">Passengers Served</h1>
+		</div>
+		<div class="flex flex-col justify-center  animate-when-visible anim-delay-12 opacity-0" data-anim="slide-fade-in">
+			<h1 class="text-center text-[3.5rem]">0</h1>
+			<h1 class="text-center text-xl -mt-2">Aborted Missions</h1>
+		</div>
+	</section>
+	<section class="relative h-screen about-atmospheric-entry grid grid-cols-5 grid-rows-4 place-items-center">
+		<div class="w-[clamp(200px,50vw,700px)] col-start-2 col-end-3 row-start-3 row-end-4">
+			<a href="https://www.spacex.com/vehicles/falcon-heavy/" 
+				class="font-bold opacity-0 text-5xl text-white animate-when-visible" 
+				data-anim="slide-fade-in"
+			>
+				OUR MISSION
+			</a>
+			<p class="opacity-0 text-xl text-white animate-when-visible mt-4 anim-delay-2" 
+				data-anim="slide-fade-in"
+			>
+				Our mission at EXO is to revolutionize space travel and exploration by making it more 
+				accessible, efficient, and sustainable. We aim to push the boundaries of human potential and 
+				technology, fostering a future where interplanetary travel is a reality for all. Through innovation, 
+				dedication, and a relentless pursuit of excellence, we strive to inspire the next generation of 
+				explorers and make the dream of living among the stars a tangible reality.
+			</p>
+			<a href="book.html" class="
+				mt-4 launch-more more-btn btn animate-when-visible left 
+				tracking-snug font-bold anim-delay-4" 
+				data-title="TAKE FLIGHT WITH US" 
+				style="width: 14rem; height: 4rem;" 
+				data-anim="slide-fade-in"
+			></a>
+			<a href="https://www.spacex.com/vehicles/falcon-heavy/" 
+				class="absolute bottom-4 right-4 text-white underline" 
+				data-anim="slide-fade-in"
+			>
+				SpaceX Falcon Heavy
+			</a>
+			<!-- <a href="book.html" class="btn btn-light w-[100px] h-[20px]" data-title="Take Flight With Us">
+			</a> -->
+		</div>
+	</section>
 </body>
 </html>

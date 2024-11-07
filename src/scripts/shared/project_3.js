@@ -22,13 +22,16 @@ import { bgImgCount } from './project_2';
 *********************************************************/
 
 // get the current background image index or set it to 0
-let bgImgIdx = localStorage.getItem("exo-last-rng-image") || 0;
+let bgImgIdx = localStorage.getItem("exo-last-rng-image");
+if(isNaN(bgImgIdx)) {
+	bgImgIdx = 0;
+}
 
 const updateImages = () => {
 	// go to the next image and reset back to 0 at the end
-	bgImgIdx = (bgImgIdx + 1) % bgImgCount;
+	bgImgIdx = (bgImgIdx + 1) % (bgImgCount || 3);
 
-	// set the last rng image s.t. when the page loads it picks back up where it left off
+	// set the last rng image s.t. when the page loa2s it picks back up where it left off
 	localStorage.setItem("exo-last-rng-image", bgImgIdx);
 
 	// show / hide the images
@@ -37,7 +40,7 @@ const updateImages = () => {
 		// the css on the element has a transition duration of 200 on opacity
 		$(this).css({ 
 			display: "block",
-			opacity: index === bgImgIdx ? "100%" : "0%"
+			opacity: index === bgImgIdx ? "1" : "0"
 		});
 
 		// hide the invisible elements from the dom after the opacity transition has ended
