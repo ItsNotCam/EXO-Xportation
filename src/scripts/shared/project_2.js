@@ -1,6 +1,6 @@
 import $ from "jquery";
 
-const isHomePage = window.location.pathname.endsWith("/") || window.localStorage.pathname.endsWith("/index.html");
+const isHomePage = window.location.pathname.endsWith("/") || window.location.pathname.endsWith("/index.html");
 
 // Create the form element with jQuery
 const transitionDurationMs = 200;
