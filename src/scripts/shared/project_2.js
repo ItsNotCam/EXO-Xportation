@@ -1,5 +1,7 @@
 import $ from "jquery";
 
+const isHomePage = window.location.pathname.endsWith("/") || window.localStorage.pathname.endsWith("/index.html");
+
 // Create the form element with jQuery
 const transitionDurationMs = 200;
 const form = $("<form>", {
@@ -25,7 +27,7 @@ const form = $("<form>", {
 			px-2 pt-2 pb-1 bg-transparent outline-one text-exo-light-100
 			border-b border-exo-light-100 focus:outline-none
 		" placeholder="John Doe" name="username" id="username">
-		${window.location.pathname === "/" || window.location.pathname === "/index.html" ? /*html*/`
+		${isHomePage ? /*html*/`
 			<label for="delay" class="text-left mt-2">Background change delay (ms)</label>
 			<input type="text" autocomplete="off" class="
 				px-2 pt-2 pb-1 bg-transparent outline-one text-exo-light-100
@@ -48,8 +50,10 @@ form.on("submit", (e) => {
   if (username.val().length > 0) {
     setDisplayName(username.val()); // Set the display name with the input value
 
-		if(delay) {
+		if(delay && !isNaN(delay.val())) {
 			setDelay(delay.val());
+		} else {
+			setDelay(2500);
 		}
 
     setFormVisible(false); // Hide the form
@@ -96,7 +100,7 @@ const setDelay = (delay) => {
 		return true;
 	}
 
-	if(isDigit(delay)) {
+	if(!isNaN(delay) && isDigit(delay)) {
 		localStorage.setItem("exo-image-rotation-delay", parseInt(delay));
 	}
 }
@@ -154,7 +158,7 @@ $(function () {
   /* OR SHOW DISPLAY NAME INPUT FORM   */
   /*************************************/
   const exoName = localStorage.getItem("exo-name"); // get the name from the local storage
-	const delay = localStorage.getItem("exo-image-rotation-delay")
+
   if (exoName !== null && exoName.length > 0) {
     setDisplayName(exoName); // set the display name
     setFormVisible(false); // hide the name editing form
@@ -162,6 +166,10 @@ $(function () {
 
 		const delayElement = form.find("#delay");
 		if(delayElement) {
+			let delay = localStorage.getItem("exo-image-rotation-delay")
+			if(!delay || isNaN(delay)) {
+				delay = 2500;
+			}
 			form.val(delay); // set the form's delay to the current delay
 		}
   } else {

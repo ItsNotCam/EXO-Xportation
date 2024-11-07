@@ -25,6 +25,13 @@ import { bgImgCount } from './project_2';
 let bgImgIdx = localStorage.getItem("exo-last-rng-image");
 if(isNaN(bgImgIdx)) {
 	bgImgIdx = 0;
+	localStorage.setItem("exo-last-rng-image", bgImgIdx);
+}
+
+// set image rotation delay if not exists
+const entryImgRotationDelay = localStorage.getItem("exo-image-rotation-delay");
+if(!entryImgRotationDelay || isNaN(entryImgRotationDelay)) {
+	localStorage.setItem("exo-image-rotation-delay", entryImgRotationDelay);
 }
 
 const updateImages = () => {
@@ -53,8 +60,12 @@ const updateImages = () => {
 // change the delay between background image rotation
 const getImgRotationDelay = () => {
 	const delay = localStorage.getItem("exo-image-rotation-delay");
-	try 	{ return parseInt(delay); }
-	catch { return 2500; }
+	try { 
+		return parseInt(delay); 
+	} catch { 
+		localStorage.setItem("exo-image-rotation-delay");
+		return 2500; 
+	}
 }
 
 // start the animation after delay
