@@ -90,7 +90,7 @@ const setFlights = (planet, bookedFlights) => {
 
     flightItem.on("click", ".select-flight", function (event) {
       event.stopPropagation();
-      updatePageState(selectedFlightId, id);
+      updatePageState("selectedFlightId", id);
     });
 
     pageState.flights.push(flightItem);

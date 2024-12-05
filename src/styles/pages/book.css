@@ -87,7 +87,7 @@
   --sb-size: 5px;
 
   &::-webkit-scrollbar {
-    width: 15px;
+    width: 10px;
   }
 
   &::-webkit-scrollbar-track {
