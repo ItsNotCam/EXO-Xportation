@@ -8,16 +8,7 @@
   margin-block: auto;
 }
 
-.book-item-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto 1fr;
-  height: 100vh;
-  padding: 4rem;
-  gap: 1rem;
-  position: relative;
-  z-index: 1000;
-}
+.book-item-container { }
 
 .book-item-form {
   grid-area: 2 / 2 / 3 / 4;

@@ -51,7 +51,7 @@ module.exports = {
         'nav': {"max": "960px"},
         'txt': {'max': '741px'},
         '1000': {'max': '1000px'},
-        '1550': {'max': '1550px'}
+        '1550': {'max': '1550px'},
       },
       lineHeight: {
         'em-0.1': '0.1em',

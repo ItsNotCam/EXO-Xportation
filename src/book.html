@@ -13,10 +13,12 @@
 		<ul id="bg-img-selectors" class="
 			relative col-start-2 col-end-3 row-start-2 row-end-3 
 			z-[2]
-			max-w-[70%]
+			w-[clamp(700px,50vw,100px)]
 			grid grid-cols-[minmax(1fr,100px)] grid-rows-1 
 			p-4 justify-self-end
 			h-[40vh]
+			nav:col-start-1
+			nav:mx-auto
 		">
 			<li class="
 				cursor-pointer
@@ -67,7 +69,7 @@
 				<img src="public/images/alien_planet.webp" alt="io" class="h-full w-full object-cover">
 			</li>
 		</ul>
-		<div class="col-start-1 col-end-2 row-start-2 row-end-3 flex flex-col justify-end items-start m-8">
+		<div class="col-start-1 col-end-2 row-start-2 row-end-3 nav:row-start-1 nav:row-end-2 flex flex-col justify-end items-start m-8">
 			<h1 id="current-location" class="text-[4rem] text-center font-bold z-[1] transition-opacity uppercase">
 				EUROPA
 			</h1>
@@ -82,7 +84,11 @@
 			data-[visible='true']:backdrop-blur-md
 			data-[visible='true']:bg-exo-dark-500/60
 		">
-			<div class="book-item-container">
+			<div class="book-item-container
+				grid grid-cols-3 grid-rows-[auto,1fr]
+				h-screen p-12 gap-4 relative z-[1000]
+				nav:px-0 nav:py-0
+			">
 				<button id="book-close" class="book-close-btn w-10 h-10 fixed right-6 top-6 rounded-full p-1 hover:bg-exo-dark-500 transition-colors duration-200">
 					<svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
 						stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
