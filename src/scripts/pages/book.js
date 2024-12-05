@@ -1,47 +1,44 @@
-import '../../styles/pages/book.css';
-import './book/exo-book-flight-item';
-import $ from 'jquery';
+import "../../styles/pages/book.css";
+import "./book/exo-book-flight-item";
+import $ from "jquery";
+import LoadBookingData from "./book/load-booking-data";
 
-import {
-  planets,
-  bookedFlights
-} from './book/booking-data';
-
+// setup the page state
 const pageState = {
-  "book-flight-form-open": false,
-  "selected-planet": "europa",
-  "selected-flight-id": -1,
-  "flights": []
-}
-
-var flightsElement = $(".book-item-flights");
-const formElement = $("#book-flight-form");
-
-const updatePageState = (key, value) => observedPageState[key] = value;
-
-$(() => {
-  setFlights(planets[0])
-  $("#book-open").on("click", () => updatePageState("book-flight-form-open", true));
-  $("#book-close").on("click", () => updatePageState("book-flight-form-open", false));
-});
+  bookFlightFormOpen: false,
+  selectedPlanets: "europa",
+  selectedFlightId: -1,
+  flights: [],
+  bgImage: $("#bg-image"),
+  currentLocation: $("#current-location"),
+  bookLocation: $("#book-location"),
+  bgImages: $("#bg-img-selectors").children(),
+};
 
 // watch for page changes
-var pageStateHandler = {
+const observedPageState = new Proxy(pageState, {
   set: function (obj, prop, value) {
     obj[prop] = value;
-    console.log(`pageState changed: ${prop} = ${value}`, "\nnew pageState:", pageState);
+    console.log(
+      `pageState changed: ${prop} = ${value}`,
+      "\nnew pageState:",
+      pageState
+    );
 
     // open / close the flight form
-    formElement.attr("data-visible", pageState["book-flight-form-open"]);
-    $("#nav-container").css("z-index", pageState["book-flight-form-open"] ? "0" : "50")
-
-    // set the selected planet
-    /* TODO */
+    $("#book-flight-form").attr(
+      "data-visible",
+      pageState.bookFlightFormOpen
+    );
+    $("#nav-container").css(
+      "z-index",
+      pageState.bookFlightFormOpen ? "0" : "50"
+    );
 
     // set the selected flight
     pageState.flights.forEach((flight) => {
       const flightId = $(flight).attr("id");
-      const isSelectedId = flightId === pageState["selected-flight-id"];
+      const isSelectedId = flightId === pageState.selectedFlightId;
       const closestSelectFlightBtnElement = $(flight).find(".select-flight");
 
       $(flight).attr("data-selected", isSelectedId);
@@ -56,18 +53,23 @@ var pageStateHandler = {
     });
 
     return true;
-  }
-};
-var observedPageState = new Proxy(pageState, pageStateHandler);
+  },
+});
 
-const setFlights = (planet) => {
-	planet = planet.toLowerCase();
+// abstract out updating the observed page state
+const updatePageState = (key, value) => (observedPageState[key] = value);
+
+const setFlights = (planet, bookedFlights) => {
   pageState.flights = [];
-  $(flightsElement).html("");
+
+  planet = planet.toLowerCase();
+
+  var flightsElement = $(".book-item-flights");
+  flightsElement.html("");
 
   bookedFlights[planet].forEach((flight, index) => {
     const id = `${planet}-flight-${index + 1}`;
-    const flightItem = $(`
+    const flightItem = $(/* html */`
       <exo-book-flight-item data-id="${id}" data-selected="false" class="data-[selected='true']:pointer-events-none">
         <span slot="company">${flight.company}</span>
         <span slot="method">${flight.method}</span>
@@ -88,46 +90,57 @@ const setFlights = (planet) => {
 
     flightItem.on("click", ".select-flight", function (event) {
       event.stopPropagation();
-      updatePageState("selected-flight-id", id);
+      updatePageState(selectedFlightId, id);
     });
 
     pageState.flights.push(flightItem);
     flightsElement.append(flightItem);
   });
-}
+};
 
-$(() => {
-	const bgImage = $("#bg-image");
-	const currentLocation = $("#current-location");
-	const bookLocation = $("#book-location");
-	const bgImages = $("#bg-img-selectors").children();
+$(async () => {
 
-	bgImages.on("click", function() {
-		const clickedImageSrc = $(this).find("img").attr("src");
-		const clickedImageLocation = $(this).find("h1").text();
+	var planets = [];
+	var bookedFlights = {};
 
-		if(bgImage.attr("src") === clickedImageSrc) {
-			return;
-		}
+	try {
+		const result = await LoadBookingData();
+		planets = result.planets;
+		bookedFlights = result.bookedFlights;
+	} catch(e) {
+		console.error(e);
+	}
 
+  setFlights(planets[0], bookedFlights);
+  $("#book-open").on("click", () =>
+    updatePageState("bookFlightFormOpen", true)
+  );
+  $("#book-close").on("click", () =>
+    updatePageState("bookFlightFormOpen", false)
+  );
 
-		bgImage.css("opacity", 0);
-		currentLocation.css("opacity", 0);
-		setTimeout(() => {
-			currentLocation.text(clickedImageLocation);
-			bgImage.attr("src", clickedImageSrc);
-			bookLocation.find("h1").text(clickedImageLocation);
-			bookLocation.find("img").attr("src", clickedImageSrc);
-			
-			bgImage.css("opacity", 1);
-			currentLocation.css("opacity", 1);
-		}, 200);
+  pageState.bgImages.on("click", function () {
+    const { bgImage, currentLocation, bookLocation } = pageState;
+		
+    const clickedImageSrc = $(this).find("img").attr("src");
+    const clickedImageLocation = $(this).find("h1").text();
 
-		setFlights(clickedImageLocation);
-	})
-})
+    if (bgImage.attr("src") === clickedImageSrc) {
+      return;
+    }
 
-// $(".select-flight").each(function() {
-//   const closestFlightID = $(this).closest(".book-item-flight").attr("id");
-//   $(this).on("click", () => observedPageState["selected-flight-id"] = closestFlightID);
-// })
+    bgImage.css("opacity", 0);
+    currentLocation.css("opacity", 0);
+    setTimeout(() => {
+      currentLocation.text(clickedImageLocation);
+      bgImage.attr("src", clickedImageSrc);
+      bookLocation.find("h1").text(clickedImageLocation);
+      bookLocation.find("img").attr("src", clickedImageSrc);
+
+      bgImage.css("opacity", 1);
+      currentLocation.css("opacity", 1);
+    }, 200);
+
+    setFlights(clickedImageLocation, bookedFlights);
+  });
+});
