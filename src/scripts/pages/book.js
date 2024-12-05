@@ -1,3 +1,6 @@
+// replaced by shared/project_4.js
+
+/*
 import "../../styles/pages/book.css";
 import "./book/exo-book-flight-item";
 import $ from "jquery";
@@ -69,7 +72,7 @@ const setFlights = (planet, bookedFlights) => {
 
   bookedFlights[planet].forEach((flight, index) => {
     const id = `${planet}-flight-${index + 1}`;
-    const flightItem = $(/* html */`
+    const flightItem = $(`
       <exo-book-flight-item data-id="${id}" data-selected="false" class="data-[selected='true']:pointer-events-none">
         <span slot="company">${flight.company}</span>
         <span slot="method">${flight.method}</span>
@@ -144,3 +147,5 @@ $(async () => {
     setFlights(clickedImageLocation, bookedFlights);
   });
 });
+
+*/

@@ -1,7 +1,7 @@
-import "../styles/pages/book.css";
-import "./pages/book/exo-book-flight-item";
+import "../../styles/pages/book.css";
+import "../pages/book/exo-book-flight-item";
 import $ from "jquery";
-import LoadBookingData from "./pages/book/load-booking-data";
+import LoadBookingData from "../pages/book/load-booking-data";
 
 // setup the page state
 const pageState = {
@@ -98,10 +98,11 @@ const setFlights = (planet, bookedFlights) => {
   });
 };
 
+// on page load
 $(async () => {
+	// get planets and booked flights using raw ajax
 	var planets = [];
 	var bookedFlights = {};
-
 	try {
 		const result = await LoadBookingData();
 		planets = result.planets;
@@ -110,7 +111,10 @@ $(async () => {
 		console.error(e);
 	}
 
+	// set initial flights
   setFlights(planets[0], bookedFlights);
+
+	// when clicking open or close buttons, change page state
   $("#book-open").on("click", () =>
     updatePageState("bookFlightFormOpen", true)
   );
@@ -118,28 +122,40 @@ $(async () => {
     updatePageState("bookFlightFormOpen", false)
   );
 
+	// update the page state with the data cooresponding to the clicked image
+	// these images are the preview images on the bottom right of the "book" page
   pageState.bgImages.on("click", function () {
+		// get relevant data from the current page state
     const { bgImage, currentLocation, bookLocation } = pageState;
 		
+		// get the information of the currently clicked image
     const clickedImageSrc = $(this).find("img").attr("src");
     const clickedImageLocation = $(this).find("h1").text();
-
     if (bgImage.attr("src") === clickedImageSrc) {
       return;
     }
 
+		////////////////////////
+		// Blending Animation //
+		////////////////////////
+
+		// hide the current image and location elements in order 
     bgImage.css("opacity", 0);
     currentLocation.css("opacity", 0);
-    setTimeout(() => {
-      currentLocation.text(clickedImageLocation);
-      bgImage.attr("src", clickedImageSrc);
-      bookLocation.find("h1").text(clickedImageLocation);
-      bookLocation.find("img").attr("src", clickedImageSrc);
 
+		// after 200ms (the duration of the opacity transition property) swap the images
+    setTimeout(() => {
+      currentLocation.text(clickedImageLocation); // update page state
+      bgImage.attr("src", clickedImageSrc); // update background image src
+      bookLocation.find("h1").text(clickedImageLocation); // change the title on the bottom left of the page
+      bookLocation.find("img").attr("src", clickedImageSrc); // update the form element image
+
+			// now that all of the properties have been set, show elements
       bgImage.css("opacity", 1);
       currentLocation.css("opacity", 1);
     }, 200);
 
+		// update the flights to the current one
     setFlights(clickedImageLocation, bookedFlights);
   });
 });

@@ -1,6 +1,7 @@
 import './scripted_imports';
 import './scripts/shared/project_2';
 import './scripts/shared/project_3';
+import './scripts/shared/project_4';
 import Lenis from 'lenis';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
