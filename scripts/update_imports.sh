@@ -7,7 +7,11 @@ media_files=()
 # add all media files
 html_files=$(find src/* -type f -name "*.html" -not -path "*/node_modules/*")
 for f in $html_files; do
+	# within img tags
 	media_files+=$(grep -Eo 'src="[^"]+"' $f | sed 's/src="//' | sed 's/"$//' | sed 's/public\// .\/public\//')
+
+	# within explicit background-image inline styles
+	media_files+=$(grep -Eo 'background-image: url\("[^"]+"\)' $f | sed 's/background-image: url("//' | sed 's/")$//' | sed 's/public\// .\/public\//')
 done
 
 js_files=$(find src/scripts/shared/* -type f -name "*.js" -not -path "*index.js" -and -not -path "*scripted_imports.js" | sed 's/src\//.\//')
