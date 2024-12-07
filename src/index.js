@@ -49,7 +49,7 @@ if(allBtns.length > 0) {
 
 const startAnimation = (entries, observer) => {
   entries.forEach(entry => {
-    const animation = entry.target.getAttribute("data-anim")
+		const animation = entry.target.getAttribute("data-anim") || entry.target.closest("[data-anim]").getAttribute("data-anim");
     entry.target.classList.toggle(animation, entry.isIntersecting);
   });
 };
@@ -85,7 +85,21 @@ window.onload = function() {
   requestAnimationFrame(raf)  
 
   const observer = new IntersectionObserver(startAnimation);
-  const options = { root: null, rootMargin: '0px', threshold: 1 }; 
-  const elements = document.querySelectorAll('.animate-when-visible');
-  elements.forEach(el => observer.observe(el, options));
+  const options = { root: null, rootMargin: '0px', threshold: 1, animateChildren: false }; 
+  const animateSelfWhenVisibleElement = document.querySelectorAll('.animate-when-visible');
+  animateSelfWhenVisibleElement.forEach(el => observer.observe(el, options));
+	
+	const animateChildrenWhenVisibleElement = document.querySelectorAll('.animate-children-when-visible');
+	animateChildrenWhenVisibleElement.forEach(el => {
+		const children = el.children;
+		for (let i = 0; i < children.length; i++) {
+			observer.observe(children[i], options);
+			if (children[i].children.length > 0) {
+				const nestedChildren = children[i].children;
+				for (let j = 0; j < nestedChildren.length; j++) {
+					observer.observe(nestedChildren[j], options);
+				}
+			}
+		}
+	});
 }

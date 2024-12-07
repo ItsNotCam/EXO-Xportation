@@ -20,10 +20,11 @@ class ExoBookFlightItem extends HTMLElement {
     const selected = this.hasAttribute("data-selected") && this.getAttribute("data-selected") === "true";
 
 		const backgrounds = ["airport.webp", "alien_planet.webp", "frankfurt.webp", "green_future_city.webp", "moon_settlement.webp"];
-		const randomBackground = `url('..\/..\/public\/images\/${backgrounds[Math.floor(Math.random() * backgrounds.length)]}')`;
+		// const randomBackground = `url('..\/..\/public\/images\/${backgrounds[Math.floor(Math.random() * backgrounds.length)]}')`;
+		// style="background-image: ${randomBackground}">
 
     this.innerHTML = /*html*/ `
-      <div id="${id}" class="book-item-flight object-cover" style="background-image: ${randomBackground}">
+      <div id="${id}" class="book-item-flight object-cover">
         <div class="flex justify-between items-center [&>h1]:text-2xl">
           <h1>${company}</h1>
           <h1>${method}</h1>
