@@ -1,5 +1,6 @@
 import "../../styles/pages/book.css";
 import "../pages/book/exo-book-flight-item";
+
 import $ from "jquery";
 import LoadBookingData from "../pages/book/load-booking-data";
 
@@ -150,11 +151,21 @@ $(async () => {
       currentLocation.text(clickedImageLocation); // update page state
       bgImage.attr("src", clickedImageSrc); // update background image src
       bookLocation.find("h1").text(clickedImageLocation); // change the title on the bottom left of the page
-      bookLocation.find("img").attr("src", clickedImageSrc); // update the form element image
+			
+			// hide the base image first - i do this in the case that the new content loads slowly. 
+			// if the new content loads slower than its transition, the background will just fade back into the same image
+			// then abruptly change. This "reset" will make the page black until the new image is loaded.
+			// it's a hack but this is a school project right ¯\_(ツ)_/¯
+      // bookLocation.find("img").attr("src", ""); 
+
+			// now set the new image to the correct one
+      bookLocation.find("img").attr("src", clickedImageSrc); 
 
 			// now that all of the properties have been set, show elements
-      bgImage.css("opacity", 1);
-      currentLocation.css("opacity", 1);
+			setTimeout(() => {
+				bgImage.css("opacity", 1);
+				currentLocation.css("opacity", 1);
+			}, 200);
     }, 200);
 
 		// update the flights to the current one
