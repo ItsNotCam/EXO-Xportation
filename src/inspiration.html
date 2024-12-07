@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXO</title>
+
+	<!-- 
+	FOR WEBPACK SCRIPTED IMPORTS
+	-->
+</head>
+
+<body>
+  <!-- src/scripts/shared/components/exo-cursor.js -->
+  <exo-cursor class="hidden"></exo-cursor>
+  <!-- src/scripts/shared/components/exo-nav.js -->
+  <exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
+  <main>
+		<section class="relative h-screen w-full grid place-items-center bg-cover" 
+			style="background-image: url('public/images/child-in-tokyo.webp')
+		">
+			<div class="absolute top-0 left-0 w-full h-full bg-black/50"></div>
+			<div data-anim="slide-fade-in" class="animate-children-when-visible flex flex-col z-[1]">
+				<p class="opacity-0 italic text-exo-light-400">Not that I'm even good artist, but...</p>
+				<quote class="text-6xl italic uppercase">
+					<p class="opacity-0 anim-delay-20">"Good artists copy,</p>
+					<p class="opacity-0 anim-delay-35 ml-16">great artists steal"</p>	
+				</quote>
+				<p data-anim="opacity-fade-in" class="opacity-0 anim-delay-50 anim-dur-0 text-right text-2xl ">- Picasso 
+				<span data-anim="opacity-fade-in" class="opacity-0 anim-delay-60 anim-dur-0 text-sm text-exo-light-400">(maybe)</span></p>
+			</div>
+        <a href="#space"class="
+          absolute grid items-center 
+          bottom-6 left-1/2 -translate-x-1/2 
+          text-center cursor-pointer
+          pointer-events-auto
+        ">
+        <span class="text-xl">More</span>
+        <svg aria-label="downard arrow" class="mx-auto -my-2 animate-learn-more-arrow" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#e8eaed">
+          <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+        </svg>
+      </a>
+		</section>
+		<section class="relative h-screen w-full grid place-items-center">
+			<div>woohoo</div>
+		</section>
+  </main>
+</body>
+</html>

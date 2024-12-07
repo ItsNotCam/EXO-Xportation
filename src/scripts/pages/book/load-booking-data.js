@@ -1,9 +1,9 @@
-const bookingDataPath = "/public/booking-data.json";
-
+// const root = "~cyoung35/exo"
+const root = "~cyoung35";
 export default function LoadBookingData() {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", bookingDataPath, true);
+    xhr.open("GET", `./public/data/booking-data.json`, true);
     xhr.responseType = "json";
 
     xhr.onload = function () {
