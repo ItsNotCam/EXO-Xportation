@@ -3,6 +3,8 @@ import "../pages/book/exo-book-flight-item";
 import $ from "jquery";
 import LoadBookingData from "../pages/book/load-booking-data";
 
+// all of this code only applies to the "books.html" page
+
 // setup the page state
 const pageState = {
   bookFlightFormOpen: false,
