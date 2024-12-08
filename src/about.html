@@ -8,12 +8,25 @@
 <body class="bg-exo-dark-500">
 	<!-- src/scripts/shared/components/exo-nav.js -->
 	<exo-nav class="relative" blur-color="rgba(74,95,121,0.85)"></exo-nav>
-	
+
 	<section class="about-bg h-screen grid place-items-center text-center">
 		<video src="public/videos/earth_rotation.mp4" class="absolute inset-0 w-full h-full object-cover bg-exo-dark-500 -z-[1]" autoplay loop muted></video>
 		<h1 class="max-w-[800px] text-[clamp(1rem,5vw,1.25rem)]">
 			“You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars.” -Elon Musk
 		</h1>
+		
+		<a href="#space" class="
+		absolute grid items-center 
+		bottom-6 left-1/2 -translate-x-1/2 
+		text-center cursor-pointer
+		pointer-events-auto
+	">
+	<span class="text-xl">More</span>
+	<svg aria-label="downard arrow" class="mx-auto -my-2 animate-learn-more-arrow"
+		xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#e8eaed">
+		<path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+	</svg>
+</a>
 	</section>
 	<section class="flex flex-row flex-wrap gap-4 mx-auto justify-around py-28 max-w-[1200px]">
 		<div class="flex flex-col justify-center animate-when-visible opacity-0" data-anim="slide-fade-in">
