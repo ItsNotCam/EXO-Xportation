@@ -16,6 +16,10 @@
 	<exo-cursor class="hidden"></exo-cursor>
 	<!-- src/scripts/shared/components/exo-nav.js -->
 	<exo-nav blur-color="rgba(74,95,121,0.85)"></exo-nav>
+	<div class="hidden">
+		<img src="public/images/child-in-tokyo.webp">
+		<img src="public/images/urban.webp">
+	</div>
 	<main>
 		<section class="relative h-screen w-full grid place-items-center bg-cover" style="
 			background-image: url('public/images/child-in-tokyo.webp'); 
@@ -47,12 +51,13 @@
 			</a>
 		</section>
 		<section class="relative" style="
-			background-image: url('public/images/black-stage-background.jpg');
+			background-image: url('public/images/urban.webp');
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 			background-size: cover;
 			background-color: black;
 		">
+		<div class="absolute top-0 left-0 w-full h-full bg-black/50"></div>
 			<div class="h-[100vh] grid place-items-center w-full">
 				<p data-anim="slide-fade-in" class="animate-when-visible opacity-0 text-center text-4xl tracking-wide leading-normal">
 					A website built for George Mason's<br>Fall 2024 IT-331 class...
