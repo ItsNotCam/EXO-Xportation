@@ -2,6 +2,8 @@ import "../../styles/pages/book.css";
 import "../pages/book/exo-book-flight-item";
 
 import $ from "jquery";
+import "jquery-validation";
+
 import LoadBookingData from "../pages/book/load-booking-data";
 
 // all of this code only applies to the "books.html" page
@@ -171,4 +173,36 @@ $(async () => {
 		// update the flights to the current one
     setFlights(clickedImageLocation, bookedFlights);
   });
-});
+	
+		const validateProps = { required: true }
+		$('form').validate({
+			rules: {
+				"first-name": validateProps,
+				"last-name": validateProps,
+				"age": validateProps,
+				"address-1": validateProps,
+				"address-2": validateProps,
+				"city": validateProps,
+				"zipcode": validateProps
+			},
+			highlight: function (element) {
+				$(element).parent().css({
+					color: "red"
+				});
+			},
+			unhighlight: function (element) {
+				$(element).parent().css({
+					color: "red"
+				});
+			},
+			messages: {
+				"first-name": "",
+				"last-name": "",
+				"age": "",
+				"address-1": "",
+				"address-2": "",
+				"city": "",
+				"zipcode": ""
+			}
+		});
+})

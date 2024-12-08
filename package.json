@@ -35,8 +35,10 @@
     "webpack-dev-server": "^5.1.0"
   },
   "dependencies": {
+    "datatables": "^1.10.18",
     "gsap": "^3.12.5",
     "jquery": "^3.7.1",
+    "jquery-validation": "^1.21.0",
     "lenis": "^1.1.13",
     "uuid": "^10.0.0"
   }

@@ -81,7 +81,7 @@
   background: url("../../public/images/mars_settlement.webp") no-repeat center bottom / cover;
 }
 
-.custom-scrollbar {
+* {
   --sb-track-color: #131313;
   --sb-thumb-color: #484848;
   --sb-size: 5px;

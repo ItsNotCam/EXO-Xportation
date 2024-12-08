@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EXO</title>
+	<link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.tailwindcss.css">
 
 	<!-- 
 	FOR WEBPACK SCRIPTED IMPORTS
@@ -57,7 +58,7 @@
 				<line x1="6" y1="6" x2="18" y2="18" />
 			</svg>
 		</button>
-		<div class="w-[min(85vw,800px)] m-4 text-xl relative disclaimer-content-before">
+		<div class="w-[min(85vw,1000px)] m-4 text-xl relative disclaimer-content-before">
 			<h1 class="text-3xl mb-2 font-bold uppercase tracking-wide text-center">
 				Images
 			</h1>
@@ -70,9 +71,10 @@
 				You're just resending the same request.
 			</p>
 			<p>All icons retrieved from <a href="https://fonts.google.com/icons" target="_blank">Google Material Icons</a></p>
-			<!-- Contains Generated Content -->
-			<ul id="attribution-list" class="text-lg text-exo-light-300 flex flex-row gap-2 flex-wrap"></ul>
-			<!-- Contains Generated Content -->
+			<div class="datatable w-full">
+				<!-- Contains Generated Content -->
+				<table id="attribution-list" class="display" style="width:100%"></table>
+			</div>
 		</div>
 	</div>
   <main>

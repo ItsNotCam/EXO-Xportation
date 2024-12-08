@@ -1,5 +1,6 @@
 import '../../styles/pages/home.css';
 import $ from 'jquery';
+import 'datatables';
 
 $(function() {
   const disclaimer = $("#disclaimer");
@@ -164,9 +165,46 @@ const links = [
   }
 ];
 
+$.getJSON("public/data/credits.json", function(data) {
+	const links = data.credits;
+	console.log(links);
 
-$("#attribution-list").html(links.map(link => /* html */`
-  <li>
-    <a class="hover:text-white visited:text-blue-400 underline flex-grow" href="${link.link}" target="_blank">${link.title}</a>
-  </li>
-`).join(''));
+	const truncate = (text, len) => {
+		return text.length > len ? text.substring(0, len) + '...' : text;
+	}
+
+	$("#attribution-list").html(/*html*/`
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Link</th>
+			</tr>
+		</thead>
+		<tbody>
+	` + links.map(link => /* html */`
+			<tr>
+				<td>
+					${link.title}
+				</td>
+				<td> 
+					<a class="hover:text-white visited:text-blue-400 underline flex-grow" href="${link.link}" target="_blank">
+					${truncate(link.link.replace("https://www.freepik.com/free-ai-image/", "").replace("https://www.freepik.com/free-photo/", ""), 30)}
+					</a>
+				</td>
+			</tr>
+			`).join('') + /* html */ `
+		</tbody>
+	`);
+	
+	$("#attribution-list").dataTable({
+		paginate: true,
+		scrollY: 325
+	});
+});
+
+
+// $("#attribution-list").html(links.map(link => /* html */`
+//   <li>
+//     <a class="hover:text-white visited:text-blue-400 underline flex-grow" href="${link.link}" target="_blank">${link.title}</a>
+//   </li>
+// `).join(''));
